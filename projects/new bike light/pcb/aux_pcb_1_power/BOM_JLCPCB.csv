@@ -1,0 +1,18 @@
+Comment,Designator,Footprint,LCSC Part Number
+"MT3608 Boost Converter",U1,SOT-23-6,C84817
+"SS14 Schottky 1A 40V",D1,SMA,C2480
+"SS14 Schottky 1A 40V",D2,SMA,C2480
+"SS14 Schottky 1A 40V",D3,SMA,C2480
+"22uH 1.5A Inductor",L1,5x5mm,C408412
+"10uF 16V Ceramic",C1,0805,C15850
+"10uF 16V Ceramic",C2,0805,C15850
+"22uF 16V Ceramic",C3,0805,C45783
+"100nF Ceramic",C4,0603,C14663
+"470uF 10V Electrolytic",C5,8x10mm,C134766
+"100k 1% Resistor",R1,0603,C25803
+"24k 1% Resistor",R2,0603,C25942
+"USB-C Receptacle Power Only",J1,USB-C-16P,TBD
+"JST-PH 2P Connector",J2,JST-PH-2P,C131337
+"JST-PH 6P Connector (To XIAO)",J3,JST-PH-6P,C131341
+"JST-PH 5P Connector (From Handlebar)",J4,JST-PH-5P,C131340
+"JST-PH 3P Connector (To LED Strip)",J5,JST-PH-3P,C131338

@@ -1,0 +1,99 @@
+(kicad_sch
+  (version 20231120)
+  (generator "eeschema")
+  (generator_version "8.0")
+  (uuid "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55")
+  (paper "A4")
+  (title_block
+    (title "AUX PCB #1 - Power Hub")
+    (date "2026-01-12")
+    (rev "A")
+    (comment 1 "Bike Light Project")
+    (comment 2 "5V LED Rail + Signal Passthrough")
+    (comment 3 "MT3608 Boost + Schottky OR-ing")
+  )
+  (lib_symbols
+  )
+  (text "USB-C Input Path"
+    (exclude_from_sim no)
+    (at 50.8 38.1 0)
+    (effects
+      (font
+        (size 2.54 2.54)
+        (bold yes)
+      )
+    )
+    (uuid "a1b2c3d4-e5f6-7890-abcd-ef1234567890")
+  )
+  (text "Battery Boost Path"
+    (exclude_from_sim no)
+    (at 50.8 88.9 0)
+    (effects
+      (font
+        (size 2.54 2.54)
+        (bold yes)
+      )
+    )
+    (uuid "b2c3d4e5-f678-90ab-cdef-123456789012")
+  )
+  (text "Signal Passthrough"
+    (exclude_from_sim no)
+    (at 180.34 88.9 0)
+    (effects
+      (font
+        (size 2.54 2.54)
+        (bold yes)
+      )
+    )
+    (uuid "f6789012-abcd-ef12-3456-789012345678")
+  )
+  (text "Output Connectors"
+    (exclude_from_sim no)
+    (at 180.34 38.1 0)
+    (effects
+      (font
+        (size 2.54 2.54)
+        (bold yes)
+      )
+    )
+    (uuid "c3d4e5f6-7890-abcd-ef12-345678901234")
+  )
+  (text "Design Notes:\n- MT3608 boost: 3.0-4.2V -> 5.17V\n- Schottky OR-ing: USB dominates when connected\n- 470uF + 100nF bulk caps for 24x WS2812\n- Peak current: 500mA (brake/turn modes)\n- Signal passthrough: SW_LEFT, SW_RIGHT, SW_MODE (J4->J3)\n- LED_DATA passthrough: J3 pin 6 -> J5 pin 3"
+    (exclude_from_sim no)
+    (at 25.4 175.26 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "d4e5f678-90ab-cdef-1234-567890123456")
+  )
+  (text "Components to place:\nPOWER:\n  J1 - USB-C (power only)\n  J2 - JST-PH 2P (battery)\n  U1 - MT3608 (SOT-23-6)\n  D1,D2,D3 - SS14 (SMA)\n  L1 - 22uH 1.5A (5x5mm)\n  C1,C2 - 10uF (0805)\n  C3 - 22uF (0805)\n  C4 - 100nF (0603)\n  C5 - 470uF (8x10mm electrolytic)\n  R1 - 100k (0603)\n  R2 - 24k (0603)\n\nCONNECTORS:\n  J3 - JST-PH 6P (To XIAO: 5V,GND,SW_L,SW_R,SW_M,LED_DATA)\n  J4 - JST-PH 5P (From Handlebar: 5V,GND,SW_L,SW_R,SW_M)\n  J5 - JST-PH 3P (To LED Strip: 5V,GND,LED_DATA)"
+    (exclude_from_sim no)
+    (at 25.4 200.66 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "e5f67890-abcd-ef12-3456-789012345678")
+  )
+  (text "Signal Routing:\nJ4.3 (SW_LEFT)  --> J3.3\nJ4.4 (SW_RIGHT) --> J3.4\nJ4.5 (SW_MODE)  --> J3.5\nJ3.6 (LED_DATA) --> J5.3\n\nJ4.1 gets 5V from rail\nJ4.2 connected to GND"
+    (exclude_from_sim no)
+    (at 180.34 101.6 0)
+    (effects
+      (font
+        (size 1.27 1.27)
+      )
+      (justify left)
+    )
+    (uuid "01234567-89ab-cdef-0123-456789abcdef")
+  )
+  (sheet_instances
+    (path "/"
+      (page "1")
+    )
+  )
+)
