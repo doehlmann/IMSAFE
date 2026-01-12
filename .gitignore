@@ -1,0 +1,49 @@
+# KiCad backup files
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.bak
+*~
+*-backups/
+fp-info-cache
+
+# KiCad lock files
+*.lck
+
+# STM32CubeIDE build outputs
+Debug/
+Release/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+
+# STM32CubeIDE settings (optional - some prefer to track these)
+.settings/
+.cproject
+.project
+
+# Gerber exports (regenerated, large)
+# Uncomment if you don't want to version gerbers
+# gerbers/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# OS generated
+.DS_Store
+.DS_Store?
+
+# Editor files
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+
+# Project-specific ignores
+# Add patterns for files you don't want to track
+tmpclaude-*
