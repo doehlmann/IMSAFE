@@ -51,6 +51,18 @@
 		(uuid "mcu-label-001")
 	)
 
+	(text "UI Sections (14-16)"
+		(exclude_from_sim no)
+		(at 88.9 127 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+		)
+		(uuid "ui-label-001")
+	)
+
 	(text "Sensor Sections (7-11)"
 		(exclude_from_sim no)
 		(at 152.4 60.96 0)
@@ -304,6 +316,123 @@
 			(project "IMSAFE_MainBoard"
 				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
 					(page "7")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 88.9 134.62)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 224 194 1)
+		)
+		(uuid "sheet-sec14-ioexp")
+		(property "Sheetname" "Section_14_IO_Expander"
+			(at 88.9 133.9084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_14_IO_Expander.kicad_sch"
+			(at 88.9 147.9746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "19")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 88.9 149.86)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 224 194 1)
+		)
+		(uuid "sheet-sec15-leds")
+		(property "Sheetname" "Section_15_Status_LEDs"
+			(at 88.9 149.1484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_15_Status_LEDs.kicad_sch"
+			(at 88.9 163.2146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "20")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 88.9 165.1)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 224 194 1)
+		)
+		(uuid "sheet-sec16-enc")
+		(property "Sheetname" "Section_16_Rotary_Encoders"
+			(at 88.9 164.3884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_16_Rotary_Encoders.kicad_sch"
+			(at 88.9 178.4546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "21")
 				)
 			)
 		)
