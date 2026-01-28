@@ -33,22 +33,28 @@ This document provides the engineering rationale behind each schematic section o
 ## ERC Summary (All Sections)
 
 **ERC Run Date:** 2026-01-29
-**Tool:** KiCad 9.0 kicad-cli
+**Tool:** KiCad 9.0.3 kicad-cli
 
 | Category | Count | Status |
 |----------|-------|--------|
-| Errors | 174 | Under review |
-| Warnings | 233 | Mostly waived |
+| Errors | 129 | Under review |
+| Warnings | 261 | Mostly waived |
+| **Total** | **390** | |
 
 ### Waived Warnings (Global)
-- **lib_symbol_mismatch (158):** Custom symbols created for JLCPCB parts - functionally correct
+- **lib_symbol_mismatch (157):** Custom symbols created for JLCPCB parts - functionally correct
 - **lib_symbol_issues (15):** Symbol properties differ from library - intentional customization
 - **footprint_link_issues (9):** Custom footprints for JLCPCB assembly
+- **same_local_global_label (17):** Labels intentionally share names across hierarchy
 
 ### Errors Requiring Resolution
-- **pin_not_connected (105):** NC pins to be explicitly marked
-- **hier_label_mismatch (1):** Remaining hierarchical label cleanup
-- **power_pin_not_driven (5):** PWR_FLAG symbols added for VSYS/VBAT nets
+- **pin_not_connected (68):** Unconnected IC pins - review for NC marking or wiring
+- **unconnected_wire_endpoint (38):** Dangling wire endpoints to clean up
+- **wire_dangling (34):** Incomplete wire connections
+- **label_dangling (22):** Labels not connected to nets
+- **global_label_dangling (12):** Unused global labels
+- **power_pin_not_driven (2):** Power nets without explicit source
+- **pin_to_pin (1):** Charger QON vs regulator VOUT - design review needed
 
 ---
 
