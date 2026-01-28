@@ -2306,13 +2306,13 @@ Not applicable - passive test points.
 | 04 | MOSFET thermal at 5A | MEDIUM | Verify PCB thermal design |
 | 15 | 3.3V logic to 5V WS2812B | LOW | Test with actual parts |
 | 17 | ESP32 antenna keepout | MEDIUM | Verify PCB layout |
-| 05/06 | PWR_FLAG for ERC | LOW | **FIXED** - Added in schematic |
-| 01 | MCU decoupling caps | MEDIUM | **IN PROGRESS** - Wiring fixes needed |
-| 04 | BMS protection circuit | MEDIUM | **IN PROGRESS** - Gate connections needed |
-| 07 | BMP390 SCK pin | LOW | **IN PROGRESS** - Tie to GND for I2C mode |
-| 14 | IO Expander GPIO pins | LOW | **IN PROGRESS** - Add no_connect symbols |
-| 16 | Encoder S2 pins | LOW | **IN PROGRESS** - Connect to GND |
-| ROOT | Dangling wires/labels | MEDIUM | **IN PROGRESS** - Clean up interconnects |
+| 05/06 | PWR_FLAG for ERC | LOW | **FIXED** - PWR_FLAG wired to VSYS net |
+| 01 | MCU decoupling caps | MEDIUM | Open - Manual KiCad wiring needed |
+| 04 | BMS VSYS output | HIGH | **FIXED** - Hierarchical label added |
+| 07 | BMP390 SCK pin | LOW | **FIXED** - Connected to GND for I2C mode |
+| 14 | IO Expander GPIO pins | LOW | **FIXED** - 16 no_connect symbols added |
+| 16 | Encoder S2 pins | LOW | Open - Manual KiCad wiring needed |
+| ROOT | Dangling wires/labels | MEDIUM | Open - Manual cleanup needed |
 
 ---
 
@@ -2419,4 +2419,5 @@ The following ERC errors require attention before layout:
 | 1.0 | 2026-01-29 | Claude | Initial document creation |
 | 2.0 | 2026-01-29 | Claude | Added: requirement IDs, component tables, ERC status, pinout verification, safe failure behavior, vibration sensor cable specs, thermal notes, expected voltages |
 | 2.1 | 2026-01-29 | Claude | Added: Appendix F Design Review Checkpoint, updated R602 calculation to 19.1k |
+| 2.2 | 2026-01-29 | Claude | Applied ERC fixes: BMS VSYS label, BMP390 SCK→GND, IO Expander no_connects, PWR_FLAG wiring |
 

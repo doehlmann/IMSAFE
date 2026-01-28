@@ -741,9 +741,20 @@
 		(uuid "hl-packneg")
 	)
 
+	(hierarchical_label "VSYS" (shape output) (at 144.78 124.46 0) (fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left))
+		(uuid "hl-vsys")
+	)
+
 	(wire (pts (xy 50.8 101.6) (xy 53.34 101.6)) (stroke (width 0) (type default)) (uuid "w-hl-vbat"))
 	(wire (pts (xy 180.34 123.19) (xy 187.96 123.19)) (stroke (width 0) (type default)) (uuid "w-hl-cellmid"))
 	(wire (pts (xy 137.16 179.07) (xy 137.16 185.42)) (stroke (width 0) (type default)) (uuid "w-hl-packneg"))
+	(wire (pts (xy 137.16 124.46) (xy 144.78 124.46)) (stroke (width 0) (type default)) (uuid "w-hl-vsys"))
+
+	(label "VSYS" (at 140.97 124.46 0) (fields_autoplaced yes)
+		(effects (font (size 1.27 1.27)) (justify left bottom))
+		(uuid "label-vsys")
+	)
 
 	(symbol (lib_id "power:PWR_FLAG") (at 60.96 101.6 0) (unit 1)
 		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)

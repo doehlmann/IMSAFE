@@ -556,6 +556,9 @@
 
 	(wire (pts (xy 53.34 113.03) (xy 55.88 113.03)) (stroke (width 0) (type default)) (uuid "w-hl-vsys"))
 	(wire (pts (xy 231.14 119.38) (xy 233.68 119.38)) (stroke (width 0) (type default)) (uuid "w-hl-3v3"))
+	(wire (pts (xy 55.88 113.03) (xy 63.5 113.03)) (stroke (width 0) (type default)) (uuid "w-pwr-flag-vsys"))
+
+	(junction (at 55.88 113.03) (diameter 0) (color 0 0 0 0) (uuid "junction-vsys-main"))
 
 	(symbol (lib_id "power:PWR_FLAG") (at 63.5 113.03 0) (unit 1)
 		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
