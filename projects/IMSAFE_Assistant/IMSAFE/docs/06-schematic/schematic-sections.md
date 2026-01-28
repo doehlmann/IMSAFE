@@ -12,9 +12,9 @@
 
 | # | Section | Main IC(s) | Status |
 |---|---------|------------|--------|
-| 1 | MCU Core | STM32H747AG | Pending |
-| 2 | Power Input (USB-C) | - | Pending |
-| 3 | Battery Charger | BQ25792 | Pending |
+| 1 | MCU Core | STM32H747AG | **In Progress** |
+| 2 | Power Input (USB-C) | USBLC6-2SC6 | **Complete** |
+| 3 | Battery Charger | BQ25792 | **Complete** |
 | 4 | BMS | HY2120 + HY2213 | Pending |
 | 5 | 3.3V Regulator | TPS62133 | Pending |
 | 6 | 5V Regulator | TPS62130 | Pending |
