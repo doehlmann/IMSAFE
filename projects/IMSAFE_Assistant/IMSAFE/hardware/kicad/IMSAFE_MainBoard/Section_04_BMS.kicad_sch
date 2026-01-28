@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec04-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 04: BMS")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "HY2120 Protection + HY2213 Balancers")
+		(comment 2 "2S Li-ion Cell Protection and Balancing")
+	)
+
+	(lib_symbols)
+
+	(text "BMS Section\n\nMain Components:\n- U4: HY2120-CB (SOT-23-6) Protection IC\n- U5, U6: HY2213-BB3A (SOT-23-6) Balancers x2\n- Q1-Q4: AO3400A (SOT-23) N-ch MOSFETs\n\nProtection IC (HY2120):\n- C401: 100nF VDD bypass\n- R401: 1k OD gate resistor\n- R402: 1k OC gate resistor\n\nCurrent Sensing:\n- R403: 5mOhm 1206 overcurrent sense\n\nCell Balancing (per cell):\n- R404: 62 Ohm 1/4W Cell 1 balance\n- R405: 62 Ohm 1/4W Cell 2 balance\n- C402: 100nF U5 bypass\n- C403: 100nF U6 bypass\n\nNets:\n- VBAT, CELL1, CELL2, BAT-, P-, P+"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec04-text-001")
+	)
+
+	(text "TODO: Add HY2120, HY2213, MOSFET symbols\nRefer to HY2120 datasheet application circuit"
+		(exclude_from_sim no)
+		(at 25.4 127 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec04-todo-001")
+	)
+)

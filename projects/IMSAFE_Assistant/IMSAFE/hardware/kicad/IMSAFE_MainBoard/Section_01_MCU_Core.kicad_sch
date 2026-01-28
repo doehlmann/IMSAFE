@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec01-0001-0002-0003-000000000001")
+	(paper "A3")
+	(title_block
+		(title "Section 01: MCU Core")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "STM32H747AGI6 Dual-Core MCU")
+		(comment 2 "LQFP-176 with decoupling, crystals, reset")
+	)
+
+	(lib_symbols)
+
+	(text "MCU Core Section\n\nMain Component:\n- U1: STM32H747AGI6 (LQFP-176)\n\nPower Supply Decoupling (per ST AN4661):\n- C101: 4.7uF 0805 VDD bulk (near pin 1)\n- C102-C111: 100nF 0603 each VDD pin (10x)\n- C112-C115: 100nF 0603 each VDDA pin (4x)\n- C116: 1uF 0603 VDDA bulk\n- C117-C118: 100nF 0603 VDDUSB (2x)\n- C119-C120: 2.2uF 0603 VCAP1, VCAP2\n- C121: 100nF 0603 VBAT\n- C122: 10nF 0603 VREF+\n\nHSE Crystal (8 MHz):\n- Y1: 8 MHz 3225 (20ppm, 10pF load)\n- C123: 15pF 0603 OSC_IN\n- C124: 15pF 0603 OSC_OUT\n- R101: 1M 0603 feedback (optional)\n\nLSE Crystal (32.768 kHz):\n- Y2: 32.768kHz 3215 (20ppm, 6pF load)\n- C125: 6.8pF 0603 OSC32_IN\n- C126: 6.8pF 0603 OSC32_OUT\n- R102: 10M 0603 feedback (optional)\n\nReset Circuit:\n- R103: 10k 0603 NRST pull-up\n- C127: 100nF 0603 NRST filter\n\nBoot Configuration:\n- R104: 10k 0603 BOOT0 pull-down\n\nTotal: ~28 passives"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec01-text-001")
+	)
+
+	(text "TODO: Add STM32H747AGI6 symbol\nPlace decoupling caps near respective power pins\nKeep crystal traces short and guarded"
+		(exclude_from_sim no)
+		(at 25.4 165.1 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec01-todo-001")
+	)
+)

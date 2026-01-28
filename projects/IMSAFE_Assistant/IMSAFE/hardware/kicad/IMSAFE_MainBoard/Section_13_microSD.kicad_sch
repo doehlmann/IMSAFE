@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec13-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 13: microSD")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "microSD Socket with ESD Protection")
+		(comment 2 "SDMMC 4-bit mode")
+	)
+
+	(lib_symbols)
+
+	(text "microSD Section\n\nMain Components:\n- J3: MEM2067-02-180-00-A (hinged socket, vibration resistant)\n- U14, U15: USBLC6-2SC6 (ESD) x2\n\nPassives:\n- C1301: 100nF 0603 VDD bypass\n- C1302: 10uF 0805 VDD bulk\n- R1301-R1304: 33 Ohm 0603 DAT0-3 series resistors (4x)\n- R1305: 33 Ohm 0603 CMD series\n- R1306: 33 Ohm 0603 CLK series\n- R1307: 10k 0603 card detect pull-up\n\nInterface: SDMMC1 4-bit mode + DMA\n\nNotes:\n- Hinged socket for vibration resistance\n- ESD protection on all data lines\n- Series resistors for impedance matching\n- Card detect for hot-swap handling\n\nFilesystem: FATFS with 2-FAT table\nCard: Industrial-grade (SanDisk, ATP, Swissbit)"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec13-text-001")
+	)
+
+	(text "TODO: Add MEM2067 socket, ESD ICs\nRefer to GCT datasheet for footprint"
+		(exclude_from_sim no)
+		(at 25.4 119.38 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec13-todo-001")
+	)
+)

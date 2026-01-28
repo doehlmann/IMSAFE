@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec10-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 10: Gas Sensor")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "MICS-4514 CO + NO2 Sensor")
+		(comment 2 "Analog outputs with heater control")
+	)
+
+	(lib_symbols)
+
+	(text "Gas Sensor Section\n\nMain Component:\n- U12: MICS-4514 (SMD)\n\nHeater Control:\n- Q5: AO3400A (SOT-23) heater switch\n- R1001: 10k 0603 gate pull-down\n- R1002: 100 Ohm 0603 gate series\n\nSignal Conditioning (Reducing - CO):\n- R1003: 10k 0603 load resistor\n- C1001: 100nF 0603 ADC input filter\n- R1004: 1k 0603 series protection\n\nSignal Conditioning (Oxidizing - NO2):\n- R1005: 10k 0603 load resistor\n- C1002: 100nF 0603 ADC input filter\n- R1006: 1k 0603 series protection\n\nInterface:\n- ADC1: CO analog output\n- ADC2: NO2 analog output\n- GPIO: Heater enable (PWM capable)\n\nSpecs:\n- CO range: 1-1000 ppm\n- NO2 range: 0.05-10 ppm\n- Heater power: ~80 mW\n- 30s warmup required\n\nMounting: Requires airflow to cabin air"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec10-text-001")
+	)
+
+	(text "TODO: Add MICS-4514 symbol, MOSFET, resistor network\nRefer to SGX datasheet application circuit"
+		(exclude_from_sim no)
+		(at 25.4 137.16 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec10-todo-001")
+	)
+)

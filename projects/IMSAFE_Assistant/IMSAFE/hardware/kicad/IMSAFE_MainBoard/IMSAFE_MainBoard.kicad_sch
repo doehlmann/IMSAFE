@@ -1,0 +1,746 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "a1b2c3d4-e5f6-7890-abcd-ef1234567890")
+	(paper "A3")
+	(title_block
+		(title "IMSAFE MainBoard - Root")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "STM32H747AG Based Aviation Instrument")
+		(comment 2 "Multi-sheet hierarchical design")
+	)
+
+	(lib_symbols)
+
+	(text "IMSAFE MainBoard\nHierarchical Schematic"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 5 5)
+				(bold yes)
+			)
+		)
+		(uuid "title-text-001")
+	)
+
+	(text "Power Sections (2-6)"
+		(exclude_from_sim no)
+		(at 25.4 60.96 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+		)
+		(uuid "power-label-001")
+	)
+
+	(text "MCU Section (1)"
+		(exclude_from_sim no)
+		(at 25.4 127 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+		)
+		(uuid "mcu-label-001")
+	)
+
+	(text "Sensor Sections (7-11)"
+		(exclude_from_sim no)
+		(at 152.4 60.96 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+		)
+		(uuid "sensor-label-001")
+	)
+
+	(text "Interface Sections (12-13, 17-20)"
+		(exclude_from_sim no)
+		(at 279.4 60.96 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+		)
+		(uuid "interface-label-001")
+	)
+
+	(sheet
+		(at 25.4 68.58)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1)
+		)
+		(uuid "sheet-sec02-usbc")
+		(property "Sheetname" "Section_02_USB_C"
+			(at 25.4 67.8684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_02_USB_C.kicad_sch"
+			(at 25.4 81.9346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "2")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 25.4 83.82)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1)
+		)
+		(uuid "sheet-sec03-charger")
+		(property "Sheetname" "Section_03_Charger"
+			(at 25.4 83.1084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_03_Charger.kicad_sch"
+			(at 25.4 97.1746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "3")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 25.4 99.06)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1)
+		)
+		(uuid "sheet-sec04-bms")
+		(property "Sheetname" "Section_04_BMS"
+			(at 25.4 98.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_04_BMS.kicad_sch"
+			(at 25.4 112.4146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "4")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 78.74 68.58)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1)
+		)
+		(uuid "sheet-sec05-3v3")
+		(property "Sheetname" "Section_05_3V3_Regulator"
+			(at 78.74 67.8684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_05_3V3_Regulator.kicad_sch"
+			(at 78.74 81.9346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "5")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 78.74 83.82)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1)
+		)
+		(uuid "sheet-sec06-5v")
+		(property "Sheetname" "Section_06_5V_Regulator"
+			(at 78.74 83.1084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_06_5V_Regulator.kicad_sch"
+			(at 78.74 97.1746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "6")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 25.4 134.62)
+		(size 50.8 25.4)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 255 194 1)
+		)
+		(uuid "sheet-sec01-mcu")
+		(property "Sheetname" "Section_01_MCU_Core"
+			(at 25.4 133.9084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_01_MCU_Core.kicad_sch"
+			(at 25.4 160.6746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "7")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 152.4 68.58)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1)
+		)
+		(uuid "sheet-sec07-baro")
+		(property "Sheetname" "Section_07_Barometric"
+			(at 152.4 67.8684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_07_Barometric.kicad_sch"
+			(at 152.4 81.9346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "8")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 152.4 83.82)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1)
+		)
+		(uuid "sheet-sec08-imu")
+		(property "Sheetname" "Section_08_IMU"
+			(at 152.4 83.1084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_08_IMU.kicad_sch"
+			(at 152.4 97.1746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "9")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 152.4 99.06)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1)
+		)
+		(uuid "sheet-sec09-mag")
+		(property "Sheetname" "Section_09_Magnetometer"
+			(at 152.4 98.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_09_Magnetometer.kicad_sch"
+			(at 152.4 112.4146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "10")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 152.4 114.3)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1)
+		)
+		(uuid "sheet-sec10-gas")
+		(property "Sheetname" "Section_10_Gas_Sensor"
+			(at 152.4 113.5884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_10_Gas_Sensor.kicad_sch"
+			(at 152.4 127.6546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "11")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 152.4 129.54)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1)
+		)
+		(uuid "sheet-sec11-temphum")
+		(property "Sheetname" "Section_11_Temp_Humidity"
+			(at 152.4 128.8284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_11_Temp_Humidity.kicad_sch"
+			(at 152.4 142.8946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "12")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 279.4 68.58)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1)
+		)
+		(uuid "sheet-sec12-display")
+		(property "Sheetname" "Section_12_Display"
+			(at 279.4 67.8684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_12_Display.kicad_sch"
+			(at 279.4 81.9346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "13")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 279.4 83.82)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1)
+		)
+		(uuid "sheet-sec13-sd")
+		(property "Sheetname" "Section_13_microSD"
+			(at 279.4 83.1084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_13_microSD.kicad_sch"
+			(at 279.4 97.1746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "14")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 279.4 99.06)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1)
+		)
+		(uuid "sheet-sec17-ble")
+		(property "Sheetname" "Section_17_Bluetooth"
+			(at 279.4 98.3484 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_17_Bluetooth.kicad_sch"
+			(at 279.4 112.4146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "15")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 279.4 114.3)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1)
+		)
+		(uuid "sheet-sec18-vib")
+		(property "Sheetname" "Section_18_Vibration_Interface"
+			(at 279.4 113.5884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_18_Vibration_Interface.kicad_sch"
+			(at 279.4 127.6546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "16")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 279.4 129.54)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1)
+		)
+		(uuid "sheet-sec19-audio")
+		(property "Sheetname" "Section_19_Audio"
+			(at 279.4 128.8284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_19_Audio.kicad_sch"
+			(at 279.4 142.8946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "17")
+				)
+			)
+		)
+	)
+
+	(sheet
+		(at 279.4 144.78)
+		(size 50.8 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1)
+		)
+		(uuid "sheet-sec20-debug")
+		(property "Sheetname" "Section_20_Debug"
+			(at 279.4 144.0684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_20_Debug.kicad_sch"
+			(at 279.4 158.1346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "18")
+				)
+			)
+		)
+	)
+
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

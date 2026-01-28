@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec17-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 17: Bluetooth Module")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "ESP32-C3-MINI-1 BLE/WiFi Module")
+		(comment 2 "UART interface to STM32")
+	)
+
+	(lib_symbols)
+
+	(text "Bluetooth Module Section\n\nMain Component:\n- U17: ESP32-C3-MINI-1 (module)\n\nPassives:\n- C1701: 10uF 0805 3V3 bulk\n- C1702: 100nF 0603 3V3 bypass\n- R1701: 10k 0603 EN pull-up\n- R1702: 10k 0603 IO9 pull-up (boot mode)\n- C1703: 1uF 0603 EN delay cap\n\nInterface (to STM32H747):\n- USART2_TX (PA2) --> RXD\n- USART2_RX (PA3) <-- TXD\n- GPIO (PC1) --> EN\n- GPIO (PC2) --> IO9 (boot)\n\nSpecs:\n- BLE 5.0\n- WiFi 802.11 b/g/n (2.4GHz)\n- PCB antenna (onboard)\n- Pre-certified: FCC, CE, IC, MIC, KCC\n- 4MB flash for AT firmware or custom\n\nPower:\n- Sleep: 5 uA\n- BLE active: 20-50 mA\n- TX peak: 350 mA (brief)\n\nFirmware: ESP-AT (transparent UART bridge)"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec17-text-001")
+	)
+
+	(text "TODO: Add ESP32-C3-MINI-1 symbol\nKeep antenna clear area per datasheet"
+		(exclude_from_sim no)
+		(at 25.4 124.46 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec17-todo-001")
+	)
+)

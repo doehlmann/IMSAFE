@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec18-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 18: Vibration Sensor Interface")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "External sensor pod connectors")
+		(comment 2 "ADXL355 (engine) + ADXL372 (gearbox)")
+	)
+
+	(lib_symbols)
+
+	(text "Vibration Sensor Interface Section\n\nMain Components:\n- J4, J5: M8 4-pin IP67 connectors (x2)\n\nESD & Filtering (per channel):\nEngine Connector (J4 - ADXL355):\n- C1801: 100nF 0603 SPI CLK filter\n- C1802: 100nF 0603 SPI MISO filter\n- R1801: 33 Ohm 0603 SPI CLK series\n- R1802: 33 Ohm 0603 SPI MISO series\n\nGearbox Connector (J5 - ADXL372):\n- C1803: 100nF 0603 SPI CLK filter\n- C1804: 100nF 0603 SPI MISO filter\n- R1803: 33 Ohm 0603 SPI CLK series\n- R1804: 33 Ohm 0603 SPI MISO series\n\nConnector Pinout (M8 4-pin):\n- Pin 1: VCC (3.3V)\n- Pin 2: GND\n- Pin 3: SPI_CLK\n- Pin 4: SPI_MISO\n\nInterface: SPI2 (shared bus, separate CS)\n\nExternal Sensor Pods:\n- Engine: ADXL355 (+125C, 20 ug/rtHz)\n- Gearbox: ADXL372 (+105C, +/-200g)"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec18-text-001")
+	)
+
+	(text "TODO: Add M8 connector symbols\nExternal pod PCB separate project"
+		(exclude_from_sim no)
+		(at 25.4 124.46 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec18-todo-001")
+	)
+)

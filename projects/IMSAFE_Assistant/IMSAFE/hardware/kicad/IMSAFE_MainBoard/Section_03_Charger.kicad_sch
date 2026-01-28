@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec03-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 03: Battery Charger")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "BQ25792 Buck-Boost Charger")
+		(comment 2 "5V USB to 8.4V 2S Li-ion")
+	)
+
+	(lib_symbols)
+
+	(text "Battery Charger Section\n\nComponents:\n- U3: BQ25792RQMR (QFN-29)\n- L1: 2.2uH 5A power inductor\n\nInput Stage:\n- C301: 10uF 25V VBUS input\n- C302: 100nF VBUS HF filter\n- C303: 10uF 25V PMID cap\n\nOutput Stage (to battery):\n- C304, C305: 22uF 16V BAT output\n\nSystem Output (VSYS):\n- C306: 22uF 16V VSYS\n- C307: 100nF VSYS HF\n\nSensing & Config:\n- R301: 10mOhm input sense\n- R302: 5mOhm battery sense\n- R303: 10k NTC bias\n- R304: 100k ILIM set\n- C308: 100nF REGN bypass\n- C309: 1uF PMID LDO\n\nI2C Pull-ups:\n- R305, R306: 4.7k SDA/SCL\n\nNets:\n- VBUS, VSYS, VBAT, I2C1_SDA, I2C1_SCL"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec03-text-001")
+	)
+
+	(text "TODO: Add BQ25792 symbol and complete circuit\nRefer to TI datasheet application circuit"
+		(exclude_from_sim no)
+		(at 25.4 127 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec03-todo-001")
+	)
+)

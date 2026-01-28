@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec12-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 12: Display Interface")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "ST7789 3.5\" TFT Display")
+		(comment 2 "SPI or 8080 parallel interface")
+	)
+
+	(lib_symbols)
+
+	(text "Display Interface Section\n\nMain Component:\n- J2: FPC connector (for display module)\n\nSPI Interface Option:\n- R1201: 33 Ohm 0603 SPI CLK series\n- R1202: 33 Ohm 0603 SPI MOSI series\n- C1201: 100nF 0603 display VDD bypass\n- C1202: 10uF 0805 display bulk\n\nBacklight Control:\n- Q6: AO3400A (SOT-23) backlight PWM switch\n- R1203: 10k 0603 gate pull-down\n- R1204: 100 Ohm 0603 gate series\n\nDisplay Specs:\n- Controller: ST7789V2\n- Resolution: 320x480\n- Color: 16-bit RGB565\n- Backlight: LED, PWM dimmable\n\nInterface Options:\n- 8080 parallel via FMC: ~30-60 FPS (recommended)\n- SPI with DMA: ~15-20 FPS\n\nGraphics Library: LVGL or TouchGFX"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec12-text-001")
+	)
+
+	(text "TODO: Add FPC connector symbol, MOSFET\nMatch pinout to specific display module"
+		(exclude_from_sim no)
+		(at 25.4 119.38 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec12-todo-001")
+	)
+)

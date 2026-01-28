@@ -1377,6 +1377,79 @@ GPIO (PC2)      ──► IO9 (boot)
 
 ---
 
+### IMSAFE-DEC-031
+**Date:** 2026-01-28
+**Feature:** Integration - Multi-Board Architecture
+**Related Spec Sections:** System architecture, physical requirements
+
+**Context:**
+The system requires integration of MCU, power management, sensors, display, UI controls (switches/LEDs), and radar interface. Need to determine optimal PCB partitioning for manufacturability, serviceability, and mechanical integration.
+
+**Options Considered:**
+| Option | Description | Key Pros | Key Cons |
+|--------|-------------|----------|----------|
+| A | Single PCB (all-in-one) | Lowest cost, simplest assembly | Inflexible panel layout, complex routing |
+| B | Multi-board: Main + Switch/LED + Radar | Flexible panel design, modular | More connectors, assembly steps |
+| C | Multi-board: Main + UI Panel | Two-board compromise | Still couples switches to main board size |
+
+**Selection Criteria:**
+- [x] Mechanical: Panel-mount display and switches with flexible positioning
+- [x] Manufacturing: Separate boards allow parallel assembly/test
+- [x] Serviceability: UI panel can be replaced independently
+- [x] Development: Radar interface isolated for de-risk strategy (DEC-005)
+
+**Decision:** Option B: Multi-board architecture
+
+**Board Breakdown:**
+
+| Board | Functions | KiCad Project |
+|-------|-----------|---------------|
+| **MainBoard** | MCU, power (charger, BMS, regulators), sensors (BMP390, ICM-42688-P, MMC5983MA, MICS-4514, Si7021), microSD, BLE module, buzzer, debug | IMSAFE_MainBoard |
+| **SwitchLED Board** | 8× toggle switches, 16× WS2812B-2020, MCP23017 I/O expander, encoders | IMSAFE_SwitchLED_Board |
+| **Radar Interface** | BGT24LTR11 shield connector OR XMC4700 baseboard interface (fallback per DEC-005) | IMSAFE_Radar_Interface |
+| **Vibration Pods** (×2) | ADXL355 or ADXL372, M8 connector, external to main enclosure | External assembly |
+
+**Interconnects:**
+
+| Connection | Connector | Signals |
+|------------|-----------|---------|
+| Main ↔ Switch/LED | FFC/FPC 10-pin | 5V, 3.3V, GND, I2C (SDA, SCL), LED_DATA, INT, 3× spare |
+| Main ↔ Display | FFC 40-pin | SPI or 8080 parallel per display module |
+| Main ↔ Radar | 10-pin header | UART (TX, RX), SPI (MOSI, MISO, SCK, CS), INT, 3.3V, 5V, GND |
+| Main ↔ Vibration | M8 4-pin ×2 | VCC, GND, SPI_CLK, SPI_MISO |
+
+**PCB Specifications:**
+
+| Board | Layers | Dimensions (est.) | Notes |
+|-------|--------|-------------------|-------|
+| MainBoard | 4 | 100×80mm | STM32H7 routing, thermal management |
+| SwitchLED | 2 | 200×40mm | Long panel strip, switch spacing |
+| Radar Interface | 2 | 50×50mm | Shield footprint or connector |
+
+**Rationale:**
+- Display-centered main board allows optimal MCU-to-display routing
+- Switch/LED panel can be sized/positioned for ergonomic cockpit layout
+- Radar isolation supports both integration paths (DEC-005)
+- External vibration pods already required (engine bay environment)
+- FFC/FPC reduces wiring complexity between boards
+
+**Risks / Open Issues:**
+- [ ] Define exact FFC pinout and connector (Molex, TE, etc.)
+- [ ] Mechanical enclosure design must accommodate board separation
+- [ ] EMI considerations between boards (shielding if needed)
+
+**Downstream Impact:**
+- Schematic: Hierarchical sheets per board in KiCad
+- PCB: Three separate PCB projects already created
+- Assembly: Board-level test before final integration
+- Enclosure: Multi-board mounting provisions required
+
+**Status:**
+- [ ] Proposed
+- [x] Approved (2026-01-28)
+
+---
+
 ## Decision Index
 | Decision ID | Subsystem | Status | Date |
 |------------|----------|--------|------|
@@ -1411,3 +1484,4 @@ GPIO (PC2)      ──► IO9 (boot)
 | IMSAFE-DEC-028 | Audio - Buzzer (MLT-8530) | **Approved** | 2026-01-28 |
 | IMSAFE-DEC-029 | Power - On/Off Switch | **Approved** | 2026-01-28 |
 | IMSAFE-DEC-030 | Power - Input Protection (PTC+TVS) | **Approved** | 2026-01-28 |
+| IMSAFE-DEC-031 | Integration - Multi-Board Architecture | **Approved** | 2026-01-28 |

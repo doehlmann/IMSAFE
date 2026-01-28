@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec08-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 08: IMU")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "ICM-42688-P 6-axis IMU")
+		(comment 2 "I2C address 0x68")
+	)
+
+	(lib_symbols)
+
+	(text "IMU Section\n\nMain Component:\n- U10: ICM-42688-P (LGA-14 2.5x3mm)\n\nPassives:\n- C801: 100nF 0603 VDD bypass\n- C802: 100nF 0603 VDDIO bypass\n- C803: 10nF 0603 RESV cap (pin 6)\n- C804: 100nF 0603 additional decoupling\n\nInterface: I2C1 @ 400kHz (or SPI)\nAddress: 0x68 (AD0 = GND)\n\nSpecs:\n- Gyro noise: 0.0028 deg/s/rtHz (best-in-class)\n- Accel noise: 70 ug/rtHz\n- ODR: up to 32 kHz\n- Temp range: -40 to +85C\n\nNotes:\n- Mount flat for accurate attitude\n- Keep away from high-frequency switching\n- I2C pull-ups in charger section"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec08-text-001")
+	)
+
+	(text "TODO: Add ICM-42688-P symbol\nRefer to TDK datasheet application circuit"
+		(exclude_from_sim no)
+		(at 25.4 106.68 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec08-todo-001")
+	)
+)

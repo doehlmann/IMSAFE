@@ -18,10 +18,13 @@ Source of truth: docs/00-functional-spec/IMSAFE-Functional-Spec.md (Rev A, 2026-
   - a selected primary component + at least 1 alternate,
   - a short decision record (why chosen, risks, availability, footprint/package).
 - [x] Open contradictions/unknowns in the spec are resolved or explicitly tracked.
-- [ ] A single integration choice is made:
-  - Single PCB OR multi-PCB (and why),
-  - with defined interconnects.
-- [ ] KiCad projects created (even if only skeleton).
+- [x] A single integration choice is made:
+  - **Multi-PCB (DEC-031)**: MainBoard + SwitchLED Board + Radar Interface
+  - with defined interconnects (FFC/FPC, M8, headers).
+- [x] KiCad projects created (even if only skeleton).
+  - MainBoard: 16 hierarchical sheets (sections 1-13, 17-20)
+  - SwitchLED Board: 3 hierarchical sheets (sections 14-16)
+  - Radar Interface: 1 sheet (per DEC-005 de-risk strategy)
 - [x] Initial verification plan exists that maps to integration tests in spec.
 
 ---
@@ -161,12 +164,16 @@ But every proposal must include:
 
 ---
 
-## Phase 4 — Integration: single PCB vs multi-PCB
-- [ ] Decide partitioning:
-  - Candidate: Single main PCB + separate vibration sensor pods
-  - Switch/LED panel: integrated or separate?
-- [ ] Define connectors between boards (pinout, power, I2C/SPI, mechanical)
-- [ ] Confirm PCB constraints (4-layer, dimensions for 3.5" display)
+## Phase 4 — Integration: single PCB vs multi-PCB ✓ DECIDED
+- [x] Decide partitioning (DEC-031):
+  - **Multi-board:** MainBoard + SwitchLED Board + Radar Interface + Vibration Pods
+  - Switch/LED panel: **Separate** (flexible positioning)
+- [x] Define connectors between boards (pinout, power, I2C/SPI, mechanical)
+  - Main ↔ Switch/LED: FFC 10-pin
+  - Main ↔ Display: FFC 40-pin
+  - Main ↔ Radar: 10-pin header
+  - Main ↔ Vibration: M8 4-pin ×2
+- [ ] Confirm PCB constraints (4-layer main, 2-layer others)
 
 ---
 

@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec19-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 19: Audio Alarm")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "MLT-8530 Active Buzzer")
+		(comment 2 "CO alarm and notification")
+	)
+
+	(lib_symbols)
+
+	(text "Audio Alarm Section\n\nMain Component:\n- BZ1: MLT-8530 (active buzzer, 85dB)\n\nDriver Circuit:\n- Q7: AO3400A (SOT-23) buzzer driver\n- R1901: 10k 0603 gate pull-down\n- R1902: 100 Ohm 0603 gate series\n- D2: 1N4148W (SOD-123) flyback diode\n\nInterface: GPIO (PWM capable for tone patterns)\n\nSpecs:\n- Type: Active (internal oscillator)\n- SPL: 85 dB @ 10cm\n- Voltage: 3.3V\n- Current: ~30 mA\n\nUsage:\n- CO alarm (safety critical)\n- Low battery warning\n- Checklist incomplete alert\n- Notification tones"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec19-text-001")
+	)
+
+	(text "TODO: Add buzzer symbol, MOSFET, diode\nSimple low-side switch circuit"
+		(exclude_from_sim no)
+		(at 25.4 99.06 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec19-todo-001")
+	)
+)

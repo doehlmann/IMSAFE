@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec09-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 09: Magnetometer")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "MMC5983MA 3-axis Magnetometer")
+		(comment 2 "I2C address 0x30")
+	)
+
+	(lib_symbols)
+
+	(text "Magnetometer Section\n\nMain Component:\n- U11: MMC5983MA (LGA-16 3x3mm)\n\nPassives:\n- C901: 100nF 0603 VDD bypass\n- C902: 100nF 0603 VDDIO bypass\n- C903: 4.7uF 0603 C1 cap (internal use)\n\nInterface: I2C1 @ 400kHz\nAddress: 0x30\n\nSpecs:\n- Noise: 0.4 mG RMS (best-in-class)\n- Resolution: 18-bit\n- ODR: up to 1000 Hz\n- Temp range: -40 to +105C\n- Built-in SET/RESET for offset cancellation\n\nCalibration Notes:\n- Requires soft-iron and hard-iron calibration\n- Mount AWAY from motors, speakers, ferrous metals\n- I2C pull-ups in charger section"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec09-text-001")
+	)
+
+	(text "TODO: Add MMC5983MA symbol\nRefer to MEMSIC datasheet application circuit"
+		(exclude_from_sim no)
+		(at 25.4 106.68 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec09-todo-001")
+	)
+)

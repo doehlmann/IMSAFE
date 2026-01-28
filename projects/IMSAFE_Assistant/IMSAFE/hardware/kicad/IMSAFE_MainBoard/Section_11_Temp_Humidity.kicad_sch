@@ -1,0 +1,42 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "sec11-0001-0002-0003-000000000001")
+	(paper "A4")
+	(title_block
+		(title "Section 11: Temperature & Humidity")
+		(date "2026-01-28")
+		(rev "0.1")
+		(company "IMSAFE Project")
+		(comment 1 "Si7021 Temp/Humidity Sensor")
+		(comment 2 "I2C address 0x40")
+	)
+
+	(lib_symbols)
+
+	(text "Temperature/Humidity Section\n\nMain Component:\n- U13: Si7021-A20-GM (DFN-6 3x3mm)\n\nPassives:\n- C1101: 100nF 0603 VDD bypass\n\nInterface: I2C1 @ 400kHz\nAddress: 0x40\n\nSpecs:\n- Temperature accuracy: +/- 0.4C\n- Humidity accuracy: +/- 3% RH\n- Temp range: -40 to +125C\n- Factory calibrated\n\nNotes:\n- For accurate cabin air reading, consider\n  mounting on short cable away from PCB heat\n- I2C pull-ups in charger section"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "sec11-text-001")
+	)
+
+	(text "TODO: Add Si7021 symbol\nRefer to Sensirion datasheet"
+		(exclude_from_sim no)
+		(at 25.4 93.98 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "sec11-todo-001")
+	)
+)
