@@ -196,6 +196,37 @@
 				)
 			)
 		)
+		(symbol "power:PWR_FLAG"
+			(power)
+			(pin_numbers hide)
+			(pin_names (offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#FLG" (at 0 1.905 0)
+				(effects (font (size 1.27 1.27)) hide)
+			)
+			(property "Value" "PWR_FLAG" (at 0 3.81 0)
+				(effects (font (size 1.27 1.27)))
+			)
+			(property "Footprint" "" (at 0 0 0)
+				(effects (font (size 1.27 1.27)) hide)
+			)
+			(property "Datasheet" "~" (at 0 0 0)
+				(effects (font (size 1.27 1.27)) hide)
+			)
+			(symbol "PWR_FLAG_0_0"
+				(pin power_out line (at 0 0 90) (length 0)
+					(name "pwr" (effects (font (size 1.27 1.27))))
+					(number "1" (effects (font (size 1.27 1.27))))
+				)
+			)
+			(symbol "PWR_FLAG_0_1"
+				(polyline (pts (xy 0 0) (xy 0 1.27) (xy -1.016 1.905) (xy 0 2.54) (xy 1.016 1.905) (xy 0 1.27))
+					(stroke (width 0) (type default)) (fill (type none))
+				)
+			)
+		)
 		(symbol "Regulator:TPS62130RGTR"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -246,7 +277,7 @@
 		)
 	)
 
-	(text "5V Buck Regulator - TPS62130 (Adjustable)\n\nSpecifications:\n- Input: VSYS (6.0-8.4V nominal from charger)\n- Output: +5V (adjustable via FB divider)\n- Current: 3A max continuous\n- Switching frequency: 2.5MHz\n- Efficiency: >90% @ 1A load\n\nKey Components:\n- U8: TPS62130RGTR (QFN-16 3x3mm) - JLCPCB C128068\n- L3: 1.5uH 4A shielded inductor (4x4mm) - JLCPCB C408335\n\nFeedback Calculation:\nVOUT = Vfb * (1 + R601/R602)\nVOUT = 0.8V * (1 + 100k/24.3k) = 5.09V\n\nLoads: WS2812B LEDs, Display, Buzzer"
+	(text "5V Buck Regulator - TPS62130 (Adjustable)\n\nSpecifications:\n- Input: VSYS (6.0-8.4V nominal from charger)\n- Output: +5V (adjustable via FB divider)\n- Current: 3A max continuous\n- Switching frequency: 2.5MHz\n- Efficiency: >90% @ 1A load\n\nKey Components:\n- U8: TPS62130RGTR (QFN-16 3x3mm) - JLCPCB C128068\n- L3: 1.5uH 4A shielded inductor (4x4mm) - JLCPCB C408335\n\nFeedback Calculation:\nVOUT = Vfb * (1 + R601/R602)\nVOUT = 0.8V * (1 + 100k/19.1k) = 5.03V\n\nLoads: WS2812B LEDs, Display, Buzzer"
 		(exclude_from_sim no)
 		(at 25.4 25.4 0)
 		(effects (font (size 1.8 1.8)) (justify left))
@@ -267,7 +298,7 @@
 		(uuid "text-inductor-001")
 	)
 
-	(text "Feedback Divider\nR601 = 100k (top)\nR602 = 24.3k (bot)\nVout = 5.09V"
+	(text "Feedback Divider\nR601 = 100k (top)\nR602 = 19.1k (bot)\nVout = 5.03V"
 		(exclude_from_sim no)
 		(at 147.32 165.1 0)
 		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
@@ -394,10 +425,10 @@
 		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
 		(uuid "r602-uuid")
 		(property "Reference" "R602" (at 149.86 153.67 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "24.3k" (at 149.86 156.21 0) (effects (font (size 1.27 1.27)) (justify left)))
+		(property "Value" "19.1k" (at 149.86 156.21 0) (effects (font (size 1.27 1.27)) (justify left)))
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 145.542 154.94 90) (effects (font (size 1.27 1.27)) hide))
 		(property "Datasheet" "~" (at 147.32 154.94 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C25959" (at 147.32 154.94 0) (effects (font (size 1.27 1.27)) hide))
+		(property "JLCPCB" "C25947" (at 147.32 154.94 0) (effects (font (size 1.27 1.27)) hide))
 		(pin "1" (uuid "r602-p1")) (pin "2" (uuid "r602-p2"))
 		(instances (project "IMSAFE_MainBoard" (path "/sec06-0001-0002-0003-000000000001" (reference "R602") (unit 1))))
 	)
@@ -573,6 +604,17 @@
 
 	(wire (pts (xy 53.34 113.03) (xy 55.88 113.03)) (stroke (width 0) (type default)) (uuid "w-hl-vsys"))
 	(wire (pts (xy 231.14 119.38) (xy 233.68 119.38)) (stroke (width 0) (type default)) (uuid "w-hl-5v"))
+
+	(symbol (lib_id "power:PWR_FLAG") (at 63.5 113.03 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "pwr-flag-vsys-06")
+		(property "Reference" "#FLG0601" (at 63.5 111.125 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Value" "PWR_FLAG" (at 63.5 109.22 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 63.5 113.03 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Datasheet" "~" (at 63.5 113.03 0) (effects (font (size 1.27 1.27)) hide))
+		(pin "1" (uuid "pwr-flag-vsys-06-p1"))
+		(instances (project "IMSAFE_MainBoard" (path "/sec06-0001-0002-0003-000000000001" (reference "#FLG0601") (unit 1))))
+	)
 
 	(sheet_instances (path "/" (page "1")))
 )

@@ -405,7 +405,7 @@ Same as Section 05 (TPS62133):
 
 ### Power
 - **Input:** VSYS (6.0V - 8.4V)
-- **Output:** +5V (5.09V actual)
+- **Output:** +5V (5.03V actual)
 - **Max Current:** 3A continuous
 - **Typical Load:** 1A (LEDs at medium brightness)
 
@@ -421,36 +421,23 @@ Desired Vout: 5.0V
 Formula: Vout = Vfb * (1 + R601/R602)
 Rearranged: R601/R602 = (Vout/Vfb) - 1 = (5.0/0.8) - 1 = 5.25
 
-Selected:
-R601 = 100kOhm (top resistor, VOUT to FB)
-R602 = 24.3kOhm (bottom resistor, FB to GND)
-Ratio: 100/24.3 = 4.115
+Selected (CORRECTED):
+R601 = 100kOhm (top resistor, VOUT to FB) - JLCPCB C25803
+R602 = 19.1kOhm (bottom resistor, FB to GND) - JLCPCB C25947
+Ratio: 100/19.1 = 5.24
 
-Actual Vout: 0.8V * (1 + 4.115) = 4.09V
-
-ERROR DETECTED: Recalculating...
-Need ratio of 5.25, selected gives 4.115
-
-Corrected selection:
-R601 = 100kOhm
-R602 = 19.1kOhm (gives ratio 5.24)
-Vout = 0.8 * (1 + 5.24) = 4.99V
-
-OR use standard values:
-R601 = 100kOhm
-R602 = 18kOhm (E24)
-Vout = 0.8 * (1 + 5.56) = 5.25V (5% high, acceptable)
+Actual Vout: 0.8V * (1 + 5.24) = 4.99V (~5.0V)
 ```
 
-**NOTE:** Schematic uses R602 = 24.3k which gives 4.09V output. This requires correction to 18k-19.1k for true 5V output.
+**Note:** Original design had R602 = 24.3k (4.09V output). Corrected to 19.1k (E96 value) for proper 5V output.
 
 ### Test Points
 - TP2: +5V output voltage monitoring
 
 ### Risks/Unknowns
-1. **DESIGN ERROR:** Feedback resistor values produce 4.09V, not 5V - REQUIRES CORRECTION
-2. **LED Current:** WS2812B may draw high peak currents - verify regulator response
-3. **Thermal:** Higher power dissipation than 3.3V rail due to larger load
+1. **LED Current:** WS2812B may draw high peak currents - verify regulator response
+2. **Thermal:** Higher power dissipation than 3.3V rail due to larger load
+3. **Tolerance:** 1% resistors recommended for feedback divider accuracy
 
 ---
 
