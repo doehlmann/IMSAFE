@@ -16,8 +16,8 @@
 | 2 | Power Input (USB-C) | USBLC6-2SC6 | **Complete** |
 | 3 | Battery Charger | BQ25792 | **Complete** |
 | 4 | BMS | HY2120 + HY2213 | **Complete** |
-| 5 | 3.3V Regulator | TPS62133 | Pending |
-| 6 | 5V Regulator | TPS62130 | Pending |
+| 5 | 3.3V Regulator | TPS62133 | **Complete** |
+| 6 | 5V Regulator | TPS62130 | **Complete** |
 | 7 | Barometric Sensor | BMP390 | Pending |
 | 8 | IMU | ICM-42688-P | Pending |
 | 9 | Magnetometer | MMC5983MA | Pending |
@@ -498,8 +498,8 @@ Per ST AN4661, STM32H7 requires extensive decoupling.
 | 2. USB-C Input | - | 4 | Pending |
 | 3. Charger | BQ25792 | 16 | Pending |
 | 4. BMS | HY2120/HY2213 | 15 | Complete |
-| 5. 3.3V Reg | TPS62133 | 7 | Pending |
-| 6. 5V Reg | TPS62130 | 9 | Pending |
+| 5. 3.3V Reg | TPS62133 | 7 | Complete |
+| 6. 5V Reg | TPS62130 | 9 | Complete |
 | 7. Barometric | BMP390 | 2 | Pending |
 | 8. IMU | ICM-42688-P | 4 | Pending |
 | 9. Magnetometer | MMC5983MA | 3 | Pending |
