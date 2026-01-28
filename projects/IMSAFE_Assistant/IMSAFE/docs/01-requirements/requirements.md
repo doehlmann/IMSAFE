@@ -56,7 +56,23 @@
 | ID | Requirement | Priority | Status |
 |----|-------------|----------|--------|
 | FR-CN-001 | System shall support USB-C for data/charging | Must | Open |
-| FR-CN-002 | System shall support Bluetooth connectivity | Could | Open |
+| FR-CN-002 | System shall support Bluetooth connectivity | Should | Open |
+| FR-CN-003 | Bluetooth shall support BLE 5.0 minimum | Should | Open |
+| FR-CN-004 | Bluetooth shall enable flight log download to smartphone | Should | Open |
+| FR-CN-005 | Bluetooth shall support configuration via companion app | Should | Open |
+| FR-CN-006 | Bluetooth range shall be minimum 10m | Should | Open |
+| FR-CN-007 | Bluetooth pairing shall use secure bonding | Should | Open |
+
+### 1.6.1 Bluetooth Implementation Options
+
+| Option | Description | MCU Impact | Pros | Cons |
+|--------|-------------|------------|------|------|
+| A | External BLE module (e.g., HM-10, RN4870) | UART interface | Simple integration, certified | Added BOM cost (~$3-5), extra component |
+| B | Integrated BLE MCU (STM32WB series) | Single chip | Lower BOM, smaller PCB | Different MCU family, dual-core (M4+M0) |
+| C | Integrated WiFi+BLE SoC (ESP32-S3) | Replace main MCU | Lowest cost, WiFi bonus | Xtensa core, not ARM, less industrial |
+| D | Combo module (e.g., ESP32 as coprocessor) | SPI/UART to main MCU | Best of both | Added complexity |
+
+**Decision Required:** Select Bluetooth implementation approach (impacts MCU selection)
 
 ### 1.7 Vibration Analysis
 
@@ -65,6 +81,24 @@
 | FR-VB-001 | System shall support 2 external IMUs | Could | Open |
 | FR-VB-002 | IMUs shall attach to engine and gearbox | Could | Open |
 | FR-VB-003 | System shall perform vibration FFT analysis | Could | Open |
+
+### 1.8 User Input
+
+| ID | Requirement | Priority | Status |
+|----|-------------|----------|--------|
+| FR-UI-001 | System shall have 2 rotary encoders with push buttons | Must | Open |
+| FR-UI-002 | Left encoder shall control mode selection and menu navigation | Must | Open |
+| FR-UI-003 | Right encoder shall control value adjustment and zoom | Must | Open |
+| FR-UI-004 | Encoder push buttons shall confirm selections | Must | Open |
+
+### 1.9 Timekeeping
+
+| ID | Requirement | Priority | Status |
+|----|-------------|----------|--------|
+| FR-TK-001 | System shall maintain real-time clock (RTC) | Must | Open |
+| FR-TK-002 | RTC shall persist during power-off (battery backup) | Should | Open |
+| FR-TK-003 | System shall provide flight timer function | Should | Open |
+| FR-TK-004 | Flight timer shall display elapsed time on screen | Should | Open |
 
 ---
 
@@ -107,3 +141,29 @@
 | FR-SN-001 | TC-010 | Calibration Test |
 | FR-DP-001 | TC-020 | Functional Test |
 | FR-RD-001 | TC-030 | Range Test |
+
+---
+
+## 5. Power Budget
+
+| Parameter | Min | Typ | Max | Unit | Notes |
+|-----------|-----|-----|-----|------|-------|
+| Supply Voltage (internal) | 3.0 | 3.3 | 3.6 | V | Logic rails |
+| Battery Voltage | 6.0 | 7.4 | 8.4 | V | 2S Li-ion |
+| Active Current | - | TBD | TBD | mA | All peripherals on |
+| Sleep Current | - | TBD | 100 | uA | RTC running only |
+| Battery Capacity | - | 16000 | - | mAh | Target from spec |
+| Charging Input | 5 | - | 20 | V | USB-C PD |
+
+---
+
+## 6. Power States
+
+| State | Description | Current Target | Wake Source |
+|-------|-------------|----------------|-------------|
+| Active | Full operation | TBD mA | - |
+| Low Power | Reduced update rate | TBD mA | Button, USB |
+| Sleep | MCU sleep, RTC only | <100 uA | Button, USB |
+| Off | Complete shutdown | 0 | Power button |
+
+---
