@@ -88,7 +88,7 @@ def create_summary_sheet(wb):
         ('01_MCU_Core', 'Crystal & decoupling calculations', 'Complete', '28', 'Per ST AN4661'),
         ('02_USB_C', 'CC resistor & ESD calculations', 'Complete', '6', 'USB 2.0 UFP'),
         ('03_Charger', 'BQ25792 sizing calculations', 'Complete', '17', 'Buck-boost power path'),
-        ('04_BMS', 'Cell balancing calculations', 'Pending', '~12', 'HY2120 + HY2213'),
+        ('04_BMS', 'Cell protection & balancing', 'Complete', '12', 'HY2120 + HY2213'),
         ('05_Regulators', '3.3V/5V regulator calculations', 'Pending', '~14', 'TPS62133/TPS62130'),
         ('Power_Budget', 'System power analysis', 'In Progress', '-', 'All sections'),
     ]
@@ -415,6 +415,179 @@ def create_charger_sheet(wb):
 
     return ws
 
+def create_bms_sheet(wb):
+    """Create BMS calculations sheet"""
+    ws = wb.create_sheet("04_BMS")
+    set_column_widths(ws, [28, 15, 12, 12, 15, 40])
+
+    row = 1
+    row = add_section_header(ws, row, "Section 04: Battery Management System (BMS)", 6)
+    row += 1
+
+    # System Configuration
+    row = add_section_header(ws, row, "Battery Configuration", 6)
+
+    headers = ['Parameter', 'Symbol', 'Value', 'Unit', 'Formula', 'Notes']
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    config_data = [
+        ('Cell Configuration', '-', '2S', '-', '-', '2 cells in series'),
+        ('Cell Voltage (nom)', 'Vcell', 3.7, 'V', '-', 'Li-ion nominal'),
+        ('Cell Voltage (max)', 'Vcell_max', 4.2, 'V', '-', 'Full charge'),
+        ('Cell Voltage (min)', 'Vcell_min', 3.0, 'V', '-', 'Discharge cutoff'),
+        ('Pack Voltage (nom)', 'Vpack', 7.4, 'V', '=2*3.7', '2S nominal'),
+        ('Pack Voltage (max)', 'Vpack_max', 8.4, 'V', '=2*4.2', '2S full charge'),
+        ('Pack Capacity', 'Cbat', 16000, 'mAh', '-', 'Per spec'),
+    ]
+
+    for data in config_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # Protection Thresholds
+    row = add_section_header(ws, row, "HY2120 Protection Thresholds", 6)
+
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    prot_data = [
+        ('Overcharge Threshold', 'Voc', 4.25, 'V', '-', 'Per cell, CB version'),
+        ('Overcharge Release', 'Vocr', 4.15, 'V', '-', 'Hysteresis'),
+        ('Over-discharge Threshold', 'Vod', 2.8, 'V', '-', 'Per cell'),
+        ('Over-discharge Release', 'Vodr', 3.0, 'V', '-', 'Hysteresis'),
+        ('Overcurrent (discharge)', 'Ioc_dis', 200, 'mV', '-', 'Across sense resistor'),
+        ('Overcurrent (charge)', 'Ioc_chg', 100, 'mV', '-', 'Lower for charging'),
+        ('Short Circuit', 'Isc', 400, 'mV', '-', 'Fast response'),
+    ]
+
+    for data in prot_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # Current Sense Calculation
+    row = add_section_header(ws, row, "Current Sense Resistor Calculation", 6)
+
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    sense_data = [
+        ('Overcurrent Threshold', 'Voc', 200, 'mV', '-', 'HY2120 typical'),
+        ('Desired Trip Current', 'Itrip', 40, 'A', '-', 'Max continuous'),
+        ('Sense Resistor', 'R403', '=200/40', 'mΩ', 'Rsense = Voc/Itrip', '5mΩ calculated'),
+        ('Selected Value', 'R403', 5, 'mΩ', '-', 'Standard 1% value'),
+        ('Actual Trip Current', 'Itrip_act', '=200/5', 'A', 'I = Voc/R', '40A'),
+        ('Power @ Trip', 'Psense', '=40^2*5/1000', 'W', 'P = I²R', '8W peak'),
+        ('Power @ 5A Normal', 'Psense_5A', '=5^2*5/1000', 'mW', 'P = I²R', '125mW'),
+        ('Resistor Package', '-', '1206', '-', '-', '0.5W rating'),
+    ]
+
+    for data in sense_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # Cell Balancing Calculation
+    row = add_section_header(ws, row, "Cell Balancing (HY2213-BB3A)", 6)
+
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    balance_data = [
+        ('Balance Start Voltage', 'Vbal', 4.2, 'V', '-', 'HY2213-BB3A threshold'),
+        ('Balance Voltage Hyst', 'Vbal_h', 50, 'mV', '-', 'Hysteresis'),
+        ('Desired Bleed Current', 'Ibal', 68, 'mA', '-', 'Moderate balance rate'),
+        ('Balance Resistor', 'Rbal', '=4.2/0.068', 'Ω', 'R = V/I', '~62Ω'),
+        ('Selected Value', 'R404/R405', 62, 'Ω', '-', 'Standard E24 value'),
+        ('Actual Bleed Current', 'Ibal_act', '=4.2/62*1000', 'mA', 'I = V/R', '67.7mA'),
+        ('Power Dissipation', 'Pbal', '=4.2^2/62*1000', 'mW', 'P = V²/R', '284mW'),
+        ('Resistor Package', '-', '0805', '-', '-', '0.25W rating OK'),
+        ('Max Balance Time', 't_bal', '=500/67.7', 'hrs', 'ΔQ / Ibal', '~7.4h for 500mAh diff'),
+    ]
+
+    for data in balance_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # MOSFET Selection
+    row = add_section_header(ws, row, "MOSFET Selection (AO3400A)", 6)
+
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    mosfet_data = [
+        ('Drain-Source Voltage', 'Vds', 30, 'V', '-', 'Exceeds 8.4V pack'),
+        ('Continuous Current', 'Id', 5.7, 'A', '-', 'At 25°C'),
+        ('On Resistance', 'Rds_on', 28, 'mΩ', '-', 'At Vgs=4.5V'),
+        ('Gate Threshold', 'Vgs_th', 1.2, 'V', '-', 'Typical'),
+        ('HY2120 Gate Drive', 'Vgate', '~3', 'V', '-', 'From OD/OC pins'),
+        ('FETs in Series', 'n', 2, '-', '-', 'Back-to-back per function'),
+        ('Total Rds (per path)', 'Rds_total', '=28*2', 'mΩ', 'n * Rds_on', '56mΩ'),
+        ('Conduction Loss @5A', 'Pcond', '=5^2*56/1000', 'W', 'P = I² * R', '1.4W'),
+        ('Gate Resistor', 'R401/R402', 1, 'kΩ', '-', 'Limits gate current'),
+    ]
+
+    for data in mosfet_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # BOM Summary
+    row = add_section_header(ws, row, "Section 04 BOM Summary", 6)
+
+    headers2 = ['Reference', 'Value', 'Package', 'Qty', 'JLCPCB', 'Description']
+    for col, header in enumerate(headers2, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    bom_data = [
+        ('U4', 'HY2120-CB', 'SOT-23-6', 1, 'C113632', '2S protection IC'),
+        ('U5, U6', 'HY2213-BB3A', 'SOT-23-6', 2, 'C113633', 'Cell balancer'),
+        ('Q1-Q4', 'AO3400A', 'SOT-23', 4, 'C20917', 'N-ch MOSFET'),
+        ('C401-C403', '100nF', '0603', 3, 'C14663', 'Bypass caps'),
+        ('R401, R402', '1kΩ', '0603', 2, 'C21190', 'Gate resistors'),
+        ('R403', '5mΩ', '1206', 1, 'C2933641', 'Current sense'),
+        ('R404, R405', '62Ω', '0805', 2, 'C17828', 'Balance resistors'),
+        ('TOTAL', '-', '-', 15, '-', '4 ICs + 11 passives'),
+    ]
+
+    for data in bom_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    return ws
+
 def create_power_budget_sheet(wb):
     """Create Power Budget calculations sheet"""
     ws = wb.create_sheet("Power_Budget")
@@ -509,6 +682,7 @@ def main():
     create_mcu_sheet(wb)
     create_usbc_sheet(wb)
     create_charger_sheet(wb)
+    create_bms_sheet(wb)
     create_power_budget_sheet(wb)
 
     # Save workbook

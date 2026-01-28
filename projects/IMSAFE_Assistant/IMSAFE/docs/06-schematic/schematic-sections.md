@@ -15,7 +15,7 @@
 | 1 | MCU Core | STM32H747AG | **In Progress** |
 | 2 | Power Input (USB-C) | USBLC6-2SC6 | **Complete** |
 | 3 | Battery Charger | BQ25792 | **Complete** |
-| 4 | BMS | HY2120 + HY2213 | Pending |
+| 4 | BMS | HY2120 + HY2213 | **Complete** |
 | 5 | 3.3V Regulator | TPS62133 | Pending |
 | 6 | 5V Regulator | TPS62130 | Pending |
 | 7 | Barometric Sensor | BMP390 | Pending |
@@ -497,7 +497,7 @@ Per ST AN4661, STM32H7 requires extensive decoupling.
 | 1. MCU Core | STM32H747AG | 28 | Pending |
 | 2. USB-C Input | - | 4 | Pending |
 | 3. Charger | BQ25792 | 16 | Pending |
-| 4. BMS | HY2120/HY2213 | 9 | Pending |
+| 4. BMS | HY2120/HY2213 | 15 | Complete |
 | 5. 3.3V Reg | TPS62133 | 7 | Pending |
 | 6. 5V Reg | TPS62130 | 9 | Pending |
 | 7. Barometric | BMP390 | 2 | Pending |
