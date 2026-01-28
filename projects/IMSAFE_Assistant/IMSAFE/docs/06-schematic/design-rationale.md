@@ -2301,13 +2301,18 @@ Not applicable - passive test points.
 
 | Section | Issue | Severity | Status |
 |---------|-------|----------|--------|
-| 06 | FB resistors corrected | HIGH | **FIXED** - R602 changed to 19.1k |
+| 06 | FB resistors corrected | HIGH | **FIXED** - R602 changed to 19.1k (C25947) |
 | 04 | Balance resistors marginal thermal | MEDIUM | Monitor - 0.284W in 0.25W package |
 | 04 | MOSFET thermal at 5A | MEDIUM | Verify PCB thermal design |
 | 15 | 3.3V logic to 5V WS2812B | LOW | Test with actual parts |
 | 17 | ESP32 antenna keepout | MEDIUM | Verify PCB layout |
 | 05/06 | PWR_FLAG for ERC | LOW | **FIXED** - Added in schematic |
-| 01 | 174 ERC errors | MEDIUM | pin_not_connected - mark NC pins |
+| 01 | MCU decoupling caps | MEDIUM | **IN PROGRESS** - Wiring fixes needed |
+| 04 | BMS protection circuit | MEDIUM | **IN PROGRESS** - Gate connections needed |
+| 07 | BMP390 SCK pin | LOW | **IN PROGRESS** - Tie to GND for I2C mode |
+| 14 | IO Expander GPIO pins | LOW | **IN PROGRESS** - Add no_connect symbols |
+| 16 | Encoder S2 pins | LOW | **IN PROGRESS** - Connect to GND |
+| ROOT | Dangling wires/labels | MEDIUM | **IN PROGRESS** - Clean up interconnects |
 
 ---
 
@@ -2328,10 +2333,90 @@ Not applicable - passive test points.
 
 ---
 
+## Appendix F: Design Review Checkpoint
+
+### Recommended Review Gate: Post-Schematic / Pre-Layout
+
+**Current Status:** Schematic complete, ERC errors under remediation
+
+### Pre-Review Checklist
+
+| Category | Item | Status |
+|----------|------|--------|
+| **Schematic Completeness** | All 20 sections defined | ✓ Complete |
+| **Component Selection** | All parts have JLCPCB numbers | ✓ Complete |
+| **Power Architecture** | Power tree documented | ✓ Complete |
+| **Signal Integrity** | I2C pull-ups, USB impedance | ✓ Addressed |
+| **Protection** | ESD, overvoltage, overcurrent | ✓ In design |
+| **Thermal** | Components >0.25W identified | ✓ Documented |
+| **Test Access** | Test points defined per section | ✓ Complete |
+| **BOM** | Exportable, costed | ✓ Available |
+| **ERC** | Errors resolved or waived | ⚠ In progress |
+
+### Review Artifacts Required
+
+1. **Schematic PDF** - Generate from KiCad with all hierarchy levels
+2. **Design Rationale** - This document (design-rationale.md)
+3. **BOM** - IMSAFE-BOM-v1.md with JLCPCB part numbers
+4. **Calculations Spreadsheet** - IMSAFE_Schematic_Calculations.xlsx
+5. **Requirements Traceability** - Appendix C of this document
+
+### Key Review Topics
+
+1. **Power Budget Verification**
+   - Validate total system current vs. regulator capacity
+   - Confirm battery capacity for target runtime
+
+2. **I2C Bus Loading**
+   - Multiple devices on I2C1 (IMU, Magnetometer, Temp/Humidity)
+   - Verify address conflicts resolved
+   - Check bus capacitance vs. pull-up values
+
+3. **MCU Pin Allocation**
+   - All peripheral assignments validated
+   - Alternate function conflicts checked
+   - Spare GPIO for debugging identified
+
+4. **Thermal Analysis**
+   - U1 (STM32): 1.3W typical - requires thermal vias
+   - U3 (BQ25792): 0.5W max - requires pour/vias
+   - R404/R405 (BMS balance): 284mW - at package limit
+   - LED Array: 2.88W max - external dissipation
+
+5. **Manufacturing Considerations**
+   - All parts JLCPCB Basic/Extended library
+   - Footprints verified for SMT assembly
+   - No fine-pitch BGA (assembly compatible)
+
+### Post-Review Actions
+
+After successful review, proceed to:
+1. **PCB Layout** - Start with power/ground planes and critical routes
+2. **DRC Setup** - Import constraints from Appendix E
+3. **3D Model** - Verify mechanical fit
+4. **Gerber Generation** - For fab quote and DFM check
+
+### ERC Resolution Summary
+
+The following ERC errors require attention before layout:
+
+| Error Type | Count | Resolution |
+|------------|-------|------------|
+| pin_not_connected | ~86 | Add no_connect (X) symbols to intentionally unused IC pins |
+| wire_dangling | ~35 | Complete wire connections in root schematic |
+| label_dangling | ~22 | Connect labels to nets or remove if unused |
+| power_pin_not_driven | ~4 | Add PWR_FLAG symbols to battery/external power inputs |
+| hier_label_mismatch | ~1 | Synchronize hierarchical labels between root and child sheets |
+
+**Recommended:** Run ERC in KiCad and resolve all errors before design review.
+
+---
+
 ## Document Revision History
 
 | Rev | Date | Author | Changes |
 |-----|------|--------|---------|
 | 1.0 | 2026-01-29 | Claude | Initial document creation |
 | 2.0 | 2026-01-29 | Claude | Added: requirement IDs, component tables, ERC status, pinout verification, safe failure behavior, vibration sensor cable specs, thermal notes, expected voltages |
+| 2.1 | 2026-01-29 | Claude | Added: Appendix F Design Review Checkpoint, updated R602 calculation to 19.1k |
 

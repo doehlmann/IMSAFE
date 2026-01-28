@@ -88,8 +88,8 @@ def create_summary_sheet(wb):
         ('01_MCU_Core', 'Crystal & decoupling calculations', 'Complete', '28', 'Per ST AN4661'),
         ('02_USB_C', 'CC resistor & ESD calculations', 'Complete', '6', 'USB 2.0 UFP'),
         ('03_Charger', 'BQ25792 sizing calculations', 'Complete', '17', 'Buck-boost power path'),
-        ('04_BMS', 'Cell protection & balancing', 'Complete', '12', 'HY2120 + HY2213'),
-        ('05_Regulators', '3.3V/5V regulator calculations', 'Pending', '~14', 'TPS62133/TPS62130'),
+        ('04_BMS', 'Cell protection & balancing', 'Complete', '15', 'HY2120 + HY2213'),
+        ('05_06_Regulators', '3.3V/5V buck regulator sizing', 'Complete', '18', 'TPS62133/TPS62130'),
         ('Power_Budget', 'System power analysis', 'In Progress', '-', 'All sections'),
     ]
 
@@ -415,6 +415,153 @@ def create_charger_sheet(wb):
 
     return ws
 
+def create_regulators_sheet(wb):
+    """Create Regulators calculations sheet (Sections 05-06)"""
+    ws = wb.create_sheet("05_06_Regulators")
+    set_column_widths(ws, [28, 15, 12, 12, 15, 40])
+
+    row = 1
+    row = add_section_header(ws, row, "Sections 05-06: DC-DC Buck Regulators", 6)
+    row += 1
+
+    # System Parameters
+    row = add_section_header(ws, row, "System Parameters", 6)
+
+    headers = ['Parameter', 'Symbol', 'Value', 'Unit', 'Formula', 'Notes']
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    sys_data = [
+        ('Input Voltage (nom)', 'Vin', 7.4, 'V', '-', 'VSYS from 2S battery'),
+        ('Input Voltage (min)', 'Vin_min', 6.0, 'V', '-', 'Battery discharged'),
+        ('Input Voltage (max)', 'Vin_max', 8.4, 'V', '-', 'Battery full'),
+        ('Switching Frequency', 'Fsw', 2.5, 'MHz', '-', 'TPS6213x default'),
+    ]
+
+    for data in sys_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # Section 05 - 3.3V Regulator
+    row = add_section_header(ws, row, "Section 05: TPS62133 (3.3V Fixed)", 6)
+
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    reg_3v3_data = [
+        ('Output Voltage', 'Vout', 3.3, 'V', '-', 'Fixed output version'),
+        ('Max Output Current', 'Iout_max', 3.0, 'A', '-', 'Continuous'),
+        ('Typical Load Current', 'Iout_typ', 0.5, 'A', '-', 'MCU + sensors'),
+        ('Inductor Value', 'L2', 1.5, 'µH', 'TI recommended', '1-2.2µH range'),
+        ('Inductor Saturation', 'Isat', 4.0, 'A', '>Iout_max', 'Must not saturate'),
+        ('Input Cap (bulk)', 'C501', 10, 'µF', '-', 'X7R ceramic'),
+        ('Input Cap (HF)', 'C502', 100, 'nF', '-', 'High frequency'),
+        ('Output Cap (bulk)', 'C503+C504', 44, 'µF', '2×22µF', 'Low ESR X7R'),
+        ('Output Cap (HF)', 'C505', 100, 'nF', '-', 'High frequency'),
+        ('Efficiency (typ)', 'η', 92, '%', '@7.4V,1A', 'From datasheet'),
+        ('Power Loss @0.5A', 'Ploss', '=0.5*3.3*(1-0.92)/0.92', 'W', 'Pout*(1-η)/η', '~143mW'),
+    ]
+
+    for data in reg_3v3_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # Section 06 - 5V Regulator
+    row = add_section_header(ws, row, "Section 06: TPS62130 (5V Adjustable)", 6)
+
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    reg_5v_data = [
+        ('Feedback Reference', 'Vfb', 0.8, 'V', '-', 'Internal reference'),
+        ('FB Top Resistor', 'R601', 100, 'kΩ', '-', 'VOUT to FB'),
+        ('FB Bottom Resistor', 'R602', 19.1, 'kΩ', 'C25947', 'FB to GND'),
+        ('Output Voltage', 'Vout', '=0.8*(1+100/19.1)', 'V', 'Vfb*(1+R601/R602)', '~5.03V'),
+        ('Max Output Current', 'Iout_max', 3.0, 'A', '-', 'Continuous'),
+        ('Typical Load Current', 'Iout_typ', 1.0, 'A', '-', 'LEDs + display'),
+        ('Inductor Value', 'L3', 1.5, 'µH', 'TI recommended', '1-2.2µH range'),
+        ('Inductor Saturation', 'Isat', 4.0, 'A', '>Iout_max', 'Must not saturate'),
+        ('Efficiency (typ)', 'η', 90, '%', '@7.4V,1A', 'Estimated'),
+        ('Power Loss @1A', 'Ploss', '=1*5*(1-0.90)/0.90', 'W', 'Pout*(1-η)/η', '~556mW'),
+    ]
+
+    for data in reg_5v_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # Inductor Selection
+    row = add_section_header(ws, row, "Inductor Selection Guidelines", 6)
+
+    for col, header in enumerate(headers, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    inductor_data = [
+        ('Min Inductance', 'Lmin', 1.0, 'µH', 'TI app note', 'For 2.5MHz'),
+        ('Max Inductance', 'Lmax', 2.2, 'µH', 'TI app note', 'Higher = less ripple'),
+        ('Selected Value', 'L', 1.5, 'µH', '-', 'Good compromise'),
+        ('Peak Current', 'Ipk', '=Iout+ΔI/2', 'A', '-', 'Must be < Isat'),
+        ('Ripple Current (est)', 'ΔI', '~30%', '-', 'of Iout', 'Typical design'),
+        ('DC Resistance', 'Rdc', '<30', 'mΩ', '-', 'Lower = better efficiency'),
+        ('Package', '-', '4×4mm', '-', '-', 'Shielded ferrite'),
+    ]
+
+    for data in inductor_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    row += 1
+
+    # BOM Summary
+    row = add_section_header(ws, row, "Sections 05-06 BOM Summary", 6)
+
+    headers2 = ['Reference', 'Value', 'Package', 'Qty', 'JLCPCB', 'Description']
+    for col, header in enumerate(headers2, 1):
+        cell = ws.cell(row=row, column=col, value=header)
+        apply_header_style(cell)
+    row += 1
+
+    bom_data = [
+        ('U7', 'TPS62133RGTR', 'QFN-16', 1, 'C128072', '3.3V buck'),
+        ('U8', 'TPS62130RGTR', 'QFN-16', 1, 'C128068', '5V buck'),
+        ('L2, L3', '1.5µH 4A', '4×4mm', 2, 'C408335', 'Shielded inductor'),
+        ('C501, C601', '10µF 16V', '0805', 2, 'C15850', 'Input bulk'),
+        ('C502, C602, C505, C605', '100nF', '0603', 4, 'C14663', 'HF filter'),
+        ('C503, C504, C603, C604', '22µF 10V', '0805', 4, 'C45783', 'Output bulk'),
+        ('R501, R601, R603', '100kΩ', '0603', 3, 'C25803', 'EN pull-up, FB top'),
+        ('R602', '24.3kΩ', '0603', 1, 'C25959', 'FB bottom'),
+        ('TOTAL', '-', '-', 18, '-', '2 ICs + 2 inductors + 14 passives'),
+    ]
+
+    for data in bom_data:
+        for col, value in enumerate(data, 1):
+            cell = ws.cell(row=row, column=col, value=value)
+            apply_cell_style(cell)
+        row += 1
+
+    return ws
+
 def create_bms_sheet(wb):
     """Create BMS calculations sheet"""
     ws = wb.create_sheet("04_BMS")
@@ -683,6 +830,7 @@ def main():
     create_usbc_sheet(wb)
     create_charger_sheet(wb)
     create_bms_sheet(wb)
+    create_regulators_sheet(wb)
     create_power_budget_sheet(wb)
 
     # Save workbook
