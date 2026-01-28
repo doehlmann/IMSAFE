@@ -1,0 +1,67 @@
+# KiCad
+*.bak
+*.bck
+*~
+*-backups/
+*.kicad_prl
+fp-info-cache
+*.lck
+
+# KiCad auto-save files
+\#auto_saved_files\#
+_autosave-*
+
+# Manufacturing outputs (regenerate from source)
+# Uncomment if you want to exclude these
+# hardware/manufacturing/outputs/*.zip
+
+# Gerber preview files
+*.gbrjob
+
+# STM32CubeIDE / Eclipse
+.metadata/
+.settings/
+Debug/
+Release/
+*.launch
+.cproject
+.project
+
+# DAVE IDE (Infineon)
+.dave/
+*.Debug/
+*.Release/
+
+# Build artifacts
+*.o
+*.obj
+*.elf
+*.hex
+*.bin
+*.map
+*.lst
+*.d
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
