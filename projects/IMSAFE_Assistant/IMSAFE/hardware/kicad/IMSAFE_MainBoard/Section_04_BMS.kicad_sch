@@ -614,6 +614,7 @@
 	(wire (pts (xy 82.55 119.38) (xy 119.38 119.38)) (stroke (width 0) (type default)) (uuid "w-oc-gate"))
 	(wire (pts (xy 119.38 119.38) (xy 119.38 142.24)) (stroke (width 0) (type default)) (uuid "w-oc-gate-1"))
 	(wire (pts (xy 119.38 142.24) (xy 129.54 142.24)) (stroke (width 0) (type default)) (uuid "w-oc-gate-q3"))
+	(wire (pts (xy 119.38 142.24) (xy 119.38 157.48)) (stroke (width 0) (type default)) (uuid "w-oc-gate-down"))
 	(wire (pts (xy 119.38 157.48) (xy 129.54 157.48)) (stroke (width 0) (type default)) (uuid "w-oc-gate-q4"))
 
 	(wire (pts (xy 137.16 94.0) (xy 137.16 86.36)) (stroke (width 0) (type default)) (uuid "w-q1-drain-1"))
@@ -660,8 +661,10 @@
 
 	(wire (pts (xy 246.38 123.19) (xy 246.38 127)) (stroke (width 0) (type default)) (uuid "w-u5-gnd"))
 	(wire (pts (xy 241.3 123.19) (xy 241.3 127)) (stroke (width 0) (type default)) (uuid "w-u5-vss"))
-	(wire (pts (xy 241.3 127) (xy 246.38 127)) (stroke (width 0) (type default)) (uuid "w-u5-gnd-join"))
+	(wire (pts (xy 241.3 127) (xy 243.84 127)) (stroke (width 0) (type default)) (uuid "w-u5-gnd-join-1"))
+	(wire (pts (xy 243.84 127) (xy 246.38 127)) (stroke (width 0) (type default)) (uuid "w-u5-gnd-join-2"))
 	(wire (pts (xy 243.84 127) (xy 243.84 130.81)) (stroke (width 0) (type default)) (uuid "w-u5-gnd-ext"))
+	(junction (at 243.84 127) (diameter 0) (color 0 0 0 0) (uuid "junc-u5-gnd"))
 
 	(wire (pts (xy 246.38 161.29) (xy 246.38 165.1)) (stroke (width 0) (type default)) (uuid "w-u6-gnd"))
 	(wire (pts (xy 241.3 161.29) (xy 241.3 165.1)) (stroke (width 0) (type default)) (uuid "w-u6-vss"))

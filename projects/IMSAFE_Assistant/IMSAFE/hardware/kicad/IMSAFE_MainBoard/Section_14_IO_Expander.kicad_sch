@@ -414,6 +414,17 @@
 		(instances (project "IMSAFE_MainBoard" (path "/sec14-0001-0002-0003-000000000001" (reference "#PWR01404") (unit 1))))
 	)
 
+	(symbol (lib_id "power:+3V3") (at 167.64 111.76 90) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "pwr-3v3-reset")
+		(property "Reference" "#PWR01405" (at 171.45 111.76 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Value" "+3V3" (at 172.72 111.76 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "" (at 167.64 111.76 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Datasheet" "" (at 167.64 111.76 0) (effects (font (size 1.27 1.27)) hide))
+		(pin "1" (uuid "pwr-3v3-reset-p1"))
+		(instances (project "IMSAFE_MainBoard" (path "/sec14-0001-0002-0003-000000000001" (reference "#PWR01405") (unit 1))))
+	)
+
 	(wire (pts (xy 127 71.12) (xy 127 78.74)) (stroke (width 0) (type default)) (uuid "w-3v3-vdd"))
 	(wire (pts (xy 127 129.54) (xy 127 134.62)) (stroke (width 0) (type default)) (uuid "w-u16-gnd"))
 
@@ -422,7 +433,7 @@
 	(wire (pts (xy 160.02 92.71) (xy 160.02 96.52)) (stroke (width 0) (type default)) (uuid "w-c1401-gnd"))
 
 	(wire (pts (xy 139.7 111.76) (xy 151.13 111.76)) (stroke (width 0) (type default)) (uuid "w-reset-r1404"))
-	(wire (pts (xy 158.75 111.76) (xy 165.1 111.76)) (stroke (width 0) (type default)) (uuid "w-r1404-3v3"))
+	(wire (pts (xy 158.75 111.76) (xy 167.64 111.76)) (stroke (width 0) (type default)) (uuid "w-r1404-3v3"))
 
 	(wire (pts (xy 139.7 88.9) (xy 151.13 88.9)) (stroke (width 0) (type default)) (uuid "w-a0-r1401"))
 	(wire (pts (xy 158.75 88.9) (xy 165.1 88.9)) (stroke (width 0) (type default)) (uuid "w-r1401-gnd"))
@@ -433,7 +444,7 @@
 	(wire (pts (xy 139.7 124.46) (xy 151.13 124.46)) (stroke (width 0) (type default)) (uuid "w-a2-r1403"))
 	(wire (pts (xy 158.75 124.46) (xy 165.1 124.46)) (stroke (width 0) (type default)) (uuid "w-r1403-gnd"))
 
-	(wire (pts (xy 165.1 88.9) (xy 165.1 111.76)) (stroke (width 0) (type default)) (uuid "w-gnd-tie1"))
+	(wire (pts (xy 165.1 88.9) (xy 165.1 121.92)) (stroke (width 0) (type default)) (uuid "w-gnd-tie1"))
 	(wire (pts (xy 165.1 121.92) (xy 165.1 124.46)) (stroke (width 0) (type default)) (uuid "w-gnd-tie2"))
 
 	(hierarchical_label "I2C1_SDA" (shape bidirectional) (at 147.32 119.38 0) (fields_autoplaced yes)

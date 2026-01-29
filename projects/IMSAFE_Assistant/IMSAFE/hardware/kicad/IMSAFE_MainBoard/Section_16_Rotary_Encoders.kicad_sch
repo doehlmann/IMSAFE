@@ -299,6 +299,28 @@
 		(instances (project "IMSAFE_MainBoard" (path "/sec16-0001-0002-0003-000000000001" (reference "#PWR1606") (unit 1))))
 	)
 
+	(symbol (lib_id "power:GND") (at 104.14 111.76 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "pwr-gnd-enc1-s2")
+		(property "Reference" "#PWR1607" (at 104.14 118.11 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Value" "GND" (at 104.14 115.57 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Footprint" "" (at 104.14 111.76 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Datasheet" "" (at 104.14 111.76 0) (effects (font (size 1.27 1.27)) hide))
+		(pin "1" (uuid "pwr-gnd-enc1-s2-p1"))
+		(instances (project "IMSAFE_MainBoard" (path "/sec16-0001-0002-0003-000000000001" (reference "#PWR1607") (unit 1))))
+	)
+
+	(symbol (lib_id "power:GND") (at 200.66 111.76 0) (unit 1)
+		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
+		(uuid "pwr-gnd-enc2-s2")
+		(property "Reference" "#PWR1608" (at 200.66 118.11 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Value" "GND" (at 200.66 115.57 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Footprint" "" (at 200.66 111.76 0) (effects (font (size 1.27 1.27)) hide))
+		(property "Datasheet" "" (at 200.66 111.76 0) (effects (font (size 1.27 1.27)) hide))
+		(pin "1" (uuid "pwr-gnd-enc2-s2-p1"))
+		(instances (project "IMSAFE_MainBoard" (path "/sec16-0001-0002-0003-000000000001" (reference "#PWR1608") (unit 1))))
+	)
+
 	(wire (pts (xy 93.98 123.19) (xy 93.98 132.08)) (stroke (width 0) (type default)) (uuid "w-enc1-com-gnd"))
 	(wire (pts (xy 190.5 123.19) (xy 190.5 132.08)) (stroke (width 0) (type default)) (uuid "w-enc2-com-gnd"))
 
