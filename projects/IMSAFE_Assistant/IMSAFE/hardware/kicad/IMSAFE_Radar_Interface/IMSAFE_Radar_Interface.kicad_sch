@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "radar-root-0001-0002-000000000001")
+	(generator_version "9.0")
+	(uuid "f7e3fb9b-89fb-4f09-bc7b-15fa0f59076a")
 	(paper "A4")
 	(title_block
 		(title "IMSAFE Radar Interface")
@@ -12,21 +12,7 @@
 		(comment 1 "BGT24LTR11 Integration / XMC4700 Fallback")
 		(comment 2 "Per DEC-005 De-risked Strategy")
 	)
-
 	(lib_symbols)
-
-	(text "IMSAFE Radar Interface Board\n\nPer DEC-005 (De-risked Development Strategy):\n\nPRIMARY PATH: BGT24LTR11 Shield Integration\n- Shield connector footprint for Infineon radar\n- SPI interface to STM32H747\n- Chirp control signals from MCU\n\nFALLBACK PATH: XMC4700 Baseboard Interface\n- UART connection to existing Distance2GoL baseboard\n- USB CDC protocol (already proven in d2gl_radar.py)\n- Baseboard provides processed range/velocity data\n\nConnector to MainBoard:\n- 10-pin header\n- Signals: UART TX, UART RX, SPI MOSI/MISO/SCK/CS, INT, 3.3V, 5V, GND\n\nBoard Design:\n- Accommodate BOTH interface options\n- Primary: Shield mounting holes + SPI header\n- Fallback: UART header for baseboard connection\n\nBoard Dimensions: ~50mm x 50mm\n\nFallback Trigger (per DEC-005):\n- Timer sync issues > 2 weeks\n- ADC/DAC jitter causes accuracy loss\n- Integration exceeds 8 weeks\n- Prototype needed for flight testing"
-		(exclude_from_sim no)
-		(at 25.4 25.4 0)
-		(effects
-			(font
-				(size 2 2)
-			)
-			(justify left)
-		)
-		(uuid "radar-text-001")
-	)
-
 	(text "TODO: Add header connectors\nShield footprint compatible with Infineon BGT24LTR11 shield"
 		(exclude_from_sim no)
 		(at 25.4 144.78 0)
@@ -37,6 +23,23 @@
 			)
 			(justify left)
 		)
-		(uuid "radar-todo-001")
+		(uuid "bd202e29-b013-4038-9e8e-ae4b67b0f14b")
 	)
+	(text "IMSAFE Radar Interface Board\n\nPer DEC-005 (De-risked Development Strategy):\n\nPRIMARY PATH: BGT24LTR11 Shield Integration\n- Shield connector footprint for Infineon radar\n- SPI interface to STM32H747\n- Chirp control signals from MCU\n\nFALLBACK PATH: XMC4700 Baseboard Interface\n- UART connection to existing Distance2GoL baseboard\n- USB CDC protocol (already proven in d2gl_radar.py)\n- Baseboard provides processed range/velocity data\n\nConnector to MainBoard:\n- 10-pin header\n- Signals: UART TX, UART RX, SPI MOSI/MISO/SCK/CS, INT, 3.3V, 5V, GND\n\nBoard Design:\n- Accommodate BOTH interface options\n- Primary: Shield mounting holes + SPI header\n- Fallback: UART header for baseboard connection\n\nBoard Dimensions: ~50mm x 50mm\n\nFallback Trigger (per DEC-005):\n- Timer sync issues > 2 weeks\n- ADC/DAC jitter causes accuracy loss\n- Integration exceeds 8 weeks\n- Prototype needed for flight testing"
+		(exclude_from_sim no)
+		(at 18.288 62.484 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "e072b0f4-aef5-4302-8c42-5990e4c7f82f")
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )

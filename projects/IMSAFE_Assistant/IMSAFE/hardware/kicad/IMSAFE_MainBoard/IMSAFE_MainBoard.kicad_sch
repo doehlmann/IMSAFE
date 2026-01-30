@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "a1b2c3d4-e5f6-7890-abcd-ef1234567890")
 	(paper "A3")
 	(title_block
@@ -12,113 +12,166 @@
 		(comment 1 "STM32H747AG Based Aviation Instrument")
 		(comment 2 "Multi-sheet hierarchical design")
 	)
-
 	(lib_symbols
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -6.35 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Value" "GND" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)))
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "GND_0_1"
-				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27))
-					(stroke (width 0) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
 			)
 			(symbol "GND_1_1"
-				(pin power_in line (at 0 0 270) (length 0)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
 			)
+			(embedded_fonts no)
 		)
 	)
-
+	(text "Sensor Sections (7-11)"
+		(exclude_from_sim no)
+		(at 206.248 53.848 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+		)
+		(uuid "0d36c9da-9d33-487f-8a00-7d1c9d90540c")
+	)
+	(text "Interface Sections (12-13, 17-20)"
+		(exclude_from_sim no)
+		(at 304.292 59.69 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+		)
+		(uuid "15f7cf83-7e96-4339-928b-38c79eb4cd18")
+	)
 	(text "IMSAFE MainBoard\nHierarchical Schematic"
 		(exclude_from_sim no)
-		(at 25.4 25.4 0)
+		(at 60.96 21.336 0)
 		(effects
 			(font
 				(size 5 5)
 				(bold yes)
 			)
 		)
-		(uuid "title-text-001")
+		(uuid "19732a28-7f01-497c-b801-59959a6cf6fd")
 	)
-
 	(text "Power Sections (2-6)"
 		(exclude_from_sim no)
-		(at 25.4 60.96 0)
+		(at 74.676 36.322 0)
 		(effects
 			(font
 				(size 3 3)
 				(bold yes)
 			)
 		)
-		(uuid "power-label-001")
+		(uuid "38f3faa6-6f79-4d3f-b982-5421f4c75ac0")
 	)
-
-	(text "MCU Section (1)"
-		(exclude_from_sim no)
-		(at 25.4 127 0)
-		(effects
-			(font
-				(size 3 3)
-				(bold yes)
-			)
-		)
-		(uuid "mcu-label-001")
-	)
-
 	(text "UI Sections (14-16)"
 		(exclude_from_sim no)
-		(at 88.9 127 0)
+		(at 138.43 136.906 0)
 		(effects
 			(font
 				(size 3 3)
 				(bold yes)
 			)
 		)
-		(uuid "ui-label-001")
+		(uuid "5c7fe27e-33d4-4d02-b7c9-b20f8b1d03fa")
 	)
-
-	(text "Sensor Sections (7-11)"
+	(text "MCU Section (1)"
 		(exclude_from_sim no)
-		(at 152.4 60.96 0)
+		(at 58.674 160.02 0)
 		(effects
 			(font
 				(size 3 3)
 				(bold yes)
 			)
 		)
-		(uuid "sensor-label-001")
+		(uuid "5e640f8a-9d9e-4b45-9f8b-4d05dd9102fd")
 	)
-
-	(text "Interface Sections (12-13, 17-20)"
-		(exclude_from_sim no)
-		(at 279.4 60.96 0)
-		(effects
-			(font
-				(size 3 3)
-				(bold yes)
-			)
-		)
-		(uuid "interface-label-001")
-	)
-
 	(text "Power Distribution"
 		(exclude_from_sim no)
 		(at 220 45 0)
@@ -128,388 +181,1227 @@
 				(italic yes)
 			)
 		)
-		(uuid "power-dist-label")
+		(uuid "af0f6145-1c49-4ed9-bfae-72d0e89c1999")
 	)
-
-	(sheet
-		(at 25.4 68.58)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
+	(junction
+		(at 81.28 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9923d485-c376-4e44-8d92-b78b7b17e11b")
+	)
+	(junction
+		(at 95.25 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bfcf6c79-0b62-4d62-954e-cee707816f15")
+	)
+	(wire
+		(pts
+			(xy 95.25 107.95) (xy 95.25 81.28)
+		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(fill
-			(color 255 255 194 1)
-		)
-		(uuid "sheet-sec02-usbc")
-		(property "Sheetname" "Section_02_USB_C"
-			(at 25.4 67.8684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_02_USB_C.kicad_sch"
-			(at 25.4 81.9346 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "USB_DP" bidirectional
-			(at 76.2 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-usb-dp")
-		)
-		(pin "USB_DM" bidirectional
-			(at 76.2 73.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-usb-dm")
-		)
-		(pin "VBUS" output
-			(at 76.2 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-usb-vbus")
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "2")
-				)
-			)
-		)
+		(uuid "03fa2f98-f9bd-400f-9dd8-6a504a795432")
 	)
-
-	(sheet
-		(at 25.4 83.82)
-		(size 50.8 17.78)
-		(fields_autoplaced yes)
+	(wire
+		(pts
+			(xy 69.85 81.28) (xy 81.28 81.28)
+		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(fill
-			(color 255 255 194 1)
-		)
-		(uuid "sheet-sec03-charger")
-		(property "Sheetname" "Section_03_Charger"
-			(at 25.4 83.1084 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_03_Charger.kicad_sch"
-			(at 25.4 102.2546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "VBUS" input
-			(at 25.4 86.36 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-chg-vbus")
-		)
-		(pin "VSYS" output
-			(at 76.2 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-chg-vsys")
-		)
-		(pin "VBAT" bidirectional
-			(at 76.2 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-chg-vbat")
-		)
-		(pin "CHG_INT" output
-			(at 76.2 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-chg-int")
-		)
-		(pin "I2C4_SDA" bidirectional
-			(at 76.2 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-chg-sda")
-		)
-		(pin "I2C4_SCL" input
-			(at 76.2 96.52 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-chg-scl")
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "3")
-				)
-			)
-		)
+		(uuid "073e5552-21af-4fb2-b555-d106939ae9e9")
 	)
-
-	(sheet
-		(at 25.4 104.14)
-		(size 50.8 15.24)
-		(fields_autoplaced yes)
+	(wire
+		(pts
+			(xy 110.49 158.75) (xy 100.33 158.75)
+		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(fill
-			(color 255 255 194 1)
-		)
-		(uuid "sheet-sec04-bms")
-		(property "Sheetname" "Section_04_BMS"
-			(at 25.4 103.4284 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_04_BMS.kicad_sch"
-			(at 25.4 120.0346 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "VBAT" input
-			(at 25.4 106.68 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-bms-vbat")
-		)
-		(pin "VSYS" output
-			(at 76.2 106.68 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-bms-vsys")
-		)
-		(pin "CELL_MID" bidirectional
-			(at 76.2 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-bms-cellmid")
-		)
-		(pin "PACK_NEG" output
-			(at 76.2 111.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-bms-packneg")
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "4")
-				)
-			)
-		)
+		(uuid "0773310e-58bd-4e28-a0c7-5892a71ddbb0")
 	)
-
-	(sheet
-		(at 78.74 68.58)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
+	(wire
+		(pts
+			(xy 69.85 88.9) (xy 81.28 88.9)
+		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(fill
-			(color 255 255 194 1)
-		)
-		(uuid "sheet-sec05-3v3")
-		(property "Sheetname" "Section_05_3V3_Regulator"
-			(at 78.74 67.8684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_05_3V3_Regulator.kicad_sch"
-			(at 78.74 81.9346 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "VSYS" input
-			(at 78.74 71.12 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-3v3-vsys")
-		)
-		(pin "+3V3" output
-			(at 129.54 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-3v3-out")
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "5")
-				)
-			)
-		)
+		(uuid "0b4454f2-4cf2-4545-8cc0-9c22017e3f74")
 	)
-
-	(sheet
-		(at 78.74 83.82)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
+	(wire
+		(pts
+			(xy 160.02 64.77) (xy 181.61 64.77)
+		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(fill
-			(color 255 255 194 1)
+		(uuid "0c4ab000-2974-465f-8ac5-82a549266509")
+	)
+	(wire
+		(pts
+			(xy 161.29 161.29) (xy 170.18 161.29)
 		)
-		(uuid "sheet-sec06-5v")
-		(property "Sheetname" "Section_06_5V_Regulator"
-			(at 78.74 83.1084 0)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fbab3ff-3b5b-49fa-af83-60e90ec3b2ce")
+	)
+	(wire
+		(pts
+			(xy 95.25 81.28) (xy 96.52 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11114ac7-8cd3-4ce1-8e66-18e9fc9e76fc")
+	)
+	(wire
+		(pts
+			(xy 175.26 201.93) (xy 175.26 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "150b5ca7-bbbb-4b5d-b44a-e9cc3ac0b9c6")
+	)
+	(wire
+		(pts
+			(xy 173.99 205.74) (xy 173.99 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1734fff1-2d75-478b-a22e-611f7a6b3329")
+	)
+	(wire
+		(pts
+			(xy 175.26 190.5) (xy 190.5 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19abb90b-3199-46bb-8517-d00693548200")
+	)
+	(wire
+		(pts
+			(xy 69.85 91.44) (xy 80.01 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19afec3b-3070-45a3-a4e4-bc273ad105e2")
+	)
+	(wire
+		(pts
+			(xy 83.82 53.34) (xy 81.28 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b264a41-01aa-4791-8634-88705e47b6f6")
+	)
+	(wire
+		(pts
+			(xy 81.28 53.34) (xy 81.28 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1caaae98-2248-4adb-a7d0-46e8b6fadd90")
+	)
+	(wire
+		(pts
+			(xy 110.49 161.29) (xy 101.6 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1efc468a-fb39-4187-a422-2ffbb62e70b0")
+	)
+	(wire
+		(pts
+			(xy 73.66 110.49) (xy 110.49 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f2da062-d056-43bf-8411-968d7bdd280f")
+	)
+	(wire
+		(pts
+			(xy 166.37 67.31) (xy 181.61 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2291a14a-5989-4fdd-9736-90137148f27a")
+	)
+	(wire
+		(pts
+			(xy 69.85 86.36) (xy 80.01 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23fe265e-d1c9-4f3a-bfda-c0590ca0e8b9")
+	)
+	(wire
+		(pts
+			(xy 68.58 66.04) (xy 76.2 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "259cd4e9-795f-45e3-be4b-0f6045779659")
+	)
+	(wire
+		(pts
+			(xy 175.26 191.77) (xy 161.29 191.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bbad0d8-1f23-4432-bd0b-61693f4df9a9")
+	)
+	(wire
+		(pts
+			(xy 166.37 74.93) (xy 158.75 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ce155a9-ad6f-485d-9631-4f38f2e7e8ac")
+	)
+	(wire
+		(pts
+			(xy 87.63 101.6) (xy 20.32 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ddf0b7c-7e61-4d6b-9db8-aa81a8f176d2")
+	)
+	(wire
+		(pts
+			(xy 148.59 86.36) (xy 161.29 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "306d08d2-c3c6-4354-a7a8-47116adc4e30")
+	)
+	(wire
+		(pts
+			(xy 175.26 189.23) (xy 161.29 189.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33d12f55-a094-4d19-b96d-5f38ac858326")
+	)
+	(wire
+		(pts
+			(xy 73.66 107.95) (xy 95.25 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "395d3639-a512-4992-ac68-c201c258214c")
+	)
+	(wire
+		(pts
+			(xy 147.32 81.28) (xy 148.59 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39bb748c-926a-49c6-8f99-fc18bc9d1d2a")
+	)
+	(wire
+		(pts
+			(xy 20.32 107.95) (xy 22.86 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f08d368-a66e-4df7-a8ce-9ead289b8d52")
+	)
+	(wire
+		(pts
+			(xy 81.28 81.28) (xy 95.25 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43e1568c-f592-458b-9bad-732249f84cf2")
+	)
+	(wire
+		(pts
+			(xy 69.85 83.82) (xy 87.63 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44da5072-3f05-4d34-9b21-b675de3617ed")
+	)
+	(wire
+		(pts
+			(xy 161.29 158.75) (xy 175.26 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ab428d4-d7a4-411b-aa1a-9a7296533826")
+	)
+	(wire
+		(pts
+			(xy 12.7 81.28) (xy 12.7 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4d45e2ad-416d-44ab-a63d-b248865d103f")
+	)
+	(wire
+		(pts
+			(xy 175.26 201.93) (xy 191.77 201.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53455f87-8434-46a5-87a4-467546295145")
+	)
+	(wire
+		(pts
+			(xy 73.66 113.03) (xy 99.06 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5487d4ac-977a-4697-947d-84ddd5885ef5")
+	)
+	(wire
+		(pts
+			(xy 40.64 187.96) (xy 25.4 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f07c5f9-5aee-423a-ac58-e860b79899a1")
+	)
+	(wire
+		(pts
+			(xy 40.64 185.42) (xy 25.4 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "672126f3-c62a-41e3-bd98-ca1140ed4cea")
+	)
+	(wire
+		(pts
+			(xy 148.59 81.28) (xy 148.59 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "685a4a64-0ed7-4fde-87e5-6f9a52467465")
+	)
+	(wire
+		(pts
+			(xy 76.2 66.04) (xy 76.2 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "729e4c8d-6ff6-4986-a91d-064cc49ed2d5")
+	)
+	(wire
+		(pts
+			(xy 77.47 71.12) (xy 83.82 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "734ef014-2d2d-49c2-9059-eeff0deeb024")
+	)
+	(wire
+		(pts
+			(xy 161.29 184.15) (xy 193.04 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "742b5641-15a7-4307-8741-4dbfd251171c")
+	)
+	(wire
+		(pts
+			(xy 76.2 73.66) (xy 83.82 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77a36c1f-5d29-4796-9b0f-cc72ef184479")
+	)
+	(wire
+		(pts
+			(xy 166.37 74.93) (xy 166.37 67.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77ebb3ed-4bbe-4471-bdf9-375c7255f930")
+	)
+	(wire
+		(pts
+			(xy 175.26 189.23) (xy 175.26 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85bf6940-9e21-48ff-a253-99c37d5e830d")
+	)
+	(wire
+		(pts
+			(xy 232.41 64.77) (xy 246.38 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "85c2fef6-9bae-442f-845d-32cca8940bed")
+	)
+	(wire
+		(pts
+			(xy 20.32 101.6) (xy 20.32 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "861d309a-6442-4740-be31-8d619ae34dd7")
+	)
+	(wire
+		(pts
+			(xy 77.47 63.5) (xy 77.47 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8635c758-6060-4c42-8ac5-943e88296b44")
+	)
+	(wire
+		(pts
+			(xy 68.58 63.5) (xy 77.47 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "931a36ca-3951-4188-a10c-562a41ef3f11")
+	)
+	(wire
+		(pts
+			(xy 173.99 205.74) (xy 191.77 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a87b355-12dc-48bd-9172-6203373b5b69")
+	)
+	(wire
+		(pts
+			(xy 12.7 81.28) (xy 19.05 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9cd8e656-6059-4a40-8f50-f45b171359aa")
+	)
+	(wire
+		(pts
+			(xy 173.99 194.31) (xy 161.29 194.31)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa1599dc-2d2a-4ae8-a077-30887fec25a1")
+	)
+	(wire
+		(pts
+			(xy 87.63 83.82) (xy 87.63 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af422619-aa7d-49c8-b487-8173fa3ee7ba")
+	)
+	(wire
+		(pts
+			(xy 40.64 175.26) (xy 25.4 175.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc420a9b-e466-42d2-9c02-b11fcc196e0e")
+	)
+	(wire
+		(pts
+			(xy 134.62 53.34) (xy 147.32 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c25ad116-1d38-4aed-830e-38c950101170")
+	)
+	(wire
+		(pts
+			(xy 40.64 177.8) (xy 25.4 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c473a940-9da0-48da-ba85-3632e51ab2cb")
+	)
+	(wire
+		(pts
+			(xy 40.64 182.88) (xy 25.4 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d559cc64-29cc-42ad-98d1-5880b603bced")
+	)
+	(wire
+		(pts
+			(xy 161.29 181.61) (xy 193.04 181.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "daa1b5a1-9e94-4e50-8360-dfedc39d6a5d")
+	)
+	(wire
+		(pts
+			(xy 161.29 186.69) (xy 190.5 186.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6bca56c-588d-4111-b6bf-5234ba46ca54")
+	)
+	(wire
+		(pts
+			(xy 40.64 180.34) (xy 25.4 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1a63f76-550e-478e-bb46-ea167f814fc8")
+	)
+	(wire
+		(pts
+			(xy 12.7 71.12) (xy 17.78 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7cb53cd-ab59-48df-86a6-437ac0e2b96d")
+	)
+	(wire
+		(pts
+			(xy 115.57 219.71) (xy 143.51 219.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f987acdc-e1d0-47c2-9d79-0748e3d26126")
+	)
+	(global_label "I2C4_SDA"
+		(shape bidirectional)
+		(at 81.28 88.9 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "086a8cf1-84ae-422a-a77f-f135d18ca4af")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 81.28 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_06_5V_Regulator.kicad_sch"
-			(at 78.74 97.1746 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "VSYS" input
-			(at 78.74 86.36 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-5v-vsys")
-		)
-		(pin "+5V" output
-			(at 129.54 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-5v-out")
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "6")
-				)
+				(hide yes)
 			)
 		)
 	)
-
+	(global_label "HSE_IN"
+		(shape input)
+		(at 25.4 175.26 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1280fade-7a96-40e8-becd-ce057829fd95")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.4 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ENC2_B"
+		(shape output)
+		(at 191.77 201.93 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "18f8bc47-cf1b-4808-98fa-bc5c427cf841")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 191.77 201.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BOOT0"
+		(shape input)
+		(at 25.4 187.96 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1bb8585e-809a-4f3b-8002-a97982fe7061")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.4 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CHG_INT"
+		(shape output)
+		(at 80.01 86.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "23ee9724-5e97-46d5-94a0-dc43b54c90c4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.01 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LSE_IN"
+		(shape input)
+		(at 25.4 180.34 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2b889a8e-1aaf-4491-b5d0-e35836cf7f8f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.4 180.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C1_SDA"
+		(shape bidirectional)
+		(at 160.02 64.77 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3c074af4-7f11-4048-a058-cd8b7a977ee8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.02 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "INTA"
+		(shape output)
+		(at 175.26 158.75 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3df185a2-cc17-480c-9a6c-6ff4fd22d87a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 175.26 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C1_SDA"
+		(shape bidirectional)
+		(at 100.33 158.75 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5025a429-9c50-491b-8418-b582697b44cf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 100.33 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CELL_MID"
+		(shape bidirectional)
+		(at 110.49 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6419daa1-129a-42c1-8a54-336f2ab31a2d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 110.49 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "HSE_OUT"
+		(shape output)
+		(at 25.4 177.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "67533c66-f530-47a6-92d4-bf6e7b06370d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.4 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ENC2_SW"
+		(shape output)
+		(at 191.77 205.74 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "695bfe65-0e3b-4b22-90f9-2195ce180524")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 191.77 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NRST"
+		(shape input)
+		(at 25.4 185.42 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6a7f4669-caa6-4b51-ae35-a1d3f69809ba")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.4 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LED_DATA"
+		(shape input)
+		(at 115.57 219.71 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "84b19d6a-d4a1-4816-8def-e83215a80a48")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 115.57 219.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C4_SCL"
+		(shape input)
+		(at 80.01 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "888281bd-d5da-4155-865a-c172ff2ec8f9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.01 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "USB_DM"
+		(shape bidirectional)
+		(at 83.82 73.66 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "908aff55-54fd-4edf-bfe6-362614252f12")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 83.82 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "INTB"
+		(shape output)
+		(at 170.18 161.29 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "951d1825-1fa7-4092-aeb3-01f2aaeb3c65")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.18 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ENC1_SW"
+		(shape output)
+		(at 190.5 186.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9e33b54c-22bb-48ac-b483-570389ea1b75")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C1_SCL"
+		(shape input)
+		(at 101.6 161.29 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a59618a3-46ec-4914-b12a-30b757044ce7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 101.6 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ENC1_A"
+		(shape output)
+		(at 193.04 181.61 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a7350dd6-f9c9-48a8-802f-cf3e29914b3f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 193.04 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "USB_DP"
+		(shape bidirectional)
+		(at 83.82 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a832eb42-e410-4c4b-b3ea-ea7ee3b2b459")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 83.82 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "PACK_NEG"
+		(shape output)
+		(at 99.06 113.03 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ad924b76-6250-4649-bd35-88631613d50b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 99.06 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ENC1_B"
+		(shape output)
+		(at 193.04 184.15 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c244506c-04ba-4033-bfd4-2f0046632e0c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 193.04 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "LSE_OUT"
+		(shape output)
+		(at 25.4 182.88 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c5ed00d7-8f46-47cc-8c05-1c919d6114c4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 25.4 182.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "I2C1_SCL"
+		(shape input)
+		(at 158.75 74.93 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cbcd85ea-203e-498b-adf3-723225cfee54")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.75 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "BARO_INT"
+		(shape output)
+		(at 246.38 64.77 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e7d83801-0156-4cf8-9bd1-0a37643db231")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 246.38 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ENC2_A"
+		(shape output)
+		(at 190.5 190.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e89201dd-bc2f-4285-af89-df9723f21c7b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.5 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "+5V"
+		(shape output)
+		(at 161.29 86.36 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ff16d4e2-4e77-4884-906a-ca594b56ec58")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 161.29 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "+3V3"
+		(shape output)
+		(at 147.32 53.34 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ff94fe98-1821-4e92-9f24-c5f95c58edf3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 147.32 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+	)
 	(sheet
-		(at 25.4 134.62)
+		(at 40.64 172.72)
 		(size 50.8 25.4)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 194 255 194 1)
+			(color 194 255 194 1.0000)
 		)
-		(uuid "sheet-sec01-mcu")
+		(uuid "13011f72-6b8b-4561-9372-8fb104cfc1e5")
 		(property "Sheetname" "Section_01_MCU_Core"
-			(at 25.4 133.9084 0)
+			(at 40.64 172.0084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -518,7 +1410,7 @@
 			)
 		)
 		(property "Sheetfile" "Section_01_MCU_Core.kicad_sch"
-			(at 25.4 160.6746 0)
+			(at 40.64 198.7746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -527,64 +1419,64 @@
 			)
 		)
 		(pin "HSE_IN" input
-			(at 25.4 137.16 180)
+			(at 40.64 175.26 180)
+			(uuid "f09e2e87-96b3-4fca-99a5-480d1f6493e9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "pin-mcu-hsein")
 		)
 		(pin "HSE_OUT" output
-			(at 25.4 139.7 180)
+			(at 40.64 177.8 180)
+			(uuid "1f15f25b-55c7-46b1-9bf4-e61876b66a79")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "pin-mcu-hseout")
 		)
 		(pin "LSE_IN" input
-			(at 25.4 142.24 180)
+			(at 40.64 180.34 180)
+			(uuid "9d498bbb-7eec-48ec-976c-817c147ca393")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "pin-mcu-lsein")
 		)
 		(pin "LSE_OUT" output
-			(at 25.4 144.78 180)
+			(at 40.64 182.88 180)
+			(uuid "e901727d-11f3-4761-8a75-dfde89381a6f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "pin-mcu-lseout")
 		)
 		(pin "NRST" input
-			(at 25.4 147.32 180)
+			(at 40.64 185.42 180)
+			(uuid "fc26c3be-b334-4f9e-a052-68ca43295511")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "pin-mcu-nrst")
 		)
 		(pin "BOOT0" input
-			(at 25.4 149.86 180)
+			(at 40.64 187.96 180)
+			(uuid "83f3ea31-4f8b-407f-bdfb-296939fbdd29")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "pin-mcu-boot0")
 		)
 		(instances
 			(project "IMSAFE_MainBoard"
@@ -594,248 +1486,24 @@
 			)
 		)
 	)
-
 	(sheet
-		(at 88.9 134.62)
-		(size 50.8 15.24)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 224 194 1)
-		)
-		(uuid "sheet-sec14-ioexp")
-		(property "Sheetname" "Section_14_IO_Expander"
-			(at 88.9 133.9084 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_14_IO_Expander.kicad_sch"
-			(at 88.9 150.5146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "I2C1_SDA" bidirectional
-			(at 88.9 137.16 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-ioexp-sda")
-		)
-		(pin "I2C1_SCL" input
-			(at 88.9 139.7 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-ioexp-scl")
-		)
-		(pin "INTA" output
-			(at 139.7 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-ioexp-inta")
-		)
-		(pin "INTB" output
-			(at 139.7 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-ioexp-intb")
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "19")
-				)
-			)
-		)
-	)
-
-	(sheet
-		(at 88.9 152.4)
-		(size 50.8 10.16)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 224 194 1)
-		)
-		(uuid "sheet-sec15-leds")
-		(property "Sheetname" "Section_15_Status_LEDs"
-			(at 88.9 151.6884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_15_Status_LEDs.kicad_sch"
-			(at 88.9 163.2146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "LED_DATA" input
-			(at 88.9 157.48 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-led-data")
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "20")
-				)
-			)
-		)
-	)
-
-	(sheet
-		(at 88.9 165.1)
-		(size 50.8 20.32)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 224 194 1)
-		)
-		(uuid "sheet-sec16-enc")
-		(property "Sheetname" "Section_16_Rotary_Encoders"
-			(at 88.9 164.3884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_16_Rotary_Encoders.kicad_sch"
-			(at 88.9 186.0746 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "ENC1_A" output
-			(at 139.7 167.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-enc1-a")
-		)
-		(pin "ENC1_B" output
-			(at 139.7 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-enc1-b")
-		)
-		(pin "ENC1_SW" output
-			(at 139.7 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-enc1-sw")
-		)
-		(pin "ENC2_A" output
-			(at 139.7 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-enc2-a")
-		)
-		(pin "ENC2_B" output
-			(at 139.7 177.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-enc2-b")
-		)
-		(pin "ENC2_SW" output
-			(at 139.7 180.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "pin-enc2-sw")
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "21")
-				)
-			)
-		)
-	)
-
-	(sheet
-		(at 152.4 68.58)
+		(at 17.78 60.96)
 		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 194 194 255 1)
+			(color 255 255 194 1.0000)
 		)
-		(uuid "sheet-sec07-baro")
-		(property "Sheetname" "Section_07_Barometric"
-			(at 152.4 67.8684 0)
+		(uuid "1edf632e-5745-4dab-9b23-5cebbed2d177")
+		(property "Sheetname" "Section_02_USB_C"
+			(at 17.78 60.2484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -843,8 +1511,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Section_07_Barometric.kicad_sch"
-			(at 152.4 81.9346 0)
+		(property "Sheetfile" "Section_02_USB_C.kicad_sch"
+			(at 17.78 74.3146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -852,59 +1520,62 @@
 				(justify left top)
 			)
 		)
-		(pin "I2C1_SDA" bidirectional
-			(at 152.4 71.12 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-baro-sda")
-		)
-		(pin "I2C1_SCL" input
-			(at 152.4 73.66 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "pin-baro-scl")
-		)
-		(pin "BARO_INT" output
-			(at 203.2 71.12 0)
+		(pin "USB_DP" bidirectional
+			(at 68.58 63.5 0)
+			(uuid "ee9aff2b-d2d2-4997-969f-70f1d47c2422")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "pin-baro-int")
+		)
+		(pin "USB_DM" bidirectional
+			(at 68.58 66.04 0)
+			(uuid "03c6bd3f-8721-43e5-89d0-953f332ea698")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VBUS" output
+			(at 17.78 71.12 180)
+			(uuid "e5717ac2-095c-4598-bb26-b7c9312ccc96")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
 		)
 		(instances
 			(project "IMSAFE_MainBoard"
 				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "8")
+					(page "2")
 				)
 			)
 		)
 	)
-
 	(sheet
-		(at 152.4 83.82)
+		(at 279.4 124.46)
 		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 194 194 255 1)
+			(color 255 194 194 1.0000)
 		)
-		(uuid "sheet-sec08-imu")
-		(property "Sheetname" "Section_08_IMU"
-			(at 152.4 83.1084 0)
+		(uuid "201d3654-59fe-45c7-8105-0bc6e76df53b")
+		(property "Sheetname" "Section_17_Bluetooth"
+			(at 279.4 123.7484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -912,8 +1583,8 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Section_08_IMU.kicad_sch"
-			(at 152.4 97.1746 0)
+		(property "Sheetfile" "Section_17_Bluetooth.kicad_sch"
+			(at 279.4 137.8146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -924,141 +1595,27 @@
 		(instances
 			(project "IMSAFE_MainBoard"
 				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "9")
+					(page "15")
 				)
 			)
 		)
 	)
-
-	(sheet
-		(at 152.4 99.06)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 194 194 255 1)
-		)
-		(uuid "sheet-sec09-mag")
-		(property "Sheetname" "Section_09_Magnetometer"
-			(at 152.4 98.3484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_09_Magnetometer.kicad_sch"
-			(at 152.4 112.4146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "10")
-				)
-			)
-		)
-	)
-
-	(sheet
-		(at 152.4 114.3)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 194 194 255 1)
-		)
-		(uuid "sheet-sec10-gas")
-		(property "Sheetname" "Section_10_Gas_Sensor"
-			(at 152.4 113.5884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_10_Gas_Sensor.kicad_sch"
-			(at 152.4 127.6546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "11")
-				)
-			)
-		)
-	)
-
-	(sheet
-		(at 152.4 129.54)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 194 194 255 1)
-		)
-		(uuid "sheet-sec11-temphum")
-		(property "Sheetname" "Section_11_Temp_Humidity"
-			(at 152.4 128.8284 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_11_Temp_Humidity.kicad_sch"
-			(at 152.4 142.8946 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "12")
-				)
-			)
-		)
-	)
-
 	(sheet
 		(at 279.4 68.58)
 		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 194 194 1)
+			(color 255 194 194 1.0000)
 		)
-		(uuid "sheet-sec12-display")
+		(uuid "245953ab-4da3-4029-b8f2-0b0c87ffcc3e")
 		(property "Sheetname" "Section_12_Display"
 			(at 279.4 67.8684 0)
 			(effects
@@ -1085,21 +1642,118 @@
 			)
 		)
 	)
-
 	(sheet
-		(at 279.4 83.82)
-		(size 50.8 12.7)
+		(at 143.51 214.63)
+		(size 50.8 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 194 194 1)
+			(color 255 224 194 1.0000)
 		)
-		(uuid "sheet-sec13-sd")
+		(uuid "3272e4ee-3621-4f7a-8547-cc365cc51b15")
+		(property "Sheetname" "Section_15_Status_LEDs"
+			(at 143.51 213.9184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_15_Status_LEDs.kicad_sch"
+			(at 143.51 225.4446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "LED_DATA" input
+			(at 143.51 219.71 180)
+			(uuid "2f534319-9268-48eb-9fa5-a16cb3d0676b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "20")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 180.975 83.82)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1.0000)
+		)
+		(uuid "43dd778e-5adc-48cd-a6c1-869e158c3b26")
+		(property "Sheetname" "Section_08_IMU"
+			(at 180.975 83.1084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_08_IMU.kicad_sch"
+			(at 180.975 97.1746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 278.13 99.06)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1.0000)
+		)
+		(uuid "5fe94529-d5ef-4a5e-bbcf-03b902aeec54")
 		(property "Sheetname" "Section_13_microSD"
-			(at 279.4 83.1084 0)
+			(at 278.13 98.3484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1108,7 +1762,7 @@
 			)
 		)
 		(property "Sheetfile" "Section_13_microSD.kicad_sch"
-			(at 279.4 97.1746 0)
+			(at 278.13 112.4146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1124,138 +1778,24 @@
 			)
 		)
 	)
-
 	(sheet
-		(at 279.4 99.06)
+		(at 278.765 196.215)
 		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 194 194 1)
+			(color 255 194 194 1.0000)
 		)
-		(uuid "sheet-sec17-ble")
-		(property "Sheetname" "Section_17_Bluetooth"
-			(at 279.4 98.3484 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_17_Bluetooth.kicad_sch"
-			(at 279.4 112.4146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "15")
-				)
-			)
-		)
-	)
-
-	(sheet
-		(at 279.4 114.3)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 194 194 1)
-		)
-		(uuid "sheet-sec18-vib")
-		(property "Sheetname" "Section_18_Vibration_Interface"
-			(at 279.4 113.5884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_18_Vibration_Interface.kicad_sch"
-			(at 279.4 127.6546 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "16")
-				)
-			)
-		)
-	)
-
-	(sheet
-		(at 279.4 129.54)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 194 194 1)
-		)
-		(uuid "sheet-sec19-audio")
-		(property "Sheetname" "Section_19_Audio"
-			(at 279.4 128.8284 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "Section_19_Audio.kicad_sch"
-			(at 279.4 142.8946 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "IMSAFE_MainBoard"
-				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
-					(page "17")
-				)
-			)
-		)
-	)
-
-	(sheet
-		(at 279.4 144.78)
-		(size 50.8 12.7)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 255 194 194 1)
-		)
-		(uuid "sheet-sec20-debug")
+		(uuid "64228e9d-a426-4fe9-816c-dcbc1ad25b47")
 		(property "Sheetname" "Section_20_Debug"
-			(at 279.4 144.0684 0)
+			(at 278.765 195.5034 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1264,7 +1804,7 @@
 			)
 		)
 		(property "Sheetfile" "Section_20_Debug.kicad_sch"
-			(at 279.4 158.1346 0)
+			(at 278.765 209.5696 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1280,184 +1820,784 @@
 			)
 		)
 	)
-
-	(wire (pts (xy 76.2 76.2) (xy 76.2 78.74)) (stroke (width 0) (type default)) (uuid "wire-vbus-1"))
-	(wire (pts (xy 76.2 78.74) (xy 20.32 78.74)) (stroke (width 0) (type default)) (uuid "wire-vbus-2"))
-	(wire (pts (xy 20.32 78.74) (xy 20.32 86.36)) (stroke (width 0) (type default)) (uuid "wire-vbus-3"))
-	(wire (pts (xy 20.32 86.36) (xy 25.4 86.36)) (stroke (width 0) (type default)) (uuid "wire-vbus-4"))
-
-	(wire (pts (xy 76.2 86.36) (xy 78.74 86.36)) (stroke (width 0) (type default)) (uuid "wire-vsys-5v"))
-	(wire (pts (xy 76.2 86.36) (xy 77.47 86.36)) (stroke (width 0) (type default)) (uuid "wire-vsys-j1"))
-	(wire (pts (xy 77.47 86.36) (xy 77.47 71.12)) (stroke (width 0) (type default)) (uuid "wire-vsys-up"))
-	(wire (pts (xy 77.47 71.12) (xy 78.74 71.12)) (stroke (width 0) (type default)) (uuid "wire-vsys-3v3"))
-	(wire (pts (xy 77.47 86.36) (xy 77.47 106.68)) (stroke (width 0) (type default)) (uuid "wire-vsys-down"))
-	(wire (pts (xy 77.47 106.68) (xy 76.2 106.68)) (stroke (width 0) (type default)) (uuid "wire-vsys-bms"))
-
-	(wire (pts (xy 76.2 88.9) (xy 77.47 88.9)) (stroke (width 0) (type default)) (uuid "wire-vbat-1"))
-	(wire (pts (xy 77.47 88.9) (xy 77.47 101.6)) (stroke (width 0) (type default)) (uuid "wire-vbat-2"))
-	(wire (pts (xy 77.47 101.6) (xy 20.32 101.6)) (stroke (width 0) (type default)) (uuid "wire-vbat-3"))
-	(wire (pts (xy 20.32 101.6) (xy 20.32 106.68)) (stroke (width 0) (type default)) (uuid "wire-vbat-4"))
-	(wire (pts (xy 20.32 106.68) (xy 25.4 106.68)) (stroke (width 0) (type default)) (uuid "wire-vbat-5"))
-
-	(wire (pts (xy 76.2 71.12) (xy 83.82 71.12)) (stroke (width 0) (type default)) (uuid "wire-usbdp"))
-	(wire (pts (xy 76.2 73.66) (xy 83.82 73.66)) (stroke (width 0) (type default)) (uuid "wire-usbdm"))
-
-	(wire (pts (xy 76.2 91.44) (xy 83.82 91.44)) (stroke (width 0) (type default)) (uuid "wire-chgint"))
-	(wire (pts (xy 76.2 93.98) (xy 83.82 93.98)) (stroke (width 0) (type default)) (uuid "wire-i2c4sda"))
-	(wire (pts (xy 76.2 96.52) (xy 83.82 96.52)) (stroke (width 0) (type default)) (uuid "wire-i2c4scl"))
-
-	(wire (pts (xy 76.2 109.22) (xy 83.82 109.22)) (stroke (width 0) (type default)) (uuid "wire-cellmid"))
-	(wire (pts (xy 76.2 111.76) (xy 83.82 111.76)) (stroke (width 0) (type default)) (uuid "wire-packneg"))
-
-	(wire (pts (xy 129.54 71.12) (xy 134.62 71.12)) (stroke (width 0) (type default)) (uuid "wire-3v3out"))
-	(wire (pts (xy 129.54 86.36) (xy 134.62 86.36)) (stroke (width 0) (type default)) (uuid "wire-5vout"))
-
-	(wire (pts (xy 152.4 71.12) (xy 147.32 71.12)) (stroke (width 0) (type default)) (uuid "wire-baro-sda"))
-	(wire (pts (xy 152.4 73.66) (xy 147.32 73.66)) (stroke (width 0) (type default)) (uuid "wire-baro-scl"))
-	(wire (pts (xy 203.2 71.12) (xy 208.28 71.12)) (stroke (width 0) (type default)) (uuid "wire-baro-int"))
-
-	(wire (pts (xy 88.9 137.16) (xy 83.82 137.16)) (stroke (width 0) (type default)) (uuid "wire-ioexp-sda"))
-	(wire (pts (xy 88.9 139.7) (xy 83.82 139.7)) (stroke (width 0) (type default)) (uuid "wire-ioexp-scl"))
-	(wire (pts (xy 139.7 137.16) (xy 144.78 137.16)) (stroke (width 0) (type default)) (uuid "wire-ioexp-inta"))
-	(wire (pts (xy 139.7 139.7) (xy 144.78 139.7)) (stroke (width 0) (type default)) (uuid "wire-ioexp-intb"))
-
-	(wire (pts (xy 88.9 157.48) (xy 83.82 157.48)) (stroke (width 0) (type default)) (uuid "wire-led-data"))
-
-	(wire (pts (xy 139.7 167.64) (xy 144.78 167.64)) (stroke (width 0) (type default)) (uuid "wire-enc1a"))
-	(wire (pts (xy 139.7 170.18) (xy 144.78 170.18)) (stroke (width 0) (type default)) (uuid "wire-enc1b"))
-	(wire (pts (xy 139.7 172.72) (xy 144.78 172.72)) (stroke (width 0) (type default)) (uuid "wire-enc1sw"))
-	(wire (pts (xy 139.7 175.26) (xy 144.78 175.26)) (stroke (width 0) (type default)) (uuid "wire-enc2a"))
-	(wire (pts (xy 139.7 177.8) (xy 144.78 177.8)) (stroke (width 0) (type default)) (uuid "wire-enc2b"))
-	(wire (pts (xy 139.7 180.34) (xy 144.78 180.34)) (stroke (width 0) (type default)) (uuid "wire-enc2sw"))
-
-	(wire (pts (xy 25.4 137.16) (xy 20.32 137.16)) (stroke (width 0) (type default)) (uuid "wire-mcu-hsein"))
-	(wire (pts (xy 25.4 139.7) (xy 20.32 139.7)) (stroke (width 0) (type default)) (uuid "wire-mcu-hseout"))
-	(wire (pts (xy 25.4 142.24) (xy 20.32 142.24)) (stroke (width 0) (type default)) (uuid "wire-mcu-lsein"))
-	(wire (pts (xy 25.4 144.78) (xy 20.32 144.78)) (stroke (width 0) (type default)) (uuid "wire-mcu-lseout"))
-	(wire (pts (xy 25.4 147.32) (xy 20.32 147.32)) (stroke (width 0) (type default)) (uuid "wire-mcu-nrst"))
-	(wire (pts (xy 25.4 149.86) (xy 20.32 149.86)) (stroke (width 0) (type default)) (uuid "wire-mcu-boot0"))
-
-	(global_label "USB_DP" (shape bidirectional) (at 83.82 71.12 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-usbdp")
+	(sheet
+		(at 180.34 139.7)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1.0000)
+		)
+		(uuid "67726d65-d890-4b2c-b8eb-c5d7eafca8e5")
+		(property "Sheetname" "Section_11_Temp_Humidity"
+			(at 180.34 138.9884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_11_Temp_Humidity.kicad_sch"
+			(at 180.34 153.0546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "12")
+				)
+			)
+		)
 	)
-	(global_label "USB_DM" (shape bidirectional) (at 83.82 73.66 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-usbdm")
+	(sheet
+		(at 180.34 119.38)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1.0000)
+		)
+		(uuid "6ee2866d-7d06-4e20-9ae4-f78d73a436a9")
+		(property "Sheetname" "Section_10_Gas_Sensor"
+			(at 180.34 118.6684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_10_Gas_Sensor.kicad_sch"
+			(at 180.34 132.7346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "11")
+				)
+			)
+		)
 	)
-	(global_label "CHG_INT" (shape output) (at 83.82 91.44 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-chgint")
+	(sheet
+		(at 96.52 78.74)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "710c1723-1863-4a24-acee-5ae1bcd9704c")
+		(property "Sheetname" "Section_06_5V_Regulator"
+			(at 96.52 78.0284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_06_5V_Regulator.kicad_sch"
+			(at 96.52 92.0946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "VSYS" input
+			(at 96.52 81.28 180)
+			(uuid "94222496-11da-457d-8682-7a878e78919f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+5V" output
+			(at 147.32 81.28 0)
+			(uuid "da3586d1-5069-47b0-87ba-06c1184fed59")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "6")
+				)
+			)
+		)
 	)
-	(global_label "I2C4_SDA" (shape bidirectional) (at 83.82 93.98 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-i2c4sda")
+	(sheet
+		(at 110.49 156.21)
+		(size 50.8 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 224 194 1.0000)
+		)
+		(uuid "7e716511-b5e2-4d98-9b6c-b8f2cfeb6208")
+		(property "Sheetname" "Section_14_IO_Expander"
+			(at 110.49 155.4984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_14_IO_Expander.kicad_sch"
+			(at 110.49 172.1046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "I2C1_SDA" bidirectional
+			(at 110.49 158.75 180)
+			(uuid "3c3a137c-6ab1-4a37-8b4b-88bd369e51b0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C1_SCL" input
+			(at 110.49 161.29 180)
+			(uuid "09f47e20-5975-403f-b1d0-a64c029b0708")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "INTA" output
+			(at 161.29 158.75 0)
+			(uuid "5cdaa18c-85ee-4d26-9e09-04fe3f1052db")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "INTB" output
+			(at 161.29 161.29 0)
+			(uuid "24e8e81e-dd76-4c04-87f2-8b1a4393323e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "19")
+				)
+			)
+		)
 	)
-	(global_label "I2C4_SCL" (shape input) (at 83.82 96.52 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-i2c4scl")
+	(sheet
+		(at 110.49 179.07)
+		(size 50.8 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 224 194 1.0000)
+		)
+		(uuid "812884c2-3e73-40ec-a69b-8063eaac385e")
+		(property "Sheetname" "Section_16_Rotary_Encoders"
+			(at 110.49 178.3584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_16_Rotary_Encoders.kicad_sch"
+			(at 110.49 200.0446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "ENC1_A" output
+			(at 161.29 181.61 0)
+			(uuid "bcb3e832-7364-4386-ae8e-306717f5299c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC1_B" output
+			(at 161.29 184.15 0)
+			(uuid "209b1158-a61e-428f-813b-f589c45c7e3d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC1_SW" output
+			(at 161.29 186.69 0)
+			(uuid "c9a7e045-6770-434b-998b-6301b6bfaaf4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC2_A" output
+			(at 161.29 189.23 0)
+			(uuid "0dc38e20-0458-415e-a636-f4845c56cd91")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC2_B" output
+			(at 161.29 191.77 0)
+			(uuid "723bfc6f-d8e5-45fd-abd1-9f3797ecf6d4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ENC2_SW" output
+			(at 161.29 194.31 0)
+			(uuid "24a3eb71-cf09-4253-9509-a2a76e7f486c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "21")
+				)
+			)
+		)
 	)
-	(global_label "CELL_MID" (shape bidirectional) (at 83.82 109.22 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-cellmid")
+	(sheet
+		(at 181.61 62.23)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1.0000)
+		)
+		(uuid "8d2ad56f-737f-44d6-af7d-5fe352ff1e25")
+		(property "Sheetname" "Section_07_Barometric"
+			(at 181.61 61.5184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_07_Barometric.kicad_sch"
+			(at 181.61 75.5846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "I2C1_SDA" bidirectional
+			(at 181.61 64.77 180)
+			(uuid "fa4fa4a4-97bf-4646-93c5-005c34ab6c2a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "I2C1_SCL" input
+			(at 181.61 67.31 180)
+			(uuid "7a5f397e-4792-4127-b38a-65f6dba2fe2b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "BARO_INT" output
+			(at 232.41 64.77 0)
+			(uuid "49da4306-4bf9-45f2-9c0f-4104efb8939a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "8")
+				)
+			)
+		)
 	)
-	(global_label "PACK_NEG" (shape output) (at 83.82 111.76 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-packneg")
+	(sheet
+		(at 83.82 50.8)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "9898fd8a-c00b-46f3-ae7b-37a274207c13")
+		(property "Sheetname" "Section_05_3V3_Regulator"
+			(at 83.82 50.0884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_05_3V3_Regulator.kicad_sch"
+			(at 83.82 64.1546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "VSYS" input
+			(at 83.82 53.34 180)
+			(uuid "4f2ba8e7-36b9-4a51-862d-de4506fe765b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "+3V3" output
+			(at 134.62 53.34 0)
+			(uuid "539ec902-89f1-48c2-a998-748e52da7580")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "5")
+				)
+			)
+		)
 	)
-	(global_label "+3V3" (shape output) (at 134.62 71.12 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-3v3")
+	(sheet
+		(at 19.05 78.74)
+		(size 50.8 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "d234c408-d830-4c44-85ab-eca6991bbf49")
+		(property "Sheetname" "Section_03_Charger"
+			(at 19.05 78.0284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_03_Charger.kicad_sch"
+			(at 19.05 97.1746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "VBUS" input
+			(at 19.05 81.28 180)
+			(uuid "896cd291-dc0b-41cd-b5a1-8e1334f61b6e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VSYS" output
+			(at 69.85 81.28 0)
+			(uuid "7a53e4bd-db6f-4068-9319-e054966b4f9c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "VBAT" bidirectional
+			(at 69.85 83.82 0)
+			(uuid "38eaccaa-b7d5-4c23-a2e1-5d9434db7126")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CHG_INT" output
+			(at 69.85 86.36 0)
+			(uuid "f62357d0-dece-47f5-afad-ca01e5f5f608")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "I2C4_SDA" bidirectional
+			(at 69.85 88.9 0)
+			(uuid "f5c272d3-6826-4720-a061-fb8f67bd7f2d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "I2C4_SCL" input
+			(at 69.85 91.44 0)
+			(uuid "39ea8584-b8fd-4fee-b0b4-b18778c82f10")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "3")
+				)
+			)
+		)
 	)
-	(global_label "+5V" (shape output) (at 134.62 86.36 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-5v")
+	(sheet
+		(at 279.4 147.32)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1.0000)
+		)
+		(uuid "e243a28a-0f5b-48ce-9094-ab8555e0c209")
+		(property "Sheetname" "Section_18_Vibration_Interface"
+			(at 279.4 146.6084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_18_Vibration_Interface.kicad_sch"
+			(at 279.4 160.6746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "16")
+				)
+			)
+		)
 	)
-	(global_label "I2C1_SDA" (shape bidirectional) (at 147.32 71.12 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-i2c1sda-baro")
+	(sheet
+		(at 22.86 105.41)
+		(size 50.8 15.24)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "e459fe19-d95f-4af5-86cb-c1c76981702e")
+		(property "Sheetname" "Section_04_BMS"
+			(at 22.86 104.6984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_04_BMS.kicad_sch"
+			(at 22.86 121.3046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "VBAT" input
+			(at 22.86 107.95 180)
+			(uuid "f45a9c39-287d-40a4-a401-70a3f33f8217")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VSYS" output
+			(at 73.66 107.95 0)
+			(uuid "96f1cec7-371b-405e-8eca-f09104da3e58")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "CELL_MID" bidirectional
+			(at 73.66 110.49 0)
+			(uuid "c7a194b3-3adc-46c8-b83d-2797d0df25e2")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "PACK_NEG" output
+			(at 73.66 113.03 0)
+			(uuid "28460a4b-9052-4e65-bc1d-0bf74b559f8a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "4")
+				)
+			)
+		)
 	)
-	(global_label "I2C1_SCL" (shape input) (at 147.32 73.66 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-i2c1scl-baro")
+	(sheet
+		(at 279.4 172.72)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 194 194 1.0000)
+		)
+		(uuid "ef947237-168f-45e4-a490-77a604236c1d")
+		(property "Sheetname" "Section_19_Audio"
+			(at 279.4 172.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_19_Audio.kicad_sch"
+			(at 279.4 186.0746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "17")
+				)
+			)
+		)
 	)
-	(global_label "BARO_INT" (shape output) (at 208.28 71.12 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-baroint")
+	(sheet
+		(at 180.34 101.6)
+		(size 50.8 12.7)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 194 194 255 1.0000)
+		)
+		(uuid "f5aed7f5-c707-4476-9145-c5c5ab5cfe28")
+		(property "Sheetname" "Section_09_Magnetometer"
+			(at 180.34 100.8884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Section_09_Magnetometer.kicad_sch"
+			(at 180.34 114.9546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+					(page "10")
+				)
+			)
+		)
 	)
-	(global_label "I2C1_SDA" (shape bidirectional) (at 83.82 137.16 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-i2c1sda-ioexp")
-	)
-	(global_label "I2C1_SCL" (shape input) (at 83.82 139.7 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-i2c1scl-ioexp")
-	)
-	(global_label "INTA" (shape output) (at 144.78 137.16 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-inta")
-	)
-	(global_label "INTB" (shape output) (at 144.78 139.7 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-intb")
-	)
-	(global_label "LED_DATA" (shape input) (at 83.82 157.48 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-leddata")
-	)
-	(global_label "ENC1_A" (shape output) (at 144.78 167.64 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-enc1a")
-	)
-	(global_label "ENC1_B" (shape output) (at 144.78 170.18 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-enc1b")
-	)
-	(global_label "ENC1_SW" (shape output) (at 144.78 172.72 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-enc1sw")
-	)
-	(global_label "ENC2_A" (shape output) (at 144.78 175.26 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-enc2a")
-	)
-	(global_label "ENC2_B" (shape output) (at 144.78 177.8 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-enc2b")
-	)
-	(global_label "ENC2_SW" (shape output) (at 144.78 180.34 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "gl-enc2sw")
-	)
-	(global_label "HSE_IN" (shape input) (at 20.32 137.16 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-hsein")
-	)
-	(global_label "HSE_OUT" (shape output) (at 20.32 139.7 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-hseout")
-	)
-	(global_label "LSE_IN" (shape input) (at 20.32 142.24 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-lsein")
-	)
-	(global_label "LSE_OUT" (shape output) (at 20.32 144.78 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-lseout")
-	)
-	(global_label "NRST" (shape input) (at 20.32 147.32 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-nrst")
-	)
-	(global_label "BOOT0" (shape input) (at 20.32 149.86 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "gl-boot0")
-	)
-
-
 	(sheet_instances
 		(path "/"
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )

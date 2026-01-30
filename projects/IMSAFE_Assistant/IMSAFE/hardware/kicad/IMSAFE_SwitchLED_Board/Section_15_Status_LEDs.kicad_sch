@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec15-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "eae44868-a211-4c71-bf1c-cc0325e73811")
 	(paper "A4")
 	(title_block
 		(title "Section 15: Status LEDs")
@@ -12,21 +12,7 @@
 		(comment 1 "WS2812B-2020 Addressable RGB LEDs")
 		(comment 2 "16 LEDs for switch status indication")
 	)
-
 	(lib_symbols)
-
-	(text "Status LEDs Section\n\nMain Components:\n- LED1-LED16: WS2812B-2020 (2x2mm) x16\n\nPassives (per LED):\n- C1501-C1516: 100nF 0603 decoupling x16\n\nData Line:\n- R1501: 330 Ohm 0603 data series (first LED only)\n\nTotal passives: 17\n\nInterface:\n- Single GPIO pin (LED_DATA via FFC)\n- DMA + timer for 800 kHz protocol\n- 5V power rail\n\nLED Arrangement (2 per switch):\n- LED1-LED2: Switch 1 (above/below)\n- LED3-LED4: Switch 2\n- LED5-LED6: Switch 3\n- LED7-LED8: Switch 4\n- LED9-LED10: Switch 5\n- LED11-LED12: Switch 6\n- LED13-LED14: Switch 7\n- LED15-LED16: Switch 8\n\nColors:\n- Green: Correct position\n- Red: Alarm\n- Amber: Attention\n\nPower: ~100mA typical, 192mA peak"
-		(exclude_from_sim no)
-		(at 25.4 25.4 0)
-		(effects
-			(font
-				(size 2 2)
-			)
-			(justify left)
-		)
-		(uuid "sec15-text-001")
-	)
-
 	(text "TODO: Add 16x WS2812B-2020 symbols, daisy-chain data\nEach LED needs adjacent 100nF decoupling"
 		(exclude_from_sim no)
 		(at 25.4 137.16 0)
@@ -37,6 +23,17 @@
 			)
 			(justify left)
 		)
-		(uuid "sec15-todo-001")
+		(uuid "1d479136-d4b9-4552-b868-5a47167da01b")
+	)
+	(text "Status LEDs Section\n\nMain Components:\n- LED1-LED16: WS2812B-2020 (2x2mm) x16\n\nPassives (per LED):\n- C1501-C1516: 100nF 0603 decoupling x16\n\nData Line:\n- R1501: 330 Ohm 0603 data series (first LED only)\n\nTotal passives: 17\n\nInterface:\n- Single GPIO pin (LED_DATA via FFC)\n- DMA + timer for 800 kHz protocol\n- 5V power rail\n\nLED Arrangement (2 per switch):\n- LED1-LED2: Switch 1 (above/below)\n- LED3-LED4: Switch 2\n- LED5-LED6: Switch 3\n- LED7-LED8: Switch 4\n- LED9-LED10: Switch 5\n- LED11-LED12: Switch 6\n- LED13-LED14: Switch 7\n- LED15-LED16: Switch 8\n\nColors:\n- Green: Correct position\n- Red: Alarm\n- Amber: Attention\n\nPower: ~100mA typical, 192mA peak"
+		(exclude_from_sim no)
+		(at 24.13 69.088 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "5e73ff98-1e2c-4429-bc1d-f91b0c9d56e5")
 	)
 )

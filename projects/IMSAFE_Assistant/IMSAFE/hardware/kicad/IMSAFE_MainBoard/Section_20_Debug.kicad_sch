@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec20-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "17d2a978-31c3-49ad-8310-2e25ccdfde2d")
 	(paper "A4")
 	(title_block
 		(title "Section 20: Debug & Test Points")
@@ -12,21 +12,18 @@
 		(comment 1 "Tag-Connect TC2030 + Debug Header")
 		(comment 2 "Test points for bring-up")
 	)
-
 	(lib_symbols)
-
 	(text "Debug & Test Points Section\n\nMain Components:\n- J6: Tag-Connect TC2030-IDC-NL footprint\n- J7: 6-pin debug header (2.54mm, optional)\n\nSWD Signals:\n- Pin 1: VCC (3.3V)\n- Pin 2: SWDIO (PA13)\n- Pin 3: GND\n- Pin 4: SWCLK (PA14)\n- Pin 5: NRST\n- Pin 6: SWO (PB3)\n\n(NRST pull-up already in MCU section: R103)\n\nTest Points:\n- TP1: +3V3 (power test)\n- TP2: +5V (power test)\n- TP3: VBAT (battery test)\n- TP4: GND (ground reference)\n- TP5: I2C1_SDA (debug)\n- TP6: I2C1_SCL (debug)\n\nPassive Count: 0 (test points only)\n\nNotes:\n- Tag-Connect saves PCB space and connector cost\n- 6-pin header optional for prototype convenience\n- Test points as keyhole vias (0.7mm pad)"
 		(exclude_from_sim no)
-		(at 25.4 25.4 0)
+		(at 22.606 60.706 0)
 		(effects
 			(font
 				(size 2 2)
 			)
 			(justify left)
 		)
-		(uuid "sec20-text-001")
+		(uuid "3b32ae14-8200-47e3-afa3-558bfdb0ad78")
 	)
-
 	(text "TODO: Add Tag-Connect footprint, test point symbols\nRefer to Tag-Connect TC2030 landing pattern"
 		(exclude_from_sim no)
 		(at 25.4 116.84 0)
@@ -37,6 +34,6 @@
 			)
 			(justify left)
 		)
-		(uuid "sec20-todo-001")
+		(uuid "afe31464-2bd1-4110-9b96-5e074ca4cd37")
 	)
 )

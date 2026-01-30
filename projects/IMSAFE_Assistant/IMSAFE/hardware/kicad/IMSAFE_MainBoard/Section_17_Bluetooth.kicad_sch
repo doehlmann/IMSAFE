@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec17-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "fbf6bf1e-6b76-4b2c-929e-91ce6d9bd63d")
 	(paper "A4")
 	(title_block
 		(title "Section 17: Bluetooth Module")
@@ -12,24 +12,1225 @@
 		(comment 1 "ESP32-C3-MINI-1 BLE/WiFi Module")
 		(comment 2 "UART interface to STM32")
 	)
-
-	(lib_symbols)
-
-	(text "Bluetooth Module Section\n\nMain Component:\n- U17: ESP32-C3-MINI-1 (module)\n\nPassives:\n- C1701: 10uF 0805 3V3 bulk\n- C1702: 100nF 0603 3V3 bypass\n- R1701: 10k 0603 EN pull-up\n- R1702: 10k 0603 IO9 pull-up (boot mode)\n- C1703: 1uF 0603 EN delay cap\n\nInterface (to STM32H747):\n- USART2_TX (PA2) --> RXD\n- USART2_RX (PA3) <-- TXD\n- GPIO (PC1) --> EN\n- GPIO (PC2) --> IO9 (boot)\n\nSpecs:\n- BLE 5.0\n- WiFi 802.11 b/g/n (2.4GHz)\n- PCB antenna (onboard)\n- Pre-certified: FCC, CE, IC, MIC, KCC\n- 4MB flash for AT firmware or custom\n\nPower:\n- Sleep: 5 uA\n- BLE active: 20-50 mA\n- TX peak: 350 mA (brief)\n\nFirmware: ESP-AT (transparent UART bridge)"
-		(exclude_from_sim no)
-		(at 25.4 25.4 0)
-		(effects
-			(font
-				(size 2 2)
+	(lib_symbols
+		(symbol "1_New_library:ESP32-C3-MINI-1-N4X"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "IC"
+				(at 29.21 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
 			)
-			(justify left)
+			(property "Value" "ESP32-C3-MINI-1-N4X"
+				(at 29.21 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+				)
+			)
+			(property "Footprint" "ESP32C3MINI1N4X"
+				(at 29.21 -94.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://documentation.espressif.com/esp32-c3-mini-1_datasheet_en.pdf"
+				(at 29.21 -194.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Description" "Bluetooth, WiFi 802.11b/g/n, Bluetooth v5.0 Transceiver Module 2.4GHz Integrated, Trace Surface Mount , 3V ~ 3.6V , -40C ~ 85C (TA)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Height" "2.55"
+				(at 29.21 -394.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Part Number" ""
+				(at 29.21 -494.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Mouser Price/Stock" ""
+				(at 29.21 -594.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Name" "Espressif Systems"
+				(at 29.21 -694.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(property "Manufacturer_Part_Number" "ESP32-C3-MINI-1-N4X"
+				(at 29.21 -794.92 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left top)
+					(hide yes)
+				)
+			)
+			(symbol "ESP32-C3-MINI-1-N4X_1_1"
+				(rectangle
+					(start 5.08 2.54)
+					(end 27.94 -78.74)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name "GND_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "GND_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -5.08 0)
+					(length 5.08)
+					(name "3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -7.62 0)
+					(length 5.08)
+					(name "NC_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -10.16 0)
+					(length 5.08)
+					(name "IO2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -12.7 0)
+					(length 5.08)
+					(name "IO3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -15.24 0)
+					(length 5.08)
+					(name "NC_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -17.78 0)
+					(length 5.08)
+					(name "EN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -20.32 0)
+					(length 5.08)
+					(name "NC_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -22.86 0)
+					(length 5.08)
+					(name "NC_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -25.4 0)
+					(length 5.08)
+					(name "GND_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -27.94 0)
+					(length 5.08)
+					(name "IO0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -30.48 0)
+					(length 5.08)
+					(name "IO1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -33.02 0)
+					(length 5.08)
+					(name "GND_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -35.56 0)
+					(length 5.08)
+					(name "NC_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -38.1 0)
+					(length 5.08)
+					(name "IO10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -40.64 0)
+					(length 5.08)
+					(name "NC_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -43.18 0)
+					(length 5.08)
+					(name "IO4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -45.72 0)
+					(length 5.08)
+					(name "IO5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -48.26 0)
+					(length 5.08)
+					(name "IO6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -50.8 0)
+					(length 5.08)
+					(name "IO7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -53.34 0)
+					(length 5.08)
+					(name "IO8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -55.88 0)
+					(length 5.08)
+					(name "IO9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -58.42 0)
+					(length 5.08)
+					(name "NC_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -60.96 0)
+					(length 5.08)
+					(name "NC_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "25"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -63.5 0)
+					(length 5.08)
+					(name "IO18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -66.04 0)
+					(length 5.08)
+					(name "IO19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -68.58 0)
+					(length 5.08)
+					(name "NC_9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -71.12 0)
+					(length 5.08)
+					(name "NC_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "29"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -73.66 0)
+					(length 5.08)
+					(name "RXD0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "30"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -76.2 0)
+					(length 5.08)
+					(name "TXD0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "31"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 0 180)
+					(length 5.08)
+					(name "NC_11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "32"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -2.54 180)
+					(length 5.08)
+					(name "NC_12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "33"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -5.08 180)
+					(length 5.08)
+					(name "NC_13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "34"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -7.62 180)
+					(length 5.08)
+					(name "NC_14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "35"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -10.16 180)
+					(length 5.08)
+					(name "GND_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "36"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -12.7 180)
+					(length 5.08)
+					(name "GND_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "37"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -15.24 180)
+					(length 5.08)
+					(name "GND_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "38"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -17.78 180)
+					(length 5.08)
+					(name "GND_8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "39"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -20.32 180)
+					(length 5.08)
+					(name "GND_9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "40"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -22.86 180)
+					(length 5.08)
+					(name "GND_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "41"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -25.4 180)
+					(length 5.08)
+					(name "GND_11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "42"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -27.94 180)
+					(length 5.08)
+					(name "GND_12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "43"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -30.48 180)
+					(length 5.08)
+					(name "GND_13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "44"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -33.02 180)
+					(length 5.08)
+					(name "GND_14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "45"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -35.56 180)
+					(length 5.08)
+					(name "GND_15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "46"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -38.1 180)
+					(length 5.08)
+					(name "GND_16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "47"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -40.64 180)
+					(length 5.08)
+					(name "GND_17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "48"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -43.18 180)
+					(length 5.08)
+					(name "GND_18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "49"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -45.72 180)
+					(length 5.08)
+					(name "GND_19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "50"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -48.26 180)
+					(length 5.08)
+					(name "GND_20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "51"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -50.8 180)
+					(length 5.08)
+					(name "GND_21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "52"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -53.34 180)
+					(length 5.08)
+					(name "GND_22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "53"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -55.88 180)
+					(length 5.08)
+					(name "GND_23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "54"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -58.42 180)
+					(length 5.08)
+					(name "GND_24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "55"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -60.96 180)
+					(length 5.08)
+					(name "GND_25"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "56"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -63.5 180)
+					(length 5.08)
+					(name "GND_26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "57"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -66.04 180)
+					(length 5.08)
+					(name "GND_27"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "58"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -68.58 180)
+					(length 5.08)
+					(name "GND_28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "59"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -71.12 180)
+					(length 5.08)
+					(name "GND_29"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "60"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 33.02 -73.66 180)
+					(length 5.08)
+					(name "GND_30"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "61"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
 		)
-		(uuid "sec17-text-001")
 	)
-
 	(text "TODO: Add ESP32-C3-MINI-1 symbol\nKeep antenna clear area per datasheet"
 		(exclude_from_sim no)
-		(at 25.4 124.46 0)
+		(at 51.562 160.782 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -37,6 +1238,314 @@
 			)
 			(justify left)
 		)
-		(uuid "sec17-todo-001")
+		(uuid "d179fdf8-6f4a-4324-b5e4-78d24354123e")
+	)
+	(text "Bluetooth Module Section\n\nMain Component:\n- U17: ESP32-C3-MINI-1 (module)\n\nPassives:\n- C1701: 10uF 0805 3V3 bulk\n- C1702: 100nF 0603 3V3 bypass\n- R1701: 10k 0603 EN pull-up\n- R1702: 10k 0603 IO9 pull-up (boot mode)\n- C1703: 1uF 0603 EN delay cap\n\nInterface (to STM32H747):\n- USART2_TX (PA2) --> RXD\n- USART2_RX (PA3) <-- TXD\n- GPIO (PC1) --> EN\n- GPIO (PC2) --> IO9 (boot)\n\nSpecs:\n- BLE 5.0\n- WiFi 802.11 b/g/n (2.4GHz)\n- PCB antenna (onboard)\n- Pre-certified: FCC, CE, IC, MIC, KCC\n- 4MB flash for AT firmware or custom\n\nPower:\n- Sleep: 5 uA\n- BLE active: 20-50 mA\n- TX peak: 350 mA (brief)\n\nFirmware: ESP-AT (transparent UART bridge)"
+		(exclude_from_sim no)
+		(at 25.4 69.596 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "fe17ca92-aeaa-42c1-94d6-f12a44b995bc")
+	)
+	(symbol
+		(lib_id "1_New_library:ESP32-C3-MINI-1-N4X")
+		(at 162.56 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "361d3264-609a-44ef-90a5-0554000a2f9a")
+		(property "Reference" "IC1"
+			(at 179.07 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "ESP32-C3-MINI-1-N4X"
+			(at 179.07 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "ESP32C3MINI1N4X"
+			(at 191.77 148.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://documentation.espressif.com/esp32-c3-mini-1_datasheet_en.pdf"
+			(at 191.77 248.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Description" "Bluetooth, WiFi 802.11b/g/n, Bluetooth v5.0 Transceiver Module 2.4GHz Integrated, Trace Surface Mount , 3V ~ 3.6V , -40C ~ 85C (TA)"
+			(at 162.56 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Height" "2.55"
+			(at 191.77 448.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Part Number" ""
+			(at 191.77 548.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Mouser Price/Stock" ""
+			(at 191.77 648.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Name" "Espressif Systems"
+			(at 191.77 748.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer_Part_Number" "ESP32-C3-MINI-1-N4X"
+			(at 191.77 848.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "10"
+			(uuid "67ec327a-764e-4c12-bd9a-4a70e2ce5e3b")
+		)
+		(pin "4"
+			(uuid "175c2a75-8cbe-4459-9c51-ff6c42aa99be")
+		)
+		(pin "12"
+			(uuid "6945af50-6327-4ee9-9105-d88274afba3b")
+		)
+		(pin "18"
+			(uuid "b06627c6-0f89-475e-bed5-7b750e3880a8")
+		)
+		(pin "29"
+			(uuid "3ef7e86d-54bc-4aed-adfc-e6eb102968ab")
+		)
+		(pin "20"
+			(uuid "f1063d8f-c351-4e5e-a916-6bb6e543e821")
+		)
+		(pin "15"
+			(uuid "4cca8ae2-3f71-4247-bc84-1ee401554583")
+		)
+		(pin "1"
+			(uuid "5721a515-6cfc-40da-941d-d73136ad0f87")
+		)
+		(pin "5"
+			(uuid "86485f5a-868e-4d80-b010-ff5c39e8d693")
+		)
+		(pin "19"
+			(uuid "c8b5f46c-18e8-4b90-8504-101a9ce4a3e6")
+		)
+		(pin "22"
+			(uuid "070767e8-0fb5-41d9-bf0f-3180c37d507e")
+		)
+		(pin "23"
+			(uuid "2d14ea7f-2469-426c-bf18-2aa8f6c9189c")
+		)
+		(pin "14"
+			(uuid "92c8b1a9-eb6e-4e1d-b74d-e35b051a7502")
+		)
+		(pin "25"
+			(uuid "848d61c8-581f-44af-a925-2841e350b08c")
+		)
+		(pin "16"
+			(uuid "d67231ff-6a46-4a06-bfb2-1c676e92384b")
+		)
+		(pin "17"
+			(uuid "2685a5ce-04a7-48c2-99bb-5ae4ad5331f5")
+		)
+		(pin "26"
+			(uuid "84bb115b-8ed5-4bee-bf63-61dd5a1a97be")
+		)
+		(pin "3"
+			(uuid "951a0ab3-7e1f-49e9-af5b-c40e352e15ed")
+		)
+		(pin "7"
+			(uuid "0f8af411-00df-4b91-8502-09f49198a838")
+		)
+		(pin "27"
+			(uuid "0b82e677-7052-4dd9-9426-27dab6976ae4")
+		)
+		(pin "28"
+			(uuid "222b1025-d12b-45df-9b1b-663dc57c33ad")
+		)
+		(pin "2"
+			(uuid "fdc6f38c-ad13-4374-827d-999a928b49bf")
+		)
+		(pin "8"
+			(uuid "08f6b1be-4f00-4117-bab4-cc5e7b53ecfe")
+		)
+		(pin "6"
+			(uuid "8c94012e-e133-4750-8ed7-45f3ffc283ec")
+		)
+		(pin "9"
+			(uuid "0670be2d-0578-4aaa-918b-f595e40771da")
+		)
+		(pin "11"
+			(uuid "992510d4-f905-4a21-aa80-84d22fb06dc2")
+		)
+		(pin "24"
+			(uuid "bf62bf09-a72f-4e32-a43b-15ecabf7ffec")
+		)
+		(pin "13"
+			(uuid "10a50883-5303-47f4-93e3-ac16ce01f47c")
+		)
+		(pin "21"
+			(uuid "d4e8282f-261f-42c3-88f7-7979dcc798f7")
+		)
+		(pin "54"
+			(uuid "635bd0db-34da-46ca-91c3-59f5445ddabc")
+		)
+		(pin "30"
+			(uuid "aea0ecd8-2013-4cd4-8cf8-5d04774ec084")
+		)
+		(pin "32"
+			(uuid "43a572e6-42dd-465d-83af-b5a083a714d2")
+		)
+		(pin "40"
+			(uuid "45f97694-a1ca-497e-9b77-c4dcb0ddc7ee")
+		)
+		(pin "43"
+			(uuid "8dd87773-e37e-4274-9f33-8dcd9b70d880")
+		)
+		(pin "37"
+			(uuid "795e1e00-46ed-4315-8d35-5a30f368d066")
+		)
+		(pin "31"
+			(uuid "22a4d306-2028-44d8-a5fc-84b5ad7a7020")
+		)
+		(pin "44"
+			(uuid "1ba34b9c-c1ae-4377-89c6-32cbdd7cf769")
+		)
+		(pin "36"
+			(uuid "7b1566e7-b98f-49e6-80a4-cd9b00ddc989")
+		)
+		(pin "50"
+			(uuid "7c0fe49f-254e-46c0-8415-9b6a0a59319a")
+		)
+		(pin "33"
+			(uuid "5147a449-50fd-400b-81c0-2dd09fdd382f")
+		)
+		(pin "42"
+			(uuid "838cf7ce-157b-4815-a9e2-c79b667fff24")
+		)
+		(pin "49"
+			(uuid "7cd630c3-8eae-4ed3-88b6-422337d2aedd")
+		)
+		(pin "39"
+			(uuid "aad7d2cf-9412-4a4b-85c1-a5643694cbc6")
+		)
+		(pin "46"
+			(uuid "7d7db2e4-1c45-4ecc-aa5b-72ebc611b53f")
+		)
+		(pin "34"
+			(uuid "cec22556-7efb-44c4-9174-96378f8d635e")
+		)
+		(pin "38"
+			(uuid "ab913e92-36fc-4408-8999-2e491dd38ecc")
+		)
+		(pin "51"
+			(uuid "0a4b73a7-3f59-43c3-9d9b-5a68ab1673b3")
+		)
+		(pin "45"
+			(uuid "81b4a080-bf30-4a3e-9924-95d444241038")
+		)
+		(pin "35"
+			(uuid "f4ec81c6-8a39-43f2-9a48-4e4a0fd879cf")
+		)
+		(pin "41"
+			(uuid "60299cf9-1d76-4077-bd12-bb591946266a")
+		)
+		(pin "48"
+			(uuid "399cfd5b-e5df-4e6e-a977-60012982ca21")
+		)
+		(pin "53"
+			(uuid "eead4882-9a1d-4fdd-b332-32dc893e1954")
+		)
+		(pin "47"
+			(uuid "a32c800c-27fd-45b6-b772-27671faf955f")
+		)
+		(pin "52"
+			(uuid "43ba605e-f02c-4bcf-8a41-05c8a01a8655")
+		)
+		(pin "56"
+			(uuid "8b31495c-0650-4751-843f-7fa0307fcf86")
+		)
+		(pin "57"
+			(uuid "a76c0e31-22f4-4391-b10a-7ff728f98583")
+		)
+		(pin "55"
+			(uuid "84297cda-8496-4e9b-9a1b-174579f9a357")
+		)
+		(pin "58"
+			(uuid "ce2f1bd7-2e95-4789-bff5-30318bbca7b3")
+		)
+		(pin "59"
+			(uuid "d1cd21ce-2f91-48c8-b886-d2389eae40b0")
+		)
+		(pin "60"
+			(uuid "e93bacfc-5c25-47bc-9d4f-59daa1ac4bc0")
+		)
+		(pin "61"
+			(uuid "50b8f0b5-f13a-434d-8917-bf039dec98ff")
+		)
+		(instances
+			(project ""
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/201d3654-59fe-45c7-8105-0bc6e76df53b"
+					(reference "IC1")
+					(unit 1)
+				)
+			)
+		)
 	)
 )

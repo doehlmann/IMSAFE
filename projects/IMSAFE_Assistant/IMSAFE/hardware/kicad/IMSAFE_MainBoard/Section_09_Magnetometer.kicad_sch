@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec09-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "597cf627-a708-4cdc-853d-1afa832a47b9")
 	(paper "A4")
 	(title_block
 		(title "Section 09: Magnetometer")
@@ -12,439 +12,1900 @@
 		(comment 1 "MMC5983MA 3-Axis Magnetometer")
 		(comment 2 "I2C address 0x30")
 	)
-
 	(lib_symbols
 		(symbol "Device:C"
-			(pin_numbers hide)
-			(pin_names (offset 0.254))
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "C" (at 0.635 2.54 0)
-				(effects (font (size 1.27 1.27)) (justify left))
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
 			)
-			(property "Value" "C" (at 0.635 -2.54 0)
-				(effects (font (size 1.27 1.27)) (justify left))
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
 			)
-			(property "Footprint" "" (at 0.9652 -3.81 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "~" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "C_0_1"
-				(polyline (pts (xy -2.032 -0.762) (xy 2.032 -0.762))
-					(stroke (width 0.508) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
-				(polyline (pts (xy -2.032 0.762) (xy 2.032 0.762))
-					(stroke (width 0.508) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
 			)
 			(symbol "C_1_1"
-				(pin passive line (at 0 3.81 270) (length 2.794)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin passive line (at 0 -3.81 90) (length 2.794)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
-				)
-			)
-		)
-		(symbol "power:GND"
-			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -6.35 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Value" "GND" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "GND_0_1"
-				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-			)
-			(symbol "GND_1_1"
-				(pin power_in line (at 0 0 270) (length 0)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
 			)
-		)
-		(symbol "power:+3V3"
-			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Value" "+3V3" (at 0 3.556 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "+3V3_0_1"
-				(polyline (pts (xy -0.762 1.27) (xy 0 2.54))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0 0) (xy 0 2.54))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0 2.54) (xy 0.762 1.27))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-			)
-			(symbol "+3V3_1_1"
-				(pin power_in line (at 0 0 90) (length 0)
-					(name "+3V3" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
-				)
-			)
+			(embedded_fonts no)
 		)
 		(symbol "Sensor:MMC5983MA"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U" (at 0 12.7 0)
-				(effects (font (size 1.27 1.27)))
+			(property "Reference" "U"
+				(at 0 12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Value" "MMC5983MA" (at 0 10.16 0)
-				(effects (font (size 1.27 1.27)))
+			(property "Value" "MMC5983MA"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Footprint" "Package_LGA:LGA-16_3x3mm_P0.5mm" (at 0 -15.24 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" "Package_LGA:LGA-16_3x3mm_P0.5mm"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "https://www.memsic.com/Public/Uploads/uploadfile/files/20220119/MMC5983MADatasheetRevA.pdf" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" "https://www.memsic.com/Public/Uploads/uploadfile/files/20220119/MMC5983MADatasheetRevA.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "MMC5983MA_0_1"
-				(rectangle (start -8.89 8.89) (end 8.89 -8.89)
-					(stroke (width 0.254) (type default)) (fill (type background))
+				(rectangle
+					(start -8.89 8.89)
+					(end 8.89 -8.89)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
 				)
 			)
 			(symbol "MMC5983MA_1_1"
-				(pin power_in line (at -11.43 6.35 0) (length 2.54)
-					(name "VDD" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at -11.43 6.35 0)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin power_in line (at -11.43 3.81 0) (length 2.54)
-					(name "VDDIO" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at -11.43 3.81 0)
+					(length 2.54)
+					(name "VDDIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin input line (at -11.43 1.27 0) (length 2.54)
-					(name "SCL" (effects (font (size 1.27 1.27))))
-					(number "3" (effects (font (size 1.27 1.27))))
+				(pin input line
+					(at -11.43 1.27 0)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin bidirectional line (at -11.43 -1.27 0) (length 2.54)
-					(name "SDA" (effects (font (size 1.27 1.27))))
-					(number "4" (effects (font (size 1.27 1.27))))
+				(pin bidirectional line
+					(at -11.43 -1.27 0)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin input line (at -11.43 -3.81 0) (length 2.54)
-					(name "SA0" (effects (font (size 1.27 1.27))))
-					(number "5" (effects (font (size 1.27 1.27))))
+				(pin input line
+					(at -11.43 -3.81 0)
+					(length 2.54)
+					(name "SA0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin input line (at -11.43 -6.35 0) (length 2.54)
-					(name "SA1" (effects (font (size 1.27 1.27))))
-					(number "6" (effects (font (size 1.27 1.27))))
+				(pin input line
+					(at -11.43 -6.35 0)
+					(length 2.54)
+					(name "SA1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin power_in line (at 0 -11.43 90) (length 2.54)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "7" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at -5.08 -11.43 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin output line (at 11.43 6.35 180) (length 2.54)
-					(name "INT" (effects (font (size 1.27 1.27))))
-					(number "8" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at -2.54 -11.43 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin passive line (at 11.43 3.81 180) (length 2.54)
-					(name "C1" (effects (font (size 1.27 1.27))))
-					(number "9" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at 0 -11.43 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin power_in line (at 2.54 -11.43 90) (length 2.54)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "10" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at 2.54 -11.43 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin no_connect line (at 11.43 1.27 180) (length 2.54)
-					(name "NC" (effects (font (size 1.27 1.27))))
-					(number "11" (effects (font (size 1.27 1.27))))
+				(pin output line
+					(at 11.43 6.35 180)
+					(length 2.54)
+					(name "INT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin no_connect line (at 11.43 -1.27 180) (length 2.54)
-					(name "NC" (effects (font (size 1.27 1.27))))
-					(number "12" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 11.43 3.81 180)
+					(length 2.54)
+					(name "C1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin no_connect line (at 11.43 -3.81 180) (length 2.54)
-					(name "NC" (effects (font (size 1.27 1.27))))
-					(number "13" (effects (font (size 1.27 1.27))))
+				(pin no_connect line
+					(at 11.43 1.27 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin no_connect line (at 11.43 -6.35 180) (length 2.54)
-					(name "NC" (effects (font (size 1.27 1.27))))
-					(number "14" (effects (font (size 1.27 1.27))))
+				(pin no_connect line
+					(at 11.43 -1.27 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin power_in line (at -2.54 -11.43 90) (length 2.54)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "15" (effects (font (size 1.27 1.27))))
+				(pin no_connect line
+					(at 11.43 -3.81 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin power_in line (at -5.08 -11.43 90) (length 2.54)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "16" (effects (font (size 1.27 1.27))))
+				(pin no_connect line
+					(at 11.43 -6.35 180)
+					(length 2.54)
+					(name "NC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+3V3"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "+3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "MMC5983MA 3-Axis Magnetometer\n\nSpecifications:\n- Resolution: 18-bit\n- Noise: 0.4 mG RMS (best-in-class)\n- Full scale: +/- 8 Gauss\n- ODR: up to 1000 Hz\n- Operating temp: -40 to +105C\n- Supply: VDD 2.16-3.6V, VDDIO 1.62-3.6V\n- Current: 0.8mA @ 100Hz\n- Interface: I2C @ 400kHz (address 0x30)\n\nKey Components:\n- U11: MMC5983MA (LGA-16 3x3mm) - JLCPCB C2903306\n- C901: 100nF VDD bypass - JLCPCB C14663\n- C902: 100nF VDDIO bypass - JLCPCB C14663\n- C903: 4.7uF C1 cap (internal use) - JLCPCB C19666\n\nConfiguration:\n- SA0 = SA1 = GND for I2C address 0x30\n- Built-in SET/RESET for offset cancellation\n- I2C pull-ups in Section 03\n\nPlacement Notes:\n- Mount AWAY from motors, speakers, ferrous metals\n- Keep distance from power magnetics\n- Requires soft-iron and hard-iron calibration"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left)
+		)
+		(uuid "1d6ade41-e699-4622-a115-a774f918a7fd")
+	)
+	(text "VDDIO Bypass\nC902 100nF\nPlace close to pin 2"
+		(exclude_from_sim no)
+		(at 76.2 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "65814027-e927-471b-b5de-04aa6c07b9b5")
+	)
+	(text "VDD Bypass\nC901 100nF\nPlace close to pin 1"
+		(exclude_from_sim no)
+		(at 99.06 127 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "a8f54aa6-79d4-46b1-afb0-52392831dcdb")
+	)
+	(text "C1 Internal Cap\nC903 4.7uF\nRequired on pin 9"
+		(exclude_from_sim no)
+		(at 154.94 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "b3e67cf8-ea00-497d-ad95-f003e449949c")
+	)
+	(text "I2C Config:\nSA0 = SA1 = GND -> Address 0x30\nPull-ups in Section 03"
+		(exclude_from_sim no)
+		(at 101.6 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "bb7f4fb2-6f95-420f-9cb0-1caf872dbe61")
+	)
+	(wire
+		(pts
+			(xy 99.06 105.41) (xy 115.57 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "069d7746-d6af-4a72-a788-71e1bcf57539")
+	)
+	(wire
+		(pts
+			(xy 115.57 115.57) (xy 83.82 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0fa45e1b-e017-43c4-9f6c-1f7df6f87b07")
+	)
+	(wire
+		(pts
+			(xy 138.43 118.11) (xy 154.94 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26034ec6-d5a5-48cf-a30f-0b1ad1c38b1a")
+	)
+	(wire
+		(pts
+			(xy 88.9 105.41) (xy 88.9 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29c48473-efdd-4a39-a9a0-ef588543cda9")
+	)
+	(wire
+		(pts
+			(xy 99.06 105.41) (xy 99.06 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b870cb0-b0a4-47dd-be7e-acd2b2624de9")
+	)
+	(wire
+		(pts
+			(xy 88.9 110.49) (xy 115.57 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3641f49c-a4de-4228-b4c1-55058bdd643e")
+	)
+	(wire
+		(pts
+			(xy 99.06 113.03) (xy 99.06 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51c43832-6723-49a0-9e1f-aa477c735876")
+	)
+	(wire
+		(pts
+			(xy 115.57 105.41) (xy 115.57 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61e1ae7a-5388-4b23-83e7-72d79c7329cf")
+	)
+	(wire
+		(pts
+			(xy 99.06 101.6) (xy 99.06 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "630f6ac8-2e3e-4e2b-ac03-ca2d882c4f75")
+	)
+	(wire
+		(pts
+			(xy 127 125.73) (xy 127 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d12ef6c-ee44-4e23-aa7e-75d8de2a0b40")
+	)
+	(wire
+		(pts
+			(xy 124.46 125.73) (xy 127 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7fd9bcd1-a4c7-4732-b375-6070fadf2741")
+	)
+	(wire
+		(pts
+			(xy 109.22 110.49) (xy 109.22 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83b59f0d-597d-4b46-b946-2c96540b47fe")
+	)
+	(wire
+		(pts
+			(xy 115.57 120.65) (xy 106.68 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a24c646-4ec9-487d-a46e-425623defee2")
+	)
+	(wire
+		(pts
+			(xy 121.92 125.73) (xy 124.46 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2be6e3c-70bc-43c0-b2fc-82f3c4166c1d")
+	)
+	(wire
+		(pts
+			(xy 88.9 113.03) (xy 88.9 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a69f58b3-0c56-47c0-b131-668caa64747a")
+	)
+	(wire
+		(pts
+			(xy 88.9 101.6) (xy 88.9 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6c7ecf6-2f65-4401-9397-86f3e8556191")
+	)
+	(wire
+		(pts
+			(xy 115.57 113.03) (xy 83.82 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c01a5734-7534-48ad-87bd-8d23541cc52d")
+	)
+	(wire
+		(pts
+			(xy 106.68 120.65) (xy 106.68 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c345efd8-5cf3-475d-a82a-8cbe5cb17647")
+	)
+	(wire
+		(pts
+			(xy 154.94 118.11) (xy 154.94 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c7b47c2a-0b63-4289-bddf-3794467d1af8")
+	)
+	(wire
+		(pts
+			(xy 129.54 125.73) (xy 127 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d74fcd13-a0ec-41e6-bee1-6cf1a7725a3a")
+	)
+	(wire
+		(pts
+			(xy 138.43 107.95) (xy 160.02 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5b1b8de-7a28-495a-bc57-f1b5425bf969")
+	)
+	(wire
+		(pts
+			(xy 154.94 110.49) (xy 154.94 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f568ba99-ffd9-48e8-bc9c-2dd7791f89aa")
+	)
+	(label "MAG_INT"
+		(at 157.48 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "55894b2c-4057-457a-92c6-8084e3d6a045")
+	)
+	(label "I2C1_SDA"
+		(at 86.36 115.57 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a3dc04ac-f765-4410-8319-eda0f74c5590")
+	)
+	(label "I2C1_SCL"
+		(at 86.36 113.03 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a9997312-04fe-4f6a-99c9-7ea6ac3c5eaf")
+	)
+	(hierarchical_label "MAG_INT"
+		(shape output)
+		(at 160.02 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "17a13080-5156-4de7-990c-1052afe0e4e3")
+	)
+	(hierarchical_label "I2C1_SCL"
+		(shape input)
+		(at 83.82 113.03 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4300b30f-589d-4285-a25a-2b6e47f585f0")
+	)
+	(hierarchical_label "I2C1_SDA"
+		(shape bidirectional)
+		(at 83.82 115.57 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "89aebcb0-cdc0-4e6b-9a5b-a8675b92451b")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 109.22 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "335b5d4e-f30f-4c66-a7c9-77058f4b8d3c")
+		(property "Reference" "#PWR?"
+			(at 109.22 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 109.22 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 109.22 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 109.22 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "19c26960-15a2-4b37-a983-148114ad40f0")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "#PWR?")
+					(unit 1)
 				)
 			)
 		)
 	)
-
-	(text "MMC5983MA 3-Axis Magnetometer\n\nSpecifications:\n- Resolution: 18-bit\n- Noise: 0.4 mG RMS (best-in-class)\n- Full scale: +/- 8 Gauss\n- ODR: up to 1000 Hz\n- Operating temp: -40 to +105C\n- Supply: VDD 2.16-3.6V, VDDIO 1.62-3.6V\n- Current: 0.8mA @ 100Hz\n- Interface: I2C @ 400kHz (address 0x30)\n\nKey Components:\n- U11: MMC5983MA (LGA-16 3x3mm) - JLCPCB C2903306\n- C901: 100nF VDD bypass - JLCPCB C14663\n- C902: 100nF VDDIO bypass - JLCPCB C14663\n- C903: 4.7uF C1 cap (internal use) - JLCPCB C19666\n\nConfiguration:\n- SA0 = SA1 = GND for I2C address 0x30\n- Built-in SET/RESET for offset cancellation\n- I2C pull-ups in Section 03\n\nPlacement Notes:\n- Mount AWAY from motors, speakers, ferrous metals\n- Keep distance from power magnetics\n- Requires soft-iron and hard-iron calibration"
+	(symbol
+		(lib_id "Device:C")
+		(at 88.9 109.22 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 25.4 25.4 0)
-		(effects (font (size 1.8 1.8)) (justify left))
-		(uuid "sec09-text-001")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4eb99565-8770-4e39-ad75-72d3448f6f04")
+		(property "Reference" "C?"
+			(at 91.44 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 91.44 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 89.8652 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 88.9 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 88.9 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C14663"
+			(at 88.9 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3996b465-4d31-4511-83eb-58527e9dd514")
+		)
+		(pin "2"
+			(uuid "9f1a1bf5-f33a-4c77-b7fb-2b5d6df199fd")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "Sensor:MMC5983MA") (at 127 114.3 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "u11-mmc5983ma-uuid")
-		(property "Reference" "U11" (at 127 99.06 0) (effects (font (size 1.27 1.27))))
-		(property "Value" "MMC5983MA" (at 127 101.6 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "Package_LGA:LGA-16_3x3mm_P0.5mm" (at 127 129.54 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "https://www.memsic.com/Public/Uploads/uploadfile/files/20220119/MMC5983MADatasheetRevA.pdf" (at 127 114.3 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C2903306" (at 127 114.3 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "u11-vdd")) (pin "2" (uuid "u11-vddio")) (pin "3" (uuid "u11-scl"))
-		(pin "4" (uuid "u11-sda")) (pin "5" (uuid "u11-sa0")) (pin "6" (uuid "u11-sa1"))
-		(pin "7" (uuid "u11-gnd1")) (pin "8" (uuid "u11-int")) (pin "9" (uuid "u11-c1"))
-		(pin "10" (uuid "u11-gnd2")) (pin "11" (uuid "u11-nc1")) (pin "12" (uuid "u11-nc2"))
-		(pin "13" (uuid "u11-nc3")) (pin "14" (uuid "u11-nc4")) (pin "15" (uuid "u11-gnd3"))
-		(pin "16" (uuid "u11-gnd4"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "U11") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:C") (at 99.06 109.22 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c901-uuid")
-		(property "Reference" "C901" (at 101.6 107.95 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "100nF" (at 101.6 110.49 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 100.0252 113.03 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 99.06 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C14663" (at 99.06 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c901-p1")) (pin "2" (uuid "c901-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "C901") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:C") (at 88.9 109.22 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c902-uuid")
-		(property "Reference" "C902" (at 91.44 107.95 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "100nF" (at 91.44 110.49 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 89.8652 113.03 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 88.9 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C14663" (at 88.9 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c902-p1")) (pin "2" (uuid "c902-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "C902") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:C") (at 154.94 114.3 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c903-uuid")
-		(property "Reference" "C903" (at 157.48 113.03 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "4.7uF" (at 157.48 115.57 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 155.9052 118.11 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 154.94 114.3 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C19666" (at 154.94 114.3 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c903-p1")) (pin "2" (uuid "c903-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "C903") (unit 1))))
-	)
-
-	(symbol (lib_id "power:+3V3") (at 99.06 101.6 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-3v3-vdd")
-		(property "Reference" "#PWR0901" (at 99.06 105.41 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "+3V3" (at 99.06 97.79 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 99.06 101.6 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 99.06 101.6 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-3v3-vdd-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "#PWR0901") (unit 1))))
-	)
-
-	(symbol (lib_id "power:+3V3") (at 88.9 101.6 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-3v3-vddio")
-		(property "Reference" "#PWR0902" (at 88.9 105.41 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "+3V3" (at 88.9 97.79 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 88.9 101.6 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 88.9 101.6 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-3v3-vddio-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "#PWR0902") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 127 129.54 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-u11")
-		(property "Reference" "#PWR0903" (at 127 135.89 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 127 133.35 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 127 129.54 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 127 129.54 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-u11-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "#PWR0903") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 99.06 119.38 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-c901")
-		(property "Reference" "#PWR0904" (at 99.06 125.73 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 99.06 123.19 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 99.06 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 99.06 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-c901-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "#PWR0904") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 88.9 119.38 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-c902")
-		(property "Reference" "#PWR0905" (at 88.9 125.73 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 88.9 123.19 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 88.9 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 88.9 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-c902-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "#PWR0905") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 154.94 124.46 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-c903")
-		(property "Reference" "#PWR0906" (at 154.94 130.81 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 154.94 128.27 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 154.94 124.46 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 154.94 124.46 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-c903-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "#PWR0906") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 109.22 124.46 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-sa0")
-		(property "Reference" "#PWR0907" (at 109.22 130.81 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 109.22 128.27 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 109.22 124.46 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 109.22 124.46 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-sa0-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "#PWR0907") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 106.68 127 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-sa1")
-		(property "Reference" "#PWR0908" (at 106.68 133.35 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 106.68 130.81 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 106.68 127 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 106.68 127 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-sa1-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec09-0001-0002-0003-000000000001" (reference "#PWR0908") (unit 1))))
-	)
-
-	(wire (pts (xy 99.06 101.6) (xy 99.06 105.41)) (stroke (width 0) (type default)) (uuid "w-3v3-c901-top"))
-	(wire (pts (xy 99.06 105.41) (xy 99.06 107.95)) (stroke (width 0) (type default)) (uuid "w-vdd-c901"))
-	(wire (pts (xy 99.06 105.41) (xy 115.57 105.41)) (stroke (width 0) (type default)) (uuid "w-vdd-conn"))
-	(wire (pts (xy 115.57 105.41) (xy 115.57 107.95)) (stroke (width 0) (type default)) (uuid "w-vdd-u11"))
-	(wire (pts (xy 99.06 113.03) (xy 99.06 119.38)) (stroke (width 0) (type default)) (uuid "w-c901-gnd"))
-
-	(wire (pts (xy 88.9 101.6) (xy 88.9 105.41)) (stroke (width 0) (type default)) (uuid "w-3v3-c902-top"))
-	(wire (pts (xy 88.9 105.41) (xy 88.9 110.49)) (stroke (width 0) (type default)) (uuid "w-vddio-c902"))
-	(wire (pts (xy 88.9 110.49) (xy 115.57 110.49)) (stroke (width 0) (type default)) (uuid "w-vddio-conn"))
-	(wire (pts (xy 88.9 113.03) (xy 88.9 119.38)) (stroke (width 0) (type default)) (uuid "w-c902-gnd"))
-
-	(wire (pts (xy 138.43 118.11) (xy 154.94 118.11)) (stroke (width 0) (type default)) (uuid "w-c1-u11"))
-	(wire (pts (xy 154.94 110.49) (xy 154.94 118.11)) (stroke (width 0) (type default)) (uuid "w-c1-vert"))
-	(wire (pts (xy 154.94 118.11) (xy 154.94 124.46)) (stroke (width 0) (type default)) (uuid "w-c903-gnd"))
-
-	(wire (pts (xy 127 125.73) (xy 127 127)) (stroke (width 0) (type default)) (uuid "w-u11-gnd-join1"))
-	(wire (pts (xy 124.46 125.73) (xy 127 125.73)) (stroke (width 0) (type default)) (uuid "w-u11-gnd-join2"))
-	(wire (pts (xy 129.54 125.73) (xy 127 125.73)) (stroke (width 0) (type default)) (uuid "w-u11-gnd-join3"))
-	(wire (pts (xy 121.92 125.73) (xy 124.46 125.73)) (stroke (width 0) (type default)) (uuid "w-u11-gnd-join4"))
-	(wire (pts (xy 127 127) (xy 127 129.54)) (stroke (width 0) (type default)) (uuid "w-u11-gnd"))
-
-	(wire (pts (xy 115.57 110.49) (xy 109.22 110.49)) (stroke (width 0) (type default)) (uuid "w-sa0-horiz"))
-	(wire (pts (xy 109.22 110.49) (xy 109.22 124.46)) (stroke (width 0) (type default)) (uuid "w-sa0-gnd"))
-	(wire (pts (xy 115.57 120.65) (xy 106.68 120.65)) (stroke (width 0) (type default)) (uuid "w-sa1-horiz"))
-	(wire (pts (xy 106.68 120.65) (xy 106.68 127)) (stroke (width 0) (type default)) (uuid "w-sa1-gnd"))
-
-	(wire (pts (xy 115.57 113.03) (xy 83.82 113.03)) (stroke (width 0) (type default)) (uuid "w-scl-u11"))
-	(wire (pts (xy 115.57 115.57) (xy 83.82 115.57)) (stroke (width 0) (type default)) (uuid "w-sda-u11"))
-
-	(wire (pts (xy 138.43 107.95) (xy 160.02 107.95)) (stroke (width 0) (type default)) (uuid "w-int-u11"))
-
-	(label "I2C1_SCL" (at 86.36 113.03 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "label-scl")
-	)
-
-	(label "I2C1_SDA" (at 86.36 115.57 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "label-sda")
-	)
-
-	(label "MAG_INT" (at 157.48 107.95 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "label-int")
-	)
-
-	(hierarchical_label "I2C1_SCL" (shape input) (at 83.82 113.03 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "hl-scl")
-	)
-
-	(hierarchical_label "I2C1_SDA" (shape bidirectional) (at 83.82 115.57 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "hl-sda")
-	)
-
-	(hierarchical_label "MAG_INT" (shape output) (at 160.02 107.95 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "hl-int")
-	)
-
-	(text "VDD Bypass\nC901 100nF\nPlace close to pin 1"
+	(symbol
+		(lib_id "power:GND")
+		(at 154.94 124.46 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 99.06 127 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-c901")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5abb8729-219c-483d-9fdc-942fcb49baca")
+		(property "Reference" "#PWR?"
+			(at 154.94 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 154.94 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "53e19f75-8097-4aa5-9d85-39549d58be52")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(text "VDDIO Bypass\nC902 100nF\nPlace close to pin 2"
+	(symbol
+		(lib_id "Sensor:MMC5983MA")
+		(at 127 114.3 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 76.2 109.22 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-c902")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "644b099b-e46d-4ce4-8495-860403bb030f")
+		(property "Reference" "U?"
+			(at 127 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MMC5983MA"
+			(at 127 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Package_LGA:LGA-16_3x3mm_P0.5mm"
+			(at 127 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.memsic.com/Public/Uploads/uploadfile/files/20220119/MMC5983MADatasheetRevA.pdf"
+			(at 127 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C2903306"
+			(at 127 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "88518acc-460d-4285-934f-fa6a8e18ca4c")
+		)
+		(pin "2"
+			(uuid "40332237-e58c-445b-8f02-0c077df6f973")
+		)
+		(pin "3"
+			(uuid "919a4d0d-fb53-494e-8353-b70094b6defa")
+		)
+		(pin "4"
+			(uuid "0e3b99d1-a528-41b4-9f1b-d030d8f4fd3d")
+		)
+		(pin "5"
+			(uuid "13bb78ae-de1d-4d09-ab23-c0969ccba42d")
+		)
+		(pin "6"
+			(uuid "3b345a13-1fc6-420c-aa35-b4353f5c3551")
+		)
+		(pin "7"
+			(uuid "b55a9dad-0588-49a0-a675-22650e7bed55")
+		)
+		(pin "8"
+			(uuid "10b949d7-4bf1-43bf-9a40-d6ae267f7fa9")
+		)
+		(pin "9"
+			(uuid "66446f2a-0eee-43ea-a324-e769da5d715b")
+		)
+		(pin "10"
+			(uuid "98b27e69-c2a7-4e48-864a-11cf5efd287b")
+		)
+		(pin "11"
+			(uuid "b7485dcd-971d-4f9e-9065-6d60efbcb455")
+		)
+		(pin "12"
+			(uuid "e1b09555-0e22-4b04-bd51-c3d884b03b98")
+		)
+		(pin "13"
+			(uuid "f9e003b5-5878-4955-8488-c92d2039cd0f")
+		)
+		(pin "14"
+			(uuid "e55d7774-9d00-4804-8960-0b9159a640c2")
+		)
+		(pin "15"
+			(uuid "d108d79a-3851-4704-acf8-308471d67579")
+		)
+		(pin "16"
+			(uuid "6702e9e3-db07-40b1-9023-70491fd5ec64")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "U?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(text "C1 Internal Cap\nC903 4.7uF\nRequired on pin 9"
+	(symbol
+		(lib_id "power:+3V3")
+		(at 99.06 101.6 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 154.94 132.08 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-c903")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7350662d-54bf-4e6c-86d1-94e942b6c986")
+		(property "Reference" "#PWR?"
+			(at 99.06 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 99.06 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3979947e-4513-4a7c-bdc2-2ea6f8f33876")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(text "I2C Config:\nSA0 = SA1 = GND -> Address 0x30\nPull-ups in Section 03"
+	(symbol
+		(lib_id "Device:C")
+		(at 99.06 109.22 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 101.6 144.78 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-i2c-config")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8571c02e-f1a5-4025-a75c-28b073fb6077")
+		(property "Reference" "C?"
+			(at 101.6 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 101.6 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 100.0252 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 99.06 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C14663"
+			(at 99.06 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3021eeed-029a-4d6d-96db-5124303f6aba")
+		)
+		(pin "2"
+			(uuid "aa065c42-5076-446d-a6da-e2bb94fa11bb")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(sheet_instances (path "/" (page "1")))
+	(symbol
+		(lib_id "power:GND")
+		(at 127 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "88453907-dfe4-437d-80ee-1d723484a530")
+		(property "Reference" "#PWR?"
+			(at 127 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 127 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bbe44506-d657-4bfd-8318-16deac9342fc")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 88.9 101.6 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8cb95e62-27ed-43a3-8086-5f6970da2bf9")
+		(property "Reference" "#PWR?"
+			(at 88.9 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 88.9 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 88.9 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9db0da5c-4ab9-4eee-a3e1-0282a7d21ffd")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 88.9 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a7dce635-75d3-47e7-8e51-3c36b196b15e")
+		(property "Reference" "#PWR?"
+			(at 88.9 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 88.9 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 88.9 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "9b14d7c7-c321-4a52-ae57-e583c7f31185")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 106.68 127 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b98a0922-950d-48dd-8e9e-9688f579b996")
+		(property "Reference" "#PWR?"
+			(at 106.68 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 106.68 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8f44d29d-6fcd-4a1e-8e55-f335acb35e52")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 154.94 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d0b9b20e-96a6-455a-ad79-d43303fe1ed8")
+		(property "Reference" "C?"
+			(at 157.48 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "4.7uF"
+			(at 157.48 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 155.9052 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 154.94 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 154.94 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C19666"
+			(at 154.94 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f59ec960-2d04-4347-90ee-b54b83f92d21")
+		)
+		(pin "2"
+			(uuid "3f135940-2265-47a8-b288-f50e82e19d06")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 99.06 119.38 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d2ca6677-1967-4eb7-877a-60db518d6ba1")
+		(property "Reference" "#PWR?"
+			(at 99.06 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 99.06 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "652cf47c-9abe-4ff0-8fcf-63a25539d789")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/f5aed7f5-c707-4476-9145-c5c5ab5cfe28"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )

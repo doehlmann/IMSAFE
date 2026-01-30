@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec08-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "ae29d071-2a4f-4826-ad6b-62d722ffd259")
 	(paper "A4")
 	(title_block
 		(title "Section 08: IMU Sensor")
@@ -12,471 +12,1635 @@
 		(comment 1 "ICM-42688-P 6-Axis Inertial Measurement Unit")
 		(comment 2 "I2C address 0x68 (AP_AD0=GND)")
 	)
-
 	(lib_symbols
-		(symbol "Device:C"
-			(pin_numbers hide)
-			(pin_names (offset 0.254))
+		(symbol "1_New_library:ICM-42688-P"
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "C" (at 0.635 2.54 0)
-				(effects (font (size 1.27 1.27)) (justify left))
+			(property "Reference" "U"
+				(at 48.26 10.16 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
 			)
-			(property "Value" "C" (at 0.635 -2.54 0)
-				(effects (font (size 1.27 1.27)) (justify left))
+			(property "Value" "ICM-42688-P"
+				(at 48.26 7.62 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
 			)
-			(property "Footprint" "" (at 0.9652 -3.81 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" "LGA14_2P5X3X0P91_TDK"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "~" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" "ICM-42688-P"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_locked" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "ICM-42688-P"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LGA14_2P5X3X0P91_TDK LGA14_2P5X3X0P91_TDK-M LGA14_2P5X3X0P91_TDK-L"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "ICM-42688-P_0_1"
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 -20.32)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 -20.32) (xy 88.9 -20.32)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 88.9 5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 88.9 -20.32) (xy 88.9 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin bidirectional line
+					(at 0 0 0)
+					(length 7.62)
+					(name "AP_SDO/AP_AD0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 0 -2.54 0)
+					(length 7.62)
+					(name "RESV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 0 -5.08 0)
+					(length 7.62)
+					(name "RESV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 0 -7.62 0)
+					(length 7.62)
+					(name "INT1/INT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 0 -10.16 0)
+					(length 7.62)
+					(name "VDDIO"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 0 -12.7 0)
+					(length 7.62)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 0 -15.24 0)
+					(length 7.62)
+					(name "RESV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 96.52 0 180)
+					(length 7.62)
+					(name "AP_SDA/AP_SDIO/AP_SDI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 96.52 -2.54 180)
+					(length 7.62)
+					(name "AP_SCL/AP_SCLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 96.52 -5.08 180)
+					(length 7.62)
+					(name "AP_CS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 96.52 -7.62 180)
+					(length 7.62)
+					(name "RESV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin no_connect line
+					(at 96.52 -10.16 180)
+					(length 7.62)
+					(name "RESV"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 96.52 -12.7 180)
+					(length 7.62)
+					(name "INT2/FSYNC/CLKIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at 96.52 -15.24 180)
+					(length 7.62)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "C_0_1"
-				(polyline (pts (xy -2.032 -0.762) (xy 2.032 -0.762))
-					(stroke (width 0.508) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
-				(polyline (pts (xy -2.032 0.762) (xy 2.032 0.762))
-					(stroke (width 0.508) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
 			)
 			(symbol "C_1_1"
-				(pin passive line (at 0 3.81 270) (length 2.794)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin passive line (at 0 -3.81 90) (length 2.794)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
-				)
-			)
-		)
-		(symbol "power:GND"
-			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -6.35 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Value" "GND" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "GND_0_1"
-				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-			)
-			(symbol "GND_1_1"
-				(pin power_in line (at 0 0 270) (length 0)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3V3"
 			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Value" "+3V3" (at 0 3.556 0)
-				(effects (font (size 1.27 1.27)))
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "+3V3_0_1"
-				(polyline (pts (xy -0.762 1.27) (xy 0 2.54))
-					(stroke (width 0) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
-				(polyline (pts (xy 0 0) (xy 0 2.54))
-					(stroke (width 0) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
-				(polyline (pts (xy 0 2.54) (xy 0.762 1.27))
-					(stroke (width 0) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
 			)
 			(symbol "+3V3_1_1"
-				(pin power_in line (at 0 0 90) (length 0)
-					(name "+3V3" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "+3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
 			)
+			(embedded_fonts no)
 		)
-		(symbol "Sensor:ICM-42688-P"
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U" (at 0 15.24 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Value" "ICM-42688-P" (at 0 12.7 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "Package_LGA:LGA-14_2.5x3mm_P0.5mm" (at 0 -17.78 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "https://invensense.tdk.com/download-pdf/icm-42688-p-datasheet/" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "ICM-42688-P_0_1"
-				(rectangle (start -10.16 11.43) (end 10.16 -11.43)
-					(stroke (width 0.254) (type default)) (fill (type background))
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
 				)
 			)
-			(symbol "ICM-42688-P_1_1"
-				(pin input line (at -12.7 7.62 0) (length 2.54)
-					(name "AP_SDO/AP_AD0" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
 				)
-				(pin passive line (at -12.7 5.08 0) (length 2.54)
-					(name "RESV" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
 				)
-				(pin input line (at -12.7 2.54 0) (length 2.54)
-					(name "AP_CS" (effects (font (size 1.27 1.27))))
-					(number "3" (effects (font (size 1.27 1.27))))
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
 				)
-				(pin input line (at -12.7 0 0) (length 2.54)
-					(name "AP_SCL/AP_SCLK" (effects (font (size 1.27 1.27))))
-					(number "4" (effects (font (size 1.27 1.27))))
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
 				)
-				(pin bidirectional line (at -12.7 -2.54 0) (length 2.54)
-					(name "AP_SDA/AP_SDIO" (effects (font (size 1.27 1.27))))
-					(number "5" (effects (font (size 1.27 1.27))))
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
-				(pin power_in line (at -12.7 -5.08 0) (length 2.54)
-					(name "VDDIO" (effects (font (size 1.27 1.27))))
-					(number "6" (effects (font (size 1.27 1.27))))
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin power_in line (at 0 -13.97 90) (length 2.54)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "7" (effects (font (size 1.27 1.27))))
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "Additional Decoupling\nC804 100nF\nPlace near U10"
+		(exclude_from_sim no)
+		(at 239.268 152.654 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "0c8ef95f-8576-422e-a8f6-bcfca72960e7")
+	)
+	(text "VDD Bypass\nC801 100nF\nPlace close to pin 12"
+		(exclude_from_sim no)
+		(at 237.49 146.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "9ddb62de-5caf-462b-9feb-5ca4f5b1f91f")
+	)
+	(text "ICM-42688-P 6-Axis IMU\n\nSpecifications:\n- Gyroscope range: +/-2000 dps\n- Accelerometer range: +/-16g\n- 16-bit ADC resolution\n- Operating temp: -40 to +85C\n- Supply: VDD/VDDIO = 1.71-3.6V\n- Current: 1.4mA (gyro+accel), 8uA sleep\n- Interface: I2C @ 400kHz (address 0x68)\n\nKey Components:\n- U10: ICM-42688-P (LGA-14 2.5x3mm) - JLCPCB C2904398\n- C801: 100nF VDD bypass - JLCPCB C14663\n- C802: 100nF VDDIO bypass - JLCPCB C14663\n- C803: 10nF RESV cap (pin 2) - JLCPCB C1588\n- C804: 100nF additional decoupling - JLCPCB C14663\n\nConfiguration:\n- AP_CS tied to VDDIO for I2C mode\n- AP_AD0 tied to GND for I2C address 0x68\n- RESV pin 2: 10nF cap to GND (required)\n- RESV pins 8,10,14: No connect\n- INT1 connected to MCU for interrupts\n- INT2/FSYNC: Not used (NC)\n- I2C pull-ups in Section 03 (R305, R306)\n\nPlacement Notes:\n- Place away from magnetic sources\n- Orient with sensor X/Y axes aligned\n- Mechanical decoupling from vibration sources"
+		(exclude_from_sim no)
+		(at 17.018 61.976 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left)
+		)
+		(uuid "aa6cd7a5-d2ef-46f5-bdb5-7bf6c6ab0e41")
+	)
+	(text "VDDIO Bypass\nC802 100nF\nPlace close to pin 6"
+		(exclude_from_sim no)
+		(at 247.904 100.076 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify right)
+		)
+		(uuid "b928417b-c5c7-4d02-86b3-7a31a0552502")
+	)
+	(text "RESV Cap\nC803 10nF\nRequired on pin 2"
+		(exclude_from_sim no)
+		(at 130.556 147.574 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "c7d1ee87-8216-41ab-a939-c29095a4d138")
+	)
+	(text "I2C Config:\nAP_AD0 -> GND = Address 0x68\nAP_CS -> VDDIO = I2C mode\nPull-ups in Section 03"
+		(exclude_from_sim no)
+		(at 156.464 148.082 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "fa8e8bdb-ce17-4d06-a466-805de8b93941")
+	)
+	(junction
+		(at 219.71 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3ce05ce9-c8d2-42cd-83f0-c17904926ac0")
+	)
+	(junction
+		(at 104.14 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "582607d0-f4b7-4a94-a49c-b64edbb15cf6")
+	)
+	(junction
+		(at 106.68 119.38)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9e1e6c6b-52b5-421f-a2be-0a19100a2d13")
+	)
+	(junction
+		(at 214.63 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b5ea19b2-abea-4531-b820-516c3112b89e")
+	)
+	(junction
+		(at 237.49 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e406f4b6-f684-4cc0-992e-c60e742e8362")
+	)
+	(wire
+		(pts
+			(xy 104.14 124.46) (xy 113.03 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02cb74e8-d23f-4a63-99a3-c0e52070a58a")
+	)
+	(wire
+		(pts
+			(xy 209.55 114.3) (xy 214.63 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0678a74b-6de5-4603-b2ae-c018d0165b24")
+	)
+	(wire
+		(pts
+			(xy 106.68 119.38) (xy 106.68 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09ae6df1-cdc5-48ab-957b-69d92c49bd4b")
+	)
+	(wire
+		(pts
+			(xy 86.36 116.84) (xy 113.03 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15fb557c-da11-4db9-8baf-cd245a54e4e3")
+	)
+	(wire
+		(pts
+			(xy 219.71 134.62) (xy 219.71 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "229bef3e-0f27-455b-ba0e-68688757deb3")
+	)
+	(wire
+		(pts
+			(xy 104.14 121.92) (xy 104.14 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2476c884-6e6c-45bd-9eb7-62ab87cc2d7b")
+	)
+	(wire
+		(pts
+			(xy 214.63 134.62) (xy 219.71 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2e219fd2-a7bd-4be1-b6e3-697e9a7c06ca")
+	)
+	(wire
+		(pts
+			(xy 237.49 120.65) (xy 237.49 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3223e62b-17b9-45d8-ab79-52ad3599c8db")
+	)
+	(wire
+		(pts
+			(xy 226.06 109.22) (xy 209.55 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c22bdd8-37bc-4aba-8782-f6665bbbd517")
+	)
+	(wire
+		(pts
+			(xy 214.63 114.3) (xy 214.63 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ce80daf-f5b6-4b97-8217-013ff7716e08")
+	)
+	(wire
+		(pts
+			(xy 113.03 121.92) (xy 104.14 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62f3a40f-5b64-495e-a1bc-315284038666")
+	)
+	(wire
+		(pts
+			(xy 240.03 111.76) (xy 209.55 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7cfcbfb1-f4ad-4e9e-b7b0-111cdda4d7ba")
+	)
+	(wire
+		(pts
+			(xy 237.49 124.46) (xy 247.65 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "840057b2-dff1-4875-a0b1-3587eacac321")
+	)
+	(wire
+		(pts
+			(xy 237.49 132.08) (xy 237.49 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e5fdf90-1cb7-4f0d-9c67-bae105b5efbb")
+	)
+	(wire
+		(pts
+			(xy 106.68 109.22) (xy 106.68 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad591421-dcd7-4a4b-a714-c74697875568")
+	)
+	(wire
+		(pts
+			(xy 219.71 124.46) (xy 237.49 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5ae8b1b-0cae-47fd-aaab-e270f38ae589")
+	)
+	(wire
+		(pts
+			(xy 113.03 109.22) (xy 106.68 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca946960-e8e7-4a4a-bb1c-64115143e4b5")
+	)
+	(wire
+		(pts
+			(xy 104.14 124.46) (xy 104.14 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8b6d1fd-086c-485f-b4f1-14dda966e6a8")
+	)
+	(wire
+		(pts
+			(xy 247.65 132.08) (xy 247.65 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8fea2e0-b9cb-4dbd-ad01-2f2cda8ca73a")
+	)
+	(wire
+		(pts
+			(xy 106.68 134.62) (xy 214.63 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dfae2795-c4f9-4dfa-8074-79e65f1625e5")
+	)
+	(wire
+		(pts
+			(xy 209.55 124.46) (xy 219.71 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4254cea-02e5-4c74-a730-a8705f45ab4f")
+	)
+	(wire
+		(pts
+			(xy 113.03 119.38) (xy 106.68 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fd3a381c-5fab-479e-8b7b-d86130cc5591")
+	)
+	(label "I2C1_SDA"
+		(at 226.06 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "020bf33b-d7ba-4faa-a76e-09c023774e1f")
+	)
+	(label "VDD"
+		(at 224.79 124.46 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0c18d630-2302-49b3-95b6-7ba1d194fe4d")
+	)
+	(label "IMU_INT"
+		(at 88.9 116.84 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1da4084c-423d-4cc7-a285-5d9084640180")
+	)
+	(label "I2C1_SCL"
+		(at 237.49 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5b8f9e7c-380a-4553-b395-2667e9aaff24")
+	)
+	(hierarchical_label "I2C1_SCL"
+		(shape input)
+		(at 240.03 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "47664e6e-d3e7-4fe9-90ce-7897016ee906")
+	)
+	(hierarchical_label "IMU_INT"
+		(shape output)
+		(at 86.36 116.84 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "60ad927e-9df1-4152-b288-7d4d233b3a80")
+	)
+	(hierarchical_label "I2C1_SDA"
+		(shape bidirectional)
+		(at 226.06 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "77b5bc40-c74b-4c1e-b490-972aeec57f17")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 247.65 138.43 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4a9481f0-507f-40a9-b74c-32009a7c1ce3")
+		(property "Reference" "#PWR035"
+			(at 247.65 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
-				(pin passive line (at 12.7 -5.08 180) (length 2.54)
-					(name "RESV" (effects (font (size 1.27 1.27))))
-					(number "8" (effects (font (size 1.27 1.27))))
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 247.65 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
-				(pin output line (at 12.7 -2.54 180) (length 2.54)
-					(name "INT1/INT" (effects (font (size 1.27 1.27))))
-					(number "9" (effects (font (size 1.27 1.27))))
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 247.65 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
-				(pin passive line (at 12.7 0 180) (length 2.54)
-					(name "RESV" (effects (font (size 1.27 1.27))))
-					(number "10" (effects (font (size 1.27 1.27))))
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 247.65 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
-				(pin input line (at 12.7 2.54 180) (length 2.54)
-					(name "INT2/FSYNC/CLKIN" (effects (font (size 1.27 1.27))))
-					(number "11" (effects (font (size 1.27 1.27))))
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
-				(pin power_in line (at 12.7 5.08 180) (length 2.54)
-					(name "VDD" (effects (font (size 1.27 1.27))))
-					(number "12" (effects (font (size 1.27 1.27))))
-				)
-				(pin power_in line (at 2.54 -13.97 90) (length 2.54)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "13" (effects (font (size 1.27 1.27))))
-				)
-				(pin passive line (at 12.7 7.62 180) (length 2.54)
-					(name "RESV" (effects (font (size 1.27 1.27))))
-					(number "14" (effects (font (size 1.27 1.27))))
+			)
+		)
+		(pin "1"
+			(uuid "0919b0b5-ab74-4724-9ba5-922759ecb347")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/43dd778e-5adc-48cd-a6c1-869e158c3b26"
+					(reference "#PWR035")
+					(unit 1)
 				)
 			)
 		)
 	)
-
-	(text "ICM-42688-P 6-Axis IMU\n\nSpecifications:\n- Gyroscope range: +/-2000 dps\n- Accelerometer range: +/-16g\n- 16-bit ADC resolution\n- Operating temp: -40 to +85C\n- Supply: VDD/VDDIO = 1.71-3.6V\n- Current: 1.4mA (gyro+accel), 8uA sleep\n- Interface: I2C @ 400kHz (address 0x68)\n\nKey Components:\n- U10: ICM-42688-P (LGA-14 2.5x3mm) - JLCPCB C2904398\n- C801: 100nF VDD bypass - JLCPCB C14663\n- C802: 100nF VDDIO bypass - JLCPCB C14663\n- C803: 10nF RESV cap (pin 2) - JLCPCB C1588\n- C804: 100nF additional decoupling - JLCPCB C14663\n\nConfiguration:\n- AP_CS tied to VDDIO for I2C mode\n- AP_AD0 tied to GND for I2C address 0x68\n- RESV pin 2: 10nF cap to GND (required)\n- RESV pins 8,10,14: No connect\n- INT1 connected to MCU for interrupts\n- INT2/FSYNC: Not used (NC)\n- I2C pull-ups in Section 03 (R305, R306)\n\nPlacement Notes:\n- Place away from magnetic sources\n- Orient with sensor X/Y axes aligned\n- Mechanical decoupling from vibration sources"
+	(symbol
+		(lib_id "power:GND")
+		(at 237.49 138.43 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 25.4 25.4 0)
-		(effects (font (size 1.8 1.8)) (justify left))
-		(uuid "sec08-text-001")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4b130201-3b23-4ec0-9370-edd726689a2b")
+		(property "Reference" "#PWR034"
+			(at 237.49 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 237.49 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 237.49 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 237.49 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 237.49 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "31bab60a-b026-468e-b2b5-d8dbed1c975c")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/43dd778e-5adc-48cd-a6c1-869e158c3b26"
+					(reference "#PWR034")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "Sensor:ICM-42688-P") (at 127 114.3 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "u10-icm42688p-uuid")
-		(property "Reference" "U10" (at 127 95.25 0) (effects (font (size 1.27 1.27))))
-		(property "Value" "ICM-42688-P" (at 127 97.79 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "Package_LGA:LGA-14_2.5x3mm_P0.5mm" (at 127 132.08 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "https://invensense.tdk.com/download-pdf/icm-42688-p-datasheet/" (at 127 114.3 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C2904398" (at 127 114.3 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "u10-ad0")) (pin "2" (uuid "u10-resv1")) (pin "3" (uuid "u10-cs"))
-		(pin "4" (uuid "u10-scl")) (pin "5" (uuid "u10-sda")) (pin "6" (uuid "u10-vddio"))
-		(pin "7" (uuid "u10-gnd1")) (pin "8" (uuid "u10-resv2")) (pin "9" (uuid "u10-int1"))
-		(pin "10" (uuid "u10-resv3")) (pin "11" (uuid "u10-int2")) (pin "12" (uuid "u10-vdd"))
-		(pin "13" (uuid "u10-gnd2")) (pin "14" (uuid "u10-resv4"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "U10") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:C") (at 160.02 109.22 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c801-uuid")
-		(property "Reference" "C801" (at 162.56 107.95 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "100nF" (at 162.56 110.49 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 160.9852 113.03 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 160.02 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C14663" (at 160.02 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c801-p1")) (pin "2" (uuid "c801-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "C801") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:C") (at 93.98 109.22 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c802-uuid")
-		(property "Reference" "C802" (at 96.52 107.95 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "100nF" (at 96.52 110.49 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 94.9452 113.03 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 93.98 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C14663" (at 93.98 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c802-p1")) (pin "2" (uuid "c802-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "C802") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:C") (at 106.68 127 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c803-uuid")
-		(property "Reference" "C803" (at 109.22 125.73 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "10nF" (at 109.22 128.27 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 107.6452 130.81 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 106.68 127 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C1588" (at 106.68 127 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c803-p1")) (pin "2" (uuid "c803-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "C803") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:C") (at 170.18 109.22 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c804-uuid")
-		(property "Reference" "C804" (at 172.72 107.95 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "100nF" (at 172.72 110.49 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 171.1452 113.03 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 170.18 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C14663" (at 170.18 109.22 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c804-p1")) (pin "2" (uuid "c804-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "C804") (unit 1))))
-	)
-
-	(symbol (lib_id "power:+3V3") (at 93.98 101.6 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-3v3-vddio")
-		(property "Reference" "#PWR0801" (at 93.98 105.41 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "+3V3" (at 93.98 97.79 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 93.98 101.6 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 93.98 101.6 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-3v3-vddio-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "#PWR0801") (unit 1))))
-	)
-
-	(symbol (lib_id "power:+3V3") (at 160.02 101.6 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-3v3-vdd")
-		(property "Reference" "#PWR0802" (at 160.02 105.41 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "+3V3" (at 160.02 97.79 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 160.02 101.6 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 160.02 101.6 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-3v3-vdd-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "#PWR0802") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 127 132.08 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-u10")
-		(property "Reference" "#PWR0803" (at 127 138.43 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 127 135.89 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 127 132.08 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 127 132.08 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-u10-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "#PWR0803") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 93.98 119.38 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-c802")
-		(property "Reference" "#PWR0804" (at 93.98 125.73 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 93.98 123.19 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 93.98 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 93.98 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-c802-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "#PWR0804") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 160.02 119.38 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-c801")
-		(property "Reference" "#PWR0805" (at 160.02 125.73 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 160.02 123.19 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 160.02 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 160.02 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-c801-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "#PWR0805") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 170.18 119.38 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-c804")
-		(property "Reference" "#PWR0806" (at 170.18 125.73 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 170.18 123.19 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 170.18 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 170.18 119.38 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-c804-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "#PWR0806") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 106.68 135.89 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-c803")
-		(property "Reference" "#PWR0807" (at 106.68 142.24 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 106.68 139.7 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 106.68 135.89 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 106.68 135.89 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-c803-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "#PWR0807") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 104.14 127 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-ad0")
-		(property "Reference" "#PWR0808" (at 104.14 133.35 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 104.14 130.81 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 104.14 127 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 104.14 127 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-ad0-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec08-0001-0002-0003-000000000001" (reference "#PWR0808") (unit 1))))
-	)
-
-	(wire (pts (xy 93.98 101.6) (xy 93.98 105.41)) (stroke (width 0) (type default)) (uuid "w-3v3-c802-top"))
-	(wire (pts (xy 93.98 105.41) (xy 93.98 109.22)) (stroke (width 0) (type default)) (uuid "w-vddio-c802"))
-	(wire (pts (xy 93.98 105.41) (xy 114.3 105.41)) (stroke (width 0) (type default)) (uuid "w-vddio-conn"))
-	(wire (pts (xy 114.3 105.41) (xy 114.3 109.22)) (stroke (width 0) (type default)) (uuid "w-vddio-u10"))
-	(wire (pts (xy 93.98 113.03) (xy 93.98 119.38)) (stroke (width 0) (type default)) (uuid "w-c802-gnd"))
-
-	(wire (pts (xy 160.02 101.6) (xy 160.02 105.41)) (stroke (width 0) (type default)) (uuid "w-3v3-c801-top"))
-	(wire (pts (xy 160.02 105.41) (xy 160.02 109.22)) (stroke (width 0) (type default)) (uuid "w-vdd-c801"))
-	(wire (pts (xy 139.7 119.38) (xy 149.86 119.38)) (stroke (width 0) (type default)) (uuid "w-vdd-u10"))
-	(wire (pts (xy 149.86 119.38) (xy 149.86 105.41)) (stroke (width 0) (type default)) (uuid "w-vdd-vert"))
-	(wire (pts (xy 149.86 105.41) (xy 160.02 105.41)) (stroke (width 0) (type default)) (uuid "w-vdd-c801-conn"))
-	(wire (pts (xy 160.02 113.03) (xy 160.02 119.38)) (stroke (width 0) (type default)) (uuid "w-c801-gnd"))
-
-	(wire (pts (xy 170.18 101.6) (xy 170.18 105.41)) (stroke (width 0) (type default)) (uuid "w-3v3-c804-top"))
-	(wire (pts (xy 170.18 105.41) (xy 170.18 109.22)) (stroke (width 0) (type default)) (uuid "w-c804-to-rail"))
-	(wire (pts (xy 170.18 105.41) (xy 160.02 105.41)) (stroke (width 0) (type default)) (uuid "w-c804-3v3"))
-	(wire (pts (xy 170.18 113.03) (xy 170.18 119.38)) (stroke (width 0) (type default)) (uuid "w-c804-gnd"))
-
-	(wire (pts (xy 127 128.27) (xy 127 130.81)) (stroke (width 0) (type default)) (uuid "w-u10-gnd-join1"))
-	(wire (pts (xy 124.46 128.27) (xy 127 128.27)) (stroke (width 0) (type default)) (uuid "w-u10-gnd-join2"))
-	(wire (pts (xy 129.54 128.27) (xy 127 128.27)) (stroke (width 0) (type default)) (uuid "w-u10-gnd-join3"))
-	(wire (pts (xy 127 130.81) (xy 127 132.08)) (stroke (width 0) (type default)) (uuid "w-u10-gnd"))
-
-	(wire (pts (xy 114.3 116.84) (xy 101.6 116.84)) (stroke (width 0) (type default)) (uuid "w-cs-horiz"))
-	(wire (pts (xy 101.6 116.84) (xy 101.6 105.41)) (stroke (width 0) (type default)) (uuid "w-cs-vert"))
-	(wire (pts (xy 101.6 105.41) (xy 93.98 105.41)) (stroke (width 0) (type default)) (uuid "w-cs-vddio"))
-
-	(wire (pts (xy 114.3 121.92) (xy 104.14 121.92)) (stroke (width 0) (type default)) (uuid "w-ad0-horiz"))
-	(wire (pts (xy 104.14 121.92) (xy 104.14 127)) (stroke (width 0) (type default)) (uuid "w-ad0-gnd"))
-
-	(wire (pts (xy 114.3 119.38) (xy 106.68 119.38)) (stroke (width 0) (type default)) (uuid "w-resv-horiz"))
-	(wire (pts (xy 106.68 119.38) (xy 106.68 123.19)) (stroke (width 0) (type default)) (uuid "w-resv-c803"))
-	(wire (pts (xy 106.68 130.81) (xy 106.68 135.89)) (stroke (width 0) (type default)) (uuid "w-c803-gnd"))
-
-	(wire (pts (xy 114.3 114.3) (xy 86.36 114.3)) (stroke (width 0) (type default)) (uuid "w-scl-u10"))
-	(wire (pts (xy 114.3 111.76) (xy 86.36 111.76)) (stroke (width 0) (type default)) (uuid "w-sda-u10"))
-
-	(wire (pts (xy 139.7 111.76) (xy 152.4 111.76)) (stroke (width 0) (type default)) (uuid "w-int-u10"))
-
-	(label "I2C1_SCL" (at 86.36 114.3 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "label-scl")
-	)
-
-	(label "I2C1_SDA" (at 86.36 111.76 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "label-sda")
-	)
-
-	(label "IMU_INT" (at 152.4 111.76 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "label-int")
-	)
-
-	(label "VDDIO" (at 93.98 105.41 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "label-vddio")
-	)
-
-	(label "VDD" (at 149.86 119.38 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "label-vdd")
-	)
-
-	(hierarchical_label "I2C1_SCL" (shape input) (at 83.82 114.3 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "hl-scl")
-	)
-
-	(hierarchical_label "I2C1_SDA" (shape bidirectional) (at 83.82 111.76 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "hl-sda")
-	)
-
-	(hierarchical_label "IMU_INT" (shape output) (at 154.94 111.76 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left))
-		(uuid "hl-int")
-	)
-
-	(wire (pts (xy 83.82 114.3) (xy 86.36 114.3)) (stroke (width 0) (type default)) (uuid "w-hl-scl"))
-	(wire (pts (xy 83.82 111.76) (xy 86.36 111.76)) (stroke (width 0) (type default)) (uuid "w-hl-sda"))
-	(wire (pts (xy 152.4 111.76) (xy 154.94 111.76)) (stroke (width 0) (type default)) (uuid "w-hl-int"))
-
-	(text "VDD Bypass\nC801 100nF\nPlace close to pin 12"
+	(symbol
+		(lib_id "Device:C")
+		(at 237.49 128.27 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 160.02 127 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-c801")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4cc64321-6f58-4ee5-b4fe-e1567e43989b")
+		(property "Reference" "C31"
+			(at 240.03 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 240.03 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 238.4552 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 237.49 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 237.49 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C14663"
+			(at 237.49 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "938931c2-fd5e-4a6b-9c84-b982913eaf5f")
+		)
+		(pin "2"
+			(uuid "5c3f5c67-159a-46b8-8f46-14c93a25ee65")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/43dd778e-5adc-48cd-a6c1-869e158c3b26"
+					(reference "C31")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(text "VDDIO Bypass\nC802 100nF\nPlace close to pin 6"
+	(symbol
+		(lib_id "power:+3V3")
+		(at 237.49 120.65 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 76.2 109.22 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-c802")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6708deaa-2ea8-435e-8966-282173ed4bf2")
+		(property "Reference" "#PWR027"
+			(at 237.49 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 237.49 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 237.49 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 237.49 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 237.49 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e9d2093c-0acb-48f4-88c0-cf705f700f1f")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/43dd778e-5adc-48cd-a6c1-869e158c3b26"
+					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(text "RESV Cap\nC803 10nF\nRequired on pin 2"
+	(symbol
+		(lib_id "1_New_library:ICM-42688-P")
+		(at 113.03 109.22 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 88.9 127 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-c803")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca8ba4e6-3066-49c6-9007-05303c881942")
+		(property "Reference" "U6"
+			(at 161.29 99.06 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "ICM-42688-PC"
+			(at 161.29 101.6 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LGA14_2P5X3X0P91_TDK"
+			(at 113.03 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "ICM-42688-P"
+			(at 113.03 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "C48586483"
+			(at 113.03 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "66994730-8669-45e5-9665-c3a5d56915e0")
+		)
+		(pin "7"
+			(uuid "24698eef-0046-4db8-95bf-de1c83caa63e")
+		)
+		(pin "14"
+			(uuid "c5a712d1-8753-42af-a459-663ed8b99cc9")
+		)
+		(pin "5"
+			(uuid "c0df2b93-b121-4291-bfa8-06a33e240206")
+		)
+		(pin "3"
+			(uuid "822b6f62-f768-4012-8b31-5485b4a128b1")
+		)
+		(pin "1"
+			(uuid "bd704771-406d-4fb7-9168-864aaf8857d0")
+		)
+		(pin "4"
+			(uuid "03f8b248-f4ca-4f85-bd68-7a5d2b725583")
+		)
+		(pin "6"
+			(uuid "93b2fed1-6dda-4b63-810d-b5f8d6f535f0")
+		)
+		(pin "11"
+			(uuid "3fc41e51-6c84-49fe-b97c-86e791a4ded4")
+		)
+		(pin "13"
+			(uuid "6d5ffd0c-a439-4bbe-b6ab-f0f4ed537a21")
+		)
+		(pin "10"
+			(uuid "d8e0cc4f-6eca-4d57-b6ab-e9121127d8ca")
+		)
+		(pin "8"
+			(uuid "c4837a49-bb32-4efb-afda-ab83f00f4e51")
+		)
+		(pin "9"
+			(uuid "721c98c8-faca-449b-82b3-29776dc7e202")
+		)
+		(pin "12"
+			(uuid "7161676a-ed12-46f1-afd5-95ba5f0c82a2")
+		)
+		(instances
+			(project ""
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/43dd778e-5adc-48cd-a6c1-869e158c3b26"
+					(reference "U6")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(text "Additional Decoupling\nC804 100nF\nPlace near U10"
+	(symbol
+		(lib_id "Device:C")
+		(at 247.65 128.27 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 170.18 127 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-c804")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ecd421e2-b7f6-4efd-a894-4136ade4071d")
+		(property "Reference" "C32"
+			(at 250.19 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 250.19 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 248.6152 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 247.65 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 247.65 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C14663"
+			(at 247.65 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f56cae3a-aeb1-4fef-a703-6718b8051cc8")
+		)
+		(pin "2"
+			(uuid "fe2148e9-3ead-4cda-be9c-dcbba64193b5")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/43dd778e-5adc-48cd-a6c1-869e158c3b26"
+					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(text "I2C Config:\nAP_AD0 -> GND = Address 0x68\nAP_CS -> VDDIO = I2C mode\nPull-ups in Section 03"
+	(symbol
+		(lib_id "power:GND")
+		(at 104.14 135.89 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 101.6 149.86 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-i2c-config")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ff023c67-6679-412c-87c0-6d0882cb3dbe")
+		(property "Reference" "#PWR026"
+			(at 104.14 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 104.14 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 104.14 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 104.14 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 104.14 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d6302ea8-6481-450f-8371-3142ac9c8c20")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/43dd778e-5adc-48cd-a6c1-869e158c3b26"
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(sheet_instances (path "/" (page "1")))
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )

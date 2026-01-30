@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec16-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "80ed3fab-957a-4bd9-a5f2-e7209d00c6e7")
 	(paper "A4")
 	(title_block
 		(title "Section 16: Rotary Encoders")
@@ -12,24 +12,10 @@
 		(comment 1 "EC11 Rotary Encoders with Switches")
 		(comment 2 "Menu navigation and value adjustment")
 	)
-
 	(lib_symbols)
-
-	(text "Rotary Encoders Section\n\nMain Components:\n- ENC1, ENC2: EC11 rotary encoder with switch x2\n\nDebounce Capacitors (per encoder):\nEncoder 1:\n- C1601: 10nF 0603 encoder A debounce\n- C1602: 10nF 0603 encoder B debounce\n- C1603: 100nF 0603 switch debounce\n\nEncoder 2:\n- C1604: 10nF 0603 encoder A debounce\n- C1605: 10nF 0603 encoder B debounce\n- C1606: 100nF 0603 switch debounce\n\nTotal passives: 6\n\nInterface (directly to MCU via FFC spare pins):\n- Left encoder: Timer encoder mode (A, B signals) + switch\n- Right encoder: Timer encoder mode (A, B signals) + switch\n\nUsage:\n- Left encoder: Mode selection, menu navigation\n- Right encoder: Value adjustment, zoom\n\nNotes:\n- EC11 generic for V1, PEC11R (Bourns) for production\n- Hardware quadrature decoding in STM32 timer\n- 10-20ms firmware debounce on switch"
-		(exclude_from_sim no)
-		(at 25.4 25.4 0)
-		(effects
-			(font
-				(size 2 2)
-			)
-			(justify left)
-		)
-		(uuid "sec16-text-001")
-	)
-
 	(text "TODO: Add 2x EC11 encoder symbols\nConnect A/B to FFC, switch to FFC"
 		(exclude_from_sim no)
-		(at 25.4 127 0)
+		(at 27.432 159.004 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -37,6 +23,17 @@
 			)
 			(justify left)
 		)
-		(uuid "sec16-todo-001")
+		(uuid "b77e35e0-5a0d-4399-a9f0-da90ad44a801")
+	)
+	(text "Rotary Encoders Section\n\nMain Components:\n- ENC1, ENC2: EC11 rotary encoder with switch x2\n\nDebounce Capacitors (per encoder):\nEncoder 1:\n- C1601: 10nF 0603 encoder A debounce\n- C1602: 10nF 0603 encoder B debounce\n- C1603: 100nF 0603 switch debounce\n\nEncoder 2:\n- C1604: 10nF 0603 encoder A debounce\n- C1605: 10nF 0603 encoder B debounce\n- C1606: 100nF 0603 switch debounce\n\nTotal passives: 6\n\nInterface (directly to MCU via FFC spare pins):\n- Left encoder: Timer encoder mode (A, B signals) + switch\n- Right encoder: Timer encoder mode (A, B signals) + switch\n\nUsage:\n- Left encoder: Mode selection, menu navigation\n- Right encoder: Value adjustment, zoom\n\nNotes:\n- EC11 generic for V1, PEC11R (Bourns) for production\n- Hardware quadrature decoding in STM32 timer\n- 10-20ms firmware debounce on switch"
+		(exclude_from_sim no)
+		(at 22.86 64.262 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left)
+		)
+		(uuid "eb0288a6-dbb4-4db9-bcd8-d2fb2275b03d")
 	)
 )

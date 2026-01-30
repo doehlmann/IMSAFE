@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec15-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "767e26a2-d739-4d66-84e6-293f35056403")
 	(paper "A4")
 	(title_block
 		(title "Section 15: Status LEDs")
@@ -12,331 +12,1373 @@
 		(comment 1 "WS2812B-2020 Addressable RGB LEDs")
 		(comment 2 "16 LEDs daisy-chained, 100nF decoupling each")
 	)
-
 	(lib_symbols
 		(symbol "Device:C"
-			(pin_numbers hide)
-			(pin_names (offset 0.254))
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "C" (at 0.635 2.54 0)
-				(effects (font (size 1.27 1.27)) (justify left))
+			(property "Reference" "C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
 			)
-			(property "Value" "C" (at 0.635 -2.54 0)
-				(effects (font (size 1.27 1.27)) (justify left))
+			(property "Value" "C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
 			)
-			(property "Footprint" "" (at 0.9652 -3.81 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" ""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "~" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "C_0_1"
-				(polyline (pts (xy -2.032 -0.762) (xy 2.032 -0.762))
-					(stroke (width 0.508) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy -2.032 0.762) (xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
-				(polyline (pts (xy -2.032 0.762) (xy 2.032 0.762))
-					(stroke (width 0.508) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy -2.032 -0.762) (xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
 			)
 			(symbol "C_1_1"
-				(pin passive line (at 0 3.81 270) (length 2.794)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin passive line (at 0 -3.81 90) (length 2.794)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R"
-			(pin_numbers hide)
-			(pin_names (offset 0))
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "R" (at 2.032 0 90)
-				(effects (font (size 1.27 1.27)))
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Value" "R" (at 0 0 90)
-				(effects (font (size 1.27 1.27)))
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Footprint" "" (at -1.778 0 90)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "~" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "R_0_1"
-				(rectangle (start -1.016 -2.54) (end 1.016 2.54)
-					(stroke (width 0.254) (type default)) (fill (type none))
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
 			)
 			(symbol "R_1_1"
-				(pin passive line (at 0 3.81 270) (length 1.27)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin passive line (at 0 -3.81 90) (length 1.27)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
-				)
-			)
-		)
-		(symbol "power:GND"
-			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -6.35 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Value" "GND" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "GND_0_1"
-				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-			)
-			(symbol "GND_1_1"
-				(pin power_in line (at 0 0 270) (length 0)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
 			)
-		)
-		(symbol "power:+5V"
-			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Value" "+5V" (at 0 3.556 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "+5V_0_1"
-				(polyline (pts (xy -0.762 1.27) (xy 0 2.54))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0 0) (xy 0 2.54))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0 2.54) (xy 0.762 1.27))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-			)
-			(symbol "+5V_1_1"
-				(pin power_in line (at 0 0 90) (length 0)
-					(name "+5V" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
-				)
-			)
+			(embedded_fonts no)
 		)
 		(symbol "LED:WS2812B-2020"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "LED" (at 0 8.89 0)
-				(effects (font (size 1.27 1.27)))
+			(property "Reference" "LED"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Value" "WS2812B-2020" (at 0 6.35 0)
-				(effects (font (size 1.27 1.27)))
+			(property "Value" "WS2812B-2020"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Footprint" "LED_SMD:LED_WS2812B-2020_2.0x2.0mm" (at 0 -10.16 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" "LED_SMD:LED_WS2812B-2020_2.0x2.0mm"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "WS2812B-2020_0_1"
-				(rectangle (start -5.08 5.08) (end 5.08 -5.08)
-					(stroke (width 0.254) (type default)) (fill (type background))
+				(rectangle
+					(start -5.08 5.08)
+					(end 5.08 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
 				)
 			)
 			(symbol "WS2812B-2020_1_1"
-				(pin power_in line (at 0 7.62 270) (length 2.54)
-					(name "VDD" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin input line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "DIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin output line (at 7.62 0 180) (length 2.54)
-					(name "DOUT" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at 0 7.62 270)
+					(length 2.54)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin power_in line (at 0 -7.62 90) (length 2.54)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "3" (effects (font (size 1.27 1.27))))
+				(pin power_in line
+					(at 0 -7.62 90)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin input line (at -7.62 0 0) (length 2.54)
-					(name "DIN" (effects (font (size 1.27 1.27))))
-					(number "4" (effects (font (size 1.27 1.27))))
+				(pin output line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name "DOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+5V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "+5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "Status LEDs - WS2812B-2020\n\nConfiguration:\n- 16x addressable RGB LEDs (2020 package)\n- Daisy-chained data protocol (800kHz)\n- Power: +5V @ 12mA max per LED\n\nKey Components:\n- LED1-LED16: WS2812B-2020 - JLCPCB C965555\n- C1501-C1516: 100nF 0603 decoupling - JLCPCB C14663\n- R1501: 330 ohm 0603 data series - JLCPCB C23138\n\nData Chain:\n- MCU GPIO -> R1501 -> LED1 DIN\n- LED1 DOUT -> LED2 DIN -> ... -> LED16 DOUT\n\nLED Arrangement (2 per switch):\n- LED1-2: Switch 1  | LED9-10: Switch 5\n- LED3-4: Switch 2  | LED11-12: Switch 6\n- LED5-6: Switch 3  | LED13-14: Switch 7\n- LED7-8: Switch 4  | LED15-16: Switch 8\n\nNote: Schematic shows LED1-4 representative.\nPattern repeats for LED5-16."
+		(exclude_from_sim no)
+		(at 21.844 44.958 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left)
+		)
+		(uuid "1df48792-a466-4bff-aafa-745b4234570e")
+	)
+	(wire
+		(pts
+			(xy 151.13 88.9) (xy 151.13 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "003b23a4-25af-400a-9a3c-3eaccf504fab")
+	)
+	(wire
+		(pts
+			(xy 189.23 88.9) (xy 189.23 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0bf4e731-10c8-48ea-9f57-8acbe580dae0")
+	)
+	(wire
+		(pts
+			(xy 158.75 106.68) (xy 181.61 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27b3dc8e-0b4a-4cfe-bd96-0cb9efbf225b")
+	)
+	(wire
+		(pts
+			(xy 124.46 106.68) (xy 143.51 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3644dca9-f489-4c4f-af44-36e0ec6c645f")
+	)
+	(wire
+		(pts
+			(xy 196.85 106.68) (xy 217.17 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42bb9d77-b63b-4a61-85a3-64bd77a74dbb")
+	)
+	(wire
+		(pts
+			(xy 189.23 114.3) (xy 189.23 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "86d0c77a-c5d9-4e52-b584-e188c62d4833")
+	)
+	(wire
+		(pts
+			(xy 105.41 106.68) (xy 116.84 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9918300a-4fa1-4cea-afe6-d0410d4ff7b5")
+	)
+	(wire
+		(pts
+			(xy 189.23 128.27) (xy 189.23 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fbd0ccc-0508-40f9-aaf9-f1cf5f5d7ee5")
+	)
+	(wire
+		(pts
+			(xy 151.13 128.27) (xy 151.13 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b8ffb81e-8544-4d2f-9ea6-59dd8a87f74c")
+	)
+	(wire
+		(pts
+			(xy 151.13 114.3) (xy 151.13 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9786b6a-9f37-424c-9389-7a6787fe24e5")
+	)
+	(label "LED_DATA"
+		(at 107.95 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "4ef5b035-d0d4-4b23-a1f1-68ec8c3b58e1")
+	)
+	(label "to LED3-16..."
+		(at 217.17 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f5d3dd09-75b4-4490-a85e-95ae2f98e744")
+	)
+	(hierarchical_label "LED_DATA"
+		(shape input)
+		(at 105.41 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d082a995-2059-49fe-9c43-5e2fd8ea8a82")
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 189.23 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "102db014-1de2-4ee3-b7d5-a3b9261390df")
+		(property "Reference" "#PWR?"
+			(at 189.23 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 189.23 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "40bfe05d-a2da-41df-a805-6f8afc25f312")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "#PWR?")
+					(unit 1)
 				)
 			)
 		)
 	)
-
-	(text "Status LEDs - WS2812B-2020\n\nConfiguration:\n- 16x addressable RGB LEDs (2020 package)\n- Daisy-chained data protocol (800kHz)\n- Power: +5V @ 12mA max per LED\n\nKey Components:\n- LED1-LED16: WS2812B-2020 - JLCPCB C965555\n- C1501-C1516: 100nF 0603 decoupling - JLCPCB C14663\n- R1501: 330 ohm 0603 data series - JLCPCB C23138\n\nData Chain:\n- MCU GPIO -> R1501 -> LED1 DIN\n- LED1 DOUT -> LED2 DIN -> ... -> LED16 DOUT\n\nLED Arrangement (2 per switch):\n- LED1-2: Switch 1  | LED9-10: Switch 5\n- LED3-4: Switch 2  | LED11-12: Switch 6\n- LED5-6: Switch 3  | LED13-14: Switch 7\n- LED7-8: Switch 4  | LED15-16: Switch 8\n\nNote: Schematic shows LED1-4 representative.\nPattern repeats for LED5-16."
+	(symbol
+		(lib_id "Device:R")
+		(at 120.65 106.68 90)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 25.4 25.4 0)
-		(effects (font (size 1.5 1.5)) (justify left))
-		(uuid "sec15-text-001")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "10cb6033-550a-4c0c-bf00-807fc3c7db87")
+		(property "Reference" "R?"
+			(at 120.65 101.6 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 120.65 104.14 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 120.65 108.458 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 120.65 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C23138"
+			(at 120.65 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3a5dc1ec-462b-4294-ad48-255bcd65a7d6")
+		)
+		(pin "2"
+			(uuid "a825f0e3-b906-44bf-89df-6e4f733359a6")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "Device:R") (at 50.8 106.68 90) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "r1501-uuid")
-		(property "Reference" "R1501" (at 50.8 101.6 90) (effects (font (size 1.27 1.27))))
-		(property "Value" "330" (at 50.8 104.14 90) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 50.8 108.458 90) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 50.8 106.68 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C23138" (at 50.8 106.68 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "r1501-p1")) (pin "2" (uuid "r1501-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "R1501") (unit 1))))
+	(symbol
+		(lib_id "LED:WS2812B-2020")
+		(at 151.13 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3ceb2db3-6eca-4156-8309-cc137464dfef")
+		(property "Reference" "LED?"
+			(at 151.13 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WS2812B-2020"
+			(at 151.13 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_WS2812B-2020_2.0x2.0mm"
+			(at 151.13 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 151.13 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C965555"
+			(at 151.13 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1ab16d72-16ce-46a7-aabb-ee61c449f345")
+		)
+		(pin "2"
+			(uuid "456f601e-75a9-4a07-a31c-5105859881b2")
+		)
+		(pin "3"
+			(uuid "94d4f851-b07d-4206-b1ae-e1391763f703")
+		)
+		(pin "4"
+			(uuid "8182fdb0-9a1e-42bb-ba0e-a0dc9bb93d66")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "LED?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "LED:WS2812B-2020") (at 81.28 106.68 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "led1-uuid")
-		(property "Reference" "LED1" (at 81.28 96.52 0) (effects (font (size 1.27 1.27))))
-		(property "Value" "WS2812B-2020" (at 81.28 99.06 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "LED_SMD:LED_WS2812B-2020_2.0x2.0mm" (at 81.28 116.84 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 81.28 106.68 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C965555" (at 81.28 106.68 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "led1-vdd")) (pin "2" (uuid "led1-dout")) (pin "3" (uuid "led1-gnd")) (pin "4" (uuid "led1-din"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "LED1") (unit 1))))
+	(symbol
+		(lib_id "power:GND")
+		(at 151.13 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "424f831e-52a8-4be8-bfc4-d813ebfbea11")
+		(property "Reference" "#PWR?"
+			(at 151.13 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 151.13 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 151.13 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bc260e40-ccd6-4ecd-82b1-a5330df8882a")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "Device:C") (at 81.28 124.46 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c1501-uuid")
-		(property "Reference" "C1501" (at 83.82 123.19 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "100nF" (at 83.82 125.73 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 82.2452 128.27 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 81.28 124.46 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C14663" (at 81.28 124.46 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c1501-p1")) (pin "2" (uuid "c1501-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "C1501") (unit 1))))
+	(symbol
+		(lib_id "Device:C")
+		(at 189.23 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "555bc246-9bf1-4959-9756-061d35f962fa")
+		(property "Reference" "C?"
+			(at 191.77 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 191.77 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 190.1952 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 189.23 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C14663"
+			(at 189.23 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c8ee95d8-1fd0-487b-aca7-4fff9ad3a8c4")
+		)
+		(pin "2"
+			(uuid "231bc3dd-a623-49c5-9587-0cd3909d7ff0")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "LED:WS2812B-2020") (at 119.38 106.68 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "led2-uuid")
-		(property "Reference" "LED2" (at 119.38 96.52 0) (effects (font (size 1.27 1.27))))
-		(property "Value" "WS2812B-2020" (at 119.38 99.06 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "LED_SMD:LED_WS2812B-2020_2.0x2.0mm" (at 119.38 116.84 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 119.38 106.68 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C965555" (at 119.38 106.68 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "led2-vdd")) (pin "2" (uuid "led2-dout")) (pin "3" (uuid "led2-gnd")) (pin "4" (uuid "led2-din"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "LED2") (unit 1))))
+	(symbol
+		(lib_id "power:GND")
+		(at 189.23 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9d079477-efb0-4967-aa3c-21994c1ec74c")
+		(property "Reference" "#PWR?"
+			(at 189.23 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 189.23 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f16f25ad-ffe0-4325-aced-dd903ec3e5f2")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "Device:C") (at 119.38 124.46 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "c1502-uuid")
-		(property "Reference" "C1502" (at 121.92 123.19 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "100nF" (at 121.92 125.73 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 120.3452 128.27 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 119.38 124.46 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C14663" (at 119.38 124.46 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "c1502-p1")) (pin "2" (uuid "c1502-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "C1502") (unit 1))))
+	(symbol
+		(lib_id "Device:C")
+		(at 151.13 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad45109c-ea03-4140-8850-0ff016c8bf60")
+		(property "Reference" "C?"
+			(at 153.67 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "100nF"
+			(at 153.67 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+			(at 152.0952 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 151.13 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 151.13 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C14663"
+			(at 151.13 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9c958e92-c3f3-45d4-ad18-3fa67fabcce7")
+		)
+		(pin "2"
+			(uuid "59acda51-5abb-448d-8f55-67500cd13cdb")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "power:+5V") (at 81.28 88.9 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-5v-led1")
-		(property "Reference" "#PWR1501" (at 81.28 92.71 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "+5V" (at 81.28 85.09 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 81.28 88.9 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 81.28 88.9 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-5v-led1-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "#PWR1501") (unit 1))))
+	(symbol
+		(lib_id "LED:WS2812B-2020")
+		(at 189.23 106.68 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cd3724b5-d646-4003-aa26-23c05012444d")
+		(property "Reference" "LED?"
+			(at 189.23 96.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "WS2812B-2020"
+			(at 189.23 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_WS2812B-2020_2.0x2.0mm"
+			(at 189.23 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 189.23 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C965555"
+			(at 189.23 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "df986429-8216-4eba-8e36-3205e8611d67")
+		)
+		(pin "2"
+			(uuid "fe7b41e9-7548-4cf1-9fdb-9ce2dbc13e72")
+		)
+		(pin "3"
+			(uuid "0ded9bd7-3f82-4bbc-a157-d33e58d32865")
+		)
+		(pin "4"
+			(uuid "114b6747-b175-445a-beaa-d020ff02c5bb")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "LED?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "power:+5V") (at 119.38 88.9 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-5v-led2")
-		(property "Reference" "#PWR1502" (at 119.38 92.71 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "+5V" (at 119.38 85.09 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 119.38 88.9 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 119.38 88.9 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-5v-led2-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "#PWR1502") (unit 1))))
+	(symbol
+		(lib_id "power:+5V")
+		(at 151.13 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f3a754e0-a30e-4e3f-8ad1-9ea377a1d90a")
+		(property "Reference" "#PWR?"
+			(at 151.13 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 151.13 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 151.13 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 151.13 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 151.13 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "693ec225-4065-448b-b833-b7a1d1692784")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/3272e4ee-3621-4f7a-8547-cc365cc51b15"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "power:GND") (at 81.28 137.16 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-led1")
-		(property "Reference" "#PWR1503" (at 81.28 143.51 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 81.28 140.97 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 81.28 137.16 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 81.28 137.16 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-led1-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "#PWR1503") (unit 1))))
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
 	)
-
-	(symbol (lib_id "power:GND") (at 119.38 137.16 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-led2")
-		(property "Reference" "#PWR1504" (at 119.38 143.51 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 119.38 140.97 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 119.38 137.16 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 119.38 137.16 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-led2-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec15-0001-0002-0003-000000000001" (reference "#PWR1504") (unit 1))))
-	)
-
-	(wire (pts (xy 38.1 106.68) (xy 46.99 106.68)) (stroke (width 0) (type default)) (uuid "w-data-r1501"))
-	(wire (pts (xy 54.61 106.68) (xy 73.66 106.68)) (stroke (width 0) (type default)) (uuid "w-r1501-led1"))
-
-	(wire (pts (xy 81.28 88.9) (xy 81.28 99.06)) (stroke (width 0) (type default)) (uuid "w-led1-vdd"))
-	(wire (pts (xy 81.28 114.3) (xy 81.28 120.65)) (stroke (width 0) (type default)) (uuid "w-led1-gnd-cap"))
-	(wire (pts (xy 81.28 128.27) (xy 81.28 137.16)) (stroke (width 0) (type default)) (uuid "w-led1-gnd"))
-
-	(wire (pts (xy 88.9 106.68) (xy 111.76 106.68)) (stroke (width 0) (type default)) (uuid "w-led1-led2"))
-
-	(wire (pts (xy 119.38 88.9) (xy 119.38 99.06)) (stroke (width 0) (type default)) (uuid "w-led2-vdd"))
-	(wire (pts (xy 119.38 114.3) (xy 119.38 120.65)) (stroke (width 0) (type default)) (uuid "w-led2-gnd-cap"))
-	(wire (pts (xy 119.38 128.27) (xy 119.38 137.16)) (stroke (width 0) (type default)) (uuid "w-led2-gnd"))
-
-	(wire (pts (xy 127 106.68) (xy 147.32 106.68)) (stroke (width 0) (type default)) (uuid "w-led2-continue"))
-
-	(label "LED_DATA" (at 38.1 106.68 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "label-led-data")
-	)
-
-	(label "to LED3-16..." (at 147.32 106.68 0) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify left bottom))
-		(uuid "label-continue")
-	)
-
-	(hierarchical_label "LED_DATA" (shape input) (at 35.56 106.68 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "hl-led-data")
-	)
-
-	(wire (pts (xy 35.56 106.68) (xy 38.1 106.68)) (stroke (width 0) (type default)) (uuid "w-hl-led-data"))
-
-	(sheet_instances (path "/" (page "1")))
+	(embedded_fonts no)
 )

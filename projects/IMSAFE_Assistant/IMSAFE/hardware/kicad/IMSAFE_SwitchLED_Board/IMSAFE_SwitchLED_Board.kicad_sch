@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "switchled-root-0001-0002-000000000001")
+	(generator_version "9.0")
+	(uuid "d2b957c0-0588-47be-81cb-9502284d07f0")
 	(paper "A4")
 	(title_block
 		(title "IMSAFE SwitchLED Board")
@@ -12,9 +12,7 @@
 		(comment 1 "Toggle Switches + Status LEDs + Encoders")
 		(comment 2 "Connected to MainBoard via FFC")
 	)
-
 	(lib_symbols)
-
 	(text "IMSAFE Switch/LED Board\n\nThis board contains:\n- Section 14: I/O Expander & Switches (MCP23017)\n- Section 15: Status LEDs (WS2812B-2020 x16)\n- Section 16: Rotary Encoders (EC11 x2)\n\nConnector to MainBoard:\n- FFC 10-pin\n- Signals: 5V, 3.3V, GND, I2C_SDA, I2C_SCL, LED_DATA, INT, 3x spare\n\nBoard Dimensions (estimated): 200mm x 40mm (long panel strip)"
 		(exclude_from_sim no)
 		(at 25.4 25.4 0)
@@ -24,21 +22,24 @@
 			)
 			(justify left)
 		)
-		(uuid "switchled-text-001")
+		(uuid "f37afb64-19c7-486e-af12-093795ab90fc")
 	)
-
 	(sheet
 		(at 25.4 76.2)
 		(size 76.2 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 194 255 194 1)
+			(color 194 255 194 1.0000)
 		)
-		(uuid "sheet-sec14-io")
+		(uuid "300d9a55-eade-4df3-8840-4aafea71e7a2")
 		(property "Sheetname" "Section_14_IO_Expander"
 			(at 25.4 75.4884 0)
 			(effects
@@ -57,27 +58,23 @@
 				(justify left top)
 			)
 		)
-		(instances
-			(project "IMSAFE_SwitchLED_Board"
-				(path "/switchled-root-0001-0002-000000000001"
-					(page "2")
-				)
-			)
-		)
 	)
-
 	(sheet
 		(at 25.4 101.6)
 		(size 76.2 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 255 255 194 1)
+			(color 255 255 194 1.0000)
 		)
-		(uuid "sheet-sec15-leds")
+		(uuid "5a624431-1216-47ab-863b-cd60c8ab385e")
 		(property "Sheetname" "Section_15_Status_LEDs"
 			(at 25.4 100.8884 0)
 			(effects
@@ -96,27 +93,23 @@
 				(justify left top)
 			)
 		)
-		(instances
-			(project "IMSAFE_SwitchLED_Board"
-				(path "/switchled-root-0001-0002-000000000001"
-					(page "3")
-				)
-			)
-		)
 	)
-
 	(sheet
 		(at 25.4 127)
 		(size 76.2 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(fill
-			(color 194 194 255 1)
+			(color 194 194 255 1.0000)
 		)
-		(uuid "sheet-sec16-enc")
+		(uuid "647699b4-cb63-4dd0-92c2-6cd3af62882f")
 		(property "Sheetname" "Section_16_Encoders"
 			(at 25.4 126.2884 0)
 			(effects
@@ -135,18 +128,11 @@
 				(justify left top)
 			)
 		)
-		(instances
-			(project "IMSAFE_SwitchLED_Board"
-				(path "/switchled-root-0001-0002-000000000001"
-					(page "4")
-				)
-			)
-		)
 	)
-
 	(sheet_instances
 		(path "/"
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )

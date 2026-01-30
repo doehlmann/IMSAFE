@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec13-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "d06a9d63-e733-4e19-8bd9-763a02d430ae")
 	(paper "A4")
 	(title_block
 		(title "Section 13: microSD")
@@ -12,21 +12,313 @@
 		(comment 1 "microSD Socket with ESD Protection")
 		(comment 2 "SDMMC 4-bit mode")
 	)
-
-	(lib_symbols)
-
+	(lib_symbols
+		(symbol "1_New_library:MEM2067-02-180-00-A_REVB"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 12.7117 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "MEM2067-02-180-00-A_REVB"
+				(at 0 -17.7826 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "MEM2067-02-180-00-A_REVB:GCT_MEM2067-02-180-00-A_REVB"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "GCT"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "MEM2067-02-180-00-A_REVB_0_0"
+				(rectangle
+					(start 0 -15.24)
+					(end 15.24 12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin power_in line
+					(at -5.08 10.16 0)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 7.62 0)
+					(length 5.08)
+					(name "DAT0"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 5.08 0)
+					(length 5.08)
+					(name "DAT1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 2.54 0)
+					(length 5.08)
+					(name "DAT2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 0 0)
+					(length 5.08)
+					(name "CD/DAT3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at -5.08 -2.54 0)
+					(length 5.08)
+					(name "CMD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin bidirectional clock
+					(at -5.08 -5.08 0)
+					(length 5.08)
+					(name "CLK"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -5.08 -7.62 0)
+					(length 5.08)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 5.08)
+					(name "SHIELD__1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 5.08)
+					(name "SHIELD__2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 5.08)
+					(name "SHIELD__3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 5.08)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
 	(text "microSD Section\n\nMain Components:\n- J3: MEM2067-02-180-00-A (hinged socket, vibration resistant)\n- U14, U15: USBLC6-2SC6 (ESD) x2\n\nPassives:\n- C1301: 100nF 0603 VDD bypass\n- C1302: 10uF 0805 VDD bulk\n- R1301-R1304: 33 Ohm 0603 DAT0-3 series resistors (4x)\n- R1305: 33 Ohm 0603 CMD series\n- R1306: 33 Ohm 0603 CLK series\n- R1307: 10k 0603 card detect pull-up\n\nInterface: SDMMC1 4-bit mode + DMA\n\nNotes:\n- Hinged socket for vibration resistance\n- ESD protection on all data lines\n- Series resistors for impedance matching\n- Card detect for hot-swap handling\n\nFilesystem: FATFS with 2-FAT table\nCard: Industrial-grade (SanDisk, ATP, Swissbit)"
 		(exclude_from_sim no)
-		(at 25.4 25.4 0)
+		(at 21.59 55.372 0)
 		(effects
 			(font
 				(size 2 2)
 			)
 			(justify left)
 		)
-		(uuid "sec13-text-001")
+		(uuid "5471cda2-5d5f-4116-be69-9e483c97000f")
 	)
-
 	(text "TODO: Add MEM2067 socket, ESD ICs\nRefer to GCT datasheet for footprint"
 		(exclude_from_sim no)
 		(at 25.4 119.38 0)
@@ -37,6 +329,117 @@
 			)
 			(justify left)
 		)
-		(uuid "sec13-todo-001")
+		(uuid "914fe990-0853-4167-ac79-99c9772557d3")
+	)
+	(symbol
+		(lib_id "1_New_library:MEM2067-02-180-00-A_REVB")
+		(at 167.64 95.25 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32b9d4f6-aa32-47ad-84fc-850c75e40b39")
+		(property "Reference" "J4"
+			(at 184.15 95.2499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MEM2067-02-180-00-A_REVB"
+			(at 184.15 97.7899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MEM2067-02-180-00-A_REVB:GCT_MEM2067-02-180-00-A_REVB"
+			(at 167.64 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 167.64 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 167.64 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "GCT"
+			(at 167.64 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "5"
+			(uuid "ec980ae6-c174-4669-b47f-af4cfbc0df1f")
+		)
+		(pin "7"
+			(uuid "a086a62c-9548-4fc6-a88c-c875fad26b5c")
+		)
+		(pin "2"
+			(uuid "87b8af16-4f64-4425-9484-3dce164209fa")
+		)
+		(pin "8"
+			(uuid "82a220a9-e11e-41ab-84d8-a331dae8f6d3")
+		)
+		(pin "1"
+			(uuid "8f574fcf-e898-435e-96b7-ad343f8da2e9")
+		)
+		(pin "6"
+			(uuid "b0850320-ec03-4f20-8376-056b8f45f2dd")
+		)
+		(pin "12"
+			(uuid "43ea3b5b-6614-4035-a550-5cf553e8c2b7")
+		)
+		(pin "4"
+			(uuid "e606bde0-7d1d-4d4d-b8fb-df2f410b5efd")
+		)
+		(pin "11"
+			(uuid "3182c4b2-ad93-4613-a260-f807e7d9f7fe")
+		)
+		(pin "3"
+			(uuid "89fe7720-63ac-4011-8993-6ffa899762e5")
+		)
+		(pin "9"
+			(uuid "dd7ba030-fdb0-48cd-bdfd-642942d3bd0a")
+		)
+		(pin "10"
+			(uuid "ca8908ad-c33b-47d2-a8d5-7336d6d030c3")
+		)
+		(instances
+			(project ""
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/5fe94529-d5ef-4a5e-bbcf-03b902aeec54"
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
 	)
 )

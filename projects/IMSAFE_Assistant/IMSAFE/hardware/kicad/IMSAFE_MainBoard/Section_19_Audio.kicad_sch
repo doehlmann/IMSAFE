@@ -1,8 +1,8 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
-	(uuid "sec19-0001-0002-0003-000000000001")
+	(generator_version "9.0")
+	(uuid "868df8e8-2b97-4eb3-ab97-6e4ca98d0d7d")
 	(paper "A4")
 	(title_block
 		(title "Section 19: Audio Alarm")
@@ -12,400 +12,1602 @@
 		(comment 1 "MLT-8530 Active Buzzer")
 		(comment 2 "CO alarm and notification")
 	)
-
 	(lib_symbols
-		(symbol "Device:D"
-			(pin_numbers hide)
-			(pin_names (offset 1.016) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D" (at 0 2.54 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Value" "D" (at 0 -2.54 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "~" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "D_0_1"
-				(polyline (pts (xy -1.27 1.27) (xy -1.27 -1.27))
-					(stroke (width 0.254) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 1.27 0) (xy -1.27 0))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27))
-					(stroke (width 0.254) (type default)) (fill (type none))
-				)
-			)
-			(symbol "D_1_1"
-				(pin passive line (at -3.81 0 0) (length 2.54)
-					(name "K" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
-				)
-				(pin passive line (at 3.81 0 180) (length 2.54)
-					(name "A" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
-				)
-			)
-		)
-		(symbol "Device:R"
-			(pin_numbers hide)
-			(pin_names (offset 0))
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R" (at 2.032 0 90)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Value" "R" (at 0 0 90)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at -1.778 0 90)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "~" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "R_0_1"
-				(rectangle (start -1.016 -2.54) (end 1.016 2.54)
-					(stroke (width 0.254) (type default)) (fill (type none))
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line (at 0 3.81 270) (length 1.27)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
-				)
-				(pin passive line (at 0 -3.81 90) (length 1.27)
-					(name "~" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
-				)
-			)
-		)
-		(symbol "power:GND"
-			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -6.35 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Value" "GND" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "GND_0_1"
-				(polyline (pts (xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-			)
-			(symbol "GND_1_1"
-				(pin power_in line (at 0 0 270) (length 0)
-					(name "GND" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
-				)
-			)
-		)
-		(symbol "power:+3V3"
-			(power)
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR" (at 0 -3.81 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Value" "+3V3" (at 0 3.556 0)
-				(effects (font (size 1.27 1.27)))
-			)
-			(property "Footprint" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(property "Datasheet" "" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "+3V3_0_1"
-				(polyline (pts (xy -0.762 1.27) (xy 0 2.54))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0 0) (xy 0 2.54))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0 2.54) (xy 0.762 1.27))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-			)
-			(symbol "+3V3_1_1"
-				(pin power_in line (at 0 0 90) (length 0)
-					(name "+3V3" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
-				)
-			)
-		)
-		(symbol "Transistor_FET:AO3400A"
-			(pin_names hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q" (at 5.08 1.905 0)
-				(effects (font (size 1.27 1.27)) (justify left))
-			)
-			(property "Value" "AO3400A" (at 5.08 0 0)
-				(effects (font (size 1.27 1.27)) (justify left))
-			)
-			(property "Footprint" "Package_TO_SOT_SMD:SOT-23" (at 5.08 -1.905 0)
-				(effects (font (size 1.27 1.27) italic) (justify left) hide)
-			)
-			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf" (at 0 0 0)
-				(effects (font (size 1.27 1.27)) hide)
-			)
-			(symbol "AO3400A_0_1"
-				(polyline (pts (xy 0.254 0) (xy -2.54 0))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0.254 1.905) (xy 0.254 -1.905))
-					(stroke (width 0.254) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0.762 -1.27) (xy 0.762 -2.286))
-					(stroke (width 0.254) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0.762 0.508) (xy 0.762 -0.508))
-					(stroke (width 0.254) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0.762 2.286) (xy 0.762 1.27))
-					(stroke (width 0.254) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 2.54 2.54) (xy 2.54 1.778))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778))
-					(stroke (width 0) (type default)) (fill (type none))
-				)
-				(polyline (pts (xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0))
-					(stroke (width 0) (type default)) (fill (type outline))
-				)
-				(circle (center 1.651 0) (radius 2.794)
-					(stroke (width 0.254) (type default)) (fill (type none))
-				)
-			)
-			(symbol "AO3400A_1_1"
-				(pin passive line (at 2.54 -5.08 90) (length 2.54)
-					(name "S" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
-				)
-				(pin input line (at -5.08 0 0) (length 2.54)
-					(name "G" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
-				)
-				(pin passive line (at 2.54 5.08 270) (length 2.54)
-					(name "D" (effects (font (size 1.27 1.27))))
-					(number "3" (effects (font (size 1.27 1.27))))
-				)
-			)
-		)
 		(symbol "Device:Buzzer"
-			(pin_numbers hide)
-			(pin_names (offset 0) hide)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "BZ" (at 0 5.08 0)
-				(effects (font (size 1.27 1.27)))
+			(property "Reference" "BZ"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Value" "Buzzer" (at 0 -5.08 0)
-				(effects (font (size 1.27 1.27)))
+			(property "Value" "Buzzer"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
 			)
-			(property "Footprint" "" (at -0.635 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Footprint" ""
+				(at -0.635 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
-			(property "Datasheet" "~" (at -0.635 0 0)
-				(effects (font (size 1.27 1.27)) hide)
+			(property "Datasheet" "~"
+				(at -0.635 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
 			)
 			(symbol "Buzzer_0_1"
-				(arc (start 0 -2.54) (mid 3.81 0) (end 0 2.54)
-					(stroke (width 0.254) (type default)) (fill (type none))
+				(polyline
+					(pts
+						(xy 0 -2.54) (xy 0 2.54)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
-				(polyline (pts (xy 0 -2.54) (xy 0 2.54))
-					(stroke (width 0.254) (type default)) (fill (type none))
+				(arc
+					(start 0 2.54)
+					(mid 3.81 0)
+					(end 0 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
 				)
 			)
 			(symbol "Buzzer_1_1"
-				(pin passive line (at -2.54 1.27 0) (length 2.54)
-					(name "+" (effects (font (size 1.27 1.27))))
-					(number "1" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at -2.54 1.27 0)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
 				)
-				(pin passive line (at -2.54 -1.27 0) (length 2.54)
-					(name "-" (effects (font (size 1.27 1.27))))
-					(number "2" (effects (font (size 1.27 1.27))))
+				(pin passive line
+					(at -2.54 -1.27 0)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:D"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "D"
+				(at 0 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "D_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.27) (xy -1.27 -1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "D_1_1"
+				(pin passive line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 3.81 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Transistor_FET:AO3400A"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "AO3400A"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "AO3400A_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "AO3400A_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+3V3"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+3V3"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+3V3_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+3V3_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "+3V3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(text "MLT-8530 Active Buzzer Driver\n\nSpecifications:\n- Buzzer type: Active (internal oscillator)\n- Sound pressure: 85 dB @ 10cm\n- Resonant frequency: 2700 Hz\n- Operating voltage: 3.3V\n- Current: ~30 mA\n\nKey Components:\n- BZ1: MLT-8530 active buzzer - JLCPCB C94599\n- Q7: AO3400A MOSFET driver - JLCPCB C20917\n- R1901: 10k gate pull-down - JLCPCB C25804\n- R1902: 100R gate series - JLCPCB C22775\n- D2: 1N4148W flyback diode - JLCPCB C81598\n\nDriver Circuit:\n- Low-side N-channel MOSFET switch\n- Flyback diode for inductive kickback protection\n- Gate pull-down ensures buzzer off at reset\n- Series gate resistor limits ringing\n\nUsage:\n- CO alarm (safety critical)\n- Low battery warning\n- Checklist incomplete alert\n- Notification tones\n\nNotes:\n- Active buzzer: just apply DC voltage\n- For tone patterns, use PWM on BUZZER_EN\n- Mount with sound holes facing outward"
+		(exclude_from_sim no)
+		(at 23.622 61.722 0)
+		(effects
+			(font
+				(size 1.8 1.8)
+			)
+			(justify left)
+		)
+		(uuid "0171f31f-8fb0-4856-b78f-5a1f61719041")
+	)
+	(text "Low-side MOSFET driver\nQ7: AO3400A N-channel\nR1901: Pull-down (off at reset)\nR1902: Gate series resistor"
+		(exclude_from_sim no)
+		(at 127 144.78 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "353178b7-fa1c-4838-9fe6-86389b562d7e")
+	)
+	(text "Flyback diode D2\nProtects against inductive\nkickback from buzzer coil"
+		(exclude_from_sim no)
+		(at 149.86 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "ad40f7cc-15c0-446a-b02a-d127bf68a349")
+	)
+	(wire
+		(pts
+			(xy 127 97.79) (xy 125.73 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "042bb4d8-d39d-4fa1-a0da-50d0fe35efcc")
+	)
+	(wire
+		(pts
+			(xy 128.27 106.68) (xy 129.54 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1313b787-74b4-4c1e-af27-d208ce4cf57c")
+	)
+	(wire
+		(pts
+			(xy 125.73 97.79) (xy 125.73 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16940cd9-fd01-4729-bea4-859301879fa9")
+	)
+	(wire
+		(pts
+			(xy 127 93.98) (xy 127 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "265f8265-3214-46d8-8207-2b53f7985f3f")
+	)
+	(wire
+		(pts
+			(xy 129.54 132.08) (xy 129.54 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4eadc27d-a79c-4656-87f4-9be7efdd31f9")
+	)
+	(wire
+		(pts
+			(xy 142.24 107.95) (xy 142.24 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62851514-c6cf-4204-b6ec-550e6056e45d")
+	)
+	(wire
+		(pts
+			(xy 142.24 115.57) (xy 142.24 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64b4cdb8-badf-463a-b0f1-9f2f19118261")
+	)
+	(wire
+		(pts
+			(xy 129.54 106.68) (xy 129.54 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70611373-239c-4975-825a-c3361ac5fbbb")
+	)
+	(wire
+		(pts
+			(xy 142.24 119.38) (xy 129.54 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "752ed263-29ce-4fc8-8375-6481f1e7218c")
+	)
+	(wire
+		(pts
+			(xy 128.27 101.6) (xy 128.27 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9990fe17-6078-41d3-a50a-f1e1c3b1afac")
+	)
+	(wire
+		(pts
+			(xy 116.84 127) (xy 116.84 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a7c1e5f-1137-4ff3-aaf8-2572df32cdc0")
+	)
+	(wire
+		(pts
+			(xy 115.57 127) (xy 116.84 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b5b4b192-d2a1-4b48-8d95-3b4722bfbd34")
+	)
+	(wire
+		(pts
+			(xy 110.49 127) (xy 107.95 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9abcb46-fe5e-45ff-a206-269cb44fd685")
+	)
+	(wire
+		(pts
+			(xy 142.24 97.79) (xy 127 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ccdd284f-1322-498d-b702-4ab793f0e629")
+	)
+	(wire
+		(pts
+			(xy 116.84 127) (xy 121.92 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9218525-a747-4133-93eb-10c80e129933")
+	)
+	(wire
+		(pts
+			(xy 91.44 127) (xy 102.87 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dea91296-5182-48cf-bba2-ee8e02005a8c")
+	)
+	(label "BUZZER_EN"
+		(at 93.98 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3e6c4abf-1817-492d-8fc5-5a5302395a3d")
+	)
+	(hierarchical_label "BUZZER_EN"
+		(shape input)
+		(at 91.44 127 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8e010207-23a1-4aa9-a3bd-b1802c2aa922")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 111.76 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "07327abf-0b7c-45c5-ad90-81bf9d79c63c")
+		(property "Reference" "R?"
+			(at 111.76 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 111.76 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 111.76 128.778 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 111.76 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 111.76 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C25804"
+			(at 111.76 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e5e8ab9b-37cb-4fb2-a1fb-094cfa5d737f")
+		)
+		(pin "2"
+			(uuid "8b4cf87a-7974-4f03-8bb7-353e2c359a08")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/ef947237-168f-45e4-a490-77a604236c1d"
+					(reference "R?")
+					(unit 1)
 				)
 			)
 		)
 	)
-
-	(text "MLT-8530 Active Buzzer Driver\n\nSpecifications:\n- Buzzer type: Active (internal oscillator)\n- Sound pressure: 85 dB @ 10cm\n- Resonant frequency: 2700 Hz\n- Operating voltage: 3.3V\n- Current: ~30 mA\n\nKey Components:\n- BZ1: MLT-8530 active buzzer - JLCPCB C94599\n- Q7: AO3400A MOSFET driver - JLCPCB C20917\n- R1901: 10k gate pull-down - JLCPCB C25804\n- R1902: 100R gate series - JLCPCB C22775\n- D2: 1N4148W flyback diode - JLCPCB C81598\n\nDriver Circuit:\n- Low-side N-channel MOSFET switch\n- Flyback diode for inductive kickback protection\n- Gate pull-down ensures buzzer off at reset\n- Series gate resistor limits ringing\n\nUsage:\n- CO alarm (safety critical)\n- Low battery warning\n- Checklist incomplete alert\n- Notification tones\n\nNotes:\n- Active buzzer: just apply DC voltage\n- For tone patterns, use PWM on BUZZER_EN\n- Mount with sound holes facing outward"
+	(symbol
+		(lib_id "Device:Buzzer")
+		(at 127 104.14 90)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 25.4 25.4 0)
-		(effects (font (size 1.8 1.8)) (justify left))
-		(uuid "sec19-text-001")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2bdf2570-be92-4114-89ef-27e4b38a29e2")
+		(property "Reference" "BZ?"
+			(at 127 96.52 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "MLT-8530"
+			(at 127 99.06 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Buzzer_Beeper:Buzzer_12x9.5RM7.6"
+			(at 126.365 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 126.365 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C94599"
+			(at 127 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e9a5cf28-c7b6-4f03-bf00-2f5b2f402a94")
+		)
+		(pin "2"
+			(uuid "64d6f2f0-0104-4e91-906d-d8bf230204f6")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/ef947237-168f-45e4-a490-77a604236c1d"
+					(reference "BZ?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(symbol (lib_id "Device:Buzzer") (at 127 104.14 90) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "bz1-mlt8530-uuid")
-		(property "Reference" "BZ1" (at 127 96.52 90) (effects (font (size 1.27 1.27))))
-		(property "Value" "MLT-8530" (at 127 99.06 90) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "Buzzer_Beeper:Buzzer_12x9.5RM7.6" (at 126.365 104.14 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 126.365 104.14 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C94599" (at 127 104.14 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "bz1-p")) (pin "2" (uuid "bz1-m"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec19-0001-0002-0003-000000000001" (reference "BZ1") (unit 1))))
-	)
-
-	(symbol (lib_id "Transistor_FET:AO3400A") (at 127 127 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "q7-ao3400a-uuid")
-		(property "Reference" "Q7" (at 132.08 125.73 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Value" "AO3400A" (at 132.08 128.27 0) (effects (font (size 1.27 1.27)) (justify left)))
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23" (at 132.08 129.54 0) (effects (font (size 1.27 1.27) italic) (justify left) hide))
-		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf" (at 127 127 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C20917" (at 127 127 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "q7-s")) (pin "2" (uuid "q7-g")) (pin "3" (uuid "q7-d"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec19-0001-0002-0003-000000000001" (reference "Q7") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:R") (at 111.76 127 90) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "r1901-uuid")
-		(property "Reference" "R1901" (at 111.76 124.46 90) (effects (font (size 1.27 1.27))))
-		(property "Value" "10k" (at 111.76 127 90) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 111.76 128.778 90) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 111.76 127 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C25804" (at 111.76 127 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "r1901-p1")) (pin "2" (uuid "r1901-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec19-0001-0002-0003-000000000001" (reference "R1901") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:R") (at 106.68 127 90) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "r1902-uuid")
-		(property "Reference" "R1902" (at 106.68 129.54 90) (effects (font (size 1.27 1.27))))
-		(property "Value" "100R" (at 106.68 127 90) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 106.68 128.778 90) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 106.68 127 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C22775" (at 106.68 127 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "r1902-p1")) (pin "2" (uuid "r1902-p2"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec19-0001-0002-0003-000000000001" (reference "R1902") (unit 1))))
-	)
-
-	(symbol (lib_id "Device:D") (at 142.24 111.76 90) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "d2-1n4148w-uuid")
-		(property "Reference" "D2" (at 147.32 111.76 90) (effects (font (size 1.27 1.27))))
-		(property "Value" "1N4148W" (at 144.78 111.76 90) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "Diode_SMD:D_SOD-123" (at 142.24 111.76 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "~" (at 142.24 111.76 0) (effects (font (size 1.27 1.27)) hide))
-		(property "JLCPCB" "C81598" (at 142.24 111.76 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "d2-k")) (pin "2" (uuid "d2-a"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec19-0001-0002-0003-000000000001" (reference "D2") (unit 1))))
-	)
-
-	(symbol (lib_id "power:+3V3") (at 127 93.98 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-3v3-bz")
-		(property "Reference" "#PWR1901" (at 127 97.79 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "+3V3" (at 127 90.17 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 127 93.98 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 127 93.98 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-3v3-bz-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec19-0001-0002-0003-000000000001" (reference "#PWR1901") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 129.54 137.16 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-q7")
-		(property "Reference" "#PWR1902" (at 129.54 143.51 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 129.54 140.97 0) (effects (font (size 1.27 1.27))))
-		(property "Footprint" "" (at 129.54 137.16 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 129.54 137.16 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-q7-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec19-0001-0002-0003-000000000001" (reference "#PWR1902") (unit 1))))
-	)
-
-	(symbol (lib_id "power:GND") (at 116.84 137.16 0) (unit 1)
-		(exclude_from_sim no) (in_bom yes) (on_board yes) (dnp no)
-		(uuid "pwr-gnd-r1901")
-		(property "Reference" "#PWR1903" (at 116.84 143.51 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Value" "GND" (at 116.84 140.97 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Footprint" "" (at 116.84 137.16 0) (effects (font (size 1.27 1.27)) hide))
-		(property "Datasheet" "" (at 116.84 137.16 0) (effects (font (size 1.27 1.27)) hide))
-		(pin "1" (uuid "pwr-gnd-r1901-p1"))
-		(instances (project "IMSAFE_MainBoard" (path "/sec19-0001-0002-0003-000000000001" (reference "#PWR1903") (unit 1))))
-	)
-
-	(wire (pts (xy 127 93.98) (xy 127 97.79)) (stroke (width 0) (type default)) (uuid "w-3v3-bz"))
-	(wire (pts (xy 127 97.79) (xy 125.73 97.79)) (stroke (width 0) (type default)) (uuid "w-bz-p-conn"))
-	(wire (pts (xy 125.73 97.79) (xy 125.73 101.6)) (stroke (width 0) (type default)) (uuid "w-bz-p"))
-
-	(wire (pts (xy 128.27 101.6) (xy 128.27 106.68)) (stroke (width 0) (type default)) (uuid "w-bz-m-conn"))
-	(wire (pts (xy 128.27 106.68) (xy 129.54 106.68)) (stroke (width 0) (type default)) (uuid "w-bz-m-q7h"))
-	(wire (pts (xy 129.54 106.68) (xy 129.54 121.92)) (stroke (width 0) (type default)) (uuid "w-bz-m-q7"))
-
-	(wire (pts (xy 129.54 132.08) (xy 129.54 137.16)) (stroke (width 0) (type default)) (uuid "w-q7-gnd"))
-
-	(wire (pts (xy 110.49 127) (xy 107.95 127)) (stroke (width 0) (type default)) (uuid "w-r1901-r1902"))
-	(wire (pts (xy 115.57 127) (xy 116.84 127)) (stroke (width 0) (type default)) (uuid "w-r1901-gnd-h"))
-	(wire (pts (xy 116.84 127) (xy 116.84 137.16)) (stroke (width 0) (type default)) (uuid "w-r1901-gnd"))
-	(wire (pts (xy 116.84 127) (xy 121.92 127)) (stroke (width 0) (type default)) (uuid "w-r1901-q7"))
-	(wire (pts (xy 102.87 127) (xy 93.98 127)) (stroke (width 0) (type default)) (uuid "w-gate-hl"))
-
-	(wire (pts (xy 142.24 107.95) (xy 142.24 97.79)) (stroke (width 0) (type default)) (uuid "w-d2-k-top"))
-	(wire (pts (xy 142.24 97.79) (xy 127 97.79)) (stroke (width 0) (type default)) (uuid "w-d2-k-bz"))
-	(wire (pts (xy 142.24 115.57) (xy 142.24 119.38)) (stroke (width 0) (type default)) (uuid "w-d2-a-bot"))
-	(wire (pts (xy 142.24 119.38) (xy 129.54 119.38)) (stroke (width 0) (type default)) (uuid "w-d2-a-q7"))
-	(wire (pts (xy 129.54 119.38) (xy 129.54 121.92)) (stroke (width 0) (type default)) (uuid "w-d2-a-q7-v"))
-
-	(label "BUZZER_EN" (at 93.98 127 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right bottom))
-		(uuid "label-buzzer-en")
-	)
-
-	(hierarchical_label "BUZZER_EN" (shape input) (at 91.44 127 180) (fields_autoplaced yes)
-		(effects (font (size 1.27 1.27)) (justify right))
-		(uuid "hl-buzzer-en")
-	)
-
-	(wire (pts (xy 91.44 127) (xy 93.98 127)) (stroke (width 0) (type default)) (uuid "w-hl-buzzer-en"))
-
-	(text "Low-side MOSFET driver\nQ7: AO3400A N-channel\nR1901: Pull-down (off at reset)\nR1902: Gate series resistor"
+	(symbol
+		(lib_id "Transistor_FET:AO3400A")
+		(at 127 127 0)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 127 144.78 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-driver")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "447a5221-8087-421c-816f-cde03b3cb929")
+		(property "Reference" "Q?"
+			(at 132.08 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "AO3400A"
+			(at 132.08 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 132.08 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "http://www.aosmd.com/pdfs/datasheet/AO3400A.pdf"
+			(at 127 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C20917"
+			(at 127 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4033fc8d-b30e-4a96-abb1-0fdc9bdbdf8f")
+		)
+		(pin "2"
+			(uuid "70f0a1df-dc74-44e0-a86b-48be934a5b7e")
+		)
+		(pin "3"
+			(uuid "0c23f1b4-d3f7-445a-9dc7-f088379e4ea8")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/ef947237-168f-45e4-a490-77a604236c1d"
+					(reference "Q?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(text "Flyback diode D2\nProtects against inductive\nkickback from buzzer coil"
+	(symbol
+		(lib_id "Device:D")
+		(at 142.24 111.76 90)
+		(unit 1)
 		(exclude_from_sim no)
-		(at 149.86 111.76 0)
-		(effects (font (size 1.27 1.27) (italic yes)) (justify left))
-		(uuid "text-flyback")
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6e8b69b0-7759-43d2-9621-f40f34291349")
+		(property "Reference" "D?"
+			(at 147.32 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "1N4148W"
+			(at 144.78 111.76 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Diode_SMD:D_SOD-123"
+			(at 142.24 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 142.24 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 142.24 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C81598"
+			(at 142.24 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3b3364b3-d4cd-41a0-b86b-8fc0348fd3f7")
+		)
+		(pin "2"
+			(uuid "a9188fc4-d282-4004-ae4c-77baf4ca1703")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/ef947237-168f-45e4-a490-77a604236c1d"
+					(reference "D?")
+					(unit 1)
+				)
+			)
+		)
 	)
-
-	(sheet_instances (path "/" (page "1")))
+	(symbol
+		(lib_id "Device:R")
+		(at 106.68 127 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "837dc6b0-bf44-485a-b67a-c100eef19a5c")
+		(property "Reference" "R?"
+			(at 106.68 129.54 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "100R"
+			(at 106.68 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 106.68 128.778 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "JLCPCB" "C22775"
+			(at 106.68 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0655ae61-6aff-439d-a535-6bcda8e104dd")
+		)
+		(pin "2"
+			(uuid "f8359463-2d95-479a-8f04-141cd4596aa1")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/ef947237-168f-45e4-a490-77a604236c1d"
+					(reference "R?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 127 93.98 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9217c934-9a66-46a1-92f9-e4f3a2088354")
+		(property "Reference" "#PWR?"
+			(at 127 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 127 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 127 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "fa75f869-d722-4d6f-9af3-112d8de19577")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/ef947237-168f-45e4-a490-77a604236c1d"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 116.84 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d9a19d9f-dbb0-46f0-b5a9-a24cc0eefa9f")
+		(property "Reference" "#PWR?"
+			(at 116.84 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 116.84 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 116.84 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 116.84 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d34afa11-b038-45b4-973c-fe9be8faaaef")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/ef947237-168f-45e4-a490-77a604236c1d"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 129.54 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ecab67da-f7f8-4d25-bc98-c589ea08ba51")
+		(property "Reference" "#PWR?"
+			(at 129.54 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 129.54 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 129.54 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 129.54 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 129.54 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f5574bf3-e622-46e6-8f2a-e8f1e7e96f48")
+		)
+		(instances
+			(project "IMSAFE_MainBoard"
+				(path "/a1b2c3d4-e5f6-7890-abcd-ef1234567890/ef947237-168f-45e4-a490-77a604236c1d"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
