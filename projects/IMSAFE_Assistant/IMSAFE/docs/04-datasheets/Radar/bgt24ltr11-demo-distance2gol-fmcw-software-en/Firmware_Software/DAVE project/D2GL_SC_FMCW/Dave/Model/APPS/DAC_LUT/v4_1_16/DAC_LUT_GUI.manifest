@@ -1,0 +1,181 @@
+package Model.APPS.DAC_LUT.v4_1_16;
+
+// Import statements
+import ifx.davex.app.manifest.*
+
+abstract class DAC_LUT_GUI extends AppManifest {
+	/* Begin : UI variable section */
+	 public GTab tab_wave_configuration;
+	 public GTab gtab_data_type;
+	 public GTab gtab_frequency;
+	 public GTab gtab_expert;
+	 public GTab gtab_interrupt_config;
+	 public GImage gimage_wave_config;
+	 public GImage gimage_sign_sel;
+	 public GImage gimage_freq_config;
+	 public GInteger gint_table_length;
+	 public GInteger gint_start_index;
+	 public GInteger gint_repetition_cycles;
+	 public GInteger gint_table_length_second_dac;
+	 public GInteger gint_start_index_second_dac;
+	 public GInteger gint_repetition_cycles_second_dac;
+	 public GInteger gint_offset_val;
+	 public GInteger gint_shifted_bits;
+	 public GInteger gint_offset_val_second_dac;
+	 public GInteger gint_shifted_bits_second_dac;
+	 public GCombo gcombo_waveform_sel;
+	 public GCombo gcombo_repetition;
+	 public GCombo gcombo_waveform_sel_second_dac;
+	 public GCombo gcombo_repetition_second_dac;
+	 public GCombo gcombo_data_type_sel;
+	 public GCombo gcombo_sign_sel;
+	 public GCombo gcombo_data_type_sel_second_dac;
+	 public GCombo gcombo_sign_sel_second_dac;
+	 public GCombo gcombo_clock_source;
+	 public GCombo gcombo_freq_config;
+	 public GCombo gcombo_refill;
+	 public GFloat gfloat_desired;
+	 public GFloat gfloat_actual;
+	 public GFloat gfloat_config_lut_freq_hz;
+	 public GFloat gfloat_required_trigger_freq;
+	 public GFloat gfloat_update_rate;
+	 public GFloat gfloat_trigger_freq;
+	 public GFloat gfloat_second_dac_freq;
+	 public GString gstring_custom_lut;
+	 public GString gstring_custom_lut_second_dac;
+	 public GString gstring_12bit_fast_exe;
+	 public GString gstring_12bit_fast_exe_second_dac;
+	 public GString gstring_interrupt_handler;
+	 public GCheck gcheck_synchronize_second_dac;
+	 public GCheck gcheck_start_during_init;
+	 public GCheck gcheck_expose_pin;
+	 public GCheck gcheck_add_offset;
+	 public GCheck gcheck_shift_enable;
+	 public GCheck gcheck_invert_output;
+	 public GCheck gcheck_add_offset_second_dac;
+	 public GCheck gcheck_shift_enable_second_dac;
+	 public GCheck gcheck_invert_output_second_dac;
+	 public GCheck gcheck_enable_sr;
+	 public GLabel glabel_start_index;
+	 public GLabel glabel_repetition_cycles;
+	 public GLabel glabel_custom_lut;
+	 public GLabel glabel_waveform_sel_second_dac;
+	 public GLabel glabel_table_length_second_dac;
+	 public GLabel glabel_start_index_second_dac;
+	 public GLabel glabel_repetition_second_dac;
+	 public GLabel glabel_repetition_cycles_second_dac;
+	 public GLabel glabel_custom_lut_second_dac;
+	 public GLabel glabel_12bit_fast_exe;
+	 public GLabel glabel_12bit_fast_exe_second_dac;
+	 public GLabel glabel_config_lut_freq_hz;
+	 public GLabel glabel_required_trigger_freq;
+	 public GLabel glabel_update_rate;
+	 public GLabel glabel_trigger_freq;
+	 public GLabel glabel_second_dac_freq;
+	 public GLabel glabel_interrupt_handler;
+	 public GGroup ggroup_dac_config;
+	 public GGroup ggroup_second_dac_config;
+	 public GGroup ggroup_dac_data_type;
+	 public GGroup ggroup_dac_data_type_second_dac;
+	 public GGroup ggroup_freq_config;
+	 public GGroup ggroup_expert_dac_config;
+	 public GGroup ggroup_offset_config;
+	 public GGroup ggroup_shift_config;
+	 public GGroup ggroup_expert_second_dac_config;
+	 public GGroup ggroup_offset_config_second_dac;
+	 public GGroup ggroup_shift_config_second_dac;
+	 public GGroup ggroup_nvic_conf;
+	 public GInterruptPrio ginterruptprio_dac_ch_sr;
+	 public GMessage gmessage_high_trig_freq;
+	 public GMessage gmessage_valid_isr_name;
+
+	 public DAC_LUT_GUI(DaveEnv daveEnv){
+
+	 tab_wave_configuration = GTab(widgetName:"tab_wave_configuration", text:"Wave Configuration", enabled:true, visible:true)
+	 gtab_data_type = GTab(widgetName:"gtab_data_type", text:"Data Type", enabled:true, visible:true)
+	 gtab_frequency = GTab(widgetName:"gtab_frequency", text:"Frequency", enabled:true, visible:true)
+	 gtab_expert = GTab(widgetName:"gtab_expert", text:"Expert", enabled:true, visible:true)
+	 gtab_interrupt_config = GTab(widgetName:"gtab_interrupt_config", text:"Interrupt Settings", enabled:true, visible:true)
+	 gimage_wave_config = GImage(widgetName:"gimage_wave_config", path: "Uimodel/Waveform_Sel.bmp", enabled:true, visible:true)
+	 gimage_sign_sel = GImage(widgetName:"gimage_sign_sel", path: "Uimodel/Sign_Sel.bmp", enabled:true, visible:true)
+	 gimage_freq_config = GImage(widgetName:"gimage_freq_config", path: "Uimodel/freq_config.bmp", enabled:true, visible:true)
+	 gint_table_length = GInteger(widgetName:"gint_table_length", value:200, minValue:32, maxValue:1024, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_start_index = GInteger(widgetName:"gint_start_index", value:0, minValue:0, maxValue:1024, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_repetition_cycles = GInteger(widgetName:"gint_repetition_cycles", value:1, minValue:1, maxValue:32767, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_table_length_second_dac = GInteger(widgetName:"gint_table_length_second_dac", value:200, minValue:32, maxValue:1024, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_start_index_second_dac = GInteger(widgetName:"gint_start_index_second_dac", value:0, minValue:0, maxValue:1024, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_repetition_cycles_second_dac = GInteger(widgetName:"gint_repetition_cycles_second_dac", value:1, minValue:1, maxValue:32767, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_offset_val = GInteger(widgetName:"gint_offset_val", value:0, minValue:0, maxValue:255, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_shifted_bits = GInteger(widgetName:"gint_shifted_bits", value:0, minValue:-7, maxValue:7, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_offset_val_second_dac = GInteger(widgetName:"gint_offset_val_second_dac", value:0, minValue:0, maxValue:255, enabled:true, visible:true, isMandatoryValue:false)
+	 gint_shifted_bits_second_dac = GInteger(widgetName:"gint_shifted_bits_second_dac", value:0, minValue:-7, maxValue:7, enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_waveform_sel = GCombo(widgetName:"gcombo_waveform_sel", options:["Sine","Cosine","Triangle","Custom"], value:"Sine", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_repetition = GCombo(widgetName:"gcombo_repetition", options:["Endless","Cycles"], value:"Endless", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_waveform_sel_second_dac = GCombo(widgetName:"gcombo_waveform_sel_second_dac", options:["Sine","Cosine","Triangle","Custom"], value:"Sine", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_repetition_second_dac = GCombo(widgetName:"gcombo_repetition_second_dac", options:["Endless","Cycles"], value:"Endless", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_data_type_sel = GCombo(widgetName:"gcombo_data_type_sel", options:["12 Bit (Faster Execution)","16 Bit (User Friendly)"], value:"12 Bit (Faster Execution)", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_sign_sel = GCombo(widgetName:"gcombo_sign_sel", options:["Unsigned","Signed"], value:"Unsigned", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_data_type_sel_second_dac = GCombo(widgetName:"gcombo_data_type_sel_second_dac", options:["12 Bit (Faster Execution)","16 Bit (User Friendly)"], value:"12 Bit (Faster Execution)", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_sign_sel_second_dac = GCombo(widgetName:"gcombo_sign_sel_second_dac", options:["Unsigned","Signed"], value:"Unsigned", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_clock_source = GCombo(widgetName:"gcombo_clock_source", options:["Internal Trigger","External Trigger","Software Trigger"], value:"Internal Trigger", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_freq_config = GCombo(widgetName:"gcombo_freq_config", options:["LUT Frequency [Hz]:","Trigger Frequency [Hz]:","Update Rate [us]:"], value:"LUT Frequency [Hz]:", enabled:true, visible:true, isMandatoryValue:false)
+	 gcombo_refill = GCombo(widgetName:"gcombo_refill", options:["Manual Software","Auto Interrupt","Auto DMA"], value:"Auto Interrupt", enabled:true, visible:true, isMandatoryValue:false)
+	 gfloat_desired = GFloat(widgetName:"gfloat_desired", value:1000, minValue:0, maxValue:1000, enabled:true, visible:true, isMandatoryValue:false)
+	 gfloat_actual = GFloat(widgetName:"gfloat_actual", value:1000, minValue:0, maxValue:7500000, enabled:false, visible:true, isMandatoryValue:false)
+	 gfloat_config_lut_freq_hz = GFloat(widgetName:"gfloat_config_lut_freq_hz", value:1000, minValue:0.0, maxValue:7500000.0, enabled:false, visible:true, isMandatoryValue:false)
+	 gfloat_required_trigger_freq = GFloat(widgetName:"gfloat_required_trigger_freq", value:10000, minValue:0, maxValue:5120000000, enabled:false, visible:true, isMandatoryValue:false)
+	 gfloat_update_rate = GFloat(widgetName:"gfloat_update_rate", value:0, minValue:0, maxValue:1000000, enabled:false, visible:true, isMandatoryValue:false)
+	 gfloat_trigger_freq = GFloat(widgetName:"gfloat_trigger_freq", value:10000, minValue:0, maxValue:5120000000, enabled:false, visible:true, isMandatoryValue:false)
+	 gfloat_second_dac_freq = GFloat(widgetName:"gfloat_second_dac_freq", value:1000, minValue:0, maxValue:5000000, enabled:false, visible:true, isMandatoryValue:false)
+	 gstring_custom_lut = GString(widgetName:"gstring_custom_lut", value:"DAC_LUT_0_array", enabled:true, visible:true, isMandatoryValue:false)
+	 gstring_custom_lut_second_dac = GString(widgetName:"gstring_custom_lut_second_dac", value:"DAC_LUT_0_coupled_array", enabled:true, visible:true, isMandatoryValue:false)
+	 gstring_12bit_fast_exe = GString(widgetName:"gstring_12bit_fast_exe", value:"12 Bit (Faster Execution)", enabled:false, visible:true, isMandatoryValue:false)
+	 gstring_12bit_fast_exe_second_dac = GString(widgetName:"gstring_12bit_fast_exe_second_dac", value:"12 Bit (Faster Execution)", enabled:false, visible:true, isMandatoryValue:false)
+	 gstring_interrupt_handler = GString(widgetName:"gstring_interrupt_handler", value:"Refill_Auto_Interrupt_Handler", enabled:true, visible:true, isMandatoryValue:false)
+	 gcheck_synchronize_second_dac = GCheck(widgetName:"gcheck_synchronize_second_dac", value:false, enabled:true, visible:true)
+	 gcheck_start_during_init = GCheck(widgetName:"gcheck_start_during_init", value:true, enabled:true, visible:true)
+	 gcheck_expose_pin = GCheck(widgetName:"gcheck_expose_pin", value:false, enabled:true, visible:true)
+	 gcheck_add_offset = GCheck(widgetName:"gcheck_add_offset", value:false, enabled:true, visible:true)
+	 gcheck_shift_enable = GCheck(widgetName:"gcheck_shift_enable", value:false, enabled:true, visible:true)
+	 gcheck_invert_output = GCheck(widgetName:"gcheck_invert_output", value:false, enabled:true, visible:true)
+	 gcheck_add_offset_second_dac = GCheck(widgetName:"gcheck_add_offset_second_dac", value:false, enabled:true, visible:true)
+	 gcheck_shift_enable_second_dac = GCheck(widgetName:"gcheck_shift_enable_second_dac", value:false, enabled:true, visible:true)
+	 gcheck_invert_output_second_dac = GCheck(widgetName:"gcheck_invert_output_second_dac", value:false, enabled:true, visible:true)
+	 gcheck_enable_sr = GCheck(widgetName:"gcheck_enable_sr", value:true, enabled:true, visible:true)
+	 glabel_start_index = GLabel(widgetName:"glabel_start_index", text:"Start index:", enabled:true, visible:true)
+	 glabel_repetition_cycles = GLabel(widgetName:"glabel_repetition_cycles", text:"Repetition cycles:", enabled:true, visible:true)
+	 glabel_custom_lut = GLabel(widgetName:"glabel_custom_lut", text:"LUT name:", enabled:true, visible:true)
+	 glabel_waveform_sel_second_dac = GLabel(widgetName:"glabel_waveform_sel_second_dac", text:"Waveform:", enabled:true, visible:true)
+	 glabel_table_length_second_dac = GLabel(widgetName:"glabel_table_length_second_dac", text:"Length of table:", enabled:true, visible:true)
+	 glabel_start_index_second_dac = GLabel(widgetName:"glabel_start_index_second_dac", text:"Start index:", enabled:true, visible:true)
+	 glabel_repetition_second_dac = GLabel(widgetName:"glabel_repetition_second_dac", text:"Repetition:", enabled:true, visible:true)
+	 glabel_repetition_cycles_second_dac = GLabel(widgetName:"glabel_repetition_cycles_second_dac", text:"Repetition cycles:", enabled:true, visible:true)
+	 glabel_custom_lut_second_dac = GLabel(widgetName:"glabel_custom_lut_second_dac", text:"LUT name:", enabled:true, visible:true)
+	 glabel_12bit_fast_exe = GLabel(widgetName:"glabel_12bit_fast_exe", text:"12 Bit ( Faster Execution)", enabled:true, visible:true)
+	 glabel_12bit_fast_exe_second_dac = GLabel(widgetName:"glabel_12bit_fast_exe_second_dac", text:"12 Bit ( Faster Execution)", enabled:true, visible:true)
+	 glabel_config_lut_freq_hz = GLabel(widgetName:"glabel_config_lut_freq_hz", text:"LUT frequency [Hz]:", enabled:true, visible:true)
+	 glabel_required_trigger_freq = GLabel(widgetName:"glabel_required_trigger_freq", text:"Trigger frequency [Hz]:", enabled:true, visible:true)
+	 glabel_update_rate = GLabel(widgetName:"glabel_update_rate", text:"Update rate [us]:", enabled:true, visible:true)
+	 glabel_trigger_freq = GLabel(widgetName:"glabel_trigger_freq", text:"Trigger frequency [Hz]:", enabled:true, visible:true)
+	 glabel_second_dac_freq = GLabel(widgetName:"glabel_second_dac_freq", text:"Second DAC LUT frequency [Hz]:", enabled:true, visible:true)
+	 glabel_interrupt_handler = GLabel(widgetName:"glabel_interrupt_handler", text:"Interrupt handler :", enabled:true, visible:true)
+	 ggroup_dac_config = GGroup(widgetName:"ggroup_dac_config", text:"DAC Configuration", enabled:true, visible:true)
+	 ggroup_second_dac_config = GGroup(widgetName:"ggroup_second_dac_config", text:"Second DAC Configuration", enabled:true, visible:true)
+	 ggroup_dac_data_type = GGroup(widgetName:"ggroup_dac_data_type", text:"Data Type Configuration", enabled:true, visible:true)
+	 ggroup_dac_data_type_second_dac = GGroup(widgetName:"ggroup_dac_data_type_second_dac", text:"Second DAC Data Type Configuration", enabled:true, visible:true)
+	 ggroup_freq_config = GGroup(widgetName:"ggroup_freq_config", text:"Frequency Configuration", enabled:true, visible:true)
+	 ggroup_expert_dac_config = GGroup(widgetName:"ggroup_expert_dac_config", text:"DAC Configuration", enabled:true, visible:true)
+	 ggroup_offset_config = GGroup(widgetName:"ggroup_offset_config", text:"Offset Configuration", enabled:true, visible:true)
+	 ggroup_shift_config = GGroup(widgetName:"ggroup_shift_config", text:"Shift Configuration", enabled:true, visible:true)
+	 ggroup_expert_second_dac_config = GGroup(widgetName:"ggroup_expert_second_dac_config", text:"Second DAC Configuration", enabled:true, visible:true)
+	 ggroup_offset_config_second_dac = GGroup(widgetName:"ggroup_offset_config_second_dac", text:"Offset Configuration", enabled:true, visible:true)
+	 ggroup_shift_config_second_dac = GGroup(widgetName:"ggroup_shift_config_second_dac", text:"Shift Configuration", enabled:true, visible:true)
+	 ggroup_nvic_conf = GGroup(widgetName:"ggroup_nvic_conf", text:"Refill Auto Interrupt Configuration", enabled:true, visible:true)
+	 ginterruptprio_dac_ch_sr = GInterruptPrio(widgetName:"ginterruptprio_dac_ch_sr", priorityValue:63, minPriority:0, maxPriority:63, subPriorityValue:0, minSubPriority:0, maxSubPriority:3, subPriorityVisible:true, enabled:true, visible:true)
+	 gmessage_high_trig_freq = GMessage(widgetName:"gmessage_high_trig_freq", text:"Configuration is not possible due to higher trigger frequency.Try reducing LUT length or LUT frequency.", isError:true, visible:true)
+	 gmessage_valid_isr_name = GMessage(widgetName:"gmessage_valid_isr_name", text:"Invalid function name", isError:false, visible:true)
+
+
+	 }
+	/* End : UI variable section */
+}

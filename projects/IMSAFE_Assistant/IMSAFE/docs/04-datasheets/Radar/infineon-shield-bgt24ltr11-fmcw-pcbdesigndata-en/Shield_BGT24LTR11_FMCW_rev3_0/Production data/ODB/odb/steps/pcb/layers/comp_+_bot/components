@@ -1,0 +1,92 @@
+#
+#Component attribute names
+#
+@0 .comp_mount_type
+@1 .comp_height
+
+# CMP 0
+CMP 13 0.38026 1.134484 0 N ANT2 24GHZ_S2G_Antenna_4X1_Patch_Array ;0=1,1=0.0000
+TOP 0 0.3801963 1.1344842 180 N 45 1 ANT2-1
+#
+# CMP 1
+CMP 18 1.4708846 0.2889006 0 N TP1 Testpoint ;0=1,1=0.0039
+PRP Bestellnummer ''
+PRP Distributor ''
+PRP FootprintBOM 'Testpoint'
+PRP Hersteller ''
+PRP Kleinmengendistributor ''
+PRP KleinmengendistributorBestellnummer ''
+PRP Kontaktperson ''
+PRP Notes ''
+PRP Preis '-'
+TOP 0 1.4708848 0.2889006 180 N 114 31 TP1-1
+#
+# CMP 2
+CMP 18 0.0486228 0.4459839 0 N TP6 Testpoint ;0=1,1=0.0039
+PRP Bestellnummer ''
+PRP Distributor ''
+PRP FootprintBOM 'Testpoint'
+PRP Hersteller ''
+PRP Kleinmengendistributor ''
+PRP KleinmengendistributorBestellnummer ''
+PRP Kontaktperson ''
+PRP Notes ''
+PRP Preis '-'
+TOP 0 0.048623 0.4459839 180 N 30 13 TP6-1
+#
+# CMP 3
+CMP 13 0.696418 1.1344878 180 N ANT1 24GHZ_S2G_Antenna_4X1_Patch_Array ;0=1,1=0.0000
+TOP 0 0.6964805 1.1344884 0 N 44 1 ANT1-1
+#
+# CMP 4
+CMP 18 0.258878 0.2913903 270 N TP5 Testpoint ;0=1,1=0.0039
+PRP Bestellnummer ''
+PRP Distributor ''
+PRP FootprintBOM 'Testpoint'
+PRP Hersteller ''
+PRP Kleinmengendistributor ''
+PRP KleinmengendistributorBestellnummer ''
+PRP Kontaktperson ''
+PRP Notes ''
+PRP Preis '-'
+TOP 0 0.258878 0.2913901 270 N 34 6 TP5-1
+#
+# CMP 5
+CMP 18 0.395341 0.2906104 270 N TP4 Testpoint ;0=1,1=0.0039
+PRP Bestellnummer ''
+PRP Distributor ''
+PRP FootprintBOM 'Testpoint'
+PRP Hersteller ''
+PRP Kleinmengendistributor ''
+PRP KleinmengendistributorBestellnummer ''
+PRP Kontaktperson ''
+PRP Notes ''
+PRP Preis '-'
+TOP 0 0.395341 0.2906102 270 N 37 20 TP4-1
+#
+# CMP 6
+CMP 18 0.5122054 0.2902754 270 N TP3 Testpoint ;0=1,1=0.0039
+PRP Bestellnummer ''
+PRP Distributor ''
+PRP FootprintBOM 'Testpoint'
+PRP Hersteller ''
+PRP Kleinmengendistributor ''
+PRP KleinmengendistributorBestellnummer ''
+PRP Kontaktperson ''
+PRP Notes ''
+PRP Preis '-'
+TOP 0 0.5122054 0.2902752 270 N 35 6 TP3-1
+#
+# CMP 7
+CMP 18 0.6629535 0.2902783 270 N TP2 Testpoint ;0=1,1=0.0039
+PRP Bestellnummer ''
+PRP Distributor ''
+PRP FootprintBOM 'Testpoint'
+PRP Hersteller ''
+PRP Kleinmengendistributor ''
+PRP KleinmengendistributorBestellnummer ''
+PRP Kontaktperson ''
+PRP Notes ''
+PRP Preis '-'
+TOP 0 0.6629535 0.2902781 270 N 38 17 TP2-1
+#

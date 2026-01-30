@@ -1,0 +1,174 @@
+*************************************************************
+FileName = BGT24LTR11_RF-Shield_Board_V3.0.PcbDoc
+ODB++ directory structure
+*************************************************************
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\matrix\matrix
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\profile
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\stephdr
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\l2_gnd\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\l2_gnd\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\top_overlay\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\top_overlay\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\l5_gnd\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\l5_gnd\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\top_paste\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\top_paste\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\bottom\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\bottom\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\bottom_paste\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\bottom_paste\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\bottom_overlay\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\bottom_overlay\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\bottom_solder\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\bottom_solder\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\keep-out_layer\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\keep-out_layer\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m1__cmp_body_top_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m1__cmp_body_top_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m2__cmp_body_bot_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m2__cmp_body_bot_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m3__asy_text_top_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m3__asy_text_top_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m4__asy_text_bot_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m4__asy_text_bot_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m5__sheet_top_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m5__sheet_top_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\top_solder\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\top_solder\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_7\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_7\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_8\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_8\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_9\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_9\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_10\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_10\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m6__sheet_bot_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m6__sheet_bot_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m14__cmp_body_otl_bot_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m14__cmp_body_otl_bot_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m13__cmp_body_otl_top_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m13__cmp_body_otl_top_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_17\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_17\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_18\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_18\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m15__cmp_courtyard_top_\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\m15__cmp_courtyard_top_\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_19\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_19\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_21\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_21\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_20\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_20\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_22\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_22\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_24\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_24\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_25\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_25\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\top\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\top\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\l3\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\l3\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\l4\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\l4\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_23\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\mechanical_23\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\drill\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\drill\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\drill\tools
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\drill1\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\drill1\attrlist
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\drill1\tools
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\comp_+_top\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\comp_+_top\components
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\comp_+_bot\features
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\layers\comp_+_bot\components
+
+Generated File : C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\ODB\odb\steps\pcb\eda\data
+

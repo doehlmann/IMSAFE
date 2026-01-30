@@ -1,0 +1,32 @@
+function parseMSG_PARA_VALUES_DEF_CNF(obj, payload)
+
+if (length(payload) > 1)
+	offset = 1;
+   
+	% read string list
+	shield_info.rf_frequency_khz = protocol_read_payload_uint32(payload, offset);
+	offset = offset + 4;
+	shield_info.major_version = protocol_read_payload_uint8(payload, offset);
+	offset = offset + 1;
+	shield_info.minor_version = protocol_read_payload_uint8(payload, offset);
+	offset = offset + 1;
+	shield_info.num_tx_antenna = protocol_read_payload_uint8(payload, offset);
+	offset = offset + 1;
+	shield_info.num_rx_antenna = protocol_read_payload_uint8(payload, offset);
+	offset = offset + 1;
+	
+	[ shield_info.rf_shield_type_id, len] = protocol_read_payload_str(payload, offset);
+    offset = offset + len; 
+	
+	[ shield_info.description, len] = protocol_read_payload_str(payload, offset);
+    offset = offset + len; 
+    [ shield_info.modulation, len] = protocol_read_payload_str(payload, offset);
+    offset = offset + len; 
+    
+    
+    shield_info.bandwidth_mhz = 200;
+	
+    obj.m_shield_info = shield_info;
+else
+    fprintf('[%s.%s] Error! Wrong payload size.\n',mfilename('Class'),mfilename);
+end

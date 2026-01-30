@@ -1,0 +1,132 @@
+Altium Designer Pick and Place Locations
+C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\Project Outputs for BGT24LTR11 RF-Shield Board V3.0\Pick Place\Pick Place for BGT24LTR11_RF-Shield_Board_V3.0(Distance2GoL).txt
+
+========================================================================================================================
+File Design Information:
+
+Date:       24.03.21
+Time:       09:44
+Revision:   Not in VersionControl
+Variant:    Distance2GoL
+Units used: mil
+
+Designator Comment                             Layer       Footprint                  Center-X(mil) Center-Y(mil) Rotation Description                                                                              
+ANT2       "24GHZ S2G Antenna 4X1 Patch Array" BottomLayer S2G_ANT                    380.196       1134.484      180      ""                                                                                       
+MP2        BMI-S-209-F-20                      TopLayer    SHIELD-SMD-BMI-S-209-F     529.929       965.711       90       "Standard Board Level Shield Frame 1008/1010 PRE-PLATED COLD ROLLED STEEL"               
+MP1        BMI-S-209-C-20                      TopLayer    SHIELD-BMI-S-209-C         -39706.307    -40374.764    90       "Standard Board Level Shield Frame Cover 1008/1010 PRE-PLATED COLD ROLLED STEEL"         
+TP1        Testpoint                           BottomLayer TP1.5MM                    1470.885      288.901       180      Testpoint                                                                                
+R200       0R                                  TopLayer    RESC1005X40N_2             2098.835      766.624       90       0R/50V/20mOhm                                                                            
+TP6        Testpoint                           BottomLayer TP1.5MM                    48.623        445.984       180      Testpoint                                                                                
+U1         BGT24LTR11N16                       TopLayer    PQFN50P240X240X77-17N-V    537.403       601.180       360      "Silicon Germanium 24GHz Radar Transceiver MMIC"                                         
+M2         "Maching 2nd Filter DCBlock"        TopLayer    OLD_MATCHING               434.723       867.735       180      ""                                                                                       
+M1         "Maching 2nd Filter DCBlock"        TopLayer    MACHINING_LTR11            640.760       867.864       180      ""                                                                                       
+R125       0R                                  TopLayer    RESC1005X40N_2             1764.190      1324.094      90       0R/50V/20mOhm                                                                            
+R122       0R                                  TopLayer    RESC1005X40N_2             1842.930      1324.094      90       0R/50V/20mOhm                                                                            
+U5         TLV9002SIDGSR                       TopLayer    SOP50P490X110-10N-1-V      1225.625      481.312       270      "Op Amp Dual Low Power Amplifier R-R I/O ±2.75V/5.5V"                                   
+U4         TLV9002SIDGSR                       TopLayer    SOP50P490X110-10N-1-V      1227.348      971.432       270      "Op Amp Dual Low Power Amplifier R-R I/O ±2.75V/5.5V"                                   
+R111       10R                                 TopLayer    RESC1005X40N_2             1146.905      1401.214      270      10R/50V/20mOhm                                                                           
+R22        100R                                TopLayer    RESC1005X40N_2             584.504       787.247       360      100R/50V/0402                                                                            
+Q2         IRLHS2242PbF                        TopLayer    IRLHS2242-V                524.111       1681.122      270      "HEXFET Power Mosfet, VDS -20V"                                                          
+C51        100nF                               TopLayer    CAPC1005X55N-0_2           434.441       1669.541      90       "General Purpose Surface Mount Ceramic Capacitor"                                        
+R115       "33 k"                              TopLayer    RESC1005X40N_2             1339.050      237.137       360      0R/50V/20mOhm                                                                            
+R114       "33 k"                              TopLayer    RESC1005X40N_2             1041.733      441.444       360      0R/50V/20mOhm                                                                            
+R106       0R                                  TopLayer    RESC1005X40N_2             1120.050      744.947       180      0R/50V/20mOhm                                                                            
+R105       0R                                  TopLayer    RESC1005X40N_2             1220.763      1210.746      360      0R/50V/20mOhm                                                                            
+C48        "100 nF"                            TopLayer    CAPC1005X55N-0_2           1120.050      882.125       360      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C47        "100 nF"                            TopLayer    CAPC1005X55N-0_2           1220.773      1130.938      180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+R66        0R                                  TopLayer    RESC1005X40N_2             1503.446      789.986       360      0R/50V/20mOhm                                                                            
+R37        0R                                  TopLayer    RESC1005X40N_2             1041.718      883.977       180      0R/50V/20mOhm                                                                            
+ANT1       "24GHZ S2G Antenna 4X1 Patch Array" BottomLayer S2G_ANT                    696.481       1134.488      360      ""                                                                                       
+TP5        Testpoint                           BottomLayer TP1.5MM                    258.878       291.390       90       Testpoint                                                                                
+TP4        Testpoint                           BottomLayer TP1.5MM                    395.341       290.610       90       Testpoint                                                                                
+TP3        Testpoint                           BottomLayer TP1.5MM                    512.205       290.275       90       Testpoint                                                                                
+TP2        Testpoint                           BottomLayer TP1.5MM                    662.953       290.278       90       Testpoint                                                                                
+R8         0R                                  TopLayer    RESC1005X40N_2             599.296       511.716       180      0R/50V/20mOhm                                                                            
+R27        0R                                  TopLayer    RESC1005X40N_2             501.151       464.111       360      0R/50V/20mOhm                                                                            
+R24        0R                                  TopLayer    RESC1005X40N_2             582.511       464.092       360      0R/50V/20mOhm                                                                            
+R25        0R                                  TopLayer    RESC1005X40N_2             583.003       269.811       90       0R/50V/20mOhm                                                                            
+C15        "220 pF"                            TopLayer    CAPC1005X55N-0_2           1041.718      1094.381      180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+U6         LP5907MFX-3.3/NOPB                  TopLayer    SOT95P280X145-5N-2         1906.098      1034.793      360      "250mA Ultra-Low-Noise, Low-IQ LDO, 3.3V"                                                
+R13        0R                                  TopLayer    RESC1005X40N_2             386.851       492.637       360      0R/50V/20mOhm                                                                            
+R50        "2.7 k"                             TopLayer    RESC1005X40N_2             1321.747      1173.976      360      5.6K/50V/20mOhm                                                                          
+R28        0R                                  TopLayer    RESC1005X40N_2             319.347       263.331       90       0R/50V/20mOhm                                                                            
+U7         CW1280T-I/CS0668                    TopLayer    WLCSP4_(CS0)               2187.414      339.327       180      "128K I2C Serial EEPROM with Software Write Protection in CSP4 Package, 0.4mm Pin Pitch" 
+R84        2K2                                 TopLayer    RESC1005X40N_2             2118.520      337.416       270      2K2/50V/20mOhm                                                                           
+R83        2K2                                 TopLayer    RESC1005X40N_2             2238.977      337.401       270      2K2/50V/20mOhm                                                                           
+X3         DF9B-31S-1V(32)                     TopLayer    CON-F-SMD-DF9B-31S-1V-32-1 1921.670      1555.118      0        "SMT Board-to-Board connectors-standard interface connector"                             
+X2         DF9B-31S-1V(32)                     TopLayer    CON-F-SMD-DF9B-31S-1V-32-1 1921.670      570.866       0        "SMT Board-to-Board connectors-standard interface connector"                             
+R82        0R                                  TopLayer    RESC1005X40N_2             2043.391      369.949       90       0R/50V/20mOhm                                                                            
+R81        0R                                  TopLayer    RESC1005X40N_2             1999.886      369.949       90       0R/50V/20mOhm                                                                            
+R80        0R                                  TopLayer    RESC1005X40N_2             2196.991      1360.810      90       0R/50V/20mOhm                                                                            
+R79        0R                                  TopLayer    RESC1005X40N_2             2216.993      1754.984      270      0R/50V/20mOhm                                                                            
+R78        0R                                  TopLayer    RESC1005X40N_2             2046.993      1052.699      180      0R/50V/20mOhm                                                                            
+R77        0R                                  TopLayer    RESC1005X40N_2             1782.917      999.518       360      0R/50V/20mOhm                                                                            
+R75        47K                                 TopLayer    RESC1005X40N_2             1733.387      350.275       360      47K/50V/20mOhm                                                                           
+R74        47K                                 TopLayer    RESC1005X40N_2             1598.140      389.318       180      47K/50V/20mOhm                                                                           
+R73        1K                                  TopLayer    RESC1005X40N_2             1598.032      350.275       360      1K/50V/20mOhm                                                                            
+R65        1.8K                                TopLayer    RESC1005X40N_2             1176.064      241.517       360      3.3K/50V/20mOhm                                                                          
+R63        22k                                 TopLayer    RESC1005X40N_2             1261.418      783.472       180      150K/50V/20mOhm                                                                          
+R61        "150 k"                             TopLayer    RESC1005X40N_2             1176.046      323.504       180      100K/50V/0402                                                                            
+R60        0R                                  TopLayer    RESC1005X40N_2             1339.050      318.361       180      0R/50V/20mOhm                                                                            
+R59        100R                                TopLayer    RESC1005X40N_2             1118.690      806.742       180      100R/50V/0402                                                                            
+R58        0R                                  TopLayer    RESC1005X40N_2             1411.818      649.627       360      0R/50V/20mOhm                                                                            
+R56        "2.7 k"                             TopLayer    RESC1005X40N_2             1340.251      820.521       180      5.6K/50V/20mOhm                                                                          
+R55        "560 R"                             TopLayer    RESC1005X40N_2             1340.251      780.878       360      5.6K/50V/20mOhm                                                                          
+R54        100R                                TopLayer    RESC1005X40N_2             1339.050      358.545       180      100R/50V/0402                                                                            
+R53        0R                                  TopLayer    RESC1005X40N_2             1822.828      768.776       90       0R/50V/20mOhm                                                                            
+R52        10K                                 TopLayer    RESC1005X40N_2             1340.251      994.602       180      10K/50V/20mOhm                                                                           
+R51        0R                                  TopLayer    RESC1005X40N_2             1092.671      323.503       180      0R/50V/20mOhm                                                                            
+R49        560R                                TopLayer    RESC1005X40N_2             1041.718      966.284       180      5.6K/50V/20mOhm                                                                          
+R48        100R                                TopLayer    RESC1005X40N_2             1041.733      712.717       360      100R/50V/0402                                                                            
+R47        0R                                  TopLayer    RESC1005X40N_2             1864.213      767.731       90       0R/50V/20mOhm                                                                            
+R46        10K                                 TopLayer    RESC1005X40N_2             1340.251      1082.455      180      10K/50V/20mOhm                                                                           
+R45        0R                                  TopLayer    RESC1005X40N_2             1041.733      394.535       360      0R/50V/20mOhm                                                                            
+R44        0R                                  TopLayer    RESC1005X40N_2             1041.718      794.666       360      0R/50V/20mOhm                                                                            
+R42        100R                                TopLayer    RESC1005X40N_2             1220.763      1170.197      180      100R/50V/0402                                                                            
+R41        0R                                  TopLayer    RESC1005X40N_2             1041.733      539.097       180      0R/50V/20mOhm                                                                            
+R36        "150 k"                             TopLayer    RESC1005X40N_2             1261.418      631.464       180      100K/50V/0402                                                                            
+R33        1.8K                                TopLayer    RESC1005X40N_2             1262.134      708.653       360      3.3K/50V/20mOhm                                                                          
+R32        22k                                 TopLayer    RESC1005X40N_2             1321.747      1217.795      180      150K/50V/20mOhm                                                                          
+R70        "10 K"                              TopLayer    RESC1005X40N_2             1503.446      830.503       360      10K/50V/20mOhm                                                                           
+R30        "10 K"                              TopLayer    RESC1005X40N_2             1041.718      1049.185      180      10K/50V/20mOhm                                                                           
+R21        0R                                  TopLayer    RESC1005X40N_2             591.105       1208.787      270      0R/50V/20mOhm                                                                            
+R18        0R                                  TopLayer    RESC1005X40N_2             1905.595      369.948       270      0R/50V/20mOhm                                                                            
+R17        100R                                TopLayer    RESC1005X40N_2             557.088       986.709       90       100R/50V/0402                                                                            
+R16        100R                                TopLayer    RESC1005X40N_2             616.246       1341.654      90       100R/50V/0402                                                                            
+R15        0R                                  TopLayer    RESC1005X40N_2             386.670       455.378       180      0R/50V/20mOhm                                                                            
+R14        0R                                  TopLayer    RESC1005X40N_2             1070.775      1401.835      90       0R/50V/20mOhm                                                                            
+R11        0R                                  TopLayer    RESC1005X40N_2             556.660       1130.032      270      0R/50V/20mOhm                                                                            
+R9         16K                                 TopLayer    RESC1005X40N_2             606.853       687.659       180      16K/50V/20mOhm                                                                           
+R7         10K                                 TopLayer    RESC1005X40N_2             396.033       1669.902      270      10K/50V/20mOhm                                                                           
+R5         1R                                  TopLayer    RESC1005X40N_2             514.745       994.602       90       1R/50V/20mOhm                                                                            
+R4         10R                                 TopLayer    RESC1005X40N_2             480.934       1453.437      360      10R/50V/20mOhm                                                                           
+R2         10K                                 TopLayer    RESC1005X40N_2             480.493       1417.967      180      10K/50V/20mOhm                                                                           
+Q1         IRLHS2242PbF                        TopLayer    IRLHS2242-V                520.595       1320.610      270      "HEXFET Power Mosfet, VDS -20V"                                                          
+C42        1uF                                 TopLayer    CAPC1005X55N-0_2           2047.991      1012.131      360      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C41        4.7uF                               TopLayer    CAPC1005X55N-0_2           1800.917      1054.794      90       "General Purpose Surface Mount Ceramic Capacitor"                                        
+C40        "100 nF"                            TopLayer    CAPC1005X55N-0_2           1733.403      390.055       360      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C39        10nF                                TopLayer    CAPC1005X55N-0_2           1598.038      311.664       360      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C37        "8.2 nF"                            TopLayer    CAPC1005X55N-0_2           1176.064      197.575       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C35        "5.6 pF"                            TopLayer    CAPC1005X55N-0_2           1176.046      283.228       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C34        "120 pF"                            TopLayer    CAPC1005X55N-0_2           1261.418      821.360       360      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C33        "12 nF"                             TopLayer    CAPC1005X55N-0_2           1340.251      861.864       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C32        "220 pF"                            TopLayer    CAPC1005X55N-0_2           1340.251      952.333       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C31        "22 nF"                             TopLayer    CAPC1005X55N-0_2           822.285       228.835       90       "General Purpose Surface Mount Ceramic Capacitor"                                        
+C28        "330 pF"                            TopLayer    CAPC1005X55N-0_2           943.308       244.236       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C26        "330 pF"                            TopLayer    CAPC1005X55N-0_2           943.308       341.733       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C24        "120 pF"                            TopLayer    CAPC1005X55N-0_2           1321.747      1130.938      180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C23        "12 nF"                             TopLayer    CAPC1005X55N-0_2           1041.718      1006.965      180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C21        "220 pF"                            TopLayer    CAPC1005X55N-0_2           1340.251      1038.829      180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C20        "22 nF"                             TopLayer    CAPC1005X55N-0_2           822.285       311.174       270      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C19        "100 nF"                            TopLayer    CAPC1005X55N-0_2           1339.464      405.515       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C18        "100 nF"                            TopLayer    CAPC1005X55N-0_2           1340.251      908.780       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C17        5.6pF                               TopLayer    CAPC1005X55N-0_2           1261.422      669.152       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C16        "8.2 nF"                            TopLayer    CAPC1005X55N-0_2           1340.748      522.039       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C38        "220 pF"                            TopLayer    CAPC1005X55N-0_2           1502.648      874.119       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C10        "100 nF"                            TopLayer    CAPC1005X55N-0_2           574.620       907.456       180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C9         "100 nF"                            TopLayer    CAPC1005X55N-0_2           633.672       1286.131      180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C8         "100 nF"                            TopLayer    CAPC1005X55N-0_2           607.050       724.701       360      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C6         1nF                                 TopLayer    CAPC1005X55N-0_2           489.213       735.078       360      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C5         10nF                                TopLayer    CAPC1005X55N-0_2           490.036       797.452       360      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C2         10nF                                TopLayer    CAPC1005X55N-0_2           499.020       1162.758      180      "General Purpose Surface Mount Ceramic Capacitor"                                        
+C1         10uF                                TopLayer    CAPC1005X55N-0_2           499.020       1195.868      180      "General Purpose Surface Mount Ceramic Capacitor"                                        

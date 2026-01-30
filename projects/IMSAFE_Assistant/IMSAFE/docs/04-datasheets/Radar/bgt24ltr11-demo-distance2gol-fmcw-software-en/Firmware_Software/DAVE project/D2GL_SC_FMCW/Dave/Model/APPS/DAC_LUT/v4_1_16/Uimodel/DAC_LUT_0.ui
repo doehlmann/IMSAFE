@@ -1,0 +1,244 @@
+<p1:Tab  xmlns="http://www.eclipse.org/xwt/presentation" xmlns:x="http://www.eclipse.org/xwt" xmlns:p1="clr-namespace:com.ifx.davex.ui.controls.app" x:Class="e" layout="{x:Null}">
+	<p1:TabFolder bounds="5, 5, 753, 529">
+		<p1:GTab text="Wave Configuration" widgetName="tab_wave_configuration" visible="true" enabled="true" manifestObj="true">
+			<p1:GTab.control>
+				<p1:Tab layout="{x:Null}">
+					<p1:GGroup text="DAC Configuration" manifestObj="true" widgetName="ggroup_dac_config" bounds="9, 4, 341, 213">
+						<p1:GGroup.layout>
+							<GridLayout numColumns="2" horizontalSpacing="10" marginHeight="10" marginWidth="10" verticalSpacing="10"/>
+						</p1:GGroup.layout>
+						<p1:GLabel text="Waveform:" visible="true" widgetName="glabel_waveform_sel">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL" widthHint="152"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_waveform_sel" options="Sine&#13;&#10;Cosine&#13;&#10;Triangle&#13;&#10;Custom&#13;&#10;" description="Waveform selection from pre defined patterns or custom waveform." value="Sine" toolTipText="Type of waveform generation">
+							<p1:GCombo.layoutData>
+								<GridData widthHint="134" horizontalAlignment="FILL"/>
+							</p1:GCombo.layoutData>
+						</p1:GCombo>
+						<p1:GLabel text="Length of table:" visible="true" widgetName="glabel_table_length">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GInteger x:Style="NONE" minValue="32" maxValue="1024" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="gint_table_length" value="200" description="Lookup table length" toolTipText="Lookup table length">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+						<p1:GLabel text="Start index:" visible="true" widgetName="glabel_start_index" manifestObj="true">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GInteger x:Style="NONE" minValue="0" maxValue="1024" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="gint_start_index" value="0" toolTipText="Waveform generation start index" description="Waveform generation start index. Can be used to configure phase difference.">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+						<p1:GLabel text="Repetition:" visible="true" widgetName="glabel_repetition">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_repetition" options="Endless&#13;&#10;Cycles" value="Endless" toolTipText="Select continuous /limited cycles waveform generation" description="Select continuous /limited cycles waveform generation">
+							<p1:GCombo.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GCombo.layoutData>
+						</p1:GCombo>
+						<p1:GLabel text="Repetition cycles:" visible="true" widgetName="glabel_repetition_cycles" manifestObj="true">
+							<p1:GLabel.layoutData>
+								<GridData widthHint="132" horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GInteger x:Style="NONE" minValue="1" maxValue="32767" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="gint_repetition_cycles" value="1" description="Number of cycles of waveform generation" toolTipText="Number of cycles of waveform generation">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+						<p1:GLabel text="LUT name:" visible="true" manifestObj="true" widgetName="glabel_custom_lut" toolTipText="User should define this array of configured LUT length.">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GString x:Style="BORDER" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gstring_custom_lut" value="DAC_LUT_0_array" description="User defined LUT name" toolTipText="LUT name should not contain any intermediate space.">
+							<p1:GString.layoutData>
+								<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+							</p1:GString.layoutData>
+						</p1:GString>
+					</p1:GGroup>
+					<p1:GGroup bounds="11, 221, 341, 238" manifestObj="true" text="Second DAC Configuration" widgetName="ggroup_second_dac_config">
+						<p1:GGroup.layout>
+							<GridLayout numColumns="2" horizontalSpacing="10" marginHeight="10" marginWidth="10" verticalSpacing="10"/>
+						</p1:GGroup.layout>
+						<p1:GCheck text="Synchronize second DAC" manifestObj="true" widgetName="gcheck_synchronize_second_dac" toolTipText="If selected then second DAC will be consumed" description="Synchronize Second DAC Enable/Disable"/>
+						<Label/>
+						<p1:GLabel text="Waveform:" visible="true" widgetName="glabel_waveform_sel_second_dac" manifestObj="true">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL" widthHint="151"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GCombo description="Waveform selection from pre defined patterns or custom waveform for sync. channel." mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" options="Sine&#13;&#10;Cosine&#13;&#10;Triangle&#13;&#10;Custom&#13;&#10;" value="Sine" widgetName="gcombo_waveform_sel_second_dac" toolTipText="Type of waveform generation">
+							<p1:GCombo.layoutData>
+								<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL" widthHint="157"/>
+							</p1:GCombo.layoutData>
+						</p1:GCombo>
+						<p1:GLabel text="Length of table:" visible="true" widgetName="glabel_table_length_second_dac" manifestObj="true">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GInteger format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="1024" minValue="32" value="200" widgetName="gint_table_length_second_dac" description="Lookup table length of sync. channel" toolTipText="Lookup table length">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+						<p1:GLabel text="Start index:" visible="true" widgetName="glabel_start_index_second_dac" manifestObj="true">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GInteger format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="1024" minValue="0" value="0" widgetName="gint_start_index_second_dac" toolTipText="Waveform generation start index" description="Waveform generation start index. Can be used to configure phase difference.">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+						<p1:GLabel text="Repetition:" visible="true" widgetName="glabel_repetition_second_dac" manifestObj="true">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" options="Endless&#13;&#10;Cycles" value="Endless" widgetName="gcombo_repetition_second_dac" description="Select continuous /limited cycles waveform generation" toolTipText="Select continuous /limited cycles waveform generation">
+							<p1:GCombo.layoutData>
+								<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+							</p1:GCombo.layoutData>
+						</p1:GCombo>
+						<p1:GLabel text="Repetition cycles:" visible="true" widgetName="glabel_repetition_cycles_second_dac" manifestObj="true">
+							<p1:GLabel.layoutData>
+								<GridData widthHint="132" horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GInteger format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="32767" minValue="1" value="1" widgetName="gint_repetition_cycles_second_dac" toolTipText="Number of cycles of waveform generation" description="Number of cycles of waveform generation">
+							<p1:GInteger.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GInteger.layoutData>
+						</p1:GInteger>
+						<p1:GLabel text="LUT name:" visible="true" manifestObj="true" widgetName="glabel_custom_lut_second_dac" toolTipText="User should define this array of configured LUT length.">
+							<p1:GLabel.layoutData>
+								<GridData horizontalAlignment="FILL"/>
+							</p1:GLabel.layoutData>
+						</p1:GLabel>
+						<p1:GString x:Style="BORDER" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gstring_custom_lut_second_dac" value="DAC_LUT_0_coupled_array" description="User defined LUT name for second dac" toolTipText="LUT name should not contain any intermediate space.">
+							<p1:GString.layoutData>
+								<GridData grabExcessHorizontalSpace="true" horizontalAlignment="FILL"/>
+							</p1:GString.layoutData>
+						</p1:GString>
+					</p1:GGroup>
+					<p1:GImage visible="true" manifestObj="true" widgetName="gimage_wave_config" bounds="358, 51, 387, 408" path="Uimodel/Waveform_Sel.bmp"/>
+					<p1:GCheck text="Start after initialization" manifestObj="true" widgetName="gcheck_start_during_init" bounds="358, 25, 159, 16" toolTipText="User has to call DAC_LUT_Start() API if checkbox is not selected." description="Enable/Disable Start After Initialization. If disabled then after configuration the mode will be configured to Idle mode. User has to explicitly call DAC_LUT_Start( ) API to start waveform generation." value="true"/>
+					<p1:GCheck bounds="540, 25, 99, 16" description="If enabled ANALOG_IO APP will be consumed so that one can share the same pin with ADC." manifestObj="true" text="Expose pin" toolTipText="If selected ANALOG_IO APP will be consumed and pin can be shared with ADC." widgetName="gcheck_expose_pin"/>
+					<p1:GLabel text="Note : Second DAC configuration on XMC4800/4700/4400/4200/4100 supported in &quot;Auto DMA&quot; refill mode." visible="true" widgetName="glabel_msg" bounds="13, 475, 622, 15"/>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+		<p1:GTab text="Data Type" visible="true" enabled="true" manifestObj="true" widgetName="gtab_data_type">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite3">
+					<p1:GImage visible="true" manifestObj="true" widgetName="gimage_sign_sel" bounds="261, 10, 471, 288" path="Uimodel/Sign_Sel.bmp"/>
+					<p1:GGroup text="Data Type Configuration" manifestObj="true" widgetName="ggroup_dac_data_type" bounds="5, 6, 250, 82">
+						<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_data_type_sel" options="12 Bit (Faster Execution)&#13;&#10;16 Bit (User Friendly)" value="12 Bit (Faster Execution)" toolTipText="16 Bit option available only for custom waveform generation." description="Data Type Selection" bounds="87, 21, 156, 21"/>
+						<p1:GString x:Style="BORDER" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gstring_12bit_fast_exe" value="12 Bit (Faster Execution)" enabled="false" description="If custom waveform generation is not selected then 12 Bit is default data type else user has choise to select 16 Bit data type." bounds="87, 21, 156, 21"/>
+						<p1:GLabel text="Data type:" visible="true" widgetName="glabel_data_type_sel" bounds="6, 23, 72, 15"/>
+						<p1:GLabel text="Sign selection:" visible="true" widgetName="glabel_sign_sel" bounds="6, 52, 77, 15"/>
+						<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_sign_sel" options="Unsigned&#13;&#10;Signed" value="Unsigned" description="Sign selection" toolTipText="Signed/Unsigned waveform selection" bounds="87, 49, 156, 21"/>
+						<p1:GLabel text="12 Bit ( Faster Execution)" visible="true" manifestObj="true" widgetName="glabel_12bit_fast_exe" bounds="160, 9, 55, 15"/>
+					</p1:GGroup>
+					<p1:GGroup bounds="4, 95, 251, 82" manifestObj="true" text="Second DAC Data Type Configuration" widgetName="ggroup_dac_data_type_second_dac">
+						<p1:GCombo bounds="88, 21, 155, 21" description="Data Type Selection" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" options="12 Bit (Faster Execution)&#13;&#10;16 Bit (User Friendly)" toolTipText="16 Bit option available only for custom waveform generation." value="12 Bit (Faster Execution)" widgetName="gcombo_data_type_sel_second_dac"/>
+						<p1:GString bounds="88, 21, 155, 21" description="If custom waveform generation is not selected then 12 Bit is default data type else user has choise to select 16 Bit data type." enabled="false" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" value="12 Bit (Faster Execution)" widgetName="gstring_12bit_fast_exe_second_dac" x:Style="BORDER"/>
+						<p1:GLabel bounds="6, 23, 72, 15" text="Data type:" widgetName="glabel_data_type_sel_second_dac"/>
+						<p1:GLabel bounds="6, 52, 77, 15" text="Sign selection:" widgetName="glabel_sign_sel_second_dac"/>
+						<p1:GCombo bounds="88, 49, 156, 21" description="Sign selection for second DAC." mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" options="Unsigned&#13;&#10;Signed" toolTipText="Signed/Unsigned waveform selection" value="Unsigned" widgetName="gcombo_sign_sel_second_dac"/>
+						<p1:GLabel text="12 Bit ( Faster Execution)" visible="true" manifestObj="true" widgetName="glabel_12bit_fast_exe_second_dac" bounds="184, 12, 55, 15"/>
+					</p1:GGroup>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+		<p1:GTab text="Frequency" visible="true" enabled="true" manifestObj="true" widgetName="gtab_frequency">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite5">
+					<p1:GLabel text="Output trigger:" visible="true" widgetName="glabel_clock_source" bounds="14, 53, 89, 15"/>
+					<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_clock_source" bounds="193, 50, 138, 21" options="Internal Trigger&#13;&#10;External Trigger&#13;&#10;Software Trigger" value="Internal Trigger" toolTipText="DAC trigger selection" description="DAC trigger selection&lt;br&gt;&#13;&#10;External Trigger - External trigger signal needs to be connected to DAC input trigger through signal configurator.&lt;br&gt; &#13;&#10;Software Trigger - Periodically DAC_LUT_SoftwareTrigger( ) API needs to be called.&lt;br&gt;"/>
+					<p1:GGroup text="Frequency Configuration" manifestObj="true" widgetName="ggroup_freq_config" bounds="4, 81, 333, 217" layout="{x:Null}">
+						<p1:GLabel text="Selection" visible="true" widgetName="glabel_freq_config" bounds="5, 25, 155, 15" description="Data register update rate selection"/>
+						<p1:GLabel text="Desired" visible="true" widgetName="glabel_desired" bounds="189, 25, 52, 15"/>
+						<p1:GLabel text="Actual" visible="true" widgetName="glabel_actual" bounds="263, 25, 58, 15"/>
+						<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_freq_config" options="LUT Frequency [Hz]:&#13;&#10;Trigger Frequency [Hz]:&#13;&#10;Update Rate [us]:" value="LUT Frequency [Hz]:" description="Waveform generation frequency configuration.DAC data register update rate is depends upon this configuration." toolTipText="DAC data register update rate selection" bounds="5, 51, 155, 21"/>
+						<p1:GFloat x:Style="BORDER" minValue="0" maxValue="1000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="*,3" manifestObj="true" widgetName="gfloat_desired" value="1000" toolTipText="Desired DAC data register update rate" description="Desired waveform frequency configuration" bounds="189, 51, 68, 21"/>
+						<p1:GFloat x:Style="BORDER" minValue="0" maxValue="7500000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="*,3" manifestObj="true" widgetName="gfloat_actual" value="1000" enabled="false" toolTipText="Configured DAC data register update rate" description="Configured DAC data register update rate" bounds="260, 51, 68, 21"/>
+						<p1:GLabel text="LUT frequency [Hz]:" visible="true" manifestObj="true" widgetName="glabel_config_lut_freq_hz" bounds="5, 96, 155, 15"/>
+						<p1:GFloat format="*,3" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="7500000.0" minValue="0.0" value="1000" widgetName="gfloat_config_lut_freq_hz" x:Style="BORDER" toolTipText="Configured Lookup table frequency" description="Configured Lookup table frequency" bounds="189, 93, 68, 21" enabled="false"/>
+						<p1:GLabel text="Trigger frequency [Hz]:" visible="true" manifestObj="true" widgetName="glabel_required_trigger_freq" bounds="5, 96, 153, 15"/>
+						<p1:GFloat x:Style="BORDER" minValue="0" maxValue="5120000000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="*,3" manifestObj="true" widgetName="gfloat_required_trigger_freq" toolTipText="Required external trigger frequency to generate required LUT frequency" value="10000" description="Required external trigger frequency" enabled="false" bounds="189, 93, 68, 21"/>
+						<p1:GLabel text="Update rate [us]:" visible="true" manifestObj="true" widgetName="glabel_update_rate" bounds="5, 133, 153, 15"/>
+						<p1:GFloat x:Style="BORDER" minValue="0" maxValue="1000000" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="*,3" manifestObj="true" widgetName="gfloat_update_rate" bounds="189, 131, 68, 21" toolTipText="Configured update rate" value="0" enabled="false" description="Configured update rate"/>
+						<p1:GLabel bounds="5, 133, 153, 15" manifestObj="true" text="Trigger frequency [Hz]:" widgetName="glabel_trigger_freq"/>
+						<p1:GFloat description="Required external trigger frequency" enabled="false" format="*,6" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="5120000000" minValue="0" toolTipText="Required external trigger frequency to generate required LUT frequency" value="10000" widgetName="gfloat_trigger_freq" x:Style="BORDER" bounds="189, 131, 68, 21"/>
+						<p1:GLabel text="Second DAC LUT frequency [Hz]:" visible="true" manifestObj="true" widgetName="glabel_second_dac_freq" bounds="5, 172, 179, 15"/>
+						<p1:GFloat bounds="189, 169, 68, 21" description="Configured second DAC LUT frequency" enabled="false" format="*,3" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="5000000" minValue="0" toolTipText="Configured DAC data register update rate" value="1000" widgetName="gfloat_second_dac_freq" x:Style="BORDER"/>
+					</p1:GGroup>
+					<p1:GLabel text="Refill:" visible="true" widgetName="glabel_refill" bounds="14, 19, 55, 15"/>
+					<p1:GCombo mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" widgetName="gcombo_refill" bounds="193, 16, 138, 21" options="Manual Software&#13;&#10;Auto Interrupt&#13;&#10;Auto DMA" value="Auto Interrupt" toolTipText="If &quot;Auto Interrupt&quot; selected then enable service request in &quot;Interrupt Settings&quot; tab." description="DAC Data register refilling options.&lt;br&gt;&#13;&#10;Manual Software - DAC_LUT_ManualSWRefill( ) API needs to be called periodically to generate waveform.&lt;br&gt;&#13;&#10;"/>
+					<p1:GImage visible="true" manifestObj="true" widgetName="gimage_freq_config" bounds="344, 13, 351, 284" path="Uimodel/freq_config.bmp"/>
+					<p1:GMessage text="Configuration is not possible due to higher trigger frequency.Try reducing LUT length or LUT frequency." visible="true" manifestObj="true" widgetName="gmessage_high_trig_freq" bounds="10, 339, 594, 15" description="Error message will displayed when trigger frequency is higher." isError="true"/>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+		<p1:GTab text="Expert" visible="true" enabled="true" manifestObj="true" widgetName="gtab_expert">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite15">
+					<p1:GGroup text="DAC Configuration" manifestObj="true" widgetName="ggroup_expert_dac_config" bounds="5, 8, 344, 218">
+						<p1:GGroup text="Offset Configuration" manifestObj="true" widgetName="ggroup_offset_config" bounds="4, 15, 325, 73" layout="{x:Null}">
+						<p1:GCheck text="Add offset" manifestObj="true" widgetName="gcheck_add_offset" toolTipText="If enabled then enter offset value" description="Enable/Disable Offset" bounds="13, 25, 136, 16"/>
+						<p1:GLabel text="Offset:" visible="true" widgetName="glabel_offset_val" bounds="13, 46, 66, 15"/>
+						<p1:GInteger x:Style="NONE" minValue="0" maxValue="255" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="gint_offset_val" value="0" toolTipText="Add Signed/Unsigned 8 bit offset depends upon signed selection." description="Data value will be offseted by this value" bounds="184, 42, 108, 23"/>
+					</p1:GGroup>
+						<p1:GGroup text="Shift Configuration" manifestObj="true" widgetName="ggroup_shift_config" layout="{x:Null}" bounds="5, 90, 325, 88">
+						<p1:GCheck text="Shift value in bits:(Positive = Left, Negative = Right)" manifestObj="true" widgetName="gcheck_shift_enable" toolTipText="If enabled then enter shifted bits value" description="Enable/Disable scaling" bounds="12, 25, 305, 16"/>
+						<p1:GLabel text="Shifted bits:" visible="true" widgetName="glabel_shifted_bits" bounds="12, 54, 88, 15"/>
+						<p1:GInteger x:Style="NONE" minValue="-7" maxValue="7" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" manifestObj="true" widgetName="gint_shifted_bits" value="0" toolTipText="Shift the values in table left or right by X bits." description="Amplitude scaling configuration" bounds="184, 50, 108, 23"/>
+					</p1:GGroup>
+						<p1:GCheck text="Invert output" manifestObj="true" widgetName="gcheck_invert_output" toolTipText="Invert output available only for XMC41/42/44/47/48 devices." description="Enable/Disable Invert output.&lt;br&gt;&#13;&#10;This configuration is available only on XMC44 device.&lt;br&gt;&#13;&#10;If selected then data value will be 2&apos;s complimented and configured." bounds="17, 187, 93, 16"/>
+					</p1:GGroup>
+					<p1:GGroup bounds="5, 238, 344, 218" manifestObj="true" text="Second DAC Configuration" widgetName="ggroup_expert_second_dac_config">
+						<p1:GGroup bounds="5, 17, 325, 73" manifestObj="true" text="Offset Configuration" widgetName="ggroup_offset_config_second_dac">
+							<p1:GCheck bounds="12, 25, 145, 16" description="Enable/Disable Offset" manifestObj="true" text="Add offset" toolTipText="If enabled then enter offset value" widgetName="gcheck_add_offset_second_dac"/>
+							<p1:GLabel bounds="13, 46, 66, 15" text="Offset:" widgetName="glabel_offset_val_second_dac"/>
+							<p1:GInteger bounds="184, 42, 108, 23" description="Data value will be offseted by this value for sync. channel" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="255" minValue="0" toolTipText="Add Signed/Unsigned 8 bit offset depends upon signed selection." value="0" widgetName="gint_offset_val_second_dac"/>
+						</p1:GGroup>
+						<p1:GGroup bounds="5, 90, 325, 88" manifestObj="true" text="Shift Configuration" widgetName="ggroup_shift_config_second_dac">
+							<p1:GCheck bounds="12, 25, 305, 16" description="Enable/Disable scaling" manifestObj="true" text="Shift value in bits:(Positive = Left, Negative = Right)" toolTipText="If enabled then enter shifted bits value" widgetName="gcheck_shift_enable_second_dac"/>
+							<p1:GLabel bounds="13, 54, 59, 15" text="Shifted bits:" widgetName="glabel_shifted_bits_second_dac"/>
+							<p1:GInteger bounds="184, 50, 108, 23" description="Amplitude scaling configuration for sync. channel" format="(com.ifx.davex.ui.controls.util.AppUiConstants).DEC" mandatory="(com.ifx.davex.ui.controls.util.AppUiConstants).FALSE" manifestObj="true" maxValue="7" minValue="-7" toolTipText="Shift the values in table left or right by X bits." value="0" widgetName="gint_shifted_bits_second_dac"/>
+						</p1:GGroup>
+						<p1:GCheck description="Enable/Disable Invert output.&lt;br&gt;&#13;&#10;This configuration is available only on XMC44 device.&lt;br&gt;&#13;&#10;If selected then data value will be 2&apos;s complimented and configured." manifestObj="true" text="Invert output" toolTipText="Invert output available only for XMC44 device" widgetName="gcheck_invert_output_second_dac" bounds="17, 186, 93, 16"/>
+					</p1:GGroup>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+		<p1:GTab text="Interrupt Settings" visible="true" enabled="true" manifestObj="true" widgetName="gtab_interrupt_config">
+			<p1:GTab.control>
+				<p1:Tab widgetName="composite32">
+					<p1:GCheck description="Enable service request interrupt generation in Data Mode." manifestObj="true" text="Enable service request " toolTipText="Enable interrupt generation in data mode" widgetName="gcheck_enable_sr" bounds="18, 16, 160, 16" value="true"/>
+					<p1:GGroup text="Refill Auto Interrupt Configuration" manifestObj="true" widgetName="ggroup_nvic_conf" bounds="13, 49, 363, 142">
+							<p1:GInterruptPrio text="Priority Configuration" x:Style="NONE" minPriority="0" maxPriority="63" minSubPriority="0" maxSubPriority="3" priorityValue="63" subPriorityValue="0" priorityMandatory="true" subPriorityMandatory="true" manifestObj="true" widgetName="ginterruptprio_dac_ch_sr" bounds="10, 62, 343, 71" toolTipText="Service request interrupt priority configuration" description="Service request Interrupt Priority Configuration"/>
+							<p1:GLabel text="Interrupt handler :" visible="true" manifestObj="true" widgetName="glabel_interrupt_handler" bounds="12, 34, 101, 15"/>
+							<p1:GString x:Style="BORDER" manifestObj="true" widgetName="gstring_interrupt_handler" bounds="130, 29, 188, 21" value="Refill_Auto_Interrupt_Handler" toolTipText="Service request interrupt handler name. It should not contain any intermediate space." description="Service request Interrupt Handler"/>
+						</p1:GGroup>
+					<p1:GMessage text="Invalid function name" visible="true" manifestObj="true" isError="false" widgetName="gmessage_valid_isr_name" bounds="16, 213, 360, 15" description="Display this message if Interrupt Handler name is not valid"/>
+				</p1:Tab>
+			</p1:GTab.control>
+		</p1:GTab>
+	</p1:TabFolder>
+</p1:Tab>

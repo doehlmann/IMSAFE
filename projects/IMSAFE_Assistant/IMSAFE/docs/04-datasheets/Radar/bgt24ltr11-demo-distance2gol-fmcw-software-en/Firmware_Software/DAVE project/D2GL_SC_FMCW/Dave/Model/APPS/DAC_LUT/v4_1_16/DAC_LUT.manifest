@@ -1,0 +1,856 @@
+package Model.APPS.DAC_LUT.v4_1_16;
+
+// Import statements
+import ifx.davex.app.manifest.*
+
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+/*
+ Copyright (c) 2015-2018, Infineon Technologies AG
+ All rights reserved.
+											
+ Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
+ following conditions are met:
+   
+ Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+ disclaimer.
+  
+ Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following
+ disclaimer in the documentation and/or other materials provided with the distribution.
+  
+ Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote
+ products derived from this software without specific prior written permission.
+   
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+   
+ To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes with
+ Infineon Technologies AG: dave@infineon.com. 
+ */
+
+/*************** Revision History **********************************************
+ Version       Date        Description //Retain this format
+ 4.0.0     15-Feb-2015     1. Initial version<br>
+ 4.0.1     20-Feb-2015     1. Help document update<br>
+ 4.1.2     12-Jun-2015     1. DMA support added <br>
+                           2. FIFO full checking added for DAC_LUT_ManualSWRefill().<br>
+ 4.1.4     09-July-2015    1. Help documentation usage section updated.<br>
+ 4.1.6     14-July-2015    1. Required APP minimum version updated<br>
+ 4.1.8     15-Sept-2015    1. Ported for XMC4800/XMC4700 series. <br>
+                           2. Invert output feature is made available for XMC41/42/44/47/48 series. <br> 
+                           3. Added Dummy read code for pdisc - Applicable for all Micrcontroller series. <br>
+                           4. CPU_CTRL_XMC4 APP initialization is removed. <br>
+ 4.1.10    05-Oct-2015     1. Copyright information is added in manifest.<br>
+ 4.1.12    15-Dec-2015     1. ANALOG_IO_Init function call added <br>
+                           2. Added support for XMC4300 device <br> 
+ 4.1.14    09-Feb-2016     1. Minimum required version of ANALOG_IO APP changed to 4.0.8 <br/>
+ 4.1.16    19-Feb-2018     1. DMA interrupt disabled if Repetition is : "Endless" <br>
+ 						   2. APP instance renaming bug fix in DAC_LUT_DMABlockTransferEvntHandler() <br> 
+ *******************************************************************************/
+class  DAC_LUT extends DAC_LUT_GUI {
+
+  /* Note  : Following App properties are mandatory and important */
+  
+  /* Begin : APP property section */
+
+  /**
+   * App version
+   * Format: a string with three digit separated by a dot.
+   */
+  def version            = '4.1.16'
+  /**
+   * App categories declaration.
+   * It is list of strings. Subcategories are separated by slash.
+   * No limits on number of categories and subcategories depth.
+   */
+  def categoriesDescription = [
+    "General Purpose/Digital to Analog Conversion"] 
+
+  /** 
+   * Minimum DAVE version required for this APP.
+   * 
+   * It is string with three digit separated by a dot.
+   */
+  def minDaveVersion           = '4.0.0'
+  
+  /**
+   * Keywords used by search feature in Apps selection view
+   *
+   * It is a list of string.
+   */
+  def keywords      = [
+    "DAC",
+    "DAC_LUT",
+    "Advanced Waveform Generator",
+    "Pattern Generator",
+    "all"
+    ]
+  
+  /**
+   * softwareIDs is used to declare which devices are compatible with this APP.
+   * It is a map with key a string containing a pattern that shall match the SW id of
+   * the device and as value the minimal version of the APP.
+   */
+  
+  /**
+   * Any step , any variant and any packages of XMC4500, XMC4400, XMC4300, XMC4200 and XMC4100, XMC4800 and XMC4700
+   */
+  def softwareIDs       = 
+      [
+      "XMC4.5.*.*.*":"1.0.0",
+	  "XMC4.4.*.*.*":"1.0.0",
+	  "XMC4.3.*.*.*":"1.0.0",
+	  "XMC4.2.*.*.*":"1.0.0",
+	  "XMC4.1.*.*.*":"1.0.0",
+	  "XMC4.7.*.*.*":"1.0.0",
+	  "XMC4.8.*.*.*":"1.0.0"
+      ]
+
+    /**
+     * Singleton property:
+     * When it is true the APP can be instantiated only once.
+     */
+  def singleton     = true
+  /**
+   * initProvider property
+   * It shall be true to add a call to <AppName>_Init()
+   */
+  def initProvider  = true
+  /**
+   * Deprecated APP
+   * Set it to true to indicate that the APP shall be not used for new projects.
+   */
+  def deprecated    = false
+  /**
+   * Sharable property.
+   * It shall be true to allow multiple APPs to require the same instance of this APP.
+   */
+  def sharable      = false
+
+  /**
+   *  App function description.
+   */
+  def description = "Supports advance waveform generation using look up table(LUT)."
+  
+  /* End   : App property section */
+  
+  /* Begin : User APP property section */
+  
+  /* --------------------------------------------------------------------------------- */
+  /* ------------------------- Begin : User variable section ------------------------- */
+  /* --------------------------------------------------------------------------------- */
+  
+  /* Required App */
+  MRequiredApp appres_clock_0
+  MRequiredApp appres_cpu
+  MRequiredApp appres_global_dma
+  MRequiredApp appres_analog_io
+  MRequiredApp appres_coupled_ch_analog_io
+  
+    /* Required Resources */
+  MVirtualResourceGroup hwres_dac_slice
+  MVirtualResourceGroup hwres_dac_analogpin
+  MVirtualResourceGroup hwres_dac_coupled_slice
+  MVirtualResourceGroup hwres_dac_coupled_analogpin
+  MVirtualResourceGroup hwres_dac_nvic_node
+  MVirtualResourceGroup hwres_dma_channel
+  MVirtualResourceGroup hwres_dma_dlr
+  
+  
+    /* Required Signals */
+  MVirtualSignal vs_dac_output
+  MVirtualSignal vs_dac_output_coupled
+  MVirtualSignal vs_dac_trigger
+  MVirtualSignal vs_dac_trigger_coupled
+  MVirtualSignal vs_dac_sgn
+  MVirtualSignal vs_dac_sgn_coupled
+  MVirtualSignal vs_dac_sr
+  MVirtualSignal vs_dac_sr_coupled
+  MVirtualSignal vs_io_pad
+  MVirtualSignal vs_io_pad_coupled
+  MVirtualSignal vs_dma_ch_interrupt
+  MVirtualSignal vs_dst_trigger_dlr  
+  MVirtualSignal vs_dac_nvic_signal
+  MVirtualSignal vs_dst_trigger_dlr_tx_out       /*Signal output from the DLR to be connected to the DMA channel*/
+  MVirtualSignal vs_dma_ch_dst_req_tx            /*Signal representing DMA channel destination peripheral request (tx)*/
+  MVirtualSignalRA vsra_gpdma_interrupt_tx       /*Virtual signal from the GLOBAL_DMA APP for transmit mode*/
+  MVirtualSignalRA vsra_analog_io_pin            /*Signal from the ANALOG_IO APP to connect DAC output */
+  MVirtualSignalRA vsra_coupled_ch_analog_io_pin /*Signal from the ANALOG_IO APP to connect DAC sync channel output */
+  
+
+  /* Solver variables */
+  SolverVariable sv_port_num = SolverVariable()
+  SolverVariable sv_coupled_port_num = SolverVariable()
+  SolverVariable sv_dma_modules = SolverVariable()  /*Solver variable with the list of DMA modules DMA0 and DMA1*/
+  SolverVariable sv_dma_ch = SolverVariable()
+  
+  GInteger gint_peripheral_clk         = GInteger(value :0)
+  GInteger gint_configured_clk         = GInteger(value :0)
+  GCheck gcheck_synch_channel          = GCheck  (value :0)
+  
+  /* -------------------------- End   : User variable section ------------------------ */
+  
+  // App Constructor
+  public DAC_LUT(DaveEnv daveEnv)
+  {
+    //Initialize manifest variables here
+    boolean device_44 = false
+	boolean device_45 = false
+    int DAC_MIN_CLK_DIV = 16
+    int DAC_MAX_CLK_DIV = 1048575
+    int DAC_MAX_FREQC = 5000000
+    String family = daveEnv.project.selectedDevice.deviceId.family
+    String series = daveEnv.project.selectedDevice.deviceId.series
+    String fn_regexp = ~/^[^\d\W]\w*\Z/
+
+    /* ---------------------------------------------------------- ---------------------------------------------------------------*/
+    /* --------------------------------------- Target Specific User Variable Initialization ------------------------------------ */
+    /* --------------------------------------------------------------------------------------------------------------------------*/
+	/* Checking device family */
+	if((family == 'XMC4') && (series == '4'))
+	{
+	  device_44 = true
+	}
+	
+	/* Checking for XMC45 device */
+	if((family == 'XMC4') && (series == '5'))
+	{
+	  device_45 = true
+	}
+    
+	/* local MF function for synchronization */
+	/* Synchronized second DAC option is disabled on XMC4400/4200/4100 in "Auto interrupt refill mode" */
+	MF SYNC_SECOND_DAC   =   MF({return (((gcheck_synchronize_second_dac.value == true) && (gcombo_refill.value == 'Auto DMA')) ||
+		                                 ((gcheck_synchronize_second_dac.value == true) && (gcombo_refill.value != 'Auto DMA') && (device_45 == true)))        
+	                            },Boolean)
+	
+	MF REPETITION_FIRST_DAC   =  MF({return (gcombo_repetition.value == "Cycles")},Boolean)
+	
+	MF REPETITION_SECOND_DAC   =  MF({return ((gcombo_repetition_second_dac.value == "Cycles") && (gcombo_refill.value != "Auto DMA"))},Boolean)
+	
+	MF AUTO_DMA_REFILL_ENABLED  = MF({return(gcombo_refill.options.indexOf(gcombo_refill.value) == 2)},Boolean)
+	
+	/* Hide Synchronized second DAC option is disabled on XMC4400/4200/4100 in "Auto interrupt refill mode" */
+	ggroup_second_dac_config.visible =  MF({return ((device_45 == true) || ((gcombo_refill.value == 'Auto DMA') && (device_45 == false)))},Boolean)
+    /* Limit trigger frequency based on the device selected and refill mode configuration */
+	  gfloat_required_trigger_freq.maxValue = MF({
+		  if(gcombo_clock_source.options.indexOf(gcombo_clock_source.value) == 0)
+		  {
+			/* If internal clock is selected then only restrict the trigger frequency configuration */
+		   if(gcombo_refill.options.indexOf(gcombo_refill.value) != 2)
+		   {
+			  if((series == '1') || (series == '2'))
+			  {
+				  return (float)500000
+			  }
+			  else if((series == '4') || (series == '5'))
+			  {
+				  return (float)750000
+			  }
+			  else //if((series == '7') || (series == '8'))
+			  {
+				  return (float)875000
+			  }
+		   }
+		   else
+		   {
+			return (float)7500000  
+		   }
+		  }
+		  else
+		  {
+			 return (float)Float.MAX_VALUE 
+		  }
+		   },Float)
+	  
+	  gfloat_trigger_freq.maxValue = MF({
+		  if(gcombo_clock_source.options.indexOf(gcombo_clock_source.value) == 0)
+		  {
+			/* If internal clock is selected then only restrict the trigger frequency configuration */
+		   if(gcombo_refill.options.indexOf(gcombo_refill.value) != 2)
+		   {
+			  if((series == '1') || (series == '2'))
+			  {
+				  return (float)500000
+			  }
+			  else if((series == '4') || (series == '5'))
+			  {
+				  return (float)750000
+			  }
+			  else //if((series == '7') || (series == '8'))
+			  {
+				  return (float)875000
+			  }
+		   }
+		   else
+		   {
+			return (float)7500000
+		   }
+		  }
+		  else
+		  {
+			return (float)Float.MAX_VALUE
+		  }
+		   },Float)
+
+
+	/* Restrict DMA module to DMA8 module for multi block data transfer */
+	addUriElementRangeConstraint(sv_dma_modules, ["dma8"])	
+	addUriElementRangeConstraint(sv_dma_ch, ["ch_adv"])
+    
+    /* DAC GPIO port solver variable */
+    addUriElementRangeConstraint(sv_port_num,[14])
+    addUriElementRangeConstraint(sv_coupled_port_num,[14])
+    
+    /* ---------------------------------------------------------- ---------------------------------------------------------------*/
+    /* --------------------------------------- APP consumption Block ----------------------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------------------------------*/
+    appres_clock_0 = MRequiredApp("CLOCK_XMC4","Clock", RSHARABLE, "4.0.2")
+    /* Consume CPU APP to set the min max value*/
+    appres_cpu    = MRequiredApp("CPU_CTRL_XMC4","CPU APP", RSHARABLE, "4.0.2")
+	
+	/* If DMA Auto refill option selected then consume GLOBAL_DMA APP */
+	appres_global_dma = MRequiredApp("GLOBAL_DMA","GLOBAL DMA",RSHARABLE, "4.0.2", AUTO_DMA_REFILL_ENABLED)
+	
+	/* If expose pin option is selected then consume ANALOG_IO APP */
+	appres_analog_io = MRequiredApp("ANALOG_IO","DAC_PIN",RSHARABLE, "4.0.8", MF({return(gcheck_expose_pin.value == true)},Boolean))
+	
+    /* If expose pin option is selected along with synch channel option then consume ANALOG_IO APP */
+	appres_coupled_ch_analog_io = MRequiredApp("ANALOG_IO","COUPLED_DAC_PIN",RSHARABLE, "4.0.2", 
+		               MF({return((gcheck_expose_pin.value == true) && (gcheck_synch_channel.value == true))},Boolean))
+	
+    /* ---------------------------------------------------------- ---------------------------------------------------------------*/
+    /* --------------------------------------- Hardware resource consumption block --------------------------------------------- */
+    /* --------------------------------------------------------------------------------------------------------------------------*/
+    hwres_dac_slice =  MVirtualResourceGroup("DAC Channel", ["peripheral","dac","*","slice","*"], true )
+    hwres_dac_analogpin = MVirtualResourceGroup("Pin", ["port","p",sv_port_num,"pad","*"], 
+		                                                             MF({return(gcheck_expose_pin.value == false)},Boolean))
+    
+    hwres_dac_coupled_slice =  MVirtualResourceGroup("DAC Coupled Channel", ["peripheral","dac","*","slice","*"], 
+                                                                     MF({return(gcheck_synch_channel.value == true)},Boolean))
+    
+    hwres_dac_coupled_analogpin = MVirtualResourceGroup("Coupled CH Pin", ["port","p",sv_coupled_port_num,"pad","*"], 
+                             MF({return((gcheck_synch_channel.value == true) && (gcheck_expose_pin.value == false))},Boolean))
+    
+    hwres_dac_nvic_node = MVirtualResourceGroup("DAC NVIC Node", ["peripheral", "cpu", "0", "nvic", "interrupt", "*"],
+                                                                         MF({return(gcombo_refill.value == "Auto Interrupt")},Boolean))
+
+	hwres_dma_channel = MVirtualResourceGroup("DMA channel", ["peripheral", sv_dma_modules, "0", sv_dma_ch, "*"], AUTO_DMA_REFILL_ENABLED)
+	hwres_dma_dlr = MVirtualResourceGroup("DLR channel", ["peripheral", "dlr", "0", "ch", "*"], AUTO_DMA_REFILL_ENABLED)
+
+    /* ---------------------------------------------------------- ---------------------------------------------------------------*/
+    /* --------------------------------------- APP IO Signals ------------------------------------------------------------------ */
+    /* --------------------------------------------------------------------------------------------------------------------------*/
+    vs_dac_sr =  MVirtualSignal( hwres_dac_slice,"event_ch_sr","sr", MF({return(gcheck_enable_sr.value == true)},Boolean), true) /* required{}, exposeToUser{}  */
+    vs_dac_sr_coupled =  MVirtualSignal( hwres_dac_coupled_slice,"event_coupled_ch_sr","sr",
+                                                                MF({return((gcheck_enable_sr.value == true) && (gcheck_synch_channel.value == true))},Boolean), true)
+    
+    vs_dac_output =  MVirtualSignal(hwres_dac_slice, "analog_ch_output","out", true, MF({return(gcheck_expose_pin.value == true)},Boolean))
+    vs_dac_output_coupled =  MVirtualSignal(hwres_dac_coupled_slice, "analog_coupled_ch_output","out",
+                             MF({return(gcheck_synch_channel.value == true)},Boolean), MF({return(gcheck_expose_pin.value == true)},Boolean))
+    
+    vs_dac_trigger =  MVirtualSignal( hwres_dac_slice,"trigger","trig", true, true)
+    vs_dac_trigger_coupled =  MVirtualSignal( hwres_dac_coupled_slice,"coupled_ch_trigger","trig", 
+                                                                MF({return(gcheck_synch_channel.value == true)},Boolean), true)
+    @AddPin
+    vs_io_pad = MVirtualSignal( hwres_dac_analogpin,"pad_signal", "pad", MF({return(gcheck_expose_pin.value == false)},Boolean), false)
+    @AddPin
+    vs_io_pad_coupled = MVirtualSignal( hwres_dac_coupled_analogpin,"coupled_ch_pad_signal", "pad", 
+                      MF({return((gcheck_synch_channel.value == true) && (gcheck_expose_pin.value == false))},Boolean), false)
+    
+    vs_dac_nvic_signal = MVirtualSignal(hwres_dac_nvic_node, "sr_ch", "signal_in", 
+                                                                    MF({return(gcombo_refill.value == "Auto Interrupt")},Boolean), true)
+	
+	vs_dma_ch_interrupt  =  MVirtualSignal( hwres_dma_channel, "dma_event", "dma_int", AUTO_DMA_REFILL_ENABLED, false)
+	vs_dma_ch_dst_req_tx =  MVirtualSignal( hwres_dma_channel, "destination_request", "dest_req", AUTO_DMA_REFILL_ENABLED, false)
+	vs_dst_trigger_dlr  =  MVirtualSignal( hwres_dma_dlr, "destination_trigger","in", AUTO_DMA_REFILL_ENABLED, false)
+	vs_dst_trigger_dlr_tx_out =  MVirtualSignal( hwres_dma_dlr, "dlr_out", "out", AUTO_DMA_REFILL_ENABLED, false)
+	vsra_gpdma_interrupt_tx   =  MVirtualSignalRA( appres_global_dma, "interrupt_dma")	
+	
+	/* If expose pin option is selected then extract signal from ANALOG_IO APP */
+	vsra_analog_io_pin = MVirtualSignalRA( appres_analog_io, "vs_analog_io_pad_pin")	
+	
+	/* If sync channel selected along with expose pin option selected, then extract signal from ANALOG_IO APP */
+	vsra_coupled_ch_analog_io_pin = MVirtualSignalRA( appres_coupled_ch_analog_io, "vs_analog_io_pad_pin")
+	  
+    /* ---------------------------------------------------------- ---------------------------------------------------------------*/
+    /* --------------------------------------- APP IO Connections ---------------------------------------------------------------*/
+    /* --------------------------------------------------------------------------------------------------------------------------*/
+    addConnectionConstraint(vs_dac_output, vs_io_pad, MF({return(gcheck_expose_pin.value == false)},Boolean))
+	/* If expose pin option is selected then connect DAC output to ANALOG_IO APP */
+	addConnectionConstraint(vs_dac_output, vsra_analog_io_pin, MF({return(gcheck_expose_pin.value == true)},Boolean))
+	
+    addConnectionConstraint(vs_dac_output_coupled, vs_io_pad_coupled,
+		MF({return((gcheck_synch_channel.value == true) && (gcheck_expose_pin.value == false))},Boolean))
+	/* If expose pin option is selected along with synch channel then connect DAC sync channel output to ANALOG_IO APP */
+	addConnectionConstraint(vs_dac_output_coupled, vsra_coupled_ch_analog_io_pin, 
+		                    MF({return((gcheck_expose_pin.value == true) && (gcheck_synch_channel.value == true))},Boolean))
+	
+	/* If expose pin option is selected then connect DAC output to ANALOG_IO APP */
+	addConnectionConstraint(vs_dac_output_coupled, vs_io_pad_coupled,
+		MF({return((gcheck_synch_channel.value == true) && (gcheck_expose_pin.value == true))},Boolean))
+	
+    addConnectionConstraint(vs_dac_sr, vs_dac_nvic_signal,MF({return(gcombo_refill.value == "Auto Interrupt")},Boolean)) 
+	
+	
+	/* DMA connections */
+	addConnectionConstraint(vs_dma_ch_interrupt, vsra_gpdma_interrupt_tx, AUTO_DMA_REFILL_ENABLED)
+	addConnectionConstraint(vs_dst_trigger_dlr_tx_out, vs_dma_ch_dst_req_tx, AUTO_DMA_REFILL_ENABLED)
+	addConnectionConstraint(vs_dac_sr, vs_dst_trigger_dlr, AUTO_DMA_REFILL_ENABLED)
+
+    /* ---------------------------------------------------------- ---------------------------------------------------------------*/
+    /* --------------------------------------- APP Configuration  ---------------------------------------------------------------*/
+    /* --------------------------------------------------------------------------------------------------------------------------*/
+    /* Read peripheral clock value from low level CLOCK APP */
+    gint_peripheral_clk.value = MF({
+      int MGHz = 1000000
+      return (int)((appres_clock_0.getVal(["gfloat_peribusfreq","value"])) * MGHz)
+      }, Integer)
+
+    /* --------------------------------------- Wave Configuration tab ------------------------------------------------------------*/
+
+    /* If synchronized channel is selected then only enable second DAC channel configuration */
+    gcombo_waveform_sel_second_dac.enabled = SYNC_SECOND_DAC
+	gcheck_synch_channel.value = SYNC_SECOND_DAC
+	/* Do not allow to configure when DMA refill option is selected along with Custom waveform generation */
+	gcombo_waveform_sel_second_dac.visible =  MF({return(!((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value == "Custom")))},Boolean)
+	glabel_waveform_sel_second_dac.visible = MF({return(!((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value == "Custom")))},Boolean)
+	glabel_table_length_second_dac.visible = MF({return(!((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value == "Custom")))},Boolean)
+	gint_table_length_second_dac.visible = MF({return(!((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value == "Custom")))},Boolean)
+	gint_start_index_second_dac.visible = MF({return(!((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value == "Custom")))},Boolean)
+	glabel_start_index_second_dac.visible = MF({return(!((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value == "Custom")))},Boolean)
+	
+	/* If custom waveform is selected along with DMA as refill mode then phase difference user has to to care in the created custom array. */
+	glabel_start_index.visible = MF({return(!((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value == "Custom")))},Boolean)
+	gint_start_index.visible = MF({return(!((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value == "Custom")))},Boolean)
+	
+    gint_table_length_second_dac.enabled = SYNC_SECOND_DAC
+    gint_start_index_second_dac.enabled = SYNC_SECOND_DAC
+    gcombo_repetition_second_dac.enabled = SYNC_SECOND_DAC
+	gcombo_repetition_second_dac.visible = MF({return (gcombo_refill.value != "Auto DMA")},Boolean)
+	glabel_repetition_second_dac.visible = MF({return (gcombo_refill.value != "Auto DMA")},Boolean)
+    gint_repetition_cycles_second_dac.enabled = SYNC_SECOND_DAC
+    /* Display   repetition cycles only if repetition is restricted to some number */
+    gint_repetition_cycles.visible = REPETITION_FIRST_DAC
+    glabel_repetition_cycles.visible = REPETITION_FIRST_DAC
+    
+    glabel_repetition_cycles_second_dac.visible =  REPETITION_SECOND_DAC
+    gint_repetition_cycles_second_dac.visible = REPETITION_SECOND_DAC
+    
+    /*Limit start index to table length */
+    gint_start_index.maxValue = MF({return (gint_table_length.value - 1)},Integer)
+    gint_start_index_second_dac.maxValue = MF({return (gint_table_length_second_dac.value - 1)},Integer)
+	    
+    /* --------------------------------------- Data Type tab ----------------------------------------------------------------------*/
+    /* only for custom waveform generation 16 Bit (User Friendly) option will be available */
+    gcombo_data_type_sel.visible =
+    MF({
+      if((gcombo_waveform_sel.value == "Custom") && (gcombo_refill.value != "Auto DMA"))
+      {
+        return true
+      }
+      else
+      {
+        return false
+      }
+    },Boolean)    
+    
+    gcombo_data_type_sel_second_dac.visible =
+    MF({
+      if((gcheck_synch_channel.value == true) &&
+          (gcombo_waveform_sel_second_dac.value =="Custom") && (gcombo_refill.value != "Auto DMA"))
+      {
+        return true
+      }
+      else
+      {
+        return false
+      }
+    },Boolean)
+	
+    gstring_12bit_fast_exe.visible = 
+    MF({
+      if((gcombo_waveform_sel.value == "Custom")&& (gcombo_refill.value != "Auto DMA"))
+      {
+        return false
+      }
+      else
+      {
+        return true
+      }
+    },Boolean)  
+    
+    gstring_12bit_fast_exe_second_dac.visible =
+    MF({
+      if((gcheck_synch_channel.value == true) && 
+          (gcombo_waveform_sel_second_dac.value =="Custom") && (gcombo_refill.value != "Auto DMA"))
+      {
+        return false
+      }
+      else
+      {
+        return true
+      }
+    },Boolean)
+    
+    /* Data type configuration for second DAC visible only when synchronize second DAC is selected */    
+    ggroup_dac_data_type_second_dac.visible = SYNC_SECOND_DAC
+    
+    gstring_custom_lut.visible = MF({return (gcombo_waveform_sel.value == "Custom")},Boolean)
+    glabel_custom_lut.visible = MF({return (gcombo_waveform_sel.value == "Custom")},Boolean)
+
+    gstring_custom_lut_second_dac.visible = MF({return ((gcombo_waveform_sel_second_dac.value == "Custom")&& (gcombo_refill.value != "Auto DMA"))},Boolean)
+    glabel_custom_lut_second_dac.visible = MF({return ((gcombo_waveform_sel_second_dac.value == "Custom") && (gcombo_refill.value != "Auto DMA"))},Boolean)
+	
+	/* If custom waveform generation with DMA then only one array will be created.Second DAC Custom waveform generation will be disabled.*/
+	gcombo_waveform_sel_second_dac.options = MF({
+		if((gcombo_refill.value == "Auto DMA") && (gcombo_waveform_sel.value != "Custom"))
+		{
+			return(["Sine","Cosine","Triangle"])
+		}
+		else
+		{
+			return(["Sine","Cosine","Triangle","Custom"])
+		}},List	)
+    /* --------------------------------------- Frequency Configuration tab --------------------------------------------------------*/
+   /* Dummy labels for help documentation */
+	glabel_12bit_fast_exe.visible = false
+	glabel_12bit_fast_exe_second_dac.visible = false
+    /* If internal trigger is selected then only give the frequency configuration */
+    ggroup_freq_config.visible = MF({return(gcombo_clock_source.value == "Internal Trigger")},Boolean)
+    
+    /* Based on user frequency configuration,Limit the Maximum desired value */
+    gfloat_desired.maxValue = MF({
+	 Float desired_maxvalue = 0.0
+	 if(gcombo_clock_source.options.indexOf(gcombo_clock_source.value) == 0) /* Output trigger == Internal Trigger */
+	 {
+	   /* If internal clock is selected then only restrict the frequency configuration */
+       if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 1) /* Selection == Trigger Frequency [Hz]: */
+       {
+         desired_maxvalue = (float)(gfloat_trigger_freq.maxValue)
+       }
+       else if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2) /* Selection == Update Rate [us]: */
+       {
+
+		 desired_maxvalue = (float)(1000000/Math.ceil(gint_peripheral_clk.value/DAC_MAX_CLK_DIV))
+       }
+       else /* Selection == LUT Frequency [Hz]: */
+       {
+		   if(gcombo_refill.options.indexOf(gcombo_refill.value) != 2) /* (Refill == Manual Software) || (Refill == Auto Interrupt) */
+		   {
+			   desired_maxvalue = (float)(gfloat_trigger_freq.maxValue/gint_table_length.value)
+		   }
+		   else /* Refill == Auto DMA */
+		   {
+			  desired_maxvalue = (float)(Math.ceil(gint_peripheral_clk.value/DAC_MIN_CLK_DIV) / gint_table_length.value)
+		   }
+       }
+	 }
+	 else /* (Output trigger == External Trigger) || (Output trigger == Software Trigger) */
+	 {
+		 /* If external trigger or software trigger is selected restriction will be disabled */
+		 desired_maxvalue = (float)Float.MAX_VALUE
+	 }
+	 
+	 return (desired_maxvalue)
+      
+    },Float)
+    
+    /* Based on user frequency configuration,Limit the Minimum desired value */
+    gfloat_desired.minValue = MF({
+      if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 1)
+      {
+        return (float)(Math.ceil(gint_peripheral_clk.value/DAC_MAX_CLK_DIV ))
+      }
+      else if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)
+      {
+		  if(gcombo_refill.options.indexOf(gcombo_refill.value) != 2)
+		  {
+			  return (float)(1000000/gfloat_trigger_freq.maxValue)
+		  }
+		  else
+		  {
+			  return (float)(1000000/Math.floor(gint_peripheral_clk.value/DAC_MIN_CLK_DIV))
+		  }
+      }
+      else
+      {
+        return (float)(Math.ceil(gint_peripheral_clk.value/(DAC_MAX_CLK_DIV)) / gint_table_length.value)
+      }
+      
+    },Float)
+    
+    /* Based on user frequency configuration,calculate the LUT frequency */
+    gfloat_config_lut_freq_hz.value = MF({
+    if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 1)
+    {
+      return (float)(gfloat_actual.value/gint_table_length.value)
+    }
+    else if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)
+    {
+      return (float)(1/((gfloat_actual.value/1000000)*gint_table_length.value))
+    }
+    else
+    {
+      return (float)(gfloat_actual.value)
+    }},Float)
+    
+    
+    /* Based on frequency configuration calculate the actual configured values */
+    gfloat_actual.value = MF({
+      int clk_div = 0
+      int clk_div_tmp = 0
+      if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 1)
+      {
+        clk_div_tmp = (int)(gint_peripheral_clk.value/gfloat_desired.value);
+      }
+      else if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)
+      {
+        clk_div_tmp = (int)(gint_peripheral_clk.value/(1000000/gfloat_desired.value))
+      }
+      else
+      {
+        clk_div_tmp = (int)(gint_peripheral_clk.value/(gfloat_desired.value * gint_table_length.value))
+      }
+      /* Check if clock divider is configurable */
+      if(clk_div_tmp < DAC_MIN_CLK_DIV)
+      {
+         /* Clock divider value can't be less than 16 */
+        clk_div = DAC_MIN_CLK_DIV
+      }
+      else if(clk_div_tmp > DAC_MAX_CLK_DIV)
+      {
+        /* Clock divider value can't be greater than 1048575 */
+        clk_div = DAC_MAX_CLK_DIV
+      }
+      else
+      {
+        clk_div = clk_div_tmp
+      }
+      
+      /* Based on user entered frequency configuration return the actual configured value */
+      if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 1)
+      {
+        return (float)(gint_peripheral_clk.value/clk_div)
+      }
+      else if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)
+      {
+        /* return actual value in milli seconds */
+        return (float)(1000000 /(gint_peripheral_clk.value/clk_div))
+      }
+      else
+      {
+        return (float)(gint_peripheral_clk.value /(gint_table_length.value * clk_div))
+      }      
+      },Float)
+
+    
+    gint_configured_clk.value = MF({return (int)(gfloat_config_lut_freq_hz.value * gint_table_length.value)},Integer)
+    
+    /* Enable configured frequency display only when update rate or trigger frequency is entered */    
+    glabel_config_lut_freq_hz.visible = MF({return (gcombo_freq_config.options.indexOf(gcombo_freq_config.value) > 0)},Boolean)
+    gfloat_config_lut_freq_hz.visible = MF({return (gcombo_freq_config.options.indexOf(gcombo_freq_config.value) > 0)},Boolean)
+    
+    glabel_required_trigger_freq.visible = MF({return (gcombo_freq_config.options.indexOf(gcombo_freq_config.value) != 1)},Boolean)
+    gfloat_required_trigger_freq.visible = MF({return (gcombo_freq_config.options.indexOf(gcombo_freq_config.value) != 1)},Boolean)    
+    gfloat_required_trigger_freq.value = MF({
+      if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 0)
+      {
+        return (float)(gfloat_desired.value * gint_table_length.value)
+      }
+      else if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)
+      {
+        return (float)(1000000/gfloat_desired.value)
+      }
+      else
+      {
+        return (float)0.0
+      }},Float)
+    
+    glabel_trigger_freq.visible = MF({return (gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)},Boolean)
+    gfloat_trigger_freq.visible = MF({return (gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)},Boolean)
+    gfloat_trigger_freq.value = MF({
+      if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 0)
+      {
+        return (float)(gfloat_desired.value * gint_table_length.value)
+      }
+      else if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)
+      {
+        return (float)(1000000/gfloat_desired.value)
+      }
+      else
+      {
+        return (float)0.0
+      }},Float)
+
+    gfloat_update_rate.visible = MF({return (gcombo_freq_config.options.indexOf(gcombo_freq_config.value) != 2)},Boolean)
+    glabel_update_rate.visible = MF({return (gcombo_freq_config.options.indexOf(gcombo_freq_config.value) != 2)},Boolean)
+    gfloat_update_rate.value = MF({
+		if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 0)
+		{
+		  return (float)(1000000/(gfloat_desired.value * gint_table_length.value))
+		}
+		else
+		{
+		  return (float)(1000000/gfloat_desired.value)
+		}
+	},Float)
+    gfloat_second_dac_freq.visible =  SYNC_SECOND_DAC
+    glabel_second_dac_freq.visible =  SYNC_SECOND_DAC
+    
+    gfloat_second_dac_freq.value  = MF({
+      if((gcheck_synch_channel.value == true)&&(gcombo_clock_source.value == "Internal Trigger"))
+      {
+        if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) != 1)
+        {
+          return (Float)(gfloat_trigger_freq.value/gint_table_length_second_dac.value)
+        }
+        else
+        {
+          return (Float)(gfloat_desired.value/gint_table_length_second_dac.value)
+        }
+      }
+      else
+      {
+        return (Float)0
+      }},Float)
+    
+    gmessage_high_trig_freq.visible = MF({
+      if(gcombo_clock_source.value == "Internal Trigger")
+      {
+        if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 0)
+        {
+          if(gfloat_required_trigger_freq.value > gfloat_required_trigger_freq.maxValue)
+          {
+            return true
+          }
+          else
+          {
+            return false
+          }
+        }
+        else if(gcombo_freq_config.options.indexOf(gcombo_freq_config.value) == 2)
+        {
+          if(gfloat_trigger_freq.value > gfloat_trigger_freq.maxValue)
+          {
+            return true
+          }
+          else
+          {
+            return false
+          }
+        }
+        else
+        {
+          return false
+        }
+      }
+      else
+      {
+        return false
+      } },Boolean)
+	
+    /* --------------------------------------- Expert Configuration tab -----------------------------------------------------------*/
+    /* If offset is enabled then enable offset value entry enable */
+    gint_offset_val.enabled = MF({return (gcheck_add_offset.value == true)},Boolean)
+    gint_offset_val_second_dac.enabled = MF({return (gcheck_add_offset_second_dac.value == true)},Boolean)
+    
+    /* If shift is enabled then enable shift bit entry */
+    gint_shifted_bits.enabled = MF({return (gcheck_shift_enable.value == true)},Boolean)
+    gint_shifted_bits_second_dac.enabled = MF({return ((gcheck_shift_enable_second_dac.value == true)&&(gcheck_synch_channel.value == true))},Boolean)
+    
+    /* Dynamic check for Min. and Max. range of offset depends upon Sign selection */
+    gint_offset_val.minValue =  MF({
+      if(gcombo_sign_sel.value == "Signed")
+      {
+        return -128
+      }
+      else
+      {
+        return 0
+      }
+      },Integer)
+    gint_offset_val.maxValue =  MF({
+      if(gcombo_sign_sel.value == "Signed")
+      {
+        return 127
+      }
+      else
+      {
+        return 255
+      }
+      },Integer)
+    
+    gint_offset_val_second_dac.minValue =  MF({
+      if((gcombo_sign_sel_second_dac.value == "Unsigned")&&(gcheck_synch_channel.value == true))
+      {
+        return 0
+      }
+      else
+      {
+        return -128
+      }
+      },Integer)
+    gint_offset_val_second_dac.maxValue =  MF({
+      if((gcombo_sign_sel_second_dac.value == "Unsigned")&&(gcheck_synch_channel.value == true))
+      {
+        return 255
+      }
+      else
+      {
+        return 127
+      }
+      },Integer)
+    
+    ggroup_expert_second_dac_config.visible =  SYNC_SECOND_DAC
+    
+//    if(device_44 != true)
+//    {
+//      /* Only for XMC44 device invert enable is possible */
+//      gcheck_invert_output.visible = false
+//      gcheck_invert_output_second_dac.visible = false
+//    }
+	
+	if(device_45 == true)
+	{
+	  /* Only for XMC45 device invert enable is not possible, rest all families 43, 44,42,41,47,48 it is possible */
+	  gcheck_invert_output.visible = false
+	  gcheck_invert_output_second_dac.visible = false
+	}
+    
+    /* --------------------------------------- Interrupt Configuration tab -----------------------------------------------------------*/
+    ggroup_nvic_conf.visible = MF({return (gcombo_refill.value == "Auto Interrupt")},Boolean)
+    gmessage_valid_isr_name.visible = MF({
+      Matcher matcher = (gstring_interrupt_handler.value =~ fn_regexp)
+      Boolean ExpressionMatch = !matcher.matches()
+      return ExpressionMatch
+    }, Boolean)
+    
+    /*Configure priority based on CPU APP*/
+    ginterruptprio_dac_ch_sr.maxPriority = MF({return (appres_cpu.getVal(["gint_maxInterruptPreemptPriority", "value"]))},Integer)
+    ginterruptprio_dac_ch_sr.maxSubPriority = MF({return (appres_cpu.getVal(["gint_maxInterruptSubPriority", "value"]))},Integer)  
+    
+  }
+  
+  // File Generation
+  def generateFiles()
+  {
+     //File Generation
+    copy("dac_lut.c", "dac_lut.c")
+    copy("dac_lut.h", "dac_lut.h")
+    generate("dac_lut_confc.tmpl", "dac_lut_conf.c")
+    generate("dac_lut_confh.tmpl", "dac_lut_conf.h")
+    generate("dac_lut_extern.tmpl", "dac_lut_extern.h")
+  }
+  
+  static main(args){
+	  DAC_LUT global = new DAC_LUT()
+  }
+
+}

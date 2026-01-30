@@ -1,0 +1,671 @@
+*************************************************************
+FileName = BGT24LTR11_RF-Shield_Board_V3.0.GBR
+AutoAperture = True
+*************************************************************
+Generating : Mechanical 25
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM25
+
+    Adding Layer      : Mechanical 25
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 21
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM21
+
+    Adding Layer      : Mechanical 21
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 17
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM17
+
+    Adding Layer      : Mechanical 17
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : M15 (CMP_Courtyard_Top)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM15
+
+    Adding Layer      : M15 (CMP_Courtyard_Top)
+
+
+Used DCodes :
+    D12
+    D56
+    D105
+*************************************************************
+
+*************************************************************
+Generating : M13 (CMP_Body_OTL_Top)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM13
+
+    Adding Layer      : M13 (CMP_Body_OTL_Top)
+
+
+Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 8
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM8
+
+    Adding Layer      : Mechanical 8
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : M5 (Sheet_Top)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM5
+
+    Adding Layer      : M5 (Sheet_Top)
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D19
+    D20
+    D21
+    D22
+    D24
+    D25
+    D27
+    D28
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+*************************************************************
+
+*************************************************************
+Generating : L4
+      File : BGT24LTR11_RF-Shield_Board_V3.0.G2
+
+    Adding Layer      : L4
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D49
+    D50
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D88
+    D90
+    D91
+    D92
+    D101
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D60
+*************************************************************
+
+*************************************************************
+Generating : M2 (CMP_Body_Bot)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM2
+
+    Adding Layer      : M2 (CMP_Body_Bot)
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : M3 (ASY_Text_Top)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM3
+
+    Adding Layer      : M3 (ASY_Text_Top)
+
+
+Used DCodes :
+    D12
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Top
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GTL
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D36
+    D37
+    D40
+    D41
+    D42
+    D49
+    D50
+    D54
+    D55
+    D56
+    D57
+    D58
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+    D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 22
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM22
+
+    Adding Layer      : Mechanical 22
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 18
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM18
+
+    Adding Layer      : Mechanical 18
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : M14 (CMP_Body_OTL_Bot)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM14
+
+    Adding Layer      : M14 (CMP_Body_OTL_Bot)
+
+
+Used DCodes :
+    D56
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 9
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM9
+
+    Adding Layer      : Mechanical 9
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : M6 (Sheet_Bot)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM6
+
+    Adding Layer      : M6 (Sheet_Bot)
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : M1 (CMP_Body_Top)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM1
+
+    Adding Layer      : M1 (CMP_Body_Top)
+
+
+Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+*************************************************************
+
+*************************************************************
+Generating : L2_GND
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GP1
+
+    Adding Layer      : L2_GND
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GD1
+
+    Adding Drill Pair : Top-BOTTOM
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D106
+    D107
+*************************************************************
+
+*************************************************************
+Generating : Drill Drawing
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GD2
+
+    Adding Drill Pair : Top-L4
+
+    Adding Layer      : Drill Drawing
+
+
+Used DCodes :
+    D106
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D13
+    D65
+*************************************************************
+
+*************************************************************
+Generating : L3
+      File : BGT24LTR11_RF-Shield_Board_V3.0.G1
+
+    Adding Layer      : L3
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D49
+    D50
+    D55
+    D56
+    D57
+    D58
+    D60
+    D61
+    D88
+    D90
+    D91
+    D92
+    D101
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 23
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM23
+
+    Adding Layer      : Mechanical 23
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 19
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM19
+
+    Adding Layer      : Mechanical 19
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D87
+    D102
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GPT
+
+    Adding Layer      : Top
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D36
+    D37
+    D40
+    D41
+    D42
+    D49
+    D50
+    D54
+    D87
+    D88
+    D89
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GPB
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D36
+    D49
+    D50
+    D87
+    D88
+    D89
+    D102
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D103
+*************************************************************
+
+*************************************************************
+Generating : M4 (ASY_Text_Bot)
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM4
+
+    Adding Layer      : M4 (ASY_Text_Bot)
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : BOTTOM
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GBL
+
+    Adding Layer      : BOTTOM
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D36
+    D49
+    D50
+    D87
+    D88
+    D89
+    D91
+    D102
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 24
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM24
+
+    Adding Layer      : Mechanical 24
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 20
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM20
+
+    Adding Layer      : Mechanical 20
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 10
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM10
+
+    Adding Layer      : Mechanical 10
+
+
+Used DCodes :
+    D104
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 7
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GM7
+
+    Adding Layer      : Mechanical 7
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : L5_GND
+      File : BGT24LTR11_RF-Shield_Board_V3.0.GP2
+
+    Adding Layer      : L5_GND
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D93
+    D94
+    D95
+    D96
+    D97
+    D100
+*************************************************************
+

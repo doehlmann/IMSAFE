@@ -1,0 +1,13 @@
+DRC Rules Export File for PCB: C:\Users\elhares\Desktop\Projekts\BGT24LTR11 Realted Projects\D2GL\BGT24LTR11_RF-Shield_Board_V3.0.PcbDoc
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=ShortCircuit|RuleName=Matching_LTR11|Scope=Board|Allowed=1
+RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=3.94
+RuleKind=Clearance|RuleName=Machining_LTR11|Scope=Board|Minimum=0.00
+RuleKind=Clearance|RuleName=Polygon|Scope=Board|Minimum=10.00
+RuleKind=Width|RuleName=Width_All|Scope=Board|Minimum=5.91
+RuleKind=Width|RuleName=Width_PWR|Scope=Board|Minimum=5.91
+RuleKind=Width|RuleName=Width_Z0_50R|Scope=Board|Minimum=4.72
+RuleKind=Width|RuleName=Width_Z0_DIFF_100R|Scope=Board|Minimum=4.33
+RuleKind=Width|RuleName=Width_BGA_Fanout|Scope=Board|Minimum=3.94
+RuleKind=Width|RuleName=Width_HighCurrent|Scope=Board|Minimum=5.91
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=2.00

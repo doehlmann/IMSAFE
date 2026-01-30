@@ -1,0 +1,84 @@
+<Device firmwareVersion="v1.0.0" name="Distance2GoL">
+  <Acquisition framePeriod_msec="200.0"/>
+  <TjbaEndpoint>
+    <TJBABoardInfo>
+      <major_version>2</major_version>
+      <minor_version>0</minor_version>
+      <rf_shield_type_id>RBBSFV30</rf_shield_type_id>
+      <description>XMC4700 Radar baseboard V2.0</description>
+    </TJBABoardInfo>
+  </TjbaEndpoint>
+  <D2GL>
+    <GetShieldInfoCnf>
+      <rf_frequency_khz>24025000</rf_frequency_khz>
+      <bandwidth_mhz>200</bandwidth_mhz>
+      <major_version>3</major_version>
+      <minor_version>0</minor_version>
+      <num_tx_antenna>1</num_tx_antenna>
+      <num_rx_antenna>2</num_rx_antenna>
+      <rf_shield_type_id>RBBSFV30</rf_shield_type_id>
+      <description>Distance2GoL BGT24LTR11 shield V3.0</description>
+      <modulation>SW controlled FMCW</modulation>
+      <up_chirp_time_s>0.0015</up_chirp_time_s>
+    </GetShieldInfoCnf>
+    <DeviceInfo>
+      <shortName>Distance2GoL</shortName>
+      <description>Distance2GoL BGT24LTR11 shield V3.0</description>
+      <minRfFrequency_kHz>24025000</minRfFrequency_kHz>
+      <maxRfFrequency_kHz>24225000</maxRfFrequency_kHz>
+      <numAntennasTx>1</numAntennasTx>
+      <numAntennasRx>2</numAntennasRx>
+      <maxTxPowerLevel>0</maxTxPowerLevel>
+      <numTempSensors>0</numTempSensors>
+      <majorVersionHW>3</majorVersionHW>
+      <minorVersionHW>0</minorVersionHW>
+      <interleavedRX>false</interleavedRX>
+      <rxDataFormat>RADAR_RX_DATA_COMPLEX</rxDataFormat>
+    </DeviceInfo>
+    <FrameFormat>
+      <numSamplesPerChirp>64</numSamplesPerChirp>
+      <numChirpsPerFrame>1</numChirpsPerFrame>
+      <rxMask>3</rxMask>
+      <signalPart>RADAR_SIGNAL_I_AND_Q</signalPart>
+    </FrameFormat>
+    <FmcwParaValueDefHost>
+      <size_elems>4</size_elems>
+      <max_distance_m_lower_boundary>2.0</max_distance_m_lower_boundary>
+      <max_distance_m_upper_boundary>30.0</max_distance_m_upper_boundary>
+      <max_distance_m_step_size>0.125</max_distance_m_step_size>
+      <min_distance_m_lower_boundary>1.0</min_distance_m_lower_boundary>
+      <min_distance_m_upper_boundary>25.0</min_distance_m_upper_boundary>
+      <min_distance_m_step_size>0.125</min_distance_m_step_size>
+      <frame_time_sec_lower_boundary>0.02</frame_time_sec_lower_boundary>
+      <frame_time_sec_upper_boundary>0.2</frame_time_sec_upper_boundary>
+      <frame_time_sec_step_size>1.0E-5</frame_time_sec_step_size>
+      <size_elems>4</size_elems>
+      <p_sample_list>[32, 64, 128, 256]</p_sample_list>
+      <ltm_threshold_lower_boundary>1</ltm_threshold_lower_boundary>
+      <ltm_threshold_upper_boundary>1000</ltm_threshold_upper_boundary>
+      <ltm_threshold_step_size>5</ltm_threshold_step_size>
+      <stm_threshold_lower_boundary>1</stm_threshold_lower_boundary>
+      <stm_threshold_upper_boundary>1000</stm_threshold_upper_boundary>
+      <stm_threshold_step_size>5</stm_threshold_step_size>
+      <number_of_chirps_per_frame_lower_boundary>1</number_of_chirps_per_frame_lower_boundary>
+      <number_of_chirps_per_frame_upper_boundary>16</number_of_chirps_per_frame_upper_boundary>
+      <number_of_chirps_per_frame_step_size>1</number_of_chirps_per_frame_step_size>
+      <pulse_repetition_time_sec_lower_boundary>0.0025</pulse_repetition_time_sec_lower_boundary>
+      <pulse_repetition_time_sec_upper_boundary>0.01</pulse_repetition_time_sec_upper_boundary>
+      <pulse_repetition_time_sec_step_size>1.0E-5</pulse_repetition_time_sec_step_size>
+    </FmcwParaValueDefHost>
+    <FmcwParaValues>
+      <max_distance_m>16.0</max_distance_m>
+      <min_distance_m>1.0</min_distance_m>
+      <frame_time_sec>0.2</frame_time_sec>
+      <number_of_samples_nu>64</number_of_samples_nu>
+      <target_hold_threshold>75</target_hold_threshold>
+      <target_activation_threshold>150</target_activation_threshold>
+      <number_of_chirps_per_frame>1</number_of_chirps_per_frame>
+      <continuous_mode_bool>0</continuous_mode_bool>
+      <baseband_gain_stage_bool>0</baseband_gain_stage_bool>
+      <pulse_repetition_rate_sec>0.005</pulse_repetition_rate_sec>
+      <activate_cfar>0</activate_cfar>
+    </FmcwParaValues>
+  </D2GL>
+</Device>

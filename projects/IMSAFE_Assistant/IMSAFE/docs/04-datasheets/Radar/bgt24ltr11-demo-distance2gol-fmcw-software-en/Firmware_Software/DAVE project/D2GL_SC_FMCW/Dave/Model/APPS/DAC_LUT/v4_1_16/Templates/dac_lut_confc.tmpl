@@ -1,0 +1,929 @@
+package Model.APPS.DAC_LUT.v4_1_16.Templates;
+
+import Model.APPS.DAC_LUT.v4_1_16.DAC_LUT
+
+out.print("""
+/**
+ * @cond
+ ***********************************************************************************************************************
+ *
+ * Copyright (c) 2018, Infineon Technologies AG
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,are permitted provided that the
+ * following conditions are met:
+ *
+ *   Redistributions of source code must retain the above copyright notice, this list of conditions and the  following
+ *   disclaimer.
+ *
+ *   Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
+ *   following disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ *   Neither the name of the copyright holders nor the names of its contributors may be used to endorse or promote
+ *   products derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE  FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY,OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT  OF THE
+ * USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * To improve the quality of the software, users are encouraged to share modifications, enhancements or bug fixes
+ * with Infineon Technologies AG (dave@infineon.com).
+ ***********************************************************************************************************************
+ *
+ * Change History
+ * --------------
+ *
+ * 2015-02-20:
+ *     - Initial version<br>
+ *
+ * 2015-06-20:
+ *     - DMA support added.<br>
+ *
+ * 2015-09-03
+ *     - Added Dummy read code for pdisc - Applicable for all Micrcontroller series. <br>
+
+ * 2018-02-14
+ *     - APP instance renaming bugfix in DAC_LUT_DMABlockTransferEvntHandler() <br>
+ * @endcond
+ *
+ */
+/***********************************************************************************************************************
+ * HEADER FILES                                                                                                      
+ **********************************************************************************************************************/
+#include "dac_lut.h"
+""");
+String appInst = "NULL"
+
+List ClkSourceEnum =
+[
+  'XMC_DAC_CH_TRIGGER_INTERNAL',
+  'XMC_DAC_CH_TRIGGER_EXTERNAL_CCU80_SR1',
+  'RESERVED',
+  'XMC_DAC_CH_TRIGGER_EXTERNAL_CCU40_SR1',
+  'XMC_DAC_CH_TRIGGER_EXTERNAL_CCU41_SR1',
+  'XMC_DAC_CH_TRIGGER_EXTERNAL_P2_9',
+  'XMC_DAC_CH_TRIGGER_EXTERNAL_P2_8',
+  'XMC_DAC_CH_TRIGGER_EXTERNAL_U0C0_DX1INS',
+  'XMC_DAC_CH_TRIGGER_EXTERNAL_U1C0_DX1INS',
+  'XMC_DAC_CH_TRIGGER_SOFTWARE'
+]
+
+List GpioModeEnum =
+[
+  'XMC_GPIO_MODE_INPUT',
+  'XMC_GPIO_MODE_INPUT_PULL_DOWN',
+  'XMC_GPIO_MODE_INPUT_PULL_UP',
+  'XMC_GPIO_MODE_INPUT_INVERTED',
+  'XMC_GPIO_MODE_INPUT_INVERTED_PULL_DOWN',
+  'XMC_GPIO_MODE_INPUT_INVERTED_PULL_UP',
+  'XMC_GPIO_MODE_OUTPUT_PUSH_PULL',
+  'XMC_GPIO_MODE_OUTPUT_OPEN_DRAIN',
+  'XMC_GPIO_MODE_OUTPUT_AF1',
+  'XMC_GPIO_MODE_OUTPUT_AF2',
+  'XMC_GPIO_MODE_OUTPUT_AF3',
+  'XMC_GPIO_MODE_OUTPUT_AF4'
+]
+
+List DacAmpEnum   =
+[
+  'XMC_DAC_CH_OUTPUT_SCALE_DIV_128',
+  'XMC_DAC_CH_OUTPUT_SCALE_DIV_64',
+  'XMC_DAC_CH_OUTPUT_SCALE_DIV_32',
+  'XMC_DAC_CH_OUTPUT_SCALE_DIV_16',
+  'XMC_DAC_CH_OUTPUT_SCALE_DIV_8',
+  'XMC_DAC_CH_OUTPUT_SCALE_DIV_4',
+  'XMC_DAC_CH_OUTPUT_SCALE_DIV_2',
+  'XMC_DAC_CH_OUTPUT_SCALE_NONE',
+  'XMC_DAC_CH_OUTPUT_SCALE_MUL_2',
+  'XMC_DAC_CH_OUTPUT_SCALE_MUL_4',
+  'XMC_DAC_CH_OUTPUT_SCALE_MUL_8',
+  'XMC_DAC_CH_OUTPUT_SCALE_MUL_16',
+  'XMC_DAC_CH_OUTPUT_SCALE_MUL_32',
+  'XMC_DAC_CH_OUTPUT_SCALE_MUL_64',
+  'XMC_DAC_CH_OUTPUT_SCALE_MUL_128'
+]
+
+List DACLutRefillEnum = 
+[
+	'DAC_LUT_REFILL_MANUAL_SOFTWARE',
+	'DAC_LUT_REFILL_AUTO_INTERRUPT',
+	'DAC_LUT_REFILL_AUTO_DMA'
+]
+
+/**********************************************************************************************************************/
+for (Object appIns : appInstancesList )
+{
+	List slice_uri;
+	List pin_uri;
+	List coupled_slice_uri;
+	List coupled_pin_uri;
+	List dac_isr_uri;
+	List dma_uri;
+	List dlr_uri;
+	
+	String wave_lut_ptr = "NULL"
+	String isr_config_ptr = "NULL"
+	String io_mode = "NULL"
+	String coupled_io_port_handle_ptr = "NULL"
+	String coupled_channel_config_ptr = "NULL"
+	String wave_point = "NULL"
+	String wave_point_coupled = "NULL"
+	String coupled_lut_ptr = "NULL"
+	String data_type = "NULL"
+	String data_type_second_dac = "NULL"
+	
+	Integer slice_num = 0
+	Integer sync_slice_num = 0
+	Integer clock_src = 0
+	Integer trigger_sel = 0
+	Integer trigger_sel_second_slice = 0
+	Integer lut_length = 0
+	Integer counter = 0
+	Integer peak_amplitude = 0
+	Integer peak_amplitude_coupled = 0
+	Integer current_quarter = 0
+	Integer quarter_length = 0
+	Integer wavepoint_i = 0
+	Integer wavepoint_d = 0
+	Integer lut_index = 0
+	Integer index = 0
+	Integer dma_array_index = 0
+	Integer lut_index_coupled = 0
+	Integer lut_max_length = 0
+	Integer wavegen_repeat_cycles = 0
+	Integer wavegen_sync_repeat_cycles = 0
+	Integer wavegen_current_cycle = 0
+	Integer wavegen_sync_current_cycle = 0
+	Integer XMC_DAC_SCALE_NONE_INDEX = 7
+	Integer shift_qty = 0
+	Integer shift_qty_second_dac = 0
+	Integer offset = 0
+	Integer dma_channel = 0
+    Integer dest_per = 0
+	Integer dest_srsel_rs = 0
+	String sign = 0
+	String sign_second_dac = 0
+	String sync_ch_config = "NULL"
+	String lut_ptr = "NULL"
+	String dma_config_ptr = "NULL"
+	String dac_data_reg_ptr = "NULL"
+	Integer offset_second_dac = 0
+	Integer wavegen_sign_max_val = 2047
+	List lut_array = ["NULL"]
+	List lut_array_coupled = ["NULL"]
+	List lut_array_dma = ["NULL"]
+	
+	Double angular_increment = 0.0
+	
+  appInst = appIns.getInstanceLabel()
+  slice_uri = appIns.hwres_dac_slice.getSolverUri()
+  pin_uri = appIns.hwres_dac_analogpin.getSolverUri()
+  dac_isr_uri = appIns.hwres_dac_nvic_node.getSolverUri()
+  
+  Integer Dummy_Mux_Read0 = 0
+  Dummy_Mux_Read0 = appIns.hwres_dac_nvic_node.getRegValue("","iser_setena") //dummy read
+  
+  String analog_io_handle = null
+  if (appIns.gcheck_expose_pin.value == true)
+  {
+	analog_io_handle = "&" + appIns.appres_analog_io.getInstanceLabel()
+  }
+  else
+  {
+	  analog_io_handle = "NULL"
+  }
+  
+  if(appIns.gcheck_synch_channel.value == true)
+  {
+	  /* Coupled channel configured */
+	  coupled_slice_uri = appIns.hwres_dac_coupled_slice.getSolverUri()
+	  coupled_pin_uri = appIns.hwres_dac_coupled_analogpin.getSolverUri()
+	  sync_slice_num = coupled_slice_uri[6].toInteger();
+	  /*dummy mux read*/
+	  appIns.hwres_dac_coupled_analogpin.getRegValue("PDISC","pdisc_pdis")
+  }
+
+  if((slice_uri != null) && ((appIns.gcheck_synch_channel.value == false) || ((coupled_slice_uri != null))))
+  {
+	slice_num   = slice_uri[6].toInteger();
+
+	trigger_sel = (int)appIns.hwres_dac_slice.getRegValue("cfg1","cfg1_trigsel")
+	dac_data_reg_ptr = "&DAC->DAC"+"${slice_num}"+"DATA"
+	
+	   angular_increment = Math.PI
+	   lut_length = appIns.gint_table_length.value
+	   quarter_length = lut_length/4
+	   current_quarter = 0
+	   peak_amplitude = wavegen_sign_max_val
+	   angular_increment = 2*angular_increment/lut_length
+	   lut_index = 0
+	   counter = 0
+	   out.print("""
+/**********************************************************************************************************************
+ * DATA STRUCTURES
+ **********************************************************************************************************************/
+""")
+	   
+	   if(appIns.gcombo_refill.value == "Auto DMA")
+	   {
+		   dma_uri = appIns.hwres_dma_channel.getSolverUri()
+		   dlr_uri = appIns.hwres_dma_dlr.getSolverUri()
+		   
+		   /*Extract DMA configuration from the URI*/
+		   if((dma_uri != null) && (dlr_uri != null))
+		   {
+			 /*Extract DMA module number from the URI*/
+			 dma_module = dma_uri[3]
+			 if(dma_module == "dma8")
+			 {
+				 dma_module = "0"
+			 }
+			 else
+			 {
+				 dma_module = "1"
+			 }
+			 dma_channel = (int)dma_uri[6].toInteger()
+			 /*Extract DLR channel from the URI*/
+			 dlr_channel = dlr_uri[6].toInteger()
+		   }
+		   
+		   dest_per = appIns.hwres_dma_channel.getRegValue("cfgh", "cfgh_dest_per").toInteger()
+		   dest_srsel_rs = appIns.hwres_dma_dlr.getRegValue("dlr", "srsel_rs").toInteger()
+		   dma_config_ptr = "&${appInst}_dma_config"
+		   lut_max_length = appIns.gint_table_length.value
+	   }
+/********************************************** Waveform Generator Lookup Table -START ******************************************************/
+	   while( lut_length > 0)
+	   {
+		   if(appIns.gcombo_waveform_sel.value == "Sine")
+		   {
+			   wavepoint_d =  Math.round(peak_amplitude * Math.sin(counter*angular_increment));
+			   counter = counter + 1;
+		   }
+		   else if(appIns.gcombo_waveform_sel.value == "Triangle")
+		   {
+			   if(current_quarter == 0)
+			   {
+				   wavepoint_d = Math.round((peak_amplitude*counter)/quarter_length);
+				   counter = counter + 1;
+				   if(counter >= quarter_length)
+				   {
+					   counter = 0;
+					   current_quarter = 1;
+				   }
+			   }
+			   else if(current_quarter == 1)
+			   {
+				   wavepoint_d = Math.round((peak_amplitude*(quarter_length-counter))/quarter_length);
+				   counter = counter + 1;
+				   if(counter >= quarter_length)
+				   {
+					   counter = 0;
+					   current_quarter = 2;
+				   }
+			   }
+			   else if(current_quarter == 2)
+			   {
+				   wavepoint_d = Math.round((peak_amplitude*(-1*counter))/quarter_length );
+				   counter = counter + 1;
+				   if(counter >= quarter_length)
+				   {
+					   counter = 0;
+					   current_quarter = 3;
+				   }
+			   }
+			   else if(current_quarter == 3)
+			   {
+				   wavepoint_d = Math.round((peak_amplitude*(counter-quarter_length))/quarter_length );
+				   counter = counter + 1;
+				   if(counter >= quarter_length)
+				   {
+					   counter = 0;
+					   current_quarter = 2;
+				   }
+			   }
+			   else
+			   {
+				   wavepoint_d = 0;
+			   }
+		   }
+		   else if(appIns.gcombo_waveform_sel.value == "Cosine")
+		   {
+			   wavepoint_d =  Math.round(peak_amplitude * Math.cos(counter*angular_increment));
+			   counter = counter + 1;
+		   }
+		   else
+		   {
+			   wavepoint_d = 0;
+		   }
+		   lut_length = lut_length - 1;
+		   wavepoint_i =  (int)wavepoint_d;
+		   if(appIns.gcombo_sign_sel.value == "Unsigned")
+		   {
+			   wavepoint_i = wavepoint_i + peak_amplitude + 1;
+		   }
+		   lut_array[lut_index++] = wavepoint_i 
+	   }
+
+	   if(appIns.gcheck_synch_channel.value == true)
+	   {
+		   sync_ch_config = "&${appInst}_Sync_Channel_Config"
+		   /* Coupled Mode selected */
+		   coupled_slice_num  = coupled_slice_uri[6].toInteger();
+   
+		   dac_data_reg_ptr = "&DAC->DAC01DATA"
+		   
+		   /*dummy mux read*/
+		  appIns.hwres_dac_analogpin.getRegValue("PDISC","pdisc_pdis")
+		  trigger_sel_second_slice = (int)appIns.hwres_dac_coupled_slice.getRegValue("cfg1","cfg1_trigsel")
+		   
+		   angular_increment = Math.PI
+		   lut_length = appIns.gint_table_length_second_dac.value
+		   quarter_length = lut_length/4
+		   current_quarter = 0
+		   peak_amplitude = wavegen_sign_max_val  
+		   angular_increment = 2*angular_increment/lut_length
+		   counter = 0
+		   lut_index_coupled = 0
+/********************************************** Waveform Generator Coupled Mode Lookup Table -START *************************************************/
+		   while( lut_length > 0)
+		   {
+			   if(appIns.gcombo_waveform_sel_second_dac.value == "Sine")
+			   {
+				   wavepoint_d =  Math.round(peak_amplitude * Math.sin(counter*angular_increment));
+				   counter = counter + 1;
+			   }
+			   else if(appIns.gcombo_waveform_sel_second_dac.value == "Triangle")
+			   {
+				   if(current_quarter == 0)
+				   {
+					   wavepoint_d = Math.round((peak_amplitude*counter)/quarter_length);
+					   counter = counter + 1;
+					   if(counter >= quarter_length)
+					   {
+						   counter = 0;
+						   current_quarter = 1;
+					   }
+				   }
+				   else if(current_quarter == 1)
+				   {
+					   wavepoint_d = Math.round((peak_amplitude*(quarter_length-counter))/quarter_length);
+					   counter = counter + 1;
+					   if(counter >= quarter_length)
+					   {
+						   counter = 0;
+						   current_quarter = 2;
+					   }
+				   }
+				   else if(current_quarter == 2)
+				   {
+					   wavepoint_d = Math.round((peak_amplitude*(-1*counter))/quarter_length );
+					   counter = counter + 1;
+					   if(counter >= quarter_length)
+					   {
+						   counter = 0;
+						   current_quarter = 3;
+					   }
+				   }
+				   else if(current_quarter == 3)
+				   {
+					   wavepoint_d = Math.round((peak_amplitude*(counter-quarter_length))/quarter_length );
+					   counter = counter + 1;
+					   if(counter >= quarter_length)
+					   {
+						   counter = 0;
+						   current_quarter = 2;
+					   }
+				   }
+				   else
+				   {
+					   wavepoint_d = 0;
+				   }
+			   }
+			   else if(appIns.gcombo_waveform_sel_second_dac.value == "Cosine")
+			   {
+				   wavepoint_d =  Math.round(peak_amplitude * Math.cos(counter*angular_increment));
+				   counter = counter + 1;
+			   }
+			   else
+			   {
+				   wavepoint_d = 0;
+			   }
+			   lut_length = lut_length - 1;
+			   wavepoint_i =  (int)wavepoint_d;
+			   if(appIns.gcombo_sign_sel_second_dac.value == "Unsigned")
+			   {
+				   wavepoint_i = wavepoint_i + peak_amplitude + 1;
+			   }
+			   
+			   lut_array_coupled[lut_index_coupled++] = wavepoint_i  
+		   }  
+		   
+		   if(appIns.gint_table_length.value > appIns.gint_table_length_second_dac.value)
+		   {
+			   lut_max_length = appIns.gint_table_length.value
+		   }
+		   else
+		   {
+			   lut_max_length = appIns.gint_table_length_second_dac.value
+		   }
+	   }
+	   if(appIns.gcombo_refill.value == "Auto DMA")
+	   {
+		   lut_index = appIns.gint_start_index.value
+		   lut_index_coupled = appIns.gint_start_index_second_dac.value
+		   index = 0
+		   dma_array_index = lut_max_length
+		   
+		   if(appIns.gcheck_synch_channel.value == true)
+		   {
+		     while(dma_array_index > 0)
+		     {
+			     /* Create one array which will have wave points for both the channels */
+			    lut_array_dma[index++] = ((((lut_array_coupled[lut_index_coupled++].toInteger()) & 0xFFFF)<<16) | ((lut_array[lut_index++].toInteger()) & 0xFFFF))
+
+			     if(lut_index_coupled == appIns.gint_table_length_second_dac.value)
+			     {
+				   lut_index_coupled = 0
+			     }
+
+                 if(lut_index == appIns.gint_table_length.value)
+			     {
+			       lut_index = 0
+			     }
+			     dma_array_index--
+		     }
+	       }
+		   else
+		   {
+			   if(lut_index != 0)
+			   {
+			     while(dma_array_index > 0)
+			     {
+				     /* Phase difference required so rearrange the array */
+				    lut_array_dma[index++] = ((lut_array[lut_index++].toInteger()) & 0xFFFF)
+   
+				     if(lut_index == appIns.gint_table_length.value)
+				     {
+					   lut_index = 0
+				     }
+				     dma_array_index--
+			     }
+			   }			   
+		   }
+	   }
+
+if(appIns.gcombo_waveform_sel.value != "Custom")
+{
+lut_ptr = "${appInst}_array"
+out.print("""
+const uint32_t ${appInst}_array[] = 
+{  """);
+
+lut_index = 0
+if((appIns.gcheck_synch_channel.value == true) && (appIns.gcombo_refill.value == "Auto DMA"))
+{
+	lut_length = lut_max_length
+	while(lut_index < lut_length)
+	{
+		wave_point = (lut_array_dma[lut_index].toInteger())
+		lut_index++
+		out.print("""\n\t(uint32_t)${wave_point}, """);
+    }
+}
+else
+{
+	lut_length = appIns.gint_table_length.value
+	while(lut_index < lut_length)
+	{
+		wave_point = (lut_array[lut_index].toInteger())
+		lut_index++
+		out.print("""\n\t(uint32_t)${wave_point}, """);
+    }
+}
+out.print("""
+};  """);
+}
+else
+{
+  lut_ptr = "${appIns.gstring_custom_lut.value}"
+}
+
+
+/* Print second DAC lookup table wave points */
+if((appIns.gcheck_synch_channel.value == true) && (appIns.gcombo_refill.value != "Auto DMA"))
+{
+if(appIns.gcombo_waveform_sel_second_dac.value != "Custom")
+{
+	coupled_lut_ptr = "${appInst}_coupled_array"
+	out.print("""
+const uint32_t ${appInst}_coupled_array[] =
+{  """);
+lut_index = 0
+lut_length = appIns.gint_table_length_second_dac.value
+while(lut_index < lut_length)
+{
+	wave_point = (lut_array_coupled[lut_index].toInteger())
+	lut_index++
+	out.print("""\n\t(uint32_t)${wave_point}, """);
+	}
+	out.print("""
+};  """);
+}
+else
+{
+  coupled_lut_ptr = "${appIns.gstring_custom_lut_second_dac.value}"
+}
+}
+/********************************************** Waveform Generator Lookup Table -END ******************************************************/
+	
+	
+   if(appIns.gcombo_waveform_sel.value != 'None')
+   {
+	
+	/* Clk source selection */
+	if(appIns.gcombo_clock_source.value == 'Internal Trigger')
+	{
+	  clock_src = 0 //'DAC_CLK_SOURCE_INTERN'	
+	}
+	else if(appIns.gcombo_clock_source.value == 'External Trigger')
+	{
+	  /* External trigger enabled */
+	  clock_src = 1 + trigger_sel
+	}
+	else
+	{
+		/* Software trigger enabled */
+		clock_src = 9 //XMC_DAC_CLK_SOURCE_SOFTWARE
+	}
+
+/* Waveform offset configuration */
+	if(appIns.gcheck_add_offset.value == true)
+	{
+		if(appIns.gint_offset_val.value < 0)
+		{
+			/* 2's compliment */
+			offset = ((appIns.gint_offset_val.value + 256) & 0x0FF);
+		}
+		else
+		{
+			offset = ((appIns.gint_offset_val.value) & 0x0FF);
+		}
+	}
+	else
+	{
+	   offset = 0;
+	}
+	
+	if((appIns.gcheck_add_offset_second_dac.value == true)&&(appIns.gcheck_synch_channel.value == true))
+	{
+		if(appIns.gint_offset_val_second_dac.value < 0)
+		{
+			/* 2's compliment */
+			offset_second_dac = ((appIns.gint_offset_val_second_dac.value + 256) & 0x0FF);
+		}
+		else
+		{
+			offset_second_dac = ((appIns.gint_offset_val_second_dac.value) & 0x0FF);
+		}
+	}
+	else
+	{
+	   offset_second_dac = 0;
+	}
+	
+/* Waveform data type configuration */	
+	if(appIns.gcombo_sign_sel.value == 'Signed')
+	{
+	   sign = 'XMC_DAC_CH_DATA_TYPE_SIGNED'
+	}
+	else
+	{
+	   sign = 'XMC_DAC_CH_DATA_TYPE_UNSIGNED'
+	}
+	
+	if((appIns.gcombo_sign_sel_second_dac.value == 'Signed')&&(appIns.gcheck_synch_channel.value == true))
+	{
+	   sign_second_dac = 'XMC_DAC_CH_DATA_TYPE_SIGNED'
+	}
+	else
+	{
+	   sign_second_dac = 'XMC_DAC_CH_DATA_TYPE_UNSIGNED'
+	}
+
+/* Scaling configuration */	
+	if(appIns.gcheck_shift_enable.value == true)
+	{
+		shift_qty = XMC_DAC_SCALE_NONE_INDEX + appIns.gint_shifted_bits.value
+	}
+	else
+	{
+	  shift_qty = XMC_DAC_SCALE_NONE_INDEX
+	}
+	
+	if((appIns.gcheck_shift_enable_second_dac.value == true)&&(appIns.gcheck_synch_channel.value == true))
+	{
+		shift_qty_second_dac = XMC_DAC_SCALE_NONE_INDEX + appIns.gint_shifted_bits_second_dac.value
+	}
+	else
+	{
+	  shift_qty_second_dac = XMC_DAC_SCALE_NONE_INDEX
+	}
+	
+/* 	Wave repetition configuration */
+	if(appIns.gcombo_repetition.value == 'Endless')
+	{
+		wavegen_repeat_cycles = 0
+		wavegen_current_cycle = 0
+	}
+	else
+	{		
+		if(appIns.gint_repetition_cycles.value == 1)
+		{
+		  wavegen_repeat_cycles = 1
+		  wavegen_current_cycle = 0
+		}
+		else
+		{ 
+		   wavegen_repeat_cycles = appIns.gint_repetition_cycles.value - 1
+		   wavegen_current_cycle = wavegen_repeat_cycles
+		}
+	}
+
+	/* Capture repetition cycles for synchronized channel */	
+	if(appIns.gcombo_repetition_second_dac.value == 'Endless')
+	{
+		wavegen_sync_repeat_cycles = 0
+		wavegen_sync_current_cycle = 0
+	}
+	else
+	{
+		
+		if(appIns.gint_repetition_cycles_second_dac.value == 1)
+		{
+			wavegen_sync_repeat_cycles = 1
+			wavegen_sync_current_cycle = 0
+		}
+		else
+		{
+			wavegen_sync_repeat_cycles = appIns.gint_repetition_cycles_second_dac.value - 1
+			wavegen_sync_current_cycle = wavegen_sync_repeat_cycles
+		}
+	}
+   }
+
+/* Waveform data format configuration */
+   if(appIns.gcombo_waveform_sel.value == "Custom")
+   {
+	   if(appIns.gcombo_data_type_sel.options.indexOf(appIns.gcombo_data_type_sel.value) == 0)
+	   {
+		   data_type = 'DAC_LUT_DATATYPE_12_BIT'
+	   }
+	   else
+	   {
+		   data_type = 'DAC_LUT_DATATYPE_16_BIT'
+	   }
+   }
+   else if(appIns.gcombo_refill.value == "Auto DMA")
+   {
+	   data_type = 'DAC_LUT_DATATYPE_16_BIT'
+   }
+   else
+   {
+	   data_type = 'DAC_LUT_DATATYPE_12_BIT'
+   }
+
+   if((appIns.gcombo_waveform_sel_second_dac.value == "Custom")&&(appIns.gcheck_synch_channel.value.value == true))
+   {
+	   /* Waveform data format configuration for second dac*/
+	   if(appIns.gcombo_data_type_sel_second_dac.options.indexOf(appIns.gcombo_data_type_sel_second_dac.value) == 0)
+	   {
+		   data_type_second_dac = 'DAC_LUT_DATATYPE_12_BIT'
+	   }
+	   else
+	   {
+		   data_type_second_dac = 'DAC_LUT_DATATYPE_16_BIT'
+	   }
+   }
+   else if(appIns.gcombo_refill.value == "Auto DMA")
+   {
+	   data_type_second_dac = 'DAC_LUT_DATATYPE_16_BIT'
+   }
+   else
+   {
+	   data_type_second_dac = 'DAC_LUT_DATATYPE_12_BIT'
+   }
+
+	out.print("""
+/* DAC Channel Configuration */
+XMC_DAC_CH_CONFIG_t ${appInst}_Channel_Config = 
+{
+   .data_type       = (uint8_t)${sign},     
+   .output_negation = (uint8_t)${["XMC_DAC_CH_OUTPUT_NEGATION_DISABLED","XMC_DAC_CH_OUTPUT_NEGATION_ENABLED"][appIns.gcheck_invert_output.value ? 1 : 0]},
+   .output_scale    = (uint8_t)${DacAmpEnum[shift_qty]},     
+   .output_offset   = ${offset}U
+};
+
+""");
+
+if(appIns.gcombo_refill.value == "Auto Interrupt")
+{
+out.print("""
+DAC_LUT_ISR_Handle_t ${appInst}_Interrupt_Config =
+{
+  .node_id      = ${dac_isr_uri[7]}U,
+  .priority     = ${appIns.ginterruptprio_dac_ch_sr.priorityValue.value}U,
+  .sub_priority = ${appIns.ginterruptprio_dac_ch_sr.subPriorityValue.value}U
+};
+""");
+}
+
+if(appIns.gcombo_refill.value == "Auto DMA")
+{
+  String dma_app_lbl  = appIns.appres_global_dma.getInstanceLabel()
+out.print("""
+XMC_DMA_CH_CONFIG_t ${appInst}_dma_ch_config =
+{
+  {
+    .src_transfer_width     = (uint32_t)XMC_DMA_CH_TRANSFER_WIDTH_32,
+    .dst_transfer_width     = (uint32_t)XMC_DMA_CH_TRANSFER_WIDTH_32,
+    .src_address_count_mode = XMC_DMA_CH_ADDRESS_COUNT_MODE_INCREMENT,
+    .dst_address_count_mode = XMC_DMA_CH_ADDRESS_COUNT_MODE_NO_CHANGE,
+    .src_burst_length       = XMC_DMA_CH_BURST_LENGTH_1,
+    .dst_burst_length       = XMC_DMA_CH_BURST_LENGTH_1,
+    .transfer_flow          = XMC_DMA_CH_TRANSFER_FLOW_M2P_DMA,
+    .enable_interrupt       = true
+  },
+  . block_size              = ${lut_max_length}U,
+  . transfer_type           = XMC_DMA_CH_TRANSFER_TYPE_MULTI_BLOCK_SRCADR_RELOAD_DSTADR_RELOAD,
+  . priority                = XMC_DMA_CH_PRIORITY_0,
+  . src_handshaking         = XMC_DMA_CH_SRC_HANDSHAKING_SOFTWARE,
+  . dst_handshaking         = XMC_DMA_CH_DST_HANDSHAKING_HARDWARE, 
+  . dst_peripheral_request  = DMA_PERIPHERAL_REQUEST(${dest_per}U, ${dest_srsel_rs}U),
+};
+
+DAC_LUT_DMA_CONFIG_t ${appInst}_dma_config =
+{
+  .dma_ch_config = &${appInst}_dma_ch_config,
+  .global_dma    = &${dma_app_lbl},
+  .dma_channel   = ${dma_channel}U
+};
+""");
+
+}
+
+/* If coupled mode configured then configure one more DAC CH */
+if(appIns.gcheck_synch_channel.value == true)
+{
+out.print("""
+/* Second DAC Channel Configuration */
+XMC_DAC_CH_CONFIG_t ${appInst}_Sync_Channel_Config = 
+{
+   .data_type       = (uint8_t)${sign_second_dac},     
+   .output_negation = (uint8_t)${["XMC_DAC_CH_OUTPUT_NEGATION_DISABLED","XMC_DAC_CH_OUTPUT_NEGATION_ENABLED"][appIns.gcheck_invert_output_second_dac.value ? 1 : 0]},
+   .output_scale    = (uint8_t)${DacAmpEnum[shift_qty_second_dac]},     
+   .output_offset   = ${offset_second_dac}
+};
+
+""");
+    coupled_io_port_handle_ptr = "&${appInst}_Coupled_IO_Port"
+    coupled_channel_config_ptr = "&${appInst}_Coupled_Channel_Config"
+}
+else
+{
+	coupled_io_port_handle_ptr = "NULL"
+	coupled_channel_config_ptr = "NULL"
+}
+
+if(appIns.gcombo_refill.value == 'Auto Interrupt')
+{
+  isr_config_ptr = '&'+appInst+'_Interrupt_Config'
+}
+else
+{
+  isr_config_ptr = 'NULL'
+}
+
+out.print("""
+
+/* Data Mode initialization */
+DAC_LUT_t ${appInst} =
+{
+  .module_ptr                    = (XMC_DAC_t  * )(void *)DAC,
+  .config_ptr                    = &${appInst}_Channel_Config,
+""")
+if(appIns.gcombo_refill.value == "Auto DMA")
+{
+out.print("""
+  .dma_config_ptr                = ${dma_config_ptr},
+""")
+}
+out.print("""
+#if (DAC_LUT_ANALOG_IO_USED == 1U)
+  .analog_io_config_ptr          = ${analog_io_handle},
+#endif
+  .sync_config_ptr               = ${sync_ch_config},
+  .wave_lut_ptr                  = (uint32_t * )(void *)${lut_ptr},
+  .wave_lut_coupled_ptr          = (uint32_t * )(void *)${coupled_lut_ptr},
+  .refill_sel                    = ${DACLutRefillEnum[appIns.gcombo_refill.options.indexOf(appIns.gcombo_refill.value)]},
+  .isr_config_ptr                = ${isr_config_ptr},
+  .data_type                     = ${data_type},
+  .data_type_sync_ch             = ${data_type_second_dac},
+  .wavegen_start_index           = ${appIns.gint_start_index.value}U,
+  .wavegen_sync_start_index      = ${appIns.gint_start_index_second_dac.value}U,
+  .wavegen_current_index         = ${appIns.gint_start_index.value}U,
+  .wavegen_sync_current_index    = ${appIns.gint_start_index_second_dac.value}U,   
+  .wavegen_lut_lenght            = ${appIns.gint_table_length.value}U,
+  .wavegen_sync_lut_lenght       = ${appIns.gint_table_length_second_dac.value}U,
+  .wavegen_repetition_cycle      = ${wavegen_repeat_cycles}U,
+  .wavegen_sync_repetition_cycle = ${wavegen_sync_repeat_cycles}U,
+  .wavegen_current_cycle         = ${wavegen_current_cycle},
+  .wavegen_sync_current_cycle    = ${wavegen_sync_current_cycle},
+  .input_trigger                 = ${ClkSourceEnum[clock_src]},
+  .frequency                     = ${appIns.gint_configured_clk.value}U,
+  .dac_data_reg_ptr              = ${dac_data_reg_ptr},
+  .service_request               = ${appIns.gcheck_enable_sr.value ? 1 : 0}U,
+  .ch                            = ${slice_num}U,
+  .sync_ch                       = ${sync_slice_num}U,
+  .state                         = DAC_LUT_STATE_UNINITIALIZED,
+  .start_after_init              = ${appIns.gcheck_start_during_init.value ? 1 : 0}U,
+};
+""")
+}
+
+if(appIns.gcombo_refill.value == "Auto Interrupt")
+{
+out.print("""
+/**********************************************************************************************************************
+ * API IMPLEMENTATION
+ **********************************************************************************************************************/
+/**
+  * @brief This is the DAC_LUT Interrupt Handler in this Handler
+  * LUT Points are Transferred to the DAC Data Register
+  */
+void ${appIns.gstring_interrupt_handler.value}(void)
+{
+  DAC_LUT_UpdateNextPoint(&${appInst});
+}
+""")
+}
+
+if(appIns.gcombo_refill.value == "Auto DMA")
+{ 
+out.print("""
+/**********************************************************************************************************************
+ * API IMPLEMENTATION
+ **********************************************************************************************************************/
+/* This API handles events generated from the DMA */
+void DAC_LUT_DMABlockTransferEvntHandler(XMC_DMA_CH_EVENT_t event)
+{
+  /* Check if any error occured during DMA transfer */
+  if(event == XMC_DMA_CH_EVENT_ERROR)
+  {
+    ${appInst}.state =  DAC_LUT_STATE_DMA_ERROR;
+    XMC_DMA_CH_ClearEventStatus(${appInst}.dma_config_ptr->global_dma->dma,
+                                   ${appInst}.dma_config_ptr->dma_channel, 
+                                    (uint32_t)XMC_DMA_CH_EVENT_ERROR);
+  }
+
+  if(${appInst}.wavegen_repetition_cycle != 0U)
+  {
+    /* Check if block transfer is completed */
+    if(event == XMC_DMA_CH_EVENT_BLOCK_TRANSFER_COMPLETE)
+    {
+      XMC_DMA_CH_ClearEventStatus(${appInst}.dma_config_ptr->global_dma->dma,
+                                   ${appInst}.dma_config_ptr->dma_channel, 
+                                    (uint32_t)XMC_DMA_CH_EVENT_BLOCK_TRANSFER_COMPLETE);
+
+      /* Decrement block transfer count */
+      ${appInst}.wavegen_current_cycle--;
+      if(${appInst}.wavegen_current_cycle <= 0)
+      {
+        /* Stop the DMA transfer after this cycle */
+        XMC_DMA_CH_RequestLastMultiblockTransfer(${appInst}.dma_config_ptr->global_dma->dma,
+                                                  ${appInst}.dma_config_ptr->dma_channel);
+      }
+    }
+  }
+}
+
+""") 
+}
+  else
+  {
+	out.print("""
+  /*DAC App is not mapped for app instant: ${appInst} */""");
+
+  }
+  
+  /* Dummy reading - avoids code generation 'unused variables' pop up window */
+  Integer Dummy_Mux_Read = 0
+  
+  Dummy_Mux_Read = appIns.hwres_dac_analogpin.getRegValue("pdisc","pdisc_pdis")
+}
+
+/*CODE_BLOCK_END*/
