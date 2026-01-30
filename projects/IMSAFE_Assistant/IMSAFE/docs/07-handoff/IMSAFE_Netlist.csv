@@ -1,0 +1,117 @@
+Net Name,Pin 1,Pin 2,Pin 3,Pin 4,Pin 5,Notes
+# IMSAFE MainBoard Master Netlist - CSV Format
+# Version 1.0 - 2026-01-30
+# Format: Net Name, Component.Pin connections (up to 5), Notes
+
+# ============= POWER NETS =============
++3V3,U1.VDD_ALL,U7.VOUT,U9.VDD,U10.VDD,U11.VDD,3.3V rail from TPS62133
++3V3,U13.VDD,U14.VDD,U15.VDD,U16.VDD,U17.3V3,3.3V continued
++3V3,U1801.VCC,U2.VCC,R_NRST.1,R_BOOT0.2,,3.3V continued
++5V,U8.VOUT,LED1-16.VDD,J1801.1,Q6.DRAIN,,5V rail from TPS62130
+VSYS,U3.SYS,U7.VIN,U8.VIN,C_VSYS.1,,System rail 6-8.4V
+VBUS,J1.VBUS,U3.VBUS,U2.VBUS,C_VBUS.1,,USB 5V input
+VBAT,Battery+,U3.BAT,U4.VDD,,,Battery 6-8.4V
+GND,All.GND,,,,,Common ground
+
+# ============= MCU CORE =============
+NRST,U1.NRST,R_NRST.2,C_NRST.1,J6.5,J7.5,Reset with RC filter
+BOOT0,U1.BOOT0,R_BOOT0.1,,,,"Boot config, pull-down"
+VCAP1,U1.VCAP1,C_VCAP1.1,,,,2.2uF to GND
+VCAP2,U1.VCAP2,C_VCAP2.1,,,,2.2uF to GND
+HSE_IN,U1.PH0,Y1.1,C_HSE1.1,,,8MHz crystal
+HSE_OUT,U1.PH1,Y1.2,C_HSE2.1,,,8MHz crystal
+LSE_IN,U1.PC14,Y2.1,C_LSE1.1,,,32.768kHz crystal
+LSE_OUT,U1.PC15,Y2.2,C_LSE2.1,,,32.768kHz crystal
+
+# ============= USB =============
+USB_DP,U1.PA12,U2.IO1,J1.D+,,,USB D+
+USB_DM,U1.PA11,U2.IO2,J1.D-,,,USB D-
+USB_VBUS,U1.PA9,J1.VBUS,,,,VBUS sense
+CC1,J1.CC1,R_CC1.1,,,,5.1k to GND
+CC2,J1.CC2,R_CC2.1,,,,5.1k to GND
+
+# ============= CAN-FD =============
+FDCAN1_TX,U1.PD1,U1801.TXD,,,,CAN transmit
+FDCAN1_RX,U1.PD0,U1801.RXD,,,,CAN receive
+CANH,U1801.CANH,R1801.2,D1801.A1,J1801.2,,CAN High
+CANL,U1801.CANL,R1802.2,D1801.A2,J1801.4,,CAN Low
+CAN_TERM_MID,R1801.1,R1802.1,C1802.1,,,Split termination junction
+
+# ============= I2C1 (SENSORS) =============
+I2C1_SCL,U1.PB8,U9.SCK,U10.SCL,U11.SCL,U13.SCL,Sensor I2C clock
+I2C1_SCL,U3.SCL,R_I2C1_SCL.2,,,,Sensor I2C clock continued
+I2C1_SDA,U1.PB9,U9.SDI,U10.SDA,U11.SDA,U13.SDA,Sensor I2C data
+I2C1_SDA,U3.SDA,R_I2C1_SDA.2,,,,Sensor I2C data continued
+
+# ============= I2C4 (IO EXPANDER) =============
+I2C4_SCL,U1.PD12,U16.SCL,R_I2C4_SCL.2,FFC.5,,MCP23017 clock
+I2C4_SDA,U1.PD13,U16.SDA,R_I2C4_SDA.2,FFC.4,,MCP23017 data
+
+# ============= SPI1 (DISPLAY) =============
+DISP_SCK,U1.PA5,R_DISP_SCK.1,,,,Display SPI clock
+DISP_MOSI,U1.PB5,R_DISP_MOSI.1,,,,Display MOSI
+DISP_MISO,U1.PB4,J2.SDO,,,,Display MISO
+DISP_CS,U1.PB1,J2.CS,,,,Display chip select
+DISP_DC,U1.PA4,J2.DC,,,,Display data/command
+DISP_RST,U1.PB0,J2.RST,,,,Display reset
+DISP_BL,U1.PB2,Q6.GATE,,,,Backlight PWM
+
+# ============= SDMMC1 =============
+SD_CLK,U1.PC12,R_SD_CLK.1,,,,SD clock
+SD_CMD,U1.PD2,R_SD_CMD.1,,,,SD command
+SD_D0,U1.PC8,R_SD_D0.1,,,,SD data 0
+SD_D1,U1.PC9,R_SD_D1.1,,,,SD data 1
+SD_D2,U1.PC10,R_SD_D2.1,,,,SD data 2
+SD_D3,U1.PC11,R_SD_D3.1,,,,SD data 3
+SD_CD,U1.GPIO,J3.CD,R_SD_CD.2,,,Card detect
+
+# ============= USART2 (BLE) =============
+ESP32_RX,U1.PA2,U17.RXD0,,,,MCU TX to BLE
+ESP32_TX,U1.PA3,U17.TXD0,,,,BLE TX to MCU
+ESP32_EN,U1.PC1,U17.EN,R_EN.2,C_EN.1,,BLE enable
+ESP32_IO9,U1.PC2,U17.IO9,R_IO9.2,,,BLE boot mode
+
+# ============= ADC =============
+MICS_RED,U1.PC3,U12.RED_OUT,R_LOAD_RED.2,C_ADC_RED.1,,Gas reducing ADC
+MICS_OX,U1.PA1,U12.OX_OUT,R_LOAD_OX.2,C_ADC_OX.1,,Gas oxidizing ADC
+VBAT_SENSE,U1.PC4,R_VBAT_DIV.MID,,,,Battery voltage sense
+
+# ============= TIMERS (ENCODERS) =============
+ENC1_A,U1.PA6,ENC1.A,C_ENC1_A.1,R_ENC1_A.2,,Encoder 1 A (TIM3_CH1)
+ENC1_B,U1.PA7,ENC1.B,C_ENC1_B.1,R_ENC1_B.2,,Encoder 1 B (TIM3_CH2)
+ENC1_SW,U1.PC6,ENC1.SW,C_ENC1_SW.1,R_ENC1_SW.2,,Encoder 1 switch
+ENC2_A,U1.PB6,ENC2.A,C_ENC2_A.1,R_ENC2_A.2,,Encoder 2 A (TIM4_CH1)
+ENC2_B,U1.PB7,ENC2.B,C_ENC2_B.1,R_ENC2_B.2,,Encoder 2 B (TIM4_CH2)
+ENC2_SW,U1.PC7,ENC2.SW,C_ENC2_SW.1,R_ENC2_SW.2,,Encoder 2 switch
+
+# ============= LED DATA =============
+LED_DATA,U1.PA0,R_LED.1,,,,WS2812B data (TIM2_CH1)
+LED_DIN1,R_LED.2,LED1.DIN,,,,LED chain start
+LED_DOUT1,LED1.DOUT,LED2.DIN,,,,LED chain
+LED_DOUT2,LED2.DOUT,LED3.DIN,,,,LED chain
+LED_DOUT3,LED3.DOUT,LED4.DIN,,,,LED chain
+LED_DOUT4,LED4.DOUT,LED5.DIN,,,,LED chain
+LED_DOUT5,LED5.DOUT,LED6.DIN,,,,LED chain
+LED_DOUT6,LED6.DOUT,LED7.DIN,,,,LED chain
+LED_DOUT7,LED7.DOUT,LED8.DIN,,,,LED chain
+LED_DOUT8,LED8.DOUT,LED9.DIN,,,,LED chain
+LED_DOUT9,LED9.DOUT,LED10.DIN,,,,LED chain
+LED_DOUT10,LED10.DOUT,LED11.DIN,,,,LED chain
+LED_DOUT11,LED11.DOUT,LED12.DIN,,,,LED chain
+LED_DOUT12,LED12.DOUT,LED13.DIN,,,,LED chain
+LED_DOUT13,LED13.DOUT,LED14.DIN,,,,LED chain
+LED_DOUT14,LED14.DOUT,LED15.DIN,,,,LED chain
+LED_DOUT15,LED15.DOUT,LED16.DIN,,,,LED chain
+
+# ============= GPIO CONTROL =============
+BUZZER,U1.PD14,R_BZ_GATE.1,,,,Buzzer control
+MICS_HEATER,U1.PC5,R_HEATER_GATE.1,,,,Gas heater control
+BQ_INT,U1.PB12,U3.INT,,,,Charger interrupt
+BQ_CE,U1.PB13,U3.CE,,,,Charger enable
+MCP_INTA,U1.PC0,U16.INTA,,,,IO expander interrupt
+WAKEUP,U1.PC13,SW_WAKE.1,,,,Wakeup button
+
+# ============= DEBUG =============
+SWDIO,U1.PA13,J6.2,J7.2,,,Debug data
+SWCLK,U1.PA14,J6.4,J7.4,,,Debug clock
+SWO,U1.PB3,J6.6,J7.6,,,Debug trace
